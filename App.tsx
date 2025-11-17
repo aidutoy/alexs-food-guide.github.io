@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import CityPage from './pages/CityPage';
 import NavBar from './components/NavBar';
 import ContactPage from './pages/ContactPage';
+import LocationsPage from './pages/LocationsPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/city/:cityId" element={<CityPage />} />
+            <Route path="/locations" element={<LocationsPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>

@@ -142,7 +142,7 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
                 <div className="space-y-3 pt-4 border-t">
                     <h4 className="font-semibold text-brand-dark">Ratings</h4>
                     <RatingDisplay label="Food" score={restaurant.ratings.food} max={5} />
-                    <RatingDisplay label="Ambiance" score={restaurant.ratings.ambiance} max={5} />
+                    <RatingDisplay label="Drinks" score={restaurant.ratings.drinks} max={5} />
                     <RatingDisplay label="Service" score={restaurant.ratings.service} max={5} />
                     <PriceRatingDisplay score={restaurant.ratings.price} max={3} />
                 </div>

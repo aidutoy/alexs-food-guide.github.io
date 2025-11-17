@@ -1,6 +1,6 @@
 export interface Rating {
   food: number;
-  ambiance: number;
+  drinks: number;
   service: number;
   price: number; 
 }
