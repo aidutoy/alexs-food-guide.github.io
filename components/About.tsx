@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Concept: React.FC = () => {
@@ -13,7 +12,7 @@ const Concept: React.FC = () => {
                 </div>
                 <div className="order-1 md:order-2">
                     <img
-                        src="https://picsum.photos/seed/about/600/500"
+                        src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/map.jpg"
                         alt="The original map"
                         className="rounded-lg shadow-2xl w-full h-auto object-cover"
                     />
