@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
         <section
             id="home"
             className="h-screen bg-cover bg-center flex flex-col items-center justify-center text-white relative"
-            style={{ backgroundImage: "url('https://picsum.photos/seed/foodhero/1920/1080')" }}
+            style={{ backgroundImage: "url('public/images/bonn/tio_pepe/tio_pepe_1.jpg')" }}
         >
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="relative z-10 text-center px-4">
