@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ArrowDownIcon from './icons/ArrowDownIcon';
 
@@ -36,7 +37,7 @@ const Hero: React.FC = () => {
         <section
             id="home"
             className="h-screen bg-cover bg-center flex flex-col items-center justify-center text-white relative"
-            style={{ backgroundImage: "url('public/images/bonn/tio_pepe/tio_pepe_1.jpg')" }}
+            style={{ backgroundImage: "url('https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_1.jpg')" }}
         >
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="relative z-10 text-center px-4">
@@ -44,7 +45,7 @@ const Hero: React.FC = () => {
                     Alex's Food Guide
                 </h1>
                 <p className="text-lg md:text-xl font-roboto font-light max-w-2xl mx-auto">
-                    Discovering the world's most unforgettable dishes, one city at a time.
+                    A collection of my favourite restaurants across the world for you to explore.
                 </p>
             </div>
             <button
