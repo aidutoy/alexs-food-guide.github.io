@@ -1,107 +1,59 @@
 
 import type { City } from '../../types';
 
-const newRestaurants = [
-  { name: 'Okinii', cuisine: 'Japanese' },
-  { name: 'Tio Pepe', cuisine: 'Spanish' },
-  { name: 'Ha Long', cuisine: 'Vietnamese' },
-  { name: 'Nennilo', cuisine: 'Italian' },
-  { name: 'Burgerwerk', cuisine: 'Burgers' },
-  { name: 'Mandala', cuisine: 'Indian' },
-  { name: 'Hokkaido Sushi and Grill', cuisine: 'Japanese' },
-  { name: 'Cream Company', cuisine: 'Desserts' },
-  { name: 'Karawane', cuisine: 'Middle Eastern' },
-  { name: 'Ichiban Noodle Bar', cuisine: 'Japanese' },
-  { name: 'Burgermanfaktur', cuisine: 'Burgers' },
-  { name: "Mayra's Wohnzimmer", cuisine: 'Cafe' },
-  { name: 'Cosy Corner', cuisine: 'Cafe' },
-  { name: 'Kaffeesaurus', cuisine: 'Cafe' },
-  { name: 'Frittenwerk', cuisine: 'Fries' },
-  { name: "L'Osteria", cuisine: 'Italian' },
-  { name: 'Frites Belgique', cuisine: 'Belgian' },
-  { name: 'Mam-mam', cuisine: 'To be updated' },
-  { name: 'Ferdinando Italian Coffee & Bistro', cuisine: 'Italian' },
-  { name: 'Pho', cuisine: 'Vietnamese' },
-  { name: 'Pie Me', cuisine: 'Pies' },
-  { name: 'Bonanza Burger', cuisine: 'Burgers' },
-  { name: 'Cafe Nova', cuisine: 'Cafe' },
-  { name: 'LaRoc Espressobar', cuisine: 'Cafe' }
-];
-
-const placeholderRestaurants = newRestaurants.map(r => {
-    const id = r.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-    return {
-        id: `bonn-${id}`,
-        name: r.name,
-        description: 'A delightful culinary experience waiting for your personal touch. Please update this description with your own review and details.',
-        mainImage: { url: `https://picsum.photos/seed/bonn-${id}-1/600/400`, caption: 'Update with an enticing photo of the restaurant.' },
-        images: [
-            { url: `https://picsum.photos/seed/bonn-${id}-2/800/600`, caption: 'A delicious dish.' },
-            { url: `https://picsum.photos/seed/bonn-${id}-3/800/600`, caption: 'The restaurant interior.' }
-        ],
-        ratings: { food: 0, drinks: 0, service: 0, price: 1 },
-        mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80783.56157259178!2d7.022066220268551!3d50.73438137885308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479808e4a0624387%3A0x42120468b6e87dc0!2sBonn!5e0!3m2!1sen!2sde!4v1684321345678',
-        cuisine: r.cuisine,
-        alexsTip: "Add your personal tip here!",
-        dietary: {
-            celiac: "Please update dietary information.",
-            lactose: "Please update dietary information.",
-            vegan: "Please update dietary information."
-        },
-        websiteUrl: '#',
-        instagramUrl: '#'
-    }
-});
-
-
 export const bonn: City = {
   id: 'bonn',
   name: 'Bonn',
   image: 'https://picsum.photos/seed/bonn/800/600',
   restaurants: [
     {
-      id: 'brauhaus-boennsch',
-      name: 'Bönnsch',
-      description: 'A traditional brewery pub in the heart of Bonn, famous for its home-brewed, unfiltered beer and classic German dishes.',
-      mainImage: { url: 'https://picsum.photos/seed/bonnbeer1/600/400', caption: 'Serving the unique Bönnsch beer.' },
+      id: 'okinii',
+      name: 'Okinii',
+      description: 'One of the best sushi places in bonn with an all-you-can-eat sushi menu. I have been so often that I am starting to get sick of it! I think the price is quite high but the sushi is worth it in my opinion.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/okinii/okinii_2.jpg', caption: 'Cream cheese roll, tuna roll, chicken and mango roll, and tekka maki' },
       images: [
-        { url: 'https://picsum.photos/seed/bonnbeer2/800/600', caption: 'A hearty German meal at Bönnsch.' },
-        { url: 'https://picsum.photos/seed/bonnbeer3/800/600', caption: 'The cozy, traditional interior.' }
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/okinii/okinii_1.jpg', caption: 'Tekka maki, shake maki, avocado maki, shake nigiri, cream cheese roll, california roll' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/okinii/okinii_3.jpg', caption: 'Tekka maki, avocado maki, shake maki, cream cheese roll, teriyaki roll, shake temaki' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/okinii/okinii_4.jpg', caption: 'Tekka maki, shake maki, cream cheese roll, shake nigiri, california maki, chicken and mango roll, teriyaki roll, and spicy duck mango roll' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/okinii/okinii_5.jpg', caption: 'Chicken and mango roll' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/okinii/okinii_6.jpg', caption: 'Spicy duck mango roll (left) and chicken and mango roll (right)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/okinii/okinii_7.jpg', caption: 'Matcha, black sesame, and mango ice cream' }
       ],
-      ratings: { food: 4, drinks: 4, service: 4, price: 2 },
-      mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.492576182107!2d7.0970223157424!3d50.73507097951568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bee1a23e5a2b2b%3A0x75f78bf8748348b!2sB%C3%B6nnsch!5e0!3m2!1sen!2sde!4v1684321345678',
-      cuisine: 'German Brewery',
-      alexsTip: "Try their unique Bönnsch beer, which is served in a special glass. It's a local specialty you won't find everywhere.",
+      ratings: { food: 5, drinks: 4, service: 4, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Okinii%20Bonn%2C%20Quantiusstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Japanese sushi',
+      alexsTip: "Try their chicken and mango roll, I can't get enough of it.",
       dietary: {
-        celiac: "Some gluten-free options available, but it's best to inform the staff about your dietary needs.",
-        lactose: "Can be accommodated upon request.",
-        vegan: "Limited vegan options, primarily salads."
+        celiac: "A few sushi options in the all-you-can-eat lunch menu, gluten-free soy sauce available.",
+        lactose: "plenty of lactose-free sushi.",
+        vegan: "vegetarian sushi are typically vegan unless with cream cheese."
       },
-      websiteUrl: 'http://www.boennsch.de/',
-      instagramUrl: 'https://www.instagram.com/brauhaus_boennsch/'
+      websiteUrl: 'https://okinii.de/standorte-bu/bonn/',
+      instagramUrl: 'https://www.instagram.com/okiniirestaurants/?hl=en'
     },
-     {
-      id: 'kaspars',
-      name: 'Kaspars',
-      description: 'Modern German cuisine with a focus on regional ingredients, served in a stylish and elegant setting.',
-      mainImage: { url: 'https://picsum.photos/seed/modern1/600/400', caption: 'An example of the beautifully plated dishes.' },
+    {
+      id: 'tio-pepe',
+      name: 'Tio Pepe',
+      description: 'Great spot for some Spanish tapas, lots of incredibly tasty dishes to share with family and friends. There is no need to rush here, sit and enjoy the atmosphere with amazing food and wine.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/tio_pepe/tio_pepe_0.jpg', caption: 'Calamari plancha, patatas bravas, bacon wrapped dates, croquettes with fish and chilli, patatas with aiolo, bread' },
       images: [
-        { url: 'https://picsum.photos/seed/modern2/800/600', caption: 'Elegant dining room at Kaspars.' },
-        { url: 'https://picsum.photos/seed/modern3/800/600', caption: 'A creative dessert.' },
-        { url: 'https://picsum.photos/seed/modern4/800/600', caption: 'Close-up on a meticulously prepared main course.' }
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/tio_pepe/tio_pepe_2.jpg', caption: 'Fried calamari, patatas bravas, bacon wrapped dates, croquettes with fish and chilli, patatas with aiolo, bread, tortilla con chorizo' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/tio_pepe/tio_pepe_3.jpg', caption: 'Tortilla con chorizo' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/tio_pepe/tio_pepe_4.jpg', caption: 'Fried calamari' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/tio_pepe/tio_pepe_6.jpg', caption: 'Fried calamari, patatas bravas, bacon wrapped dates, croquettes with fish and chilli, patatas with aiolo, bread, tortilla con chorizo)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/tio_pepe/tio_pepe_5.jpg', caption: 'Crema Catalana' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 3 },
-      mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.63001804975!2d7.10183181574229!3d50.73273997951543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bee173330f1623%3A0x864f1d440b8a3e79!2sKaspars%20Restaurant!5e0!3m2!1sen!2sde!4v1684321456789',
-      cuisine: 'Modern German',
-      alexsTip: "Perfect for a special occasion. Opt for the tasting menu to get a full sense of the chef's creativity and skill.",
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Okinii%20Bonn%2C%20Quantiusstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Spanish tapas',
+      alexsTip: "I would recommend to take a pitcher of sangria and the bacon wrapped dates, but the tortilla, croquettes, patatas bravas, and calamari are great options too.",
       dietary: {
-        celiac: "Excellent accommodation for gluten-free diets. Inform them when booking.",
-        lactose: "The kitchen is very flexible with dairy-free requests.",
-        vegan: "Vegan tasting menu available on request, a real treat!"
+        celiac: "No gluten-free bread but plenty of tapas like patatas bravas, calamari and bacon wrapped dates.",
+        lactose: "No cheese or milk specifically lactose-free but many options without dairy.",
+        vegan: "Very limited options due to the meat and fish in most food."
       },
-      websiteUrl: 'https://kaspars-restaurant.de/',
-      instagramUrl: 'https://www.instagram.com/kaspars_restaurant/'
+      websiteUrl: 'https://tio-pepe-bonn.de/',
+      instagramUrl: 'https://www.instagram.com/tiopepebonn/'
     },
-    ...placeholderRestaurants
   ],
 };
