@@ -9,42 +9,67 @@ const PinIcon = () => (
 
 const About: React.FC = () => {
     return (
-        <section id="about" className="py-16 md:py-32 bg-brand-dark relative overflow-hidden">
-            {/* Decorative background elements */}
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-accent/5 rounded-full blur-3xl"></div>
+        <section id="about" className="py-24 md:py-32 relative overflow-hidden">
+            {/* Connecting Gradient from Hero - adjusted for new background */}
+            <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-brand-dark via-brand-dark/90 to-transparent pointer-events-none z-0"></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 md:gap-24 items-center relative z-10">
                 <div className="order-2 md:order-1">
-                    <div className="animate-[slide-up_0.6s_ease-out_forwards]">
-                        <PinIcon />
-                        <h2 className="text-5xl md:text-6xl font-playfair font-bold text-white mb-8 leading-tight">
-                            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Concept</span>
-                        </h2>
-                        <div className="space-y-6 text-lg font-light text-gray-300 leading-relaxed">
-                            <p>
-                                When I moved from Scotland to Bonn, my introduction flyer to the University had a nice map of the city and the Rhein.
-                            </p>
-                            <p className="pl-4 border-l-2 border-brand-primary/50 italic text-white/90">
-                                "I took this map and pinned it up on a board in the student dorm kitchen. I started pinning restaurants, cafes, bars, and attractions I discovered with coloured pins and string."
-                            </p>
-                            <p>
-                                I would capture the basics: name, price, and a short recommendation. Fast-forward four years, and I am taking this tactile concept and turning it into a digital food guide to share with anyone who enjoys a good time and tasty food.
-                            </p>
+                    <div className="
+                        animate-[slide-up_0.6s_ease-out_forwards]
+                        bg-white/5 backdrop-blur-xl border border-white/10
+                        p-8 md:p-12 rounded-[3rem] shadow-2xl
+                        relative overflow-hidden group
+                    ">
+                        {/* Subtle internal shine */}
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent opacity-50 pointer-events-none"></div>
+                        
+                        <div className="relative z-10">
+                            <PinIcon />
+                            <h2 className="text-5xl md:text-6xl font-playfair font-bold text-white mb-8 leading-tight">
+                                The <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Concept</span>
+                            </h2>
+                            <div className="space-y-6 text-lg font-light text-gray-300 leading-relaxed">
+                                <p>
+                                    When I moved from Scotland to Bonn, my introduction flyer to the University had a nice map of the city and the Rhein.
+                                </p>
+                                <p className="pl-4 border-l-2 border-brand-primary/50 italic text-white/90">
+                                    "I took this map and pinned it up on a board in the student dorm kitchen. I started pinning restaurants, cafes, bars, and attractions I discovered with coloured pins and string."
+                                </p>
+                                <p>
+                                    I would capture the basics: name, price, and a short recommendation. Fast-forward four years, and I am taking this tactile concept and turning it into a digital food guide to share with anyone who enjoys a good time and tasty food.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div className="order-1 md:order-2 relative group">
-                    {/* Image backing effect */}
-                    <div className="absolute inset-0 bg-brand-primary rounded-[2rem] rotate-6 opacity-20 group-hover:rotate-12 transition-transform duration-500"></div>
-                    <div className="absolute inset-0 bg-white/5 rounded-[2rem] -rotate-3 scale-105 backdrop-blur-sm border border-white/10"></div>
-                    
-                    <img
-                        src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/map.jpg"
-                        alt="The original map with pins"
-                        className="relative z-10 rounded-[2rem] shadow-2xl w-full h-auto object-cover rotate-2 hover:rotate-0 transition-transform duration-700 border border-white/10"
-                    />
+                <div className="order-1 md:order-2 relative flex justify-center md:justify-end">
+                    {/* Elegant Framed Image Box */}
+                    <div className="relative w-full max-w-md aspect-[4/5]">
+                        
+                        {/* The 'Frame' Element - Wireframe style */}
+                        <div className="absolute inset-0 border border-brand-primary/30 rounded-2xl transform translate-x-6 translate-y-6 z-0"></div>
+                        
+                        {/* The Image Container */}
+                        <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl z-10 group bg-black">
+                            {/* Overlay on idle, removed on hover */}
+                            <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors duration-700 z-20"></div>
+                            
+                            <img
+                                src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/map.jpg"
+                                alt="The original map with pins"
+                                className="w-full h-full object-cover transform transition-transform duration-1000 ease-out scale-105 group-hover:scale-100"
+                            />
+                            
+                            {/* Inner Border */}
+                            <div className="absolute inset-0 border border-white/10 rounded-2xl z-30 pointer-events-none"></div>
+                        </div>
+
+                        {/* Decorative minimalist accents */}
+                         <div className="absolute -top-4 -right-4 w-8 h-8 border-t-2 border-r-2 border-brand-primary/50 rounded-tr-lg z-20"></div>
+                         <div className="absolute -bottom-4 -left-4 w-8 h-8 border-b-2 border-l-2 border-white/20 rounded-bl-lg z-20"></div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -27,6 +27,7 @@ export interface Restaurant {
   mapEmbedUrl: string;
   cuisine: string;
   alexsTip?: string;
+  quickVerdict?: string;
   dietary?: DietaryInfo;
   websiteUrl?: string;
   instagramUrl?: string;

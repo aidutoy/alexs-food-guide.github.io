@@ -8,9 +8,12 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
     const [activeId, setActiveId] = useState<string>(cities[0].id);
 
     return (
-        <section id="featured-cities" className="relative py-16 md:py-24 overflow-hidden min-h-[100vh] md:min-h-[800px] flex items-center select-none">
+        <section id="featured-cities" className="relative py-16 md:pt-48 md:pb-24 overflow-hidden min-h-[100vh] md:min-h-[800px] flex items-center select-none -mt-32 z-0">
+             {/* Seamless Transition Gradient - Extended to cover the bottom of Why section */}
+             <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-brand-dark via-brand-dark/90 to-transparent z-10 pointer-events-none"></div>
+
              {/* Ambient Background System */}
-             <div className="absolute inset-0 bg-brand-dark">
+             <div className="absolute inset-0">
                 {cities.map((city) => (
                     <div
                         key={`bg-${city.id}`}
@@ -24,10 +27,10 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
                     </div>
                 ))}
                 {/* Gradient Overlay to ensure text readability */}
-                <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark/60 to-brand-dark/90"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/60 to-brand-dark/90"></div>
              </div>
 
-             <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
+             <div className="relative z-20 max-w-7xl mx-auto px-4 w-full">
                 <div className="text-center mb-12 md:mb-16">
                     <h2 className="text-4xl md:text-5xl lg:text-7xl font-playfair font-bold text-white mb-6 drop-shadow-2xl">
                         Culinary Destinations
@@ -46,7 +49,7 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
                                 key={city.id}
                                 onClick={() => setActiveId(city.id)}
                                 className={`
-                                    relative rounded-[2rem] overflow-hidden cursor-pointer 
+                                    relative rounded-[2.5rem] overflow-hidden cursor-pointer 
                                     transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]
                                     shadow-2xl border border-white/10
                                     ${isActive ? 'flex-[3.5]' : 'flex-[0.5] hover:flex-[0.75] hover:brightness-110'}
@@ -117,12 +120,13 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
                     style={{ scrollbarWidth: 'none' }}
                 >
                     {cities.map((city) => (
-                        <div key={city.id} className="relative flex-shrink-0 w-[85vw] h-[60vh] min-h-[450px] max-h-[600px] snap-center rounded-[2rem] overflow-hidden shadow-xl border border-white/10">
+                        <div key={city.id} className="relative flex-shrink-0 w-[85vw] h-[60vh] min-h-[450px] max-h-[600px] snap-center rounded-[2.5rem] overflow-hidden shadow-xl border border-white/10">
                              <Link to={`/city/${city.id}`} className="block w-full h-full group">
                                 <img 
                                     src={city.image} 
                                     alt={city.name} 
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                                
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                                 <div className="absolute bottom-0 left-0 p-6 w-full">

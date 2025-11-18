@@ -210,6 +210,21 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
                         {restaurant.cuisine}
                     </span>
                     <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6 leading-tight pr-8">{restaurant.name}</h2>
+
+                    {/* Quick Verdict */}
+                    {restaurant.quickVerdict && (
+                        <div className="mb-6 p-5 rounded-xl bg-white/5 border-l-2 border-brand-primary relative overflow-hidden">
+                            <div className="relative z-10">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <span className="text-brand-primary text-xs font-bold uppercase tracking-widest">Quick Verdict</span>
+                                </div>
+                                <p className="text-gray-200 font-medium text-lg leading-snug italic font-playfair">"{restaurant.quickVerdict}"</p>
+                            </div>
+                            {/* Decorative BG */}
+                            <div className="absolute right-0 top-0 w-24 h-24 bg-brand-primary/5 blur-2xl -mr-10 -mt-10"></div>
+                        </div>
+                    )}
+
                     <p className="text-white/70 leading-relaxed font-light">{restaurant.description}</p>
                 </div>
                 
@@ -279,21 +294,27 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
                 {(restaurant.websiteUrl || restaurant.instagramUrl) && (
                      <div className="py-8 border-t border-white/10">
                         <h4 className="font-playfair font-bold text-white text-lg mb-4">Connect</h4>
-                          <div className="flex items-center space-x-4">
+                          <div className="flex items-center gap-6">
                             {restaurant.websiteUrl && (
-                                <a href={restaurant.websiteUrl} target="_blank" rel="noopener noreferrer" aria-label="Website" className="flex items-center gap-2 text-white/60 hover:text-brand-primary transition-colors group">
-                                    <span className="p-2 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors">
-                                        <GlobeIcon className="w-5 h-5" />
-                                    </span>
-                                    <span className="text-sm">Website</span>
+                                <a 
+                                    href={restaurant.websiteUrl} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    aria-label="Website" 
+                                    className="text-white/60 hover:text-brand-primary transition-colors hover:scale-110 transform duration-200"
+                                >
+                                    <GlobeIcon className="w-8 h-8" />
                                 </a>
                             )}
                             {restaurant.instagramUrl && (
-                                <a href={restaurant.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center gap-2 text-white/60 hover:text-brand-primary transition-colors group">
-                                    <span className="p-2 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors">
-                                        <InstagramIcon className="w-5 h-5" />
-                                    </span>
-                                    <span className="text-sm">Instagram</span>
+                                <a 
+                                    href={restaurant.instagramUrl} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    aria-label="Instagram" 
+                                    className="text-white/60 hover:text-brand-primary transition-colors hover:scale-110 transform duration-200"
+                                >
+                                    <InstagramIcon className="w-8 h-8" />
                                 </a>
                             )}
                           </div>
