@@ -62,15 +62,15 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
                                     className={`
                                         absolute inset-0 w-full h-full object-cover
                                         transition-transform duration-1000
-                                        ${isActive ? 'animate-slow-zoom' : 'grayscale-[0.5] scale-100'}
+                                        ${isActive ? 'animate-slow-zoom' : 'scale-100'}
                                     `}
                                 />
                                 
-                                {/* Cinematic Dark Gradient Overlay */}
+                                {/* Cinematic Dark Gradient Overlay - Lightened */}
                                 <div className={`
-                                    absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent
+                                    absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent
                                     transition-opacity duration-500
-                                    ${isActive ? 'opacity-100' : 'opacity-60'}
+                                    ${isActive ? 'opacity-100' : 'opacity-40'}
                                 `}></div>
 
                                 {/* Content Container */}
@@ -128,7 +128,7 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
                                 
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
                                 <div className="absolute bottom-0 left-0 p-6 w-full">
                                     <h3 className="text-4xl font-playfair font-bold text-white mb-3 drop-shadow-md">{city.name}</h3>
                                     <p className="text-white/80 text-base font-light mb-6 line-clamp-2">Discover the best food in {city.name}.</p>

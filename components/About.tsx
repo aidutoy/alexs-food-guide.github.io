@@ -53,8 +53,7 @@ const About: React.FC = () => {
                         
                         {/* The Image Container */}
                         <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl z-10 group bg-black">
-                            {/* Overlay on idle, removed on hover */}
-                            <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors duration-700 z-20"></div>
+                            {/* Removed dark overlay on idle to brighten image */}
                             
                             <img
                                 src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/map.jpg"

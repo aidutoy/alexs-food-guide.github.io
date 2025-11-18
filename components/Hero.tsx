@@ -21,11 +21,11 @@ const Hero: React.FC = () => {
                 <img
                     src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_1.jpg"
                     alt="Hero Background"
-                    className="w-full h-full object-cover animate-slow-zoom opacity-60"
+                    className="w-full h-full object-cover animate-slow-zoom opacity-90"
                     fetchPriority="high"
                 />
-                 {/* Extended Gradient Overlay for smoother transition */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-brand-dark/90"></div>
+                 {/* Extended Gradient Overlay for smoother transition - lightened for brightness */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-brand-dark/90"></div>
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-dark to-transparent"></div>
             </div>
 
@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
                     </h1>
                 </div>
 
-                <p className="text-xl md:text-2xl font-light text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow-lg animate-[slide-up_1s_ease-out_0.4s_forwards] opacity-0">
+                <p className="text-xl md:text-2xl font-light text-gray-100 max-w-2xl mx-auto leading-relaxed drop-shadow-lg animate-[slide-up_1s_ease-out_0.4s_forwards] opacity-0">
                     A curated collection of culinary experiences and hidden gems from my travels around the world.
                 </p>
             </div>
@@ -49,17 +49,17 @@ const Hero: React.FC = () => {
                 <button
                     onClick={scrollToAbout}
                     className="
-                        group relative p-5 rounded-full
-                        bg-white/5 backdrop-blur-md border border-white/10
-                        shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]
+                        group relative p-2 md:p-5 rounded-full
+                        bg-transparent md:bg-white/5 md:backdrop-blur-md md:border md:border-white/10
+                        md:shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]
                         hover:bg-white/10 hover:scale-110 hover:border-white/20
                         transition-all duration-300 ease-out
                         cursor-pointer
                     "
                     aria-label="Scroll down"
                 >
-                    <div className="absolute inset-0 rounded-full bg-brand-primary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <KnifeIcon className="w-8 h-8 text-white/80 group-hover:text-white transition-colors relative z-10 animate-bounce" />
+                    <div className="hidden md:block absolute inset-0 rounded-full bg-brand-primary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <KnifeIcon className="w-10 h-10 md:w-8 md:h-8 text-white drop-shadow-lg md:text-white/80 group-hover:text-white transition-colors relative z-10 animate-bounce" />
                 </button>
             </div>
         </section>

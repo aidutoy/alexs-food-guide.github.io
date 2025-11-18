@@ -54,14 +54,14 @@ const CityPage: React.FC = () => {
             alt={city.name} 
             className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/30 via-brand-dark/20 to-brand-dark"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/10 via-brand-dark/10 to-brand-dark"></div>
         
         {/* Hero Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
             <h1 className="text-6xl md:text-8xl font-playfair font-bold text-white drop-shadow-2xl animate-[slide-up_0.8s_ease-out_forwards]">
                 {city.name}
             </h1>
-            <p className="text-white/80 text-xl md:text-2xl font-light mt-4 max-w-2xl animate-[slide-up_0.8s_ease-out_0.2s_forwards] opacity-0">
+            <p className="text-white text-xl md:text-2xl font-light mt-4 max-w-2xl animate-[slide-up_0.8s_ease-out_0.2s_forwards] opacity-0 drop-shadow-lg">
                 Discovering the best tastes in town
             </p>
         </div>
@@ -86,7 +86,7 @@ const CityPage: React.FC = () => {
       
       {/* Restaurants Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 relative z-10 -mt-20">
-        <h2 className="text-3xl font-playfair font-bold text-white mb-10 pl-2 border-l-4 border-brand-primary">
+        <h2 className="text-3xl font-playfair font-bold text-white mb-10 pl-2 border-l-4 border-brand-primary drop-shadow-lg">
             Curated Restaurants
         </h2>
         
@@ -112,15 +112,15 @@ const CityPage: React.FC = () => {
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         
-                        {/* Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        {/* Gradient Overlay - Adjusted to be lighter */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-90 transition-opacity"></div>
 
                         {/* Content */}
                         <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                            <p className="text-brand-primary font-medium tracking-widest uppercase text-xs mb-2">
+                            <p className="text-brand-primary font-medium tracking-widest uppercase text-xs mb-2 drop-shadow-md">
                                 {restaurant.cuisine}
                             </p>
-                            <h3 className="text-3xl font-playfair font-bold text-white mb-2 leading-tight">
+                            <h3 className="text-3xl font-playfair font-bold text-white mb-2 leading-tight drop-shadow-md">
                                 {restaurant.name}
                             </h3>
                             <div className="h-0.5 w-12 bg-white/30 group-hover:w-full transition-all duration-500"></div>
