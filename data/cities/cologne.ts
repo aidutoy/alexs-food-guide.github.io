@@ -29,7 +29,8 @@ const placeholderRestaurants = newRestaurants.map(r => {
             vegan: "Please update dietary information."
         },
         websiteUrl: '#',
-        instagramUrl: '#'
+        instagramUrl: '#',
+        tags: [r.cuisine.split('/')[0], "Casual", "Dinner"]
     }
 });
 
@@ -37,7 +38,6 @@ export const cologne: City = {
   id: 'cologne',
   name: 'Cologne',
   image: 'https://picsum.photos/seed/cologne/800/600',
-  // FIX: Added coordinates for Cologne.
   coordinates: { lat: 50.9375, lon: 6.9603 },
   restaurants: [
     {
@@ -59,7 +59,8 @@ export const cologne: City = {
         vegan: "Very few vegan options. It's a traditional German brewhouse."
       },
       websiteUrl: 'https://www.frueh-am-dom.de/',
-      instagramUrl: 'https://www.instagram.com/frueh_am_dom/'
+      instagramUrl: 'https://www.instagram.com/frueh_am_dom/',
+      tags: ["German", "Beer Hall", "Traditional", "Groups", "Kölsch"]
     },
     {
       id: 'lommerzheim',
@@ -79,7 +80,8 @@ export const cologne: City = {
         lactose: "Generally easy to avoid dairy.",
         vegan: "Not suitable for vegans."
       },
-      websiteUrl: 'https://www.lommerzheim.koeln/'
+      websiteUrl: 'https://www.lommerzheim.koeln/',
+      tags: ["German", "Pub", "Authentic", "Pork", "Kölsch"]
     },
     ...placeholderRestaurants
   ],

@@ -28,7 +28,8 @@ const placeholderRestaurants = newRestaurants.map(r => {
             vegan: "Please update dietary information."
         },
         websiteUrl: '#',
-        instagramUrl: '#'
+        instagramUrl: '#',
+        tags: [r.cuisine, "View", "Experience"]
     }
 });
 
@@ -36,9 +37,8 @@ export const giza: City = {
   id: 'giza',
   name: 'Giza',
   image: 'https://picsum.photos/seed/giza-city/800/600',
-  // FIX: Added coordinates for Giza.
   coordinates: { lat: 29.9866, lon: 31.2120 },
   restaurants: [
     ...placeholderRestaurants
-  ],
+  ]
 };

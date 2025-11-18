@@ -1,10 +1,10 @@
+
 import type { City } from '../../types';
 
 export const bonn: City = {
   id: 'bonn',
   name: 'Bonn',
   image: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_1.jpg',
-  // FIX: Added coordinates for Bonn.
   coordinates: { lat: 50.7374, lon: 7.0982 },
   restaurants: [
     {
@@ -30,7 +30,8 @@ export const bonn: City = {
         vegan: "vegetarian sushi are typically vegan unless with cream cheese."
       },
       websiteUrl: 'https://okinii.de/standorte-bu/bonn/',
-      instagramUrl: 'https://www.instagram.com/okiniirestaurants/?hl=en'
+      instagramUrl: 'https://www.instagram.com/okiniirestaurants/?hl=en',
+      tags: ["Sushi", "Japanese", "Asian", "All-you-can-eat", "Dinner"]
     },
     {
       id: 'tio-pepe',
@@ -54,7 +55,8 @@ export const bonn: City = {
         vegan: "Very limited options due to the meat and fish in most food."
       },
       websiteUrl: 'https://tio-pepe-bonn.de/',
-      instagramUrl: 'https://www.instagram.com/tiopepebonn/'
+      instagramUrl: 'https://www.instagram.com/tiopepebonn/',
+      tags: ["Tapas", "Spanish", "Sharing", "Wine", "Date Night"]
     },
     {
       id: 'ha-long',
@@ -77,7 +79,8 @@ export const bonn: City = {
         lactose: "All curries are made from coconut milk, sushi may have cream cheese in some cases but generally lactose-free.",
         vegan: "Every curry can be ordered with tofu, and there are vegan sushi on the menu."
       },
-      websiteUrl: 'https://www.lieferando.de/speisekarte/ha-long-endenicher-strasse'
+      websiteUrl: 'https://www.lieferando.de/speisekarte/ha-long-endenicher-strasse',
+      tags: ["Vietnamese", "Asian", "Curry", "Sushi", "Budget-friendly", "Takeaway"]
     }
   ],
 };

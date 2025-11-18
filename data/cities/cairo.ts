@@ -26,7 +26,8 @@ const placeholderRestaurants = newRestaurants.map(r => {
             vegan: "Please update dietary information."
         },
         websiteUrl: '#',
-        instagramUrl: '#'
+        instagramUrl: '#',
+        tags: [r.cuisine, "Tourism", "Must-do"]
     }
 });
 
@@ -34,9 +35,8 @@ export const cairo: City = {
   id: 'cairo',
   name: 'Cairo',
   image: 'https://picsum.photos/seed/cairo-city/800/600',
-  // FIX: Added coordinates for Cairo.
   coordinates: { lat: 30.0444, lon: 31.2357 },
   restaurants: [
     ...placeholderRestaurants
-  ],
+  ]
 };

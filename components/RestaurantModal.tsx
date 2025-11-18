@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import type { Restaurant } from '../types';
 import ChevronLeftIcon from './icons/ChevronLeftIcon';
 import ChevronRightIcon from './icons/ChevronRightIcon';
@@ -60,6 +61,11 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
     if (restaurant) {
       setCurrentImageIndex(0);
       setShowMobileCaption(false);
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
     }
   }, [restaurant]);
 
@@ -90,19 +96,21 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
 
   return (
     <div
-      className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-300 animate-fade-in"
+      className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-300 animate-fade-in"
       onClick={onClose}
     >
       <div
         className="
-            bg-zinc-900 rounded-[2rem] w-full max-w-6xl h-full max-h-[90vh] overflow-hidden 
+            bg-zinc-900/85 backdrop-blur-xl rounded-[2rem] w-full max-w-6xl 
+            h-[85vh] md:h-full md:max-h-[90vh] 
+            overflow-hidden 
             flex flex-col md:flex-row border border-white/10 shadow-2xl
         "
         onClick={(e) => e.stopPropagation()}
       >
         {/* Image Carousel Section */}
-        <div className="w-full md:w-3/5 relative group bg-black flex flex-col">
-            <div className="relative flex-1 overflow-hidden bg-zinc-900">
+        <div className="w-full h-64 md:h-auto md:w-3/5 relative group bg-black flex flex-col shrink-0">
+            <div className="relative flex-1 overflow-hidden bg-transparent">
                 <div className="w-full h-full flex items-center justify-center" onClick={() => setShowMobileCaption(false)}>
                     <img 
                         src={allImages[currentImageIndex].url} 
@@ -162,7 +170,7 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
             </div>
             
             {/* Desktop Caption Bar */}
-            <div className="hidden md:flex bg-zinc-950 py-4 px-6 flex-col items-center justify-center min-h-[80px] border-t border-white/5 relative z-20">
+            <div className="hidden md:flex bg-black/40 py-4 px-6 flex-col items-center justify-center min-h-[80px] border-t border-white/5 relative z-20">
                 <p className="text-white/50 text-sm font-light tracking-wider text-center font-roboto italic">
                     {allImages[currentImageIndex].caption}
                 </p>
@@ -183,7 +191,7 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
         </div>
         
         {/* Details Section */}
-        <div className="w-full md:w-2/5 flex flex-col relative bg-zinc-900">
+        <div className="w-full md:w-2/5 flex flex-col flex-1 relative bg-transparent overflow-hidden">
              {/* Close Button */}
              <div className="absolute top-6 right-6 z-10">
                 <button 
@@ -196,12 +204,12 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
             </div>
 
             {/* Scrollable Content */}
-            <div className="overflow-y-auto flex-1 p-8 md:p-10 custom-scrollbar">
+            <div className="overflow-y-auto flex-1 p-6 md:p-10 custom-scrollbar overscroll-contain">
                 <div className="mb-8">
-                    <span className="inline-block px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-widest mb-4 border border-brand-primary/20">
+                    <span className="inline-block px-3 py-1 rounded-full bg-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest mb-4 border border-brand-primary/20">
                         {restaurant.cuisine}
                     </span>
-                    <h2 className="text-4xl font-playfair font-bold text-white mb-6 leading-tight">{restaurant.name}</h2>
+                    <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6 leading-tight pr-8">{restaurant.name}</h2>
                     <p className="text-white/70 leading-relaxed font-light">{restaurant.description}</p>
                 </div>
                 
@@ -241,6 +249,29 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
                                 <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1">Vegan</span>
                                 <p className="text-gray-300">{restaurant.dietary.vegan}</p>
                             </div>
+                        </div>
+                    </div>
+                )}
+
+                {restaurant.tags && restaurant.tags.length > 0 && (
+                    <div className="py-8 border-t border-white/10">
+                        <h4 className="font-playfair font-bold text-white text-lg mb-4">Tags</h4>
+                        <div className="flex flex-wrap gap-2">
+                            {restaurant.tags.map((tag, index) => (
+                                <Link 
+                                    key={index}
+                                    to={`/search?tag=${tag.toLowerCase()}`}
+                                    onClick={onClose}
+                                    className="
+                                        px-3 py-1 rounded-full text-xs font-medium tracking-wide
+                                        text-white/70 border border-white/20 
+                                        hover:bg-white/10 hover:text-white hover:border-white/40 
+                                        transition-all cursor-pointer
+                                    "
+                                >
+                                    {tag}
+                                </Link>
+                            ))}
                         </div>
                     </div>
                 )}

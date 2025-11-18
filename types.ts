@@ -1,3 +1,4 @@
+
 export interface Rating {
   food: number;
   drinks: number;
@@ -29,6 +30,7 @@ export interface Restaurant {
   dietary?: DietaryInfo;
   websiteUrl?: string;
   instagramUrl?: string;
+  tags?: string[];
 }
 
 export interface City {
@@ -36,7 +38,6 @@ export interface City {
   name: string;
   image: string;
   restaurants: Restaurant[];
-  // FIX: Added coordinates to the City interface for use in the Map component.
   coordinates: {
     lat: number;
     lon: number;

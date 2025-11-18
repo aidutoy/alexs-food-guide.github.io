@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import MenuIcon from './icons/MenuIcon';
 import CloseIcon from './icons/CloseIcon';
+import SearchIcon from './icons/SearchIcon';
 
 const NavBar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -42,7 +43,7 @@ const NavBar: React.FC = () => {
     };
 
     const navClass = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || !isHomePage || isMenuOpen ? 'bg-brand-dark shadow-lg' : 'bg-transparent'}`;
-    const navLinkClass = "text-white hover:text-gray-300 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium";
+    const navLinkClass = "text-white hover:text-gray-300 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium flex items-center gap-2";
     const mobileNavLinkClass = "text-white text-3xl font-playfair hover:text-gray-300 transition-colors duration-300";
 
 
@@ -60,6 +61,10 @@ const NavBar: React.FC = () => {
                             <div className="ml-10 flex items-baseline space-x-4">
                                 <Link to="/locations" className={navLinkClass}>Locations</Link>
                                 <Link to="/contact" className={navLinkClass}>Contact</Link>
+                                <Link to="/search" className={navLinkClass}>
+                                    <SearchIcon className="w-4 h-4" />
+                                    Search
+                                </Link>
                             </div>
                         </div>
                          <div className="-mr-2 flex md:hidden">
@@ -93,6 +98,7 @@ const NavBar: React.FC = () => {
                 <div className="flex flex-col items-center justify-center h-full space-y-8">
                     <Link to="/locations" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Locations</Link>
                     <Link to="/contact" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Contact</Link>
+                    <Link to="/search" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Search</Link>
                 </div>
             </div>
         </>
