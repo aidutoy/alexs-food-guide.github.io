@@ -1,67 +1,28 @@
-
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { City } from '../types';
 import ChevronLeftIcon from './icons/ChevronLeftIcon';
 import ChevronRightIcon from './icons/ChevronRightIcon';
 
-const AUTOPLAY_INTERVAL = 5000; // 5 seconds
-
 const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const autoplayIntervalRef = useRef<number | null>(null);
-
-    const resetAutoplay = () => {
-        if (autoplayIntervalRef.current) {
-            clearInterval(autoplayIntervalRef.current);
-        }
-        autoplayIntervalRef.current = window.setInterval(() => {
-            setCurrentIndex(prev => (prev === cities.length - 1 ? 0 : prev + 1));
-        }, AUTOPLAY_INTERVAL);
-    };
-    
-    useEffect(() => {
-        if (cities.length > 1) {
-            resetAutoplay();
-        }
-        return () => {
-            if (autoplayIntervalRef.current) {
-                clearInterval(autoplayIntervalRef.current);
-            }
-        };
-    }, [cities.length]);
 
     const handlePrev = () => {
         setCurrentIndex(prev => (prev === 0 ? cities.length - 1 : prev - 1));
-        resetAutoplay();
     };
 
     const handleNext = () => {
         setCurrentIndex(prev => (prev === cities.length - 1 ? 0 : prev + 1));
-        resetAutoplay();
     };
     
     const handleGoToSlide = (slideIndex: number) => {
         setCurrentIndex(slideIndex);
-        resetAutoplay();
     }
-    
-    const handleMouseEnter = () => {
-        if (autoplayIntervalRef.current) {
-            clearInterval(autoplayIntervalRef.current);
-        }
-    };
-
-    const handleMouseLeave = () => {
-        resetAutoplay();
-    };
 
     return (
         <section id="featured-cities" className="py-20 md:py-32 bg-white overflow-hidden">
             <div 
                 className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
             >
                 <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-16 text-center">Explore The Cities</h2>
                 <div className="relative max-w-5xl mx-auto h-[60vh]">

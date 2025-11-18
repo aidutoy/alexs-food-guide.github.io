@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Concept: React.FC = () => {
+const About: React.FC = () => {
     return (
-        <section id="Concept" className="py-20 md:py-32 bg-white">
+        <section id="about" className="py-20 md:py-32 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
                 <div className="order-2 md:order-1">
                     <h2 className="text-4xl font-playfair font-bold text-brand-dark mb-6">The Concept</h2>
@@ -22,4 +22,4 @@ const Concept: React.FC = () => {
     );
 };
 
-export default Concept;
+export default About;
