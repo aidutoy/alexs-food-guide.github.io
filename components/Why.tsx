@@ -10,7 +10,7 @@ const CameraIcon = () => (
 
 const Why: React.FC = () => {
     return (
-        <section id="why" className="relative py-32 min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <section id="why" className="relative py-16 md:py-32 min-h-[90vh] flex items-center justify-center overflow-hidden">
             {/* Background Image with Parallax feel */}
             <div className="absolute inset-0">
                 <img 
@@ -23,19 +23,19 @@ const Why: React.FC = () => {
 
             <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Glassmorphism Card */}
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-[2.5rem] p-8 md:p-16 shadow-2xl text-center transform hover:scale-[1.01] transition-transform duration-500">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-[2.5rem] p-6 sm:p-10 md:p-16 shadow-2xl text-center transform hover:scale-[1.01] transition-transform duration-500">
                     <CameraIcon />
                     
-                    <h2 className="text-5xl md:text-6xl font-playfair font-bold text-white mb-10">
+                    <h2 className="text-4xl md:text-6xl font-playfair font-bold text-white mb-8 md:mb-10">
                         The Why
                     </h2>
                     
                     <div className="prose prose-lg prose-invert mx-auto">
-                        <p className="text-xl text-gray-200 font-light leading-relaxed mb-8">
+                        <p className="text-lg md:text-xl text-gray-200 font-light leading-relaxed mb-8">
                             I am one of those people who spend the first few minutes of every meal taking pictures of the plate in front of me. 
                         </p>
                         
-                        <p className="text-lg text-gray-300 leading-relaxed mb-8">
+                        <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8">
                             Not everyone is a fan of this, but I don't do it for them. I do it for myself to remember. However, I thought, <span className="text-white font-medium italic">"What good does this photo do stuck in my phone?"</span> Why not share my experiences with you?
                         </p>
 

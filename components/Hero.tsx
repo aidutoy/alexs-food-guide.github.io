@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
     return (
         <section
             id="home"
-            className="relative h-screen flex flex-col items-center justify-center text-white overflow-hidden bg-brand-dark"
+            className="relative h-[100dvh] flex flex-col items-center justify-center text-white overflow-hidden bg-brand-dark"
         >
             {/* Background Image with Slow Zoom */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
 
             <div className="relative z-10 text-center px-4 max-w-full mx-auto">
                 
-                <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-playfair font-bold mb-8 tracking-tight drop-shadow-2xl animate-[slide-up_1s_ease-out_0.2s_forwards] opacity-0 leading-none whitespace-nowrap">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-playfair font-bold mb-8 tracking-tight drop-shadow-2xl animate-[slide-up_1s_ease-out_0.2s_forwards] opacity-0 leading-none whitespace-nowrap">
                     Alex's <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Food Guide</span>
                 </h1>
 

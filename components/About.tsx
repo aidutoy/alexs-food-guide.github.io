@@ -9,12 +9,12 @@ const PinIcon = () => (
 
 const About: React.FC = () => {
     return (
-        <section id="about" className="py-24 md:py-32 bg-brand-dark relative overflow-hidden">
+        <section id="about" className="py-16 md:py-32 bg-brand-dark relative overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-brand-accent/5 rounded-full blur-3xl"></div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 md:gap-16 items-center relative z-10">
                 <div className="order-2 md:order-1">
                     <div className="animate-[slide-up_0.6s_ease-out_forwards]">
                         <PinIcon />

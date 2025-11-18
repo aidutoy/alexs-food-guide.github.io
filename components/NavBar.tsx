@@ -58,7 +58,7 @@ const NavBar: React.FC = () => {
                             </Link>
                         </div>
                         <div className="hidden md:block">
-                            <div className="ml-10 flex items-baseline space-x-4">
+                            <div className="ml-10 flex items-center space-x-4">
                                 <Link to="/locations" className={navLinkClass}>Locations</Link>
                                 <Link to="/contact" className={navLinkClass}>Contact</Link>
                                 <Link to="/search" className={navLinkClass}>

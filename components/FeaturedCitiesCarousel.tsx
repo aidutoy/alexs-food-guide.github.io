@@ -8,7 +8,7 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
     const [activeId, setActiveId] = useState<string>(cities[0].id);
 
     return (
-        <section id="featured-cities" className="relative py-24 overflow-hidden min-h-[800px] flex items-center select-none">
+        <section id="featured-cities" className="relative py-16 md:py-24 overflow-hidden min-h-[100vh] md:min-h-[800px] flex items-center select-none">
              {/* Ambient Background System */}
              <div className="absolute inset-0 bg-brand-dark">
                 {cities.map((city) => (
@@ -28,11 +28,11 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
              </div>
 
              <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
-                <div className="text-center mb-16">
-                    <h2 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6 drop-shadow-2xl">
+                <div className="text-center mb-12 md:mb-16">
+                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-playfair font-bold text-white mb-6 drop-shadow-2xl">
                         Culinary Destinations
                     </h2>
-                    <p className="text-white/80 max-w-2xl mx-auto text-xl font-light drop-shadow-lg">
+                    <p className="text-white/80 max-w-2xl mx-auto text-lg md:text-xl font-light drop-shadow-lg">
                         Discover the unique flavors and hidden gems of the world's most vibrant cities.
                     </p>
                 </div>
@@ -117,7 +117,7 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
                     style={{ scrollbarWidth: 'none' }}
                 >
                     {cities.map((city) => (
-                        <div key={city.id} className="relative flex-shrink-0 w-[85vw] h-[550px] snap-center rounded-[2rem] overflow-hidden shadow-xl border border-white/10">
+                        <div key={city.id} className="relative flex-shrink-0 w-[85vw] h-[60vh] min-h-[450px] max-h-[600px] snap-center rounded-[2rem] overflow-hidden shadow-xl border border-white/10">
                              <Link to={`/city/${city.id}`} className="block w-full h-full group">
                                 <img 
                                     src={city.image} 
@@ -125,10 +125,10 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                                <div className="absolute bottom-0 left-0 p-8 w-full">
-                                    <h3 className="text-5xl font-playfair font-bold text-white mb-3 drop-shadow-md">{city.name}</h3>
-                                    <p className="text-white/80 text-lg font-light mb-6 line-clamp-2">Discover the best food in {city.name}.</p>
-                                    <div className="flex items-center gap-2 text-white font-medium uppercase tracking-widest text-sm border-t border-white/20 pt-4">
+                                <div className="absolute bottom-0 left-0 p-6 w-full">
+                                    <h3 className="text-4xl font-playfair font-bold text-white mb-3 drop-shadow-md">{city.name}</h3>
+                                    <p className="text-white/80 text-base font-light mb-6 line-clamp-2">Discover the best food in {city.name}.</p>
+                                    <div className="flex items-center gap-2 text-white font-medium uppercase tracking-widest text-xs border-t border-white/20 pt-4">
                                         <span>View City Guide</span>
                                         <ChevronRightIcon className="w-4 h-4" />
                                     </div>

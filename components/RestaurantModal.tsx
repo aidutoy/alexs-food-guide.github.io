@@ -101,7 +101,7 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
     >
       <div
         className="
-            bg-zinc-900/85 backdrop-blur-xl rounded-[2rem] w-full max-w-6xl 
+            bg-zinc-900/85 backdrop-blur-xl rounded-[2rem] w-full md:max-w-[90vw] lg:max-w-[1400px]
             h-[85vh] md:h-full md:max-h-[90vh] 
             overflow-hidden 
             flex flex-col md:flex-row border border-white/10 shadow-2xl
@@ -109,7 +109,7 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
         onClick={(e) => e.stopPropagation()}
       >
         {/* Image Carousel Section */}
-        <div className="w-full h-64 md:h-auto md:w-3/5 relative group bg-black flex flex-col shrink-0">
+        <div className="w-full h-[45vh] md:h-auto md:w-3/5 relative group bg-black flex flex-col shrink-0">
             <div className="relative flex-1 overflow-hidden bg-transparent">
                 <div className="w-full h-full flex items-center justify-center" onClick={() => setShowMobileCaption(false)}>
                     <img 
