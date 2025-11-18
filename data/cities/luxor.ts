@@ -36,7 +36,9 @@ export const luxor: City = {
   id: 'luxor',
   name: 'Luxor',
   image: 'https://picsum.photos/seed/luxor-city/800/600',
+  // FIX: Added coordinates for Luxor.
+  coordinates: { lat: 25.6872, lon: 32.6396 },
   restaurants: [
-    ...placeholderRestaurants,
+    ...placeholderRestaurants
   ],
 };

@@ -34,7 +34,9 @@ export const hurghada: City = {
   id: 'hurghada',
   name: 'Hurghada',
   image: 'https://picsum.photos/seed/hurghada-city/800/600',
+  // FIX: Added coordinates for Hurghada.
+  coordinates: { lat: 27.2579, lon: 33.8116 },
   restaurants: [
-    ...placeholderRestaurants,
+    ...placeholderRestaurants
   ],
 };

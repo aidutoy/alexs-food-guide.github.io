@@ -36,4 +36,9 @@ export interface City {
   name: string;
   image: string;
   restaurants: Restaurant[];
+  // FIX: Added coordinates to the City interface for use in the Map component.
+  coordinates: {
+    lat: number;
+    lon: number;
+  };
 }

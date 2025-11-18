@@ -5,7 +5,7 @@ import { cities } from '../data/mockData';
 
 const LocationsPage: React.FC = () => {
     return (
-        <div className="pt-16">
+        <div>
             <CityGrid cities={cities} />
         </div>
     );

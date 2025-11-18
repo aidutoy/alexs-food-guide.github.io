@@ -34,7 +34,9 @@ export const cairo: City = {
   id: 'cairo',
   name: 'Cairo',
   image: 'https://picsum.photos/seed/cairo-city/800/600',
+  // FIX: Added coordinates for Cairo.
+  coordinates: { lat: 30.0444, lon: 31.2357 },
   restaurants: [
-    ...placeholderRestaurants,
+    ...placeholderRestaurants
   ],
 };

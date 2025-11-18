@@ -5,21 +5,17 @@ import ChevronLeftIcon from './icons/ChevronLeftIcon';
 import ChevronRightIcon from './icons/ChevronRightIcon';
 import GlobeIcon from './icons/GlobeIcon';
 import InstagramIcon from './icons/InstagramIcon';
+import CloseIcon from './icons/CloseIcon';
+import InfoIcon from './icons/InfoIcon';
 
 interface RestaurantModalProps {
   restaurant: Restaurant | null;
   onClose: () => void;
 }
 
-const CloseIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-  </svg>
-);
-
 const StarIcon: React.FC<{ filled: boolean; }> = ({ filled }) => (
     <svg 
-        className={`w-5 h-5 ${filled ? 'text-yellow-400' : 'text-gray-300'}`} 
+        className={`w-4 h-4 ${filled ? 'text-brand-primary' : 'text-white/20'}`} 
         fill="currentColor" 
         viewBox="0 0 20 20"
     >
@@ -29,8 +25,8 @@ const StarIcon: React.FC<{ filled: boolean; }> = ({ filled }) => (
 
 const RatingDisplay: React.FC<{ label: string; score: number; max: number; }> = ({ label, score, max }) => (
     <div className="flex items-center justify-between text-sm">
-        <span className="text-gray-600">{label}</span>
-        <div className="flex">
+        <span className="text-white/60 font-light tracking-wide">{label}</span>
+        <div className="flex gap-1">
             {Array.from({ length: max }, (_, i) => 
                 <StarIcon 
                     key={i} 
@@ -43,12 +39,12 @@ const RatingDisplay: React.FC<{ label: string; score: number; max: number; }> = 
 
 const PriceRatingDisplay: React.FC<{ score: number; max: number; }> = ({ score, max }) => (
     <div className="flex items-center justify-between text-sm">
-        <span className="text-gray-600">Price</span>
-        <div className="flex text-lg font-semibold">
+        <span className="text-white/60 font-light tracking-wide">Price</span>
+        <div className="flex text-lg font-playfair">
             {Array.from({ length: max }, (_, i) => (
                 <span 
                     key={i} 
-                    className={`${i < score ? 'text-gray-700' : 'text-gray-300'}`}
+                    className={`${i < score ? 'text-white' : 'text-white/20'}`}
                 >€</span>
             ))}
         </div>
@@ -58,10 +54,12 @@ const PriceRatingDisplay: React.FC<{ score: number; max: number; }> = ({ score, 
 
 const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showMobileCaption, setShowMobileCaption] = useState(false);
 
   useEffect(() => {
     if (restaurant) {
       setCurrentImageIndex(0);
+      setShowMobileCaption(false);
     }
   }, [restaurant]);
 
@@ -85,35 +83,77 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
     setCurrentImageIndex(index);
   };
 
+  const toggleMobileCaption = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      setShowMobileCaption(!showMobileCaption);
+  };
+
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 transition-opacity duration-300 animate-fade-in"
+      className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-300 animate-fade-in"
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-lg shadow-2xl w-full max-w-[85vw] h-full max-h-[90vh] overflow-hidden flex flex-col md:flex-row"
+        className="
+            bg-zinc-900 rounded-[2rem] w-full max-w-6xl h-full max-h-[90vh] overflow-hidden 
+            flex flex-col md:flex-row border border-white/10 shadow-2xl
+        "
         onClick={(e) => e.stopPropagation()}
       >
         {/* Image Carousel Section */}
-        <div className="w-full md:w-3/5 relative group bg-black">
-            <div className="w-full h-full flex items-center justify-center">
-                <img 
-                    src={allImages[currentImageIndex].url} 
-                    alt={allImages[currentImageIndex].caption} 
-                    className="w-full h-[300px] md:h-full object-cover transition-opacity duration-300"
-                />
-            </div>
-            
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <p className="text-white text-sm drop-shadow-md text-center mb-4 min-h-[1.25rem]">{allImages[currentImageIndex].caption}</p>
+        <div className="w-full md:w-3/5 relative group bg-black flex flex-col">
+            <div className="relative flex-1 overflow-hidden bg-zinc-900">
+                <div className="w-full h-full flex items-center justify-center" onClick={() => setShowMobileCaption(false)}>
+                    <img 
+                        src={allImages[currentImageIndex].url} 
+                        alt={allImages[currentImageIndex].caption} 
+                        className="w-full h-full object-cover transition-opacity duration-500"
+                    />
+                </div>
+                
+                {/* Mobile Info Toggle */}
+                <button 
+                    onClick={toggleMobileCaption}
+                    className="md:hidden absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all active:scale-95"
+                    aria-label="Show info"
+                >
+                    <InfoIcon className="w-6 h-6" />
+                </button>
 
+                {/* Mobile Caption Overlay */}
+                <div 
+                    className={`
+                        md:hidden absolute bottom-0 left-0 right-0 
+                        bg-black/80 backdrop-blur-md p-6 pt-4 z-20
+                        transition-transform duration-300 ease-in-out border-t border-white/10
+                        ${showMobileCaption ? 'translate-y-0' : 'translate-y-full'}
+                    `}
+                >
+                    <p className="text-white/80 text-sm font-light italic text-center">
+                        {allImages[currentImageIndex].caption}
+                    </p>
+                </div>
+                
+                {/* Navigation Arrows */}
                 {allImages.length > 1 && (
-                    <div className="flex justify-center space-x-2 mt-2">
+                    <>
+                        <button onClick={prevImage} className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/20 hover:bg-black/50 backdrop-blur-md text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/10 z-10" aria-label="Previous image">
+                            <ChevronLeftIcon className="w-5 h-5" />
+                        </button>
+                        <button onClick={nextImage} className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/20 hover:bg-black/50 backdrop-blur-md text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/10 z-10" aria-label="Next image">
+                            <ChevronRightIcon className="w-5 h-5" />
+                        </button>
+                    </>
+                )}
+
+                {/* Mobile Pagination Dots (Overlay) */}
+                {allImages.length > 1 && (
+                     <div className={`md:hidden absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-30 transition-opacity duration-300 ${showMobileCaption ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                         {allImages.map((_, index) => (
                             <button 
                                 key={index}
                                 onClick={(e) => goToImage(e, index)}
-                                className={`w-3 h-3 rounded-full ${index === currentImageIndex ? 'bg-white' : 'bg-white/50 hover:bg-white'} transition-colors`}
+                                className={`h-1.5 rounded-full transition-all duration-300 shadow-sm ${index === currentImageIndex ? 'bg-white w-6' : 'bg-white/40 w-1.5'}`}
                                 aria-label={`Go to image ${index + 1}`}
                             />
                         ))}
@@ -121,92 +161,130 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
                 )}
             </div>
             
-            {allImages.length > 1 && (
-                <>
-                    <button onClick={prevImage} className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10" aria-label="Previous image">
-                        <ChevronLeftIcon className="w-6 h-6" />
-                    </button>
-                    <button onClick={nextImage} className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10" aria-label="Next image">
-                        <ChevronRightIcon className="w-6 h-6" />
-                    </button>
-                </>
-            )}
+            {/* Desktop Caption Bar */}
+            <div className="hidden md:flex bg-zinc-950 py-4 px-6 flex-col items-center justify-center min-h-[80px] border-t border-white/5 relative z-20">
+                <p className="text-white/50 text-sm font-light tracking-wider text-center font-roboto italic">
+                    {allImages[currentImageIndex].caption}
+                </p>
+
+                {allImages.length > 1 && (
+                    <div className="flex justify-center space-x-2 mt-3">
+                        {allImages.map((_, index) => (
+                            <button 
+                                key={index}
+                                onClick={(e) => goToImage(e, index)}
+                                className={`h-1 rounded-full transition-all duration-300 ${index === currentImageIndex ? 'bg-white w-6' : 'bg-white/20 w-1 hover:bg-white/40'}`}
+                                aria-label={`Go to image ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
         
         {/* Details Section */}
-        <div className="w-full md:w-2/5 p-8 flex flex-col relative overflow-y-auto">
-             <div className="absolute top-4 right-4 flex items-center space-x-3 z-10">
-                <button onClick={onClose} className="text-gray-400 hover:text-gray-600" aria-label="Close">
-                    <CloseIcon className="w-6 h-6" />
+        <div className="w-full md:w-2/5 flex flex-col relative bg-zinc-900">
+             {/* Close Button */}
+             <div className="absolute top-6 right-6 z-10">
+                <button 
+                    onClick={onClose} 
+                    className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-colors" 
+                    aria-label="Close"
+                >
+                    <CloseIcon className="w-5 h-5" />
                 </button>
             </div>
-            <div className="pr-8 space-y-4">
-                <div>
-                  <h2 className="text-3xl font-playfair font-bold text-brand-dark mb-2">{restaurant.name}</h2>
-                  <p className="text-sm text-brand-primary font-semibold mb-4">{restaurant.cuisine}</p>
-                  <p className="text-gray-700 leading-relaxed">{restaurant.description}</p>
+
+            {/* Scrollable Content */}
+            <div className="overflow-y-auto flex-1 p-8 md:p-10 custom-scrollbar">
+                <div className="mb-8">
+                    <span className="inline-block px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-xs font-bold uppercase tracking-widest mb-4 border border-brand-primary/20">
+                        {restaurant.cuisine}
+                    </span>
+                    <h2 className="text-4xl font-playfair font-bold text-white mb-6 leading-tight">{restaurant.name}</h2>
+                    <p className="text-white/70 leading-relaxed font-light">{restaurant.description}</p>
                 </div>
                 
-                <div className="space-y-3 pt-4 border-t">
-                    <h4 className="font-semibold text-brand-dark">Ratings</h4>
-                    <RatingDisplay label="Food" score={restaurant.ratings.food} max={5} />
-                    <RatingDisplay label="Drinks" score={restaurant.ratings.drinks} max={5} />
-                    <RatingDisplay label="Service" score={restaurant.ratings.service} max={5} />
-                    <PriceRatingDisplay score={restaurant.ratings.price} max={3} />
+                <div className="space-y-4 py-8 border-t border-white/10">
+                    <h4 className="font-playfair font-bold text-white text-lg">Ratings</h4>
+                    <div className="grid gap-3">
+                        <RatingDisplay label="Food" score={restaurant.ratings.food} max={5} />
+                        <RatingDisplay label="Drinks" score={restaurant.ratings.drinks} max={5} />
+                        <RatingDisplay label="Service" score={restaurant.ratings.service} max={5} />
+                        <PriceRatingDisplay score={restaurant.ratings.price} max={3} />
+                    </div>
                 </div>
                 
                 {restaurant.alexsTip && (
-                    <div className="space-y-2 pt-4 border-t">
-                        <h4 className="font-semibold text-brand-dark">Alex's Tip</h4>
-                          <p className="text-gray-700 italic">"{restaurant.alexsTip}"</p>
+                    <div className="py-8 border-t border-white/10">
+                        <h4 className="font-playfair font-bold text-white text-lg mb-3">Alex's Tip</h4>
+                        <div className="bg-white/5 rounded-xl p-5 border border-white/5 relative">
+                            <span className="text-4xl text-brand-primary/20 font-serif absolute top-2 left-2">"</span>
+                            <p className="text-gray-300 italic relative z-10 pl-4">{restaurant.alexsTip}</p>
+                        </div>
                     </div>
                 )}
 
                 {restaurant.dietary && (
-                    <div className="space-y-3 pt-4 border-t">
-                        <h4 className="font-semibold text-brand-dark">Dietary Information</h4>
-                        <div className="space-y-2 text-sm">
-                            <div className="flex items-start">
-                                <span className="font-semibold text-gray-600 w-28 shrink-0">Gluten-Free</span>
-                                <p className="text-gray-700 pl-2">{restaurant.dietary.celiac}</p>
+                    <div className="py-8 border-t border-white/10">
+                        <h4 className="font-playfair font-bold text-white text-lg mb-4">Dietary Information</h4>
+                        <div className="space-y-3 text-sm">
+                            <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                                <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1">Gluten-Free</span>
+                                <p className="text-gray-300">{restaurant.dietary.celiac}</p>
                             </div>
-                            <div className="flex items-start">
-                                <span className="font-semibold text-gray-600 w-28 shrink-0">Lactose-Free</span>
-                                <p className="text-gray-700 pl-2">{restaurant.dietary.lactose}</p>
+                            <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                                <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1">Lactose-Free</span>
+                                <p className="text-gray-300">{restaurant.dietary.lactose}</p>
                             </div>
-                            <div className="flex items-start">
-                                <span className="font-semibold text-gray-600 w-28 shrink-0">Vegan</span>
-                                <p className="text-gray-700 pl-2">{restaurant.dietary.vegan}</p>
+                            <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                                <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1">Vegan</span>
+                                <p className="text-gray-300">{restaurant.dietary.vegan}</p>
                             </div>
                         </div>
                     </div>
                 )}
 
                 {(restaurant.websiteUrl || restaurant.instagramUrl) && (
-                     <div className="space-y-3 pt-4 border-t">
-                        <h4 className="font-semibold text-brand-dark">Links</h4>
+                     <div className="py-8 border-t border-white/10">
+                        <h4 className="font-playfair font-bold text-white text-lg mb-4">Connect</h4>
                           <div className="flex items-center space-x-4">
-                            {restaurant.websiteUrl && (<a href={restaurant.websiteUrl} target="_blank" rel="noopener noreferrer" aria-label="Website" className="text-gray-500 hover:text-brand-primary transition-colors"><GlobeIcon className="w-6 h-6" /></a>)}
-                            {restaurant.instagramUrl && (<a href={restaurant.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-500 hover:text-brand-primary transition-colors"><InstagramIcon className="w-6 h-6" /></a>)}
+                            {restaurant.websiteUrl && (
+                                <a href={restaurant.websiteUrl} target="_blank" rel="noopener noreferrer" aria-label="Website" className="flex items-center gap-2 text-white/60 hover:text-brand-primary transition-colors group">
+                                    <span className="p-2 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors">
+                                        <GlobeIcon className="w-5 h-5" />
+                                    </span>
+                                    <span className="text-sm">Website</span>
+                                </a>
+                            )}
+                            {restaurant.instagramUrl && (
+                                <a href={restaurant.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex items-center gap-2 text-white/60 hover:text-brand-primary transition-colors group">
+                                    <span className="p-2 bg-white/5 rounded-full group-hover:bg-white/10 transition-colors">
+                                        <InstagramIcon className="w-5 h-5" />
+                                    </span>
+                                    <span className="text-sm">Instagram</span>
+                                </a>
+                            )}
                           </div>
                     </div>
                 )}
-            </div>
-            
-            <div className="mt-auto pt-6">
-                <h4 className="font-semibold text-brand-dark mb-2">Location</h4>
-                  <div className="h-48 rounded-lg overflow-hidden border">
-                      <iframe
-                          src={restaurant.mapEmbedUrl}
-                          width="100%"
-                          height="100%"
-                          style={{ border: 0 }}
-                          allowFullScreen={true}
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                          title={`Map of ${restaurant.name}`}
-                      ></iframe>
-                  </div>
+                
+                 {/* Map Section */}
+                <div className="mt-4">
+                    <div className="h-48 rounded-xl overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-500">
+                        <iframe
+                            src={restaurant.mapEmbedUrl}
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen={true}
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title={`Map of ${restaurant.name}`}
+                            className="w-full h-full"
+                        ></iframe>
+                    </div>
+                </div>
             </div>
         </div>
       </div>

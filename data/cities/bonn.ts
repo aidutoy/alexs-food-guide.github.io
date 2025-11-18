@@ -1,10 +1,11 @@
-
 import type { City } from '../../types';
 
 export const bonn: City = {
   id: 'bonn',
   name: 'Bonn',
   image: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_1.jpg',
+  // FIX: Added coordinates for Bonn.
+  coordinates: { lat: 50.7374, lon: 7.0982 },
   restaurants: [
     {
       id: 'okinii',
@@ -40,7 +41,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_2.jpg', caption: 'Fried calamari, patatas bravas, bacon wrapped dates, croquettes with fish and chilli, patatas with aiolo, bread, tortilla con chorizo' },
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_3.jpg', caption: 'Tortilla con chorizo' },
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_4.jpg', caption: 'Fried calamari' },
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_6.jpg', caption: 'Fried calamari, patatas bravas, bacon wrapped dates, croquettes with fish and chilli, patatas with aiolo, bread, tortilla con chorizo)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_6.jpg', caption: 'Fried calamari, patatas bravas, bacon wrapped dates, croquettes with fish and chilli, patatas with aiolo, bread, tortilla con chorizo' },
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_5.jpg', caption: 'Crema Catalana' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 3 },
@@ -77,6 +78,6 @@ export const bonn: City = {
         vegan: "Every curry can be ordered with tofu, and there are vegan sushi on the menu."
       },
       websiteUrl: 'https://www.lieferando.de/speisekarte/ha-long-endenicher-strasse'
-    },
+    }
   ],
 };

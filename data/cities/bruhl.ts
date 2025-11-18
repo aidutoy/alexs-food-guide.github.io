@@ -34,7 +34,9 @@ export const bruhl: City = {
   id: 'bruhl',
   name: 'Bruhl',
   image: 'https://picsum.photos/seed/bruhl-city/800/600',
+  // FIX: Added coordinates for Bruhl.
+  coordinates: { lat: 50.8295, lon: 6.8922 },
   restaurants: [
-    ...placeholderRestaurants,
+    ...placeholderRestaurants
   ],
 };

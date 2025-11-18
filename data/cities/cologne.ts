@@ -37,6 +37,8 @@ export const cologne: City = {
   id: 'cologne',
   name: 'Cologne',
   image: 'https://picsum.photos/seed/cologne/800/600',
+  // FIX: Added coordinates for Cologne.
+  coordinates: { lat: 50.9375, lon: 6.9603 },
   restaurants: [
     {
       id: 'frueh-am-dom',
@@ -67,7 +69,7 @@ export const cologne: City = {
       images: [
         { url: 'https://picsum.photos/seed/porkchop2/800/600', caption: 'The famous, massive Kotelett (pork chop).' },
         { url: 'https://picsum.photos/seed/porkchop3/800/600', caption: 'Enjoying a fresh Päffgen Kölsch.' }
-    ],
+      ],
       ratings: { food: 5, drinks: 3, service: 3, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2514.417855736633!2d6.971932315749103!3d50.93556997954518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf259f4a1324e7%3A0x2648a29a2a6b254a!2sLommerzheim!5e0!3m2!1sen!2sde!4v1684321234567',
       cuisine: 'German Pub Fare',
@@ -79,6 +81,6 @@ export const cologne: City = {
       },
       websiteUrl: 'https://www.lommerzheim.koeln/'
     },
-    ...placeholderRestaurants,
+    ...placeholderRestaurants
   ],
 };
