@@ -58,7 +58,7 @@ export const bonn: City = {
       },
       websiteUrl: 'https://tio-pepe-bonn.de/',
       instagramUrl: 'https://www.instagram.com/tiopepebonn/',
-      tags: ["Tapas", "Spanish", "Sharing", "Wine", "Date Night"]
+      tags: ["Tapas", "Spanish", "Sharing", "Wine", "Sangria", "Seafood"]
     },
     {
       id: 'ha-long',
@@ -84,6 +84,64 @@ export const bonn: City = {
       },
       websiteUrl: 'https://www.lieferando.de/speisekarte/ha-long-endenicher-strasse',
       tags: ["Vietnamese", "Asian", "Curry", "Sushi", "Budget-friendly", "Takeaway"]
+    },
+    {
+      id: 'nennillo',
+      name: 'Nennillo',
+      description: "The closest pizza to a true Napoli pizza you can find in Germany. I have been back many, many times and order takeout often. The pizzas are cooked in a traditional pizza oven so each pizza is cooked slighltly different, some more pale and some more burnt. If you are not happy with the cook of you pizza you can always send it back as the service staff are very polite. There are two in Bonn, the main restaurant in Altstadt and one smaller one in Poppelsdorf that does gluten-free pizza with enough notice.",
+      quickVerdict: 'Napoli pizza, best in town, and great value. 10-20 minutes for pick-up order.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_1.jpg', caption: 'Bufalina gluten-free (bottom), Rot und Böse (right) and Margherita (top)'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_2.jpg', caption: 'Rot und Böse (bottom), Bufalina gluten-free (right bottom), Principesa (top right), Lungo Tonno (top left), Bufalina (mid left)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_3.jpg', caption: 'Margherita with Aperol Spritz' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_4.jpg', caption: 'Margherita' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_5.jpg', caption: 'Rot und Böse in Köln is different than in Bonn' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_6.jpg', caption: 'Rot und Böse (bottom) and Bufalina gluten-free (top)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_7.jpg', caption: 'Rot und Böse (bottom) and Bufalina (top)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_8.jpg', caption: 'Margherita takeaway'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_9.jpg', caption: 'Margherita takeaway'}
+      ],
+      ratings: { food: 5, drinks: 4, service: 5, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Antica%20Pizzeria%20Nennillo%20-%20Bonn%2C%20Im%20Krausfeld%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Italian',
+      alexsTip: "If you like it a bit spicy like me, then take the Rot und Böse (red and evil), and always have an Aperol Spritz. For dessert, share the nutella and pistachio pizza.",
+      dietary: {
+        celiac: "Notify the restaurant in Poppelsdorf, typically a day before but morning might be ok, that you wish for a gluten-free pizza so they warm the second pizza oven before your arrival. Note it costs 4.50 more, which is rather expensive.",
+        lactose: "Cheese is not lactose-free but you can order pizza without cheese.",
+        vegan: "There are two vegan pizzas, la vegana arrabbiata and quattro vegani."
+      },
+      websiteUrl: 'https://www.nennillobonn.de/',
+      instagramUrl: 'https://www.instagram.com/bonn_pizzerianennillo/?hl=en',
+      tags: ["Italian", "Pizza", "Aperol", "Budget-friendly", "Takeaway"]
+    },
+    {
+      id: 'burgerwerk',
+      name: 'Burgerwerk',
+      description: "One of my favourite spots for burgers in Bonn is actually in Bonn-Beuel. Definitely worth a trip over the Kennedy bridge for these burgers. I have been at least three times and tried a few different burgers. The burgers are cooked to your preference of medium or well-done. The special fries are not worth it, definitely stick to the regular or sweet potato fries.",
+      quickVerdict: 'Amazing burgers cooked to medium or well-done. ',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_1.jpg', caption: 'Camembert burger with sweet potato fries'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_2.jpg', caption: 'Rot und Böse (bottom), Bufalina gluten-free (right bottom), Principesa (top right), Lungo Tonno (top left), Bufalina (mid left)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_3.jpg', caption: 'Margherita with Aperol Spritz' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_4.jpg', caption: 'Margherita' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_5.jpg', caption: 'Rot und Böse in Köln is different than in Bonn' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_6.jpg', caption: 'Rot und Böse (bottom) and Bufalina gluten-free (top)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_7.jpg', caption: 'Rot und Böse (bottom) and Bufalina (top)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_8.jpg', caption: 'Margherita takeaway'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_9.jpg', caption: 'Margherita takeaway'}
+      ],
+      ratings: { food: 5, drinks: 4, service: 5, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Antica%20Pizzeria%20Nennillo%20-%20Bonn%2C%20Im%20Krausfeld%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Italian',
+      alexsTip: "If you like it a bit spicy like me, then take the Rot und Böse (red and evil), and always have an Aperol Spritz. For dessert, share the nutella and pistachio pizza.",
+      dietary: {
+        celiac: "Notify the restaurant in Poppelsdorf, typically a day before but morning might be ok, that you wish for a gluten-free pizza so they warm the second pizza oven before your arrival. Note it costs 4.50 more, which is rather expensive.",
+        lactose: "Cheese is not lactose-free but you can order pizza without cheese.",
+        vegan: "There are two vegan pizzas, la vegana arrabbiata and quattro vegani."
+      },
+      websiteUrl: 'https://www.nennillobonn.de/',
+      instagramUrl: 'https://www.instagram.com/bonn_pizzerianennillo/?hl=en',
+      tags: ["Italian", "Pizza", "Aperol", "Budget-friendly", "Takeaway"]
     }
   ],
 };

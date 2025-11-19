@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             {/* Background Image with Slow Zoom */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
                 <img
-                    src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_1.jpg"
+                    src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_6.jpg"
                     alt="Hero Background"
                     className="w-full h-full object-cover animate-slow-zoom opacity-90"
                     fetchPriority="high"
@@ -44,22 +44,20 @@ const Hero: React.FC = () => {
                 </p>
             </div>
 
-             {/* Liquid Glass Scroll Indicator */}
+             {/* Scroll Indicator - Bubble removed */}
             <div className="absolute bottom-12 z-20 animate-[fade-in_1s_ease-out_1.5s_forwards] opacity-0">
                 <button
                     onClick={scrollToAbout}
                     className="
-                        group relative p-2 md:p-5 rounded-full
-                        bg-transparent md:bg-white/5 md:backdrop-blur-md md:border md:border-white/10
-                        md:shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]
-                        hover:bg-white/10 hover:scale-110 hover:border-white/20
+                        group relative p-4
+                        bg-transparent
+                        hover:scale-110
                         transition-all duration-300 ease-out
                         cursor-pointer
                     "
                     aria-label="Scroll down"
                 >
-                    <div className="hidden md:block absolute inset-0 rounded-full bg-brand-primary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <KnifeIcon className="w-10 h-10 md:w-8 md:h-8 text-white drop-shadow-lg md:text-white/80 group-hover:text-white transition-colors relative z-10 animate-bounce" />
+                    <KnifeIcon className="w-12 h-12 text-white drop-shadow-lg relative z-10 animate-bounce" />
                 </button>
             </div>
         </section>

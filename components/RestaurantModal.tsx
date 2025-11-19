@@ -98,25 +98,27 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
     setAiError('');
 
     try {
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        // Safely access API Key to prevent crash if process is not defined in browser environment
+        const apiKey = (typeof process !== 'undefined' && process.env) ? process.env.API_KEY : '';
         
-        // Prepare context from restaurant object
-        const contextData = JSON.stringify({
-            name: restaurant.name,
-            description: restaurant.description,
-            cuisine: restaurant.cuisine,
-            alexsTip: restaurant.alexsTip,
-            dietary: restaurant.dietary,
-            website: restaurant.websiteUrl,
-            location: restaurant.mapEmbedUrl
-        });
+        if (!apiKey) {
+            console.error("API Key is missing. Please ensure process.env.API_KEY is available.");
+            throw new Error("Configuration Error: API Key missing.");
+        }
 
+        const ai = new GoogleGenAI({ apiKey });
+        
         const systemInstruction = `You are a helpful culinary assistant for "Alex's Food Guide". 
         You are answering a user's question about the restaurant "${restaurant.name}".
         
-        Here is the data Alex has provided about this restaurant:
-        ${contextData}
-
+        Restaurant Details:
+        - Name: ${restaurant.name}
+        - Cuisine: ${restaurant.cuisine}
+        - Description: ${restaurant.description}
+        - Alex's Tip: ${restaurant.alexsTip || 'None provided'}
+        - Dietary Info: ${restaurant.dietary ? JSON.stringify(restaurant.dietary) : 'Not specified'}
+        - Website: ${restaurant.websiteUrl || 'Not specified'}
+        
         The user is asking: "${aiQuestion}"
 
         Instructions:
@@ -128,7 +130,7 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
 
         const response = await ai.models.generateContent({
             model: 'gemini-2.5-flash',
-            contents: aiQuestion,
+            contents: [{ role: 'user', parts: [{ text: aiQuestion }] }],
             config: {
                 systemInstruction: systemInstruction,
                 tools: [{ googleSearch: {} }],
