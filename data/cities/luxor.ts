@@ -25,6 +25,7 @@ const placeholderRestaurants = newRestaurants.map(r => {
         dietary: {
             celiac: "Please update dietary information.",
             lactose: "Please update dietary information.",
+            vegetarian: "Please update dietary information.",
             vegan: "Please update dietary information."
         },
         websiteUrl: '#',

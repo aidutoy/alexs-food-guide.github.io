@@ -9,6 +9,7 @@ export interface Rating {
 export interface DietaryInfo {
   celiac: string;
   lactose: string;
+  vegetarian: string;
   vegan: string;
 }
 

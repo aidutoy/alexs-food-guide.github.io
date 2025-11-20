@@ -8,7 +8,7 @@ import GlobeIcon from './icons/GlobeIcon';
 import InstagramIcon from './icons/InstagramIcon';
 import CloseIcon from './icons/CloseIcon';
 import InfoIcon from './icons/InfoIcon';
-import { GoogleGenAI } from "@google/genai";
+import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from './icons/DietaryIcons';
 
 interface RestaurantModalProps {
   restaurant: Restaurant | null;
@@ -53,33 +53,14 @@ const PriceRatingDisplay: React.FC<{ score: number; max: number; }> = ({ score, 
     </div>
 );
 
-// Sparkles icon for the AI section
-const SparklesIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-  </svg>
-);
-
-
 const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showMobileCaption, setShowMobileCaption] = useState(false);
-  
-  // AI State
-  const [aiQuestion, setAiQuestion] = useState('');
-  const [aiAnswer, setAiAnswer] = useState('');
-  const [aiLoading, setAiLoading] = useState(false);
-  const [aiSources, setAiSources] = useState<any[]>([]);
-  const [aiError, setAiError] = useState('');
 
   useEffect(() => {
     if (restaurant) {
       setCurrentImageIndex(0);
       setShowMobileCaption(false);
-      setAiQuestion('');
-      setAiAnswer('');
-      setAiSources([]);
-      setAiError('');
       // Prevent body scroll when modal is open
       document.body.style.overflow = 'hidden';
     }
@@ -87,66 +68,6 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
       document.body.style.overflow = 'unset';
     }
   }, [restaurant]);
-
-  const handleAskAi = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!aiQuestion.trim() || !restaurant) return;
-
-    setAiLoading(true);
-    setAiAnswer('');
-    setAiSources([]);
-    setAiError('');
-
-    try {
-        // Safely access API Key to prevent crash if process is not defined in browser environment
-        const apiKey = (typeof process !== 'undefined' && process.env) ? process.env.API_KEY : '';
-        
-        if (!apiKey) {
-            console.error("API Key is missing. Please ensure process.env.API_KEY is available.");
-            throw new Error("Configuration Error: API Key missing.");
-        }
-
-        const ai = new GoogleGenAI({ apiKey });
-        
-        const systemInstruction = `You are a helpful culinary assistant for "Alex's Food Guide". 
-        You are answering a user's question about the restaurant "${restaurant.name}".
-        
-        Restaurant Details:
-        - Name: ${restaurant.name}
-        - Cuisine: ${restaurant.cuisine}
-        - Description: ${restaurant.description}
-        - Alex's Tip: ${restaurant.alexsTip || 'None provided'}
-        - Dietary Info: ${restaurant.dietary ? JSON.stringify(restaurant.dietary) : 'Not specified'}
-        - Website: ${restaurant.websiteUrl || 'Not specified'}
-        
-        The user is asking: "${aiQuestion}"
-
-        Instructions:
-        1. Answer the question based on the provided data first.
-        2. If the answer is not in the data (e.g. current opening hours, specific menu prices not listed, reservation policy), YOU MUST use the Google Search tool to find the information.
-        3. If you use Google Search, specifically look for the restaurant's official website or reputable reviews.
-        4. Be concise, friendly, and helpful. Keep the answer relatively short (under 100 words unless details are needed).
-        5. Do not invent information.`;
-
-        const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash',
-            contents: [{ role: 'user', parts: [{ text: aiQuestion }] }],
-            config: {
-                systemInstruction: systemInstruction,
-                tools: [{ googleSearch: {} }],
-            },
-        });
-
-        setAiAnswer(response.text || "I couldn't generate an answer.");
-        setAiSources(response.candidates?.[0]?.groundingMetadata?.groundingChunks || []);
-
-    } catch (error) {
-        console.error("GenAI Error:", error);
-        setAiError("Sorry, I encountered an error while trying to find that for you. Please try again.");
-    } finally {
-        setAiLoading(false);
-    }
-  };
 
 
   if (!restaurant) return null;
@@ -171,6 +92,10 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
   const toggleMobileCaption = (e: React.MouseEvent) => {
       e.stopPropagation();
       setShowMobileCaption(!showMobileCaption);
+  };
+
+  const hasTag = (tag: string) => {
+      return restaurant.tags?.some(t => t.toLowerCase() === tag.toLowerCase());
   };
 
   return (
@@ -285,9 +210,20 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
             {/* Scrollable Content */}
             <div className="overflow-y-auto flex-1 p-6 md:p-10 custom-scrollbar overscroll-contain">
                 <div className="mb-8">
-                    <span className="inline-block px-3 py-1 rounded-full bg-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest mb-4 border border-brand-primary/20">
-                        {restaurant.cuisine}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                        <span className="inline-block px-3 py-1 rounded-full bg-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest border border-brand-primary/20">
+                            {restaurant.cuisine}
+                        </span>
+                        
+                        {/* Dietary Icons */}
+                        <div className="flex items-center gap-3">
+                            {hasTag('gluten-free') && <GlutenFreeIcon className="w-6 h-6" />}
+                            {hasTag('lactose-free') && <LactoseFreeIcon className="w-6 h-6" />}
+                            {hasTag('vegetarian') && <VegetarianIcon className="w-6 h-6" />}
+                            {hasTag('vegan') && <VeganIcon className="w-6 h-6" />}
+                        </div>
+                    </div>
+
                     <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6 leading-tight pr-8">{restaurant.name}</h2>
 
                     {/* Quick Verdict */}
@@ -332,98 +268,32 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
                         <h4 className="font-playfair font-bold text-white text-lg mb-4">Dietary Information</h4>
                         <div className="space-y-3 text-sm">
                             <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                                <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1">Gluten-Free</span>
+                                <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1 flex items-center gap-2">
+                                    Gluten-Free
+                                </span>
                                 <p className="text-gray-300">{restaurant.dietary.celiac}</p>
                             </div>
                             <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                                <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1">Lactose-Free</span>
+                                <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1 flex items-center gap-2">
+                                    Lactose-Free
+                                </span>
                                 <p className="text-gray-300">{restaurant.dietary.lactose}</p>
                             </div>
                             <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
-                                <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1">Vegan</span>
+                                <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1 flex items-center gap-2">
+                                    Vegetarian
+                                </span>
+                                <p className="text-gray-300">{restaurant.dietary.vegetarian}</p>
+                            </div>
+                            <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4">
+                                <span className="font-medium text-white/50 w-24 shrink-0 uppercase text-xs tracking-wider pt-1 flex items-center gap-2">
+                                    Vegan
+                                </span>
                                 <p className="text-gray-300">{restaurant.dietary.vegan}</p>
                             </div>
                         </div>
                     </div>
                 )}
-
-                {/* AI Assistant Section */}
-                <div className="py-8 border-t border-white/10">
-                    <div className="flex items-center justify-between mb-4">
-                         <div className="flex items-center gap-2">
-                            <div className="p-1.5 rounded-full bg-gradient-to-tr from-brand-primary to-orange-500 text-white">
-                                <SparklesIcon />
-                            </div>
-                            <h4 className="font-playfair font-bold text-white text-lg">Ask AI</h4>
-                         </div>
-                         <span className="text-[10px] font-bold uppercase tracking-wider bg-white/10 text-white/60 px-2 py-1 rounded">Beta</span>
-                    </div>
-
-                    <div className="bg-white/5 rounded-2xl p-1 border border-white/10 focus-within:border-brand-primary/50 focus-within:bg-white/10 transition-all duration-300">
-                        <form onSubmit={handleAskAi} className="relative">
-                            <input 
-                                type="text" 
-                                value={aiQuestion}
-                                onChange={(e) => setAiQuestion(e.target.value)}
-                                placeholder={`Ask about ${restaurant.name} (e.g. Opening hours?)`}
-                                className="w-full bg-transparent border-none outline-none text-white placeholder-white/30 py-3 pl-4 pr-12 text-sm"
-                            />
-                            <button 
-                                type="submit"
-                                disabled={aiLoading || !aiQuestion.trim()}
-                                className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg bg-white/10 hover:bg-brand-primary text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                {aiLoading ? (
-                                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                                ) : (
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                                        <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
-                                    </svg>
-                                )}
-                            </button>
-                        </form>
-                    </div>
-
-                    {/* AI Answer Display */}
-                    {(aiAnswer || aiError) && (
-                        <div className="mt-4 p-4 rounded-xl bg-white/5 border border-white/5 animate-fade-in">
-                            {aiError ? (
-                                <p className="text-red-400 text-sm">{aiError}</p>
-                            ) : (
-                                <>
-                                    <p className="text-gray-200 text-sm leading-relaxed">{aiAnswer}</p>
-                                    
-                                    {/* Sources / Grounding */}
-                                    {aiSources.length > 0 && (
-                                        <div className="mt-3 pt-3 border-t border-white/10">
-                                            <p className="text-xs text-white/40 mb-2 uppercase tracking-wider">Sources:</p>
-                                            <ul className="space-y-1">
-                                                {aiSources.map((chunk, idx) => {
-                                                    if (!chunk.web?.uri) return null;
-                                                    return (
-                                                        <li key={idx}>
-                                                            <a 
-                                                                href={chunk.web.uri} 
-                                                                target="_blank" 
-                                                                rel="noopener noreferrer"
-                                                                className="text-xs text-brand-primary hover:text-white truncate block transition-colors"
-                                                            >
-                                                                {chunk.web.title || chunk.web.uri}
-                                                            </a>
-                                                        </li>
-                                                    );
-                                                })}
-                                            </ul>
-                                        </div>
-                                    )}
-                                </>
-                            )}
-                             <div className="mt-3 text-[10px] text-white/30 italic">
-                                * AI-generated content. Verify critical info.
-                            </div>
-                        </div>
-                    )}
-                </div>
 
                 {restaurant.tags && restaurant.tags.length > 0 && (
                     <div className="py-8 border-t border-white/10">

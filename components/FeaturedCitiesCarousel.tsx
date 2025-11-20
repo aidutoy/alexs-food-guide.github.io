@@ -33,10 +33,10 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
              <div className="relative z-20 max-w-7xl mx-auto px-4 w-full">
                 <div className="text-center mb-12 md:mb-16">
                     <h2 className="text-4xl md:text-5xl lg:text-7xl font-playfair font-bold text-white mb-6 drop-shadow-2xl">
-                        Culinary Destinations
+                        My <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Journeys</span>
                     </h2>
                     <p className="text-white/80 max-w-2xl mx-auto text-lg md:text-xl font-light drop-shadow-lg">
-                        Discover the unique flavors and hidden gems of the world's most vibrant cities.
+                        Explore my recommendations for each destination
                     </p>
                 </div>
 
@@ -82,7 +82,6 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
                                             </h3>
                                             <div className="opacity-0 animate-[slide-up_0.6s_ease-out_0.1s_forwards]">
                                                 <p className="text-white/90 text-xl mt-6 line-clamp-2 font-roboto font-light text-shadow-sm">
-                                                    A curated guide to the best restaurants, bars, and cafes in {city.name}.
                                                 </p>
                                             </div>
                                             <div className="opacity-0 animate-[slide-up_0.6s_ease-out_0.2s_forwards] mt-8">

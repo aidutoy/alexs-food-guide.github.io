@@ -31,13 +31,13 @@ const About: React.FC = () => {
                             </h2>
                             <div className="space-y-6 text-lg font-light text-gray-300 leading-relaxed">
                                 <p>
-                                    When I moved from Scotland to Bonn, my introduction flyer to the University had a nice map of the city and the Rhein.
+                                    When I was 25 yreas old, I moved from Scotland to Bonn for University. My introduction flyer to the University had a nice map of the city and the Rhein. I took that map a year later and thought...
                                 </p>
                                 <p className="pl-4 border-l-2 border-brand-primary/50 italic text-white/90">
-                                    "I took this map and pinned it up on a board in the student dorm kitchen. I started pinning restaurants, cafes, bars, and attractions I discovered with coloured pins and string."
+                                    "Wouldn't it be cool to stick this up on a board in the kitchen and pin my favourite spots in Bonn?"
                                 </p>
                                 <p>
-                                    I would capture the basics: name, price, and a short recommendation. Fast-forward four years, and I am taking this tactile concept and turning it into a digital food guide to share with anyone who enjoys a good time and tasty food.
+                                    So I start pinning restaurants, cafes, bars, and attractions that I discovered with different colours and string. I would capture the basics: name, price, and a short recommendation. Fast-forward four years, and I am taking this semi-private concept and turning it into a public digital food guide to share with anyone who enjoys a good time and tasty food.
                                 </p>
                             </div>
                         </div>

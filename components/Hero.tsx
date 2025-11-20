@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             {/* Background Image with Slow Zoom */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
                 <img
-                    src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_6.jpg"
+                    src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_1.jpg"
                     alt="Hero Background"
                     className="w-full h-full object-cover animate-slow-zoom opacity-90"
                     fetchPriority="high"
@@ -33,14 +33,16 @@ const Hero: React.FC = () => {
                 
                 {/* Glassy Title Wrapper */}
                 <div className="relative inline-block">
-                     <div className="absolute inset-0 bg-white/5 blur-2xl rounded-full transform scale-110 opacity-50"></div>
+                     {/* Soft darker gradient behind text */}
+                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/50 via-transparent to-transparent blur-3xl pointer-events-none"></div>
+                     
                      <h1 className="relative text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-playfair font-bold mb-8 tracking-tight drop-shadow-2xl animate-[slide-up_1s_ease-out_0.2s_forwards] opacity-0 leading-none whitespace-nowrap">
                         Alex's <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Food Guide</span>
                     </h1>
                 </div>
 
                 <p className="text-xl md:text-2xl font-light text-gray-100 max-w-2xl mx-auto leading-relaxed drop-shadow-lg animate-[slide-up_1s_ease-out_0.4s_forwards] opacity-0">
-                    A curated collection of culinary experiences and hidden gems from my travels around the world.
+                    My personal collection of restaurants, cafes, and hidden gems from my travels around the world.
                 </p>
             </div>
 

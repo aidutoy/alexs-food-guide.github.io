@@ -1,58 +1,146 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { City } from '../types';
 import ChevronRightIcon from './icons/ChevronRightIcon';
 
 const CityGrid: React.FC<{ cities: City[] }> = ({ cities }) => {
-    return (
-        <section id="cities" className="relative min-h-screen bg-brand-dark py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-             {/* Ambient Background Elements */}
-            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-brand-accent/5 rounded-full blur-3xl pointer-events-none"></div>
+    const [hoveredCityId, setHoveredCityId] = useState<string | null>(null);
 
-            <div className="max-w-7xl mx-auto relative z-10">
-                <div className="text-center mb-20">
-                    <h2 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6 drop-shadow-2xl">
-                        Global Destinations
-                    </h2>
-                    <p className="text-white/70 max-w-2xl mx-auto text-lg font-light">
-                        Explore the full list of cities I've visited and pinned on my map.
-                    </p>
+    // Default to first city for the preview if none hovered
+    const activeCity = cities.find(c => c.id === hoveredCityId) || cities[0];
+
+    return (
+        <section className="min-h-screen bg-brand-dark text-white relative selection:bg-brand-primary selection:text-white">
+            {/* Desktop Layout: Split Screen Editorial */}
+            <div className="hidden lg:flex">
+                {/* Left Panel - Sticky Image Preview */}
+                <div className="w-1/2 h-screen sticky top-0 overflow-hidden bg-black">
+                     {/* We render all images absolutely to transition between them opacity-wise */}
+                     {cities.map((city) => (
+                        <div
+                            key={city.id}
+                            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${activeCity.id === city.id ? 'opacity-100' : 'opacity-0'}`}
+                        >
+                            <img
+                                src={city.image}
+                                alt={city.name}
+                                className={`w-full h-full object-cover transition-transform duration-[2000ms] ease-out ${activeCity.id === city.id ? 'scale-110' : 'scale-100'}`}
+                            />
+                            <div className="absolute inset-0 bg-black/20"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-60"></div>
+                            
+                            {/* Overlay Info */}
+                            <div className="absolute bottom-16 left-12 z-10">
+                                <div className="overflow-hidden mb-4">
+                                    <p className={`text-brand-primary font-mono text-3xl font-bold tracking-widest uppercase transition-transform duration-500 ${activeCity.id === city.id ? 'translate-y-0' : 'translate-y-10'}`}>
+                                        {city.coordinates.lat.toFixed(2)}° N, {city.coordinates.lon.toFixed(2)}° E
+                                    </p>
+                                </div>
+                                <div className="overflow-hidden">
+                                    <h2 className={`text-9xl font-playfair font-bold text-white leading-none drop-shadow-2xl transition-transform duration-700 delay-100 ${activeCity.id === city.id ? 'translate-y-0' : 'translate-y-full'}`}>
+                                        {city.name}
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                     ))}
+                     
+                     {/* Grain Overlay */}
+                     <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }}></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Right Panel - Scrollable List */}
+                <div className="w-1/2 min-h-screen bg-brand-dark border-l border-white/10 relative z-10">
+                    <div className="p-16 pt-32 pb-32">
+                        <div className="mb-20 pl-8 border-l-2 border-brand-primary">
+                            <span className="text-brand-primary font-medium tracking-widest uppercase text-xs block mb-2">The Collection</span>
+                            <h3 className="text-5xl font-playfair font-bold text-white mb-6">Select Destination</h3>
+                            <p className="text-white/50 font-light leading-relaxed max-w-md text-lg">
+                                A curated index of gastronomic landmarks. Hover to preview, click to explore.
+                            </p>
+                        </div>
+
+                        <div className="flex flex-col">
+                            {cities.map((city, index) => (
+                                <Link
+                                    key={city.id}
+                                    to={`/city/${city.id}`}
+                                    onMouseEnter={() => setHoveredCityId(city.id)}
+                                    className="group relative py-12 px-8 -mx-8 transition-all duration-500 hover:bg-white/[0.03]"
+                                >
+                                    {/* Hover Background Strip */}
+                                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-brand-primary transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
+
+                                    <div className="flex items-center justify-between relative z-10">
+                                        <div className="flex items-baseline gap-12">
+                                            <span className="font-mono text-white/20 text-sm group-hover:text-brand-primary transition-colors duration-300">
+                                                {(index + 1).toString().padStart(2, '0')}
+                                            </span>
+                                            <div>
+                                                <h4 className="text-4xl font-playfair font-bold text-white group-hover:translate-x-2 transition-transform duration-500">
+                                                    {city.name}
+                                                </h4>
+                                                <div className="flex items-center gap-3 mt-3 opacity-0 group-hover:opacity-100 transform -translate-y-2 group-hover:translate-y-0 transition-all duration-500 delay-75">
+                                                    <span className="h-px w-6 bg-white/20"></span>
+                                                    <p className="text-white/50 text-sm font-light">
+                                                        {city.restaurants.length} Recommended Spots
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-x-4 group-hover:translate-x-0">
+                                            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white text-brand-dark">
+                                                <ChevronRightIcon className="w-5 h-5" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Separator Line */}
+                                    <div className="absolute bottom-0 left-8 right-0 h-px bg-white/5 group-hover:bg-white/10 transition-colors duration-500"></div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Mobile Layout - High Impact Cards */}
+            <div className="lg:hidden pt-28 pb-12 px-4">
+                <div className="mb-12 px-2">
+                    <span className="text-brand-primary font-medium tracking-widest uppercase text-xs mb-2 block">The Collection</span>
+                    <h2 className="text-4xl font-playfair font-bold text-white mb-2">Destinations</h2>
+                </div>
+                
+                <div className="space-y-6">
                     {cities.map((city, index) => (
                         <Link 
-                            to={`/city/${city.id}`} 
                             key={city.id} 
-                            className="group relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl aspect-[3/4]"
+                            to={`/city/${city.id}`}
+                            className="block relative h-[450px] rounded-[2rem] overflow-hidden shadow-2xl group border border-white/10"
                         >
-                             {/* Image Layer */}
-                             <img 
+                            <img 
                                 src={city.image} 
                                 alt={city.name} 
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent opacity-90"></div>
                             
-                            {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500"></div>
-                            
-                            {/* Content Layer */}
-                            <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                    <h3 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-2 drop-shadow-lg">
-                                        {city.name}
-                                    </h3>
-                                    <div className="flex items-center text-white/80 text-sm font-medium uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                                        <span className="mr-2">Explore Guide</span>
-                                        <ChevronRightIcon className="w-4 h-4" />
+                            <div className="absolute bottom-0 left-0 right-0 p-8">
+                                <div className="flex justify-between items-end">
+                                    <div>
+                                        <p className="text-brand-primary font-mono text-xs mb-3 tracking-widest uppercase">
+                                            NO. {(index + 1).toString().padStart(2, '0')}
+                                        </p>
+                                        <h3 className="text-5xl font-playfair font-bold text-white leading-none mb-2">{city.name}</h3>
+                                        <p className="text-white/60 text-sm font-light">{city.restaurants.length} Venues</p>
+                                    </div>
+                                    <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-brand-dark transition-colors duration-300">
+                                        <ChevronRightIcon className="w-5 h-5" />
                                     </div>
                                 </div>
                             </div>
-
-                             {/* Glass Border Highlight on Hover */}
-                             <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/20 rounded-[2rem] transition-colors duration-300 pointer-events-none"></div>
                         </Link>
                     ))}
                 </div>

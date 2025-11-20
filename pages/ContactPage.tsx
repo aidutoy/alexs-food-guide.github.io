@@ -4,16 +4,45 @@ import React, { useState } from 'react';
 const ContactPage: React.FC = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [submitted, setSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        setSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitting(true);
+
+        try {
+            // Using FormSubmit.co AJAX API to send email without backend server
+            const response = await fetch("https://formsubmit.co/ajax/aidutoy@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    _subject: `New Message from Alex's Food Guide: ${formData.name}`
+                })
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                console.error("Form submission failed");
+                alert("Something went wrong. Please try again later.");
+            }
+        } catch (error) {
+            console.error("Form submission error", error);
+            alert("Something went wrong. Please check your internet connection.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -33,7 +62,7 @@ const ContactPage: React.FC = () => {
                 {/* Glassmorphism Card */}
                 <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl">
                     {submitted ? (
-                        <div className="text-center py-12">
+                        <div className="text-center py-12 animate-fade-in">
                             <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -66,6 +95,7 @@ const ContactPage: React.FC = () => {
                                         transition-all duration-200
                                     "
                                     placeholder="John Doe"
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <div>
@@ -84,6 +114,7 @@ const ContactPage: React.FC = () => {
                                         transition-all duration-200
                                     "
                                     placeholder="john@example.com"
+                                    disabled={isSubmitting}
                                 />
                             </div>
                             <div>
@@ -102,20 +133,32 @@ const ContactPage: React.FC = () => {
                                         transition-all duration-200 resize-none
                                     "
                                     placeholder="Tell me about a great restaurant..."
+                                    disabled={isSubmitting}
                                 ></textarea>
                             </div>
                             <div className="pt-4">
                                 <button 
                                     type="submit" 
-                                    className="
+                                    disabled={isSubmitting}
+                                    className={`
                                         w-full py-4 px-6 rounded-xl
-                                        bg-white text-brand-dark font-bold text-lg
-                                        hover:bg-brand-primary hover:text-white
-                                        transform hover:-translate-y-1
-                                        transition-all duration-300 shadow-lg hover:shadow-brand-primary/25
-                                    "
+                                        font-bold text-lg
+                                        transition-all duration-300 shadow-lg
+                                        ${isSubmitting 
+                                            ? 'bg-white/10 text-white/50 cursor-not-allowed' 
+                                            : 'bg-white text-brand-dark hover:bg-brand-primary hover:text-white hover:shadow-brand-primary/25 transform hover:-translate-y-1'
+                                        }
+                                    `}
                                 >
-                                    Send Message
+                                    {isSubmitting ? (
+                                        <span className="flex items-center justify-center gap-2">
+                                            <svg className="animate-spin h-5 w-5 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                            </svg>
+                                            Sending...
+                                        </span>
+                                    ) : 'Send Message'}
                                 </button>
                             </div>
                         </form>
