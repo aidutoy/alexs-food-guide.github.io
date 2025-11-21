@@ -92,7 +92,7 @@ const GalleryPreview: React.FC = () => {
 
              {/* Preview Modal */}
              {selectedImage && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center px-4" onClick={() => setSelectedImage(null)}>
+                <div className="fixed inset-0 z-[100] flex items-center justify-center px-4" onClick={() => setSelectedImage(null)}>
                     <div className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-fade-in"></div>
                     <div 
                         className="relative bg-zinc-900 border border-white/10 rounded-3xl overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl animate-fade-in" 
