@@ -186,6 +186,82 @@ export const bonn: City = {
       websiteUrl: 'https://www.burgerwerk-bonn.de/',
       instagramUrl: 'https://www.instagram.com/mandala.vegan/?hl=en',
       tags: ["Tapas", "Sushi", "Asian", "Vietnamese", "Pho", "gluten-free", "lactose-free", "Vegan", "Vegetarian"]
+    },
+    {
+      id: 'hokkaido',
+      name: 'Hokkaido Sushi & Grill',
+      description: "Sushi is one of my favourite cuisines and I am always trying to find the best all you can eat sushi in the area. While Okinii has my favourite dishes, Hokkaido is cheaper and has more mango, which is a big plus for me. I recommend coming here if you have a big appetite and tighter budget. ",
+      quickVerdict: 'Premium all-you-can-eat sushi without the high price tag. Worth the trip.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/hokkaido/hokkaido_1.jpg', caption: 'Tekka maki, shake maki, cream cheese roll, crab roll, sashimi salad'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/hokkaido/hokkaido_2.jpg', caption: 'Tekka maki, shake maki, cream cheese roll roll, sashimi salad, deep fried shrimp, fried cheese balls, shake nigiri' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/hokkaido/hokkaido_3.jpg', caption: 'Avocado maki, tekka maki, tuna roll, crab roll, cream cheese roll' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/hokkaido/hokkaido_4.jpg', caption: 'Sashimi salad, tako yaki, various sushi rolls and maki, yaki hireniku' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/hokkaido/hokkaido_5.jpg', caption: 'Sashimi salad)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/hokkaido/hokkaido_6.jpg', caption: 'Banana with honey and mango sauce' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/hokkaido/hokkaido_7.jpg', caption: 'Ice cream: mango, black sesame, and peach' }
+      ],
+      ratings: { food: 4, drinks: 4, service: 4, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Hokkaido%20Sushi%20%26%20Grill%20Restaurant%2C%20Drachenburgstra%C3%9Fe%2C%20Bonn-Bad%20Godesberg%2C%20Germany&maptype=roadmap',
+      cuisine: 'Sushi',
+      alexsTip: "The sashimi salad is absolute perfection in a bowl.",
+      dietary: {
+        celiac: "Limited options as a lot is fried or with non-gluten free soy sauce. There are only a couple sushi like the maki.",
+        lactose: "Almost everything is lactose-free unless there is cream cheese in the roll.",
+        vegetarian: "Some vegetarian sushi but limited, I recommend Mandala restaurant.",
+        vegan: "Very limited vegan sushi but limited, I recommend Mandala restaurant."
+      },
+      websiteUrl: 'https://www.hokkaido-sushi-grill.de/',
+      tags: ["Sushi", "Asian", "All-you-can-eat", "lactose-free"]
+    },
+    {
+      id: 'mayras_wohnzimmer',
+      name: "Mayra's Wohnzimmer Cafe",
+      description: "A great cafe spot in Bonn-Beuel for some coffee and homemade cakes. The cosy decor makes you feel right at home where you can catch up with your friends. The place is usually crowded for brunch, especially on the weekend so if you are a larger group, consider booking ahead. I would recommend coming for coffee and cake rather than expecting a big brunch. The smaller portion sizes and limited variety on the menu are fine for small appetites or those without dietary requirements. The staff know their allergens well and can offer at least one gluten-free cake and at least one vegan cake. When I was there, there was no gluten-free bread and the hollandaise sauce is not gluten-free, so I do not recommend for coeliacs.",
+      quickVerdict: 'A cosy cafe with fresh baked cakes and drinks to keep you warm in Winter.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mayras_wohnzimmer/mayra_1.jpg', caption: 'Monsieur camembert'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mayras_wohnzimmer/mayra_2.jpg', caption: 'Strawberry iced matcha latte and chai latte' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mayras_wohnzimmer/mayra_3.jpg', caption: 'Sans Sebastian cheesecake' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mayras_wohnzimmer/mayra_4.jpg', caption: 'Gluten-free coconut cake, coco chanel, no thats not meat.' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mayras_wohnzimmer/mayra_5.jpg', caption: 'Sashimi salad)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mayras_wohnzimmer/mayra_6.jpg', caption: 'Cappuccino' }
+      ],
+      ratings: { food: 3, drinks: 4, service: 5, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Mayras%20Wohnzimmer%20Caf%C3%A9%2C%20Friedrich-Breuer-Stra%C3%9Fe%2C%20Bonn-Beuel%2C%20Germany&maptype=roadmap',
+      cuisine: 'Cafe, Cakes',
+      alexsTip: "Start with the Monsieur camembert but ask for more hollandaise sauce, pair with an iced-matcha strawberry latte and finish it off with the San Sebastian cheesecake, which is one of the best I have ever had.",
+      dietary: {
+        celiac: "No gluten-free bread, which is a big negative but they do offer at least one gluten-free cake per day. Last time was a coconut cake.",
+        lactose: "Lactose-free milk available, no lactose-free cheese on the menu.",
+        vegetarian: "Vegetarian sandwiches available and all cakes are vegetarian.",
+        vegan: "Vegan sandwiches and cakes available."
+      },
+      websiteUrl: 'https://www.hokkaido-sushi-grill.de/',
+      tags: ["Cafe", "Cakes", "Coffee", "Matcha latte", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
+      id: 'frittenwerk',
+      name: "Frittenwerk",
+      description: "Definitely a good spot for some loaded fries or 'poutine'. I was surprised by how filling the fries were after seeing the portion size, so don't be too disappointed. The price is a little on the expensive side so I wouldn't go back often but a nice treat when you want to try something different. I had the Tijuana street fries that are topped with tomatoes, avocado and sour cream. I can also recommend the BBQ pulled pork poutine. I do not recommend adding extra falafel on top as it is not worth the price You can order at the screens and change the language so you don't need to speak German. Note the wait time for all orders when eating in is approx 30 minutes, so I wouldn' go if you are in a rush.",
+      quickVerdict: 'The best loaded fries in Bonn, wait time is a bit long but worth it.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_2.jpg', caption: 'Tijuana street fries with falafel'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_1.jpg', caption: 'BBQ pulled pork poutine (left) and Tijuana street fries (right) with falafel' }
+      ],
+      ratings: { food: 4, drinks: 4, service: 3, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frittenwerk%20Bonn%2C%20Sternstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Fries',
+      alexsTip: "Take the BBQ pulled pork poutine or the Tijuana street fries but do not add extra falafel. Takeaway orders are much faster.",
+      dietary: {
+        celiac: "Majority of fries are gluten-free.",
+        lactose: "Fries without cheese available.",
+        vegetarian: "A few fries are without meat.",
+        vegan: "Vegan fries and vegan mayo on offer."
+      },
+      websiteUrl: 'https://frittenwerk.com/',
+      instagramUrl: 'https://www.instagram.com/frittenwerk/',
+      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
     }
   ],
 };

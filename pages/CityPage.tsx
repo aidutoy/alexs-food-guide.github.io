@@ -61,10 +61,10 @@ const CityPage: React.FC = () => {
             <img 
                 src={city.image} 
                 alt={city.name} 
-                className="w-full h-full object-cover animate-slow-zoom opacity-60"
+                className="w-full h-full object-cover animate-slow-zoom"
             />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/60 via-brand-dark/40 to-brand-dark"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-brand-dark"></div>
         
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 mt-16">
@@ -132,7 +132,6 @@ const CityPage: React.FC = () => {
                                 alt={restaurant.name}
                                 className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
                             
                             {/* Hover Overlay Action */}
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-[2px] bg-black/20">

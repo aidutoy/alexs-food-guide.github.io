@@ -110,6 +110,29 @@ export const cologne: City = {
       websiteUrl: 'https://www.nennillo.de/',
       instagramUrl: 'https://www.instagram.com/pizzerianennillo/',
       tags: ["Italian", "Pizza", "Aperol", "Budget-friendly", "Takeaway", "gluten-free", "vegetarian", "vegan"]
+    },
+    {
+      id: 'frittenwerk',
+      name: "Frittenwerk",
+      description: "Definitely a good spot for some loaded fries or 'poutine'. I was surprised by how filling the fries were after seeing the portion size, so don't be too disappointed. The price is a little on the expensive side so I wouldn't go back often but a nice treat when you want to try something different. I had the Tijuana street fries that are topped with tomatoes, avocado and sour cream. I can also recommend the BBQ pulled pork poutine. I do not recommend adding extra falafel on top as it is not worth the price You can order at the screens and change the language so you don't need to speak German. Note the wait time for all orders when eating in is approx 30 minutes, so I wouldn' go if you are in a rush.",
+      quickVerdict: 'The best loaded fries in Bonn, wait time is a bit long but worth it.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_2.jpg', caption: 'Tijuana street fries with falafel'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_1.jpg', caption: 'BBQ pulled pork poutine (left) and Tijuana street fries (right) with falafel' }
+      ],
+      ratings: { food: 4, drinks: 4, service: 3, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frittenwerk%20K%C3%B6ln%2C%20Ehrenstra%C3%9Fe%2C%20Cologne%2C%20Germany&maptype=roadmap',
+      cuisine: 'Fries',
+      alexsTip: "Take the BBQ pulled pork poutine or the Tijuana street fries but do not add extra falafel. Takeaway orders are much faster.",
+      dietary: {
+        celiac: "Majority of fries are gluten-free.",
+        lactose: "Fries without cheese available.",
+        vegetarian: "A few fries are without meat.",
+        vegan: "Vegan fries and vegan mayo on offer."
+      },
+      websiteUrl: 'https://frittenwerk.com/',
+      instagramUrl: 'https://www.instagram.com/frittenwerk/',
+      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
     }
   ],
 };

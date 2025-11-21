@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
                     <div className="
                         absolute inset-0
                         bg-black/20 backdrop-blur-md
-                        [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)]
+                        [mask-image:radial-gradient(closest-side,black,transparent)]
                         lg:hidden
                         -z-10
                     "></div>
@@ -64,12 +64,11 @@ const Hero: React.FC = () => {
                             relative 
                             text-[8vw] md:text-[8vw] lg:text-8xl xl:text-9xl 
                             font-playfair font-bold tracking-tight 
-                            drop-shadow-2xl 
                             animate-[slide-up_1s_ease-out_0.2s_forwards] opacity-0 
                             leading-none 
                             whitespace-nowrap
                          ">
-                            <span>Alex's</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Food Guide</span>
+                            <span className="drop-shadow-2xl">Alex's</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400 [-webkit-text-stroke:0px]">Food Guide</span>
                         </h1>
                     </div>
 
