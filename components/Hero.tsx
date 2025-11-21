@@ -35,19 +35,42 @@ const Hero: React.FC = () => {
             <div className="relative z-10 flex flex-col items-center justify-center px-4 max-w-full mx-auto">
                 
                 {/* Glassy Title Wrapper */}
-                <div className="relative mb-8 text-center">
+                <div className="relative mb-6 md:mb-8 text-center">
                      {/* Stronger darker gradient behind text */}
                      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(closest-side,_var(--tw-gradient-stops))] from-black/70 via-transparent to-transparent blur-3xl pointer-events-none"></div>
                      
-                     <h1 className="relative text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-playfair font-bold tracking-tight drop-shadow-2xl animate-[slide-up_1s_ease-out_0.2s_forwards] opacity-0 leading-none">
+                     <h1 className="
+                        relative 
+                        text-[13vw] md:text-[10vw] lg:text-8xl xl:text-9xl 
+                        font-playfair font-bold tracking-tight 
+                        drop-shadow-2xl 
+                        animate-[slide-up_1s_ease-out_0.2s_forwards] opacity-0 
+                        leading-none 
+                        whitespace-nowrap
+
+                        /* Mobile/Tablet Background adjustments */
+                        bg-black/10 lg:bg-transparent
+                        backdrop-blur-md lg:backdrop-blur-none
+                        rounded-[3rem] lg:rounded-none
+                        px-6 py-2 lg:p-0
+                        shadow-2xl lg:shadow-none
+                     " style={{ WebkitTextStroke: '1px rgba(255,255,255,0.1)' }}>
                         <span className="block md:inline">Alex's</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400 block md:inline">Food Guide</span>
                     </h1>
                 </div>
 
-                <div className="relative text-center">
+                <div className="relative text-center px-4">
                     {/* Background blur for description text */}
                      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-black/30 blur-2xl rounded-full -z-10"></div>
-                    <p className="text-xl md:text-2xl font-light text-gray-100 max-w-2xl mx-auto leading-relaxed drop-shadow-lg animate-[slide-up_1s_ease-out_0.4s_forwards] opacity-0 relative">
+                    <p className="
+                        text-xs sm:text-sm md:text-base lg:text-2xl 
+                        font-light text-gray-100 
+                        max-w-2xl mx-auto 
+                        leading-relaxed 
+                        drop-shadow-lg 
+                        animate-[slide-up_1s_ease-out_0.4s_forwards] opacity-0 
+                        relative
+                    ">
                         My personal collection of restaurants, cafes, and hidden gems from my travels around the world.
                     </p>
                 </div>
