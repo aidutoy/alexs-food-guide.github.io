@@ -23,7 +23,7 @@ function App() {
   return (
     <HashRouter>
       <ScrollToTop />
-      <div className="bg-brand-light text-brand-secondary font-roboto flex flex-col min-h-screen">
+      <div className="bg-brand-dark text-white font-roboto flex flex-col min-h-screen">
         <NavBar />
         <main className="flex-grow">
           <Routes>

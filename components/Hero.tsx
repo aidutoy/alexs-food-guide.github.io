@@ -37,13 +37,24 @@ const Hero: React.FC = () => {
                 {/* 
                     Mobile/Tablet: Full width blurred strip
                     Desktop: Transparent container (blur handled by specific blobs/gradients)
+                    
+                    Refactored: Separate background div for mobile mask effect so text isn't masked.
                 */}
                 <div className="
+                    relative
                     w-full py-16 lg:py-0
                     flex flex-col items-center justify-center
-                    bg-black/10 backdrop-blur-sm
-                    lg:bg-transparent lg:backdrop-blur-none lg:w-auto
+                    lg:w-auto
                 ">
+                    {/* Mobile/Tablet Blur Background Layer */}
+                    <div className="
+                        absolute inset-0
+                        bg-black/20 backdrop-blur-md
+                        [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_70%)]
+                        lg:hidden
+                        -z-10
+                    "></div>
+
                     {/* Title Wrapper */}
                     <div className="relative mb-4 lg:mb-8 text-center px-2 sm:px-4">
                          {/* Desktop Radial Gradient - Hidden on mobile/tablet */}
@@ -57,7 +68,7 @@ const Hero: React.FC = () => {
                             animate-[slide-up_1s_ease-out_0.2s_forwards] opacity-0 
                             leading-none 
                             whitespace-nowrap
-                         " style={{ WebkitTextStroke: '1px rgba(255,255,255,0.1)' }}>
+                         ">
                             <span>Alex's</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Food Guide</span>
                         </h1>
                     </div>

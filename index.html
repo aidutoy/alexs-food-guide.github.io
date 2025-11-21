@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Alex's Food Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
               },
               'slide-up': {
                 '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
+                '100%': { opacity: '1' },
               },
               'slow-zoom': {
                 '0%': { transform: 'scale(1)' },
@@ -63,7 +63,7 @@
 }
 </script>
 </head>
-  <body>
+  <body class="bg-brand-dark">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
