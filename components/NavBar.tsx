@@ -4,12 +4,54 @@ import { Link, useLocation } from 'react-router-dom';
 import MenuIcon from './icons/MenuIcon';
 import CloseIcon from './icons/CloseIcon';
 import SearchIcon from './icons/SearchIcon';
+import LanguageSelector from './LanguageSelector';
+
+declare global {
+    interface Window {
+        googleTranslateElementInit: () => void;
+        google: any;
+    }
+}
 
 const NavBar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
     const isHomePage = location.pathname === '/';
+
+    // Initialize Google Translate
+    useEffect(() => {
+        if (!window.googleTranslateElementInit) {
+            window.googleTranslateElementInit = () => {
+                new window.google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    includedLanguages: 'en,de,fr,es,it,pt,nl,pl,sv,ru,ja,zh-CN,ko,hi,ar,tr,vi,th',
+                    layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+                    autoDisplay: false
+                }, 'google_translate_element');
+            };
+        }
+
+        if (!document.getElementById('google-translate-script')) {
+            const script = document.createElement('script');
+            script.id = 'google-translate-script';
+            script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            script.async = true;
+            document.body.appendChild(script);
+        }
+
+        // Inject custom styles to hide Google's default banner and widgets
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .goog-te-banner-frame.skiptranslate { display: none !important; } 
+            body { top: 0px !important; } 
+            .goog-te-gadget-icon { display: none !important; } 
+            #google_translate_element { display: none !important; }
+            .goog-tooltip { display: none !important; }
+            .goog-te-gadget-simple { background-color: transparent !important; border: none !important; font-size: 0 !important; }
+        `;
+        document.head.appendChild(style);
+    }, []);
 
     // Effect for scroll detection
     useEffect(() => {
@@ -49,6 +91,8 @@ const NavBar: React.FC = () => {
 
     return (
         <>
+            <div id="google_translate_element" className="fixed bottom-0 right-0 pointer-events-none opacity-0"></div>
+            
             <nav className={navClass}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
@@ -65,6 +109,8 @@ const NavBar: React.FC = () => {
                                     <SearchIcon className="w-4 h-4" />
                                     Search
                                 </Link>
+                                <div className="h-4 w-px bg-white/20 mx-2"></div>
+                                <LanguageSelector />
                             </div>
                         </div>
                          <div className="-mr-2 flex md:hidden">
@@ -95,10 +141,12 @@ const NavBar: React.FC = () => {
                 `}
                 id="mobile-menu"
             >
-                <div className="flex flex-col items-center justify-center h-full space-y-8">
+                <div className="flex flex-col items-center justify-center h-full space-y-8 overflow-y-auto py-8">
                     <Link to="/locations" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Locations</Link>
                     <Link to="/contact" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Contact</Link>
                     <Link to="/search" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Search</Link>
+                    <div className="border-t border-white/10 w-24 my-4"></div>
+                    <LanguageSelector mobile onClose={handleMobileRouterLinkClick} />
                 </div>
             </div>
         </>
