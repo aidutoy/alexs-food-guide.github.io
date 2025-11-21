@@ -269,6 +269,33 @@ export const bonn: City = {
       tags: ["Oriental", "All-you-can-eat", "Egyptian", "Syrian", "Lebanese", "Moroccan", "Iranian", "Turkish", "Tunisian", "lactose-free", "vegetarian", "vegan"]
     },
     {
+      id: 'ichiban',
+      name: "Ichiban Noodlebar",
+      description: "A great spot in Bonn for some cheap noodles and Japanese food. I can recommend ordering the Tonkatsu Set or the Kastu Curry Set as you get a lot of food cheap and I couldn't fault the taste. The restaurant doesn't take any bookings so larger groups are more difficult to seat. I would recommend going early in the evening during the week to avoid disappointment. ",
+      quickVerdict: 'Cheap curry sets and tasty ramen in the heart of Bonn.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ichiban/ichiban_1.jpg', caption: 'Katsu Curry Set'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ichiban/ichiban_2.jpg', caption: 'Tonkatsu' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ichiban/ichiban_3.jpg', caption: 'Ebi Tempura Udon' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ichiban/ichiban_4.jpg', caption: 'Gyoza and Korokke' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ichiban/ichiban_5.jpg', caption: 'Tofu Udon' }
+      ],
+      ratings: { food: 4, drinks: 4, service: 4, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ichiban%20Noodlebar%2C%20Br%C3%BCdergasse%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Japanese',
+      alexsTip: "Try the chicken katsu set, it's cheap and tasty.",
+      dietary: {
+        celiac: "Very limited, lots of fried chicken and wheat noodles",
+        lactose: "Most sauces without lactose.",
+        vegetarian: "Tofu is available but dishes centered around fried chicken.",
+        vegan: "Most sauces without dairy and tofu is available."
+      },
+      websiteUrl: 'https://www.ichiban-noodlebar.de/',
+      instagramUrl: 'https://www.instagram.com/ichibannoodlebar/?hl=en',
+      
+      tags: ["Japanese", "Curry", "Ramen", "Noodles", "Asian", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
       id: 'mayras_wohnzimmer',
       name: "Mayra's Wohnzimmer Cafe",
       description: "A great cafe spot in Bonn-Beuel for some coffee and homemade cakes. The cosy decor makes you feel right at home where you can catch up with your friends. The place is usually crowded for brunch, especially on the weekend so if you are a larger group, consider booking ahead. I would recommend coming for coffee and cake rather than expecting a big brunch. The smaller portion sizes and limited variety on the menu are fine for small appetites or those without dietary requirements. The staff know their allergens well and can offer at least one gluten-free cake and at least one vegan cake. When I was there, there was no gluten-free bread and the hollandaise sauce is not gluten-free, so I do not recommend for coeliacs.",
