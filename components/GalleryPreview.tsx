@@ -52,7 +52,7 @@ const GalleryPreview: React.FC = () => {
                     The <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Gallery</span>
                 </h2>
                 <p className="text-white/60 text-lg font-light max-w-2xl mx-auto mb-8">
-                    Dive into the full collection of culinary moments.
+                    Dive into my full photo collection.
                 </p>
                 <Link 
                     to="/gallery"
@@ -91,41 +91,62 @@ const GalleryPreview: React.FC = () => {
                 </div>
              </div>
 
-             {/* Preview Modal - Portal to body to fix stacking context issues */}
+             {/* Preview Modal - Sleek Design */}
              {selectedImage && createPortal(
-                <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4" onClick={() => setSelectedImage(null)}>
-                    <div className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-fade-in"></div>
+                <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4 sm:px-6" onClick={() => setSelectedImage(null)}>
+                    {/* Backdrop */}
+                    <div className="absolute inset-0 bg-black/95 backdrop-blur-md animate-fade-in"></div>
+
+                    {/* Modal Content */}
                     <div 
-                        className="relative bg-zinc-900 border border-white/10 rounded-3xl overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl animate-fade-in" 
+                        className="relative w-full max-w-5xl max-h-[90vh] flex flex-col rounded-[2rem] overflow-hidden shadow-2xl animate-slide-up" 
                         onClick={e => e.stopPropagation()}
                     >
+                        {/* Background Blur Effect for "Sleekness" */}
+                        <div className="absolute inset-0 z-0">
+                            <img src={selectedImage.url} className="w-full h-full object-cover blur-3xl opacity-30" alt="" />
+                            <div className="absolute inset-0 bg-black/40"></div>
+                        </div>
+
+                        {/* Close Button */}
                         <button 
                             onClick={() => setSelectedImage(null)}
-                            className="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-white hover:text-black transition-colors border border-white/10"
+                            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/20 hover:bg-white/20 text-white/70 hover:text-white backdrop-blur-md border border-white/10 transition-all"
                         >
                             <CloseIcon className="w-6 h-6" />
                         </button>
                         
-                        <div className="flex-1 overflow-hidden bg-black flex items-center justify-center relative">
+                        {/* Main Image Area */}
+                        <div className="relative z-10 flex-1 overflow-hidden flex items-center justify-center p-4 md:p-8">
                             <img 
                                 src={selectedImage.url} 
                                 alt={selectedImage.caption} 
-                                className="w-full h-full object-contain max-h-[60vh] md:max-h-[70vh]"
+                                className="w-full h-full object-contain max-h-[70vh] drop-shadow-2xl rounded-lg"
                             />
                         </div>
                         
-                        <div className="bg-zinc-900 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-t border-white/5">
-                            <div>
-                                <h3 className="text-2xl font-playfair font-bold text-white mb-1">{selectedImage.restaurantName}</h3>
-                                <p className="text-white/60 text-sm italic line-clamp-2">{selectedImage.caption}</p>
+                        {/* Footer Bar */}
+                        <div className="relative z-10 bg-black/60 backdrop-blur-xl border-t border-white/10 p-6 md:px-10 md:py-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                            <div className="text-center md:text-left">
+                                <h3 className="text-2xl md:text-3xl font-playfair font-bold text-white mb-1">
+                                    {selectedImage.restaurantName}
+                                </h3>
+                                <p className="text-white/60 text-sm font-light tracking-wide">
+                                    {selectedImage.caption}
+                                </p>
                             </div>
                             
                             <Link 
                                 to={`/city/${selectedImage.cityId}?restaurant=${selectedImage.restaurantId}`}
-                                className="flex items-center gap-2 bg-brand-primary hover:bg-brand-primary/80 text-white px-6 py-3 rounded-full font-medium transition-all shrink-0 shadow-lg hover:shadow-brand-primary/20"
+                                className="
+                                    inline-flex items-center gap-2 
+                                    bg-white text-brand-dark hover:bg-brand-primary hover:text-white 
+                                    px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs
+                                    transition-all duration-300 shadow-lg hover:shadow-brand-primary/25
+                                "
                             >
-                                View Restaurant
-                                <ArrowUpRightIcon className="w-5 h-5" />
+                                View Details
+                                <ArrowUpRightIcon className="w-4 h-4" />
                             </Link>
                         </div>
                     </div>

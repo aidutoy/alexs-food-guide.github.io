@@ -125,7 +125,7 @@ const CityPage: React.FC = () => {
       </div>
       
       {/* Restaurants Editorial List */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 pt-32 md:pt-56 relative z-10">
         <div className="flex flex-col gap-24 md:gap-40">
             {city.restaurants.map((restaurant, index) => (
                 <div 

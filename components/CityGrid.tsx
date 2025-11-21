@@ -18,8 +18,10 @@ const CityGrid: React.FC<{ cities: City[] }> = ({ cities }) => {
             {/* ========================================== */}
             <div className="lg:hidden pt-24 pb-16 px-4 sm:px-6 max-w-7xl mx-auto">
                 <div className="mb-12 text-center">
-                    <h1 className="text-5xl font-playfair font-bold text-white mb-4">Destinations</h1>
-                    <p className="text-white/60 font-light text-lg">Curated guides for every city.</p>
+                    <h1 className="text-5xl font-playfair font-bold text-white mb-4">
+                        Choose a <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">City</span>
+                    </h1>
+                    <p className="text-white/60 font-light text-lg">A handful of cities I have personally experienced.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -108,9 +110,11 @@ const CityGrid: React.FC<{ cities: City[] }> = ({ cities }) => {
                     <div className="p-16 pt-32 pb-32">
                         <div className="mb-20 pl-8 border-l-2 border-brand-primary">
                             <span className="text-brand-primary font-medium tracking-widest uppercase text-xs block mb-2">The Collection</span>
-                            <h3 className="text-5xl font-playfair font-bold text-white mb-6">Select Destination</h3>
+                            <h3 className="text-5xl font-playfair font-bold text-white mb-6">
+                                Choose a <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">City</span>
+                            </h3>
                             <p className="text-white/50 font-light leading-relaxed max-w-md text-lg">
-                                A curated index of gastronomic landmarks. Hover to preview, click to explore.
+                                A handful of cities I have personally experienced. Hover over to preview. Click to explore.
                             </p>
                         </div>
 

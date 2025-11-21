@@ -53,7 +53,9 @@ const ContactPage: React.FC = () => {
 
             <div className="max-w-xl w-full relative z-10">
                 <div className="text-center mb-12">
-                    <h1 className="text-5xl font-playfair font-bold text-white mb-4 drop-shadow-lg">Get In Touch</h1>
+                    <h1 className="text-5xl font-playfair font-bold text-white mb-4 drop-shadow-lg">
+                        Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Touch</span>
+                    </h1>
                     <p className="text-white/70 text-lg font-light">
                         Have a recommendation or a comment? I'd love to hear from you!
                     </p>

@@ -142,8 +142,8 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_4.jpg', caption: 'Vierkaesehoch (four cheese high)' },
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_5.jpg', caption: 'Double smash burger with gluten-free bun' },
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_6.jpg', caption: 'Special fries - not worth it' },
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_8.jpg', caption: 'Menu'},
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_9.jpg', caption: 'Menu'}
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_7.jpg', caption: 'Menu'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_8.jpg', caption: 'Menu'}
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Burgerwerk%2C%20Friedrich-Breuer-Stra%C3%9Fe%2C%20Bonn-Beuel%2C%20Germany&maptype=roadmap',
@@ -212,6 +212,37 @@ export const bonn: City = {
       },
       websiteUrl: 'https://www.hokkaido-sushi-grill.de/',
       tags: ["Sushi", "Asian", "All-you-can-eat", "lactose-free"]
+    },
+    {
+      id: 'cream_company',
+      name: "Cream Company",
+      description: "I highly recommend the classic eggs benedict, the heaven pancake, and the very berry waffle for a sugar rush. Large portion sizes that leave you feeling full or having to box the leftovers up to take home, which they are happy to do. ",
+      quickVerdict: 'Perfect spot for large appetites for brunch no matter if you are looking for something sweet or savoury.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_1.jpg', caption: 'Classic eggs benedict'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_2.jpg', caption: 'Strawberry bueno waffle' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_3.jpg', caption: 'Classic eggs benedict' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_4.jpg', caption: 'Strawberry bueno' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_5.jpg', caption: 'Berrylicious french toast' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_6.jpg', caption: 'Classic french toast' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_7.jpg', caption: 'Classic eggs benedict' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_8.jpg', caption: 'Classic eggs benedict' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_9.jpg', caption: 'Avocado toast' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_10.jpg', caption: 'Heaven pancake' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_11.jpg', caption: 'Tropical only fans' },
+      ],
+      ratings: { food: 5, drinks: 4, service: 5, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Cream%20Company%20Coffee%20%26%20Friends%2C%20Sterntorbr%C3%BCcke%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Brunch',
+      alexsTip: "For savoury take the classic eggs benedict, no need to go more fancy. For sweets, take the pancakes if you have a big hunger.",
+      dietary: {
+        celiac: "The gluten-free options are really limited, so I do not recommend for coeliacs, too much toast, waffles or pancakes.",
+        lactose: "No lactose-free cheese but toast without cheese, but limited lactose-free sweets as they use nutella and chocolate sauces. There is lactose-free milk for drinks.",
+        vegetarian: "Vegetarian toast, porridge bowls, pancakes and waffles.",
+        vegan: "A few vegan toasts, but ask about the waffles and pancakes because they are likely made with eggs and whole milk."
+      },
+      instagramUrl: 'https://www.instagram.com/creamcompany',
+      tags: ["Cafe", "Cakes", "Coffee", "desserts", "lactose-free", "vegetarian", "vegan"]
     },
     {
       id: 'mayras_wohnzimmer',

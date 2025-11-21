@@ -53,7 +53,7 @@ const GalleryPage: React.FC = () => {
                         The <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-500">Gallery</span>
                     </h1>
                     <p className="text-white/40 text-xl font-light max-w-2xl mx-auto leading-relaxed">
-                        A photographic chronicle of culinary discoveries.
+                        A photographic journey of my discoveries.
                     </p>
                 </div>
 

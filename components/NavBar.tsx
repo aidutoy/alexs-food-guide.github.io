@@ -62,7 +62,7 @@ const NavBar: React.FC = () => {
                             <div className="ml-10 flex items-center space-x-4">
                                 <Link to="/locations" className={navLinkClass}>Locations</Link>
                                 <Link to="/gallery" className={navLinkClass}>
-                                    <GalleryIcon className="w-4 h-4" />
+                                    <GalleryIcon className="w-4 h-4 mb-0.5" />
                                     Gallery
                                 </Link>
                                 <Link to="/contact" className={navLinkClass}>Contact</Link>
