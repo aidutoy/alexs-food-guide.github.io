@@ -265,7 +265,7 @@ export const bonn: City = {
         vegetarian: "Vegetarian and vegan buffet available at extra cost.",
         vegan: "Vegetarian and vegan buffet available at extra cost."
       },
-      websiteUrl: 'https://www.hokkaido-sushi-grill.de/',
+      websiteUrl: 'https://www.karawane-oberkassel.de/index.html',
       tags: ["Oriental", "All-you-can-eat", "Egyptian", "Syrian", "Lebanese", "Moroccan", "Iranian", "Turkish", "Tunisian", "lactose-free", "vegetarian", "vegan"]
     },
     {
