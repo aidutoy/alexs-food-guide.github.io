@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Why from '../components/Why';
 import FeaturedCitiesCarousel from '../components/FeaturedCitiesCarousel';
+import GalleryPreview from '../components/GalleryPreview';
 import { cities } from '../data/mockData';
 
 const HomePage: React.FC = () => {
@@ -31,6 +32,7 @@ const HomePage: React.FC = () => {
                 <About />
                 <Why />
                 <FeaturedCitiesCarousel cities={cities} />
+                <GalleryPreview />
             </div>
         </div>
     );

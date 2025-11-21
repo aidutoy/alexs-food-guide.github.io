@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { cities } from '../data/mockData';
 import type { Restaurant } from '../types';
-import RestaurantModal from '../components/RestaurantModal';
+import { RestaurantModal } from '../components/RestaurantModal';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon';
 import SearchIcon from '../components/icons/SearchIcon';
 

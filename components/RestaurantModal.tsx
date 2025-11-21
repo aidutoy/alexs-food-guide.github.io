@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import type { Restaurant } from '../types';
@@ -9,6 +8,7 @@ import InstagramIcon from './icons/InstagramIcon';
 import CloseIcon from './icons/CloseIcon';
 import InfoIcon from './icons/InfoIcon';
 import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from './icons/DietaryIcons';
+import Lightbox from './Lightbox';
 
 interface RestaurantModalProps {
   restaurant: Restaurant | null;
@@ -53,9 +53,10 @@ const PriceRatingDisplay: React.FC<{ score: number; max: number; }> = ({ score, 
     </div>
 );
 
-const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }) => {
+export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showMobileCaption, setShowMobileCaption] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   useEffect(() => {
     if (restaurant) {
@@ -94,11 +95,17 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
       setShowMobileCaption(!showMobileCaption);
   };
 
+  const openZoom = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      setIsLightboxOpen(true);
+  }
+
   const hasTag = (tag: string) => {
       return restaurant.tags?.some(t => t.toLowerCase() === tag.toLowerCase());
   };
 
   return (
+    <>
     <div
       className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-300 animate-fade-in"
       onClick={onClose}
@@ -115,11 +122,14 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
         {/* Image Carousel Section */}
         <div className="w-full h-[45vh] md:h-auto md:w-3/5 relative group bg-black flex flex-col shrink-0">
             <div className="relative flex-1 overflow-hidden bg-transparent">
-                <div className="w-full h-full flex items-center justify-center" onClick={() => setShowMobileCaption(false)}>
+                <div 
+                    className="w-full h-full flex items-center justify-center cursor-zoom-in" 
+                    onClick={openZoom}
+                >
                     <img 
                         src={allImages[currentImageIndex].url} 
                         alt={allImages[currentImageIndex].caption} 
-                        className="w-full h-full object-cover transition-opacity duration-500"
+                        className="w-full h-full object-cover transition-opacity duration-500 hover:opacity-90"
                     />
                 </div>
                 
@@ -367,8 +377,14 @@ const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, onClose }
             </div>
         </div>
       </div>
-    </div>
+      
+      {isLightboxOpen && (
+          <Lightbox 
+            images={allImages}
+            initialIndex={currentImageIndex}
+            onClose={() => setIsLightboxOpen(false)}
+          />
+      )}
+    </>
   );
 };
-
-export default RestaurantModal;

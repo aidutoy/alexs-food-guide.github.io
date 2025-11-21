@@ -1,9 +1,9 @@
 
-import React, { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { cities } from '../data/mockData';
 import type { Restaurant } from '../types';
-import RestaurantModal from '../components/RestaurantModal';
+import { RestaurantModal } from '../components/RestaurantModal';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon';
 import ArrowUpRightIcon from '../components/icons/ArrowUpRightIcon';
 import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from '../components/icons/DietaryIcons';
@@ -13,6 +13,21 @@ const CityPage: React.FC = () => {
   const city = cities.find((c) => c.id === cityId);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Check for deep link to restaurant
+  useEffect(() => {
+    if (city) {
+        const searchParams = new URLSearchParams(location.search);
+        const restaurantId = searchParams.get('restaurant');
+        if (restaurantId) {
+            const restaurant = city.restaurants.find(r => r.id === restaurantId);
+            if (restaurant) {
+                setSelectedRestaurant(restaurant);
+            }
+        }
+    }
+  }, [location.search, city]);
 
   if (!city) {
     return (
@@ -35,10 +50,14 @@ const CityPage: React.FC = () => {
 
   const openModal = (restaurant: Restaurant) => {
     setSelectedRestaurant(restaurant);
+    // Optional: Update URL without reloading to make the state shareable
+    // navigate(`?restaurant=${restaurant.id}`, { replace: true });
   };
 
   const closeModal = () => {
     setSelectedRestaurant(null);
+    // Optional: Clear URL param
+    // navigate(location.pathname, { replace: true });
   };
 
   const hasTag = (restaurant: Restaurant, tag: string) => {

@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import MenuIcon from './icons/MenuIcon';
 import CloseIcon from './icons/CloseIcon';
 import SearchIcon from './icons/SearchIcon';
+import GalleryIcon from './icons/GalleryIcon';
 
 const NavBar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -60,6 +61,10 @@ const NavBar: React.FC = () => {
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-center space-x-4">
                                 <Link to="/locations" className={navLinkClass}>Locations</Link>
+                                <Link to="/gallery" className={navLinkClass}>
+                                    <GalleryIcon className="w-4 h-4" />
+                                    Gallery
+                                </Link>
                                 <Link to="/contact" className={navLinkClass}>Contact</Link>
                                 <Link to="/search" className={navLinkClass}>
                                     <SearchIcon className="w-4 h-4" />
@@ -97,6 +102,7 @@ const NavBar: React.FC = () => {
             >
                 <div className="flex flex-col items-center justify-center h-full space-y-8 overflow-y-auto py-8">
                     <Link to="/locations" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Locations</Link>
+                    <Link to="/gallery" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Gallery</Link>
                     <Link to="/contact" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Contact</Link>
                     <Link to="/search" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Search</Link>
                 </div>
