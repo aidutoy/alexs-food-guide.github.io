@@ -142,7 +142,6 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_4.jpg', caption: 'Vierkaesehoch (four cheese high)' },
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_5.jpg', caption: 'Double smash burger with gluten-free bun' },
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_6.jpg', caption: 'Special fries - not worth it' },
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_7.jpg', caption: 'Rot und Böse (bottom) and Bufalina (top)' },
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_8.jpg', caption: 'Menu'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_9.jpg', caption: 'Menu'}
       ],

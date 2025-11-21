@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { cities } from '../data/mockData';
 import GalleryIcon from './icons/GalleryIcon';
@@ -90,9 +91,9 @@ const GalleryPreview: React.FC = () => {
                 </div>
              </div>
 
-             {/* Preview Modal */}
-             {selectedImage && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center px-4" onClick={() => setSelectedImage(null)}>
+             {/* Preview Modal - Portal to body to fix stacking context issues */}
+             {selectedImage && createPortal(
+                <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4" onClick={() => setSelectedImage(null)}>
                     <div className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-fade-in"></div>
                     <div 
                         className="relative bg-zinc-900 border border-white/10 rounded-3xl overflow-hidden max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl animate-fade-in" 
@@ -128,7 +129,8 @@ const GalleryPreview: React.FC = () => {
                             </Link>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
              )}
         </section>
     );
