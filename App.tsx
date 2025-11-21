@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CityPage from './pages/CityPage';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import ContactPage from './pages/ContactPage';
 import LocationsPage from './pages/LocationsPage';
 import SearchPage from './pages/SearchPage';
@@ -22,9 +23,9 @@ function App() {
   return (
     <HashRouter>
       <ScrollToTop />
-      <div className="bg-brand-light text-brand-secondary font-roboto">
+      <div className="bg-brand-light text-brand-secondary font-roboto flex flex-col min-h-screen">
         <NavBar />
-        <main>
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/city/:cityId" element={<CityPage />} />
@@ -33,6 +34,7 @@ function App() {
             <Route path="/search" element={<SearchPage />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </HashRouter>
   );

@@ -41,7 +41,8 @@ const LanguageSelector: React.FC<Props> = ({ mobile, onClose }) => {
         const combo = document.querySelector('.goog-te-combo') as HTMLSelectElement;
         if (combo) {
             combo.value = langCode;
-            combo.dispatchEvent(new Event('change'));
+            // Important: use 'bubbles: true' to ensure Google Translate catches the event
+            combo.dispatchEvent(new Event('change', { bubbles: true }));
         }
         setIsOpen(false);
         if (onClose) onClose();
