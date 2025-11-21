@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             {/* Background Image with Slow Zoom */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
                 <img
-                    src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_1.jpg"
+                    src="https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mandala/mandala_1.jpg"
                     alt="Hero Background"
                     className="w-full h-full object-cover animate-slow-zoom opacity-90"
                     fetchPriority="high"

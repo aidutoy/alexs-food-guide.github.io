@@ -159,6 +159,33 @@ export const bonn: City = {
       websiteUrl: 'https://www.burgerwerk-bonn.de/',
       instagramUrl: 'https://www.instagram.com/burgerwerkbonn/?hl=en',
       tags: ["Burgers", "Fries", "gluten-free", "Vegan", "Vegetarian"]
+    },
+    {
+      id: 'mandala',
+      name: 'Mandala',
+      description: "A new experience for me is a completely vegan asian tapas restaurant serving sushi, pho, and 10 different ways to eat tofu. I encourage foodies to give it a try, as it is worth the visit. You don't usually have to book ahead but do if you are a big group. If you do order sushi, be prepared with your camera as they make a show with some dry ice that excites the table. What I personally recommend are the raspberry & tofu, the soy on the run, and the vegan fish tartare. I don't recommend the sweet potato pancake because it is just sweet potato fries stuck together and it is really dense. I also found the sushi quite good, not as good as non-vegan sushi, unfortunately, but I hope they continue to reinvent themselves in the future.",
+      quickVerdict: 'Unique vegan Asian tapas with theatrical dry ice presentation. A fun dining experience, especially for tofu lovers.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mandala/mandala_1.jpg', caption: 'Sweet potato pancake (bottom), soy on the run (right), mango roll (top right), buddha bowl (top), rainbow roll (left), raspbery and tofu (center)'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mandala/mandala_2.jpg', caption: 'Raspberry and Tofu' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mandala/mandala_4.jpg', caption: 'Pho' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mandala/mandala_5.jpg', caption: 'Pho, raspberry and tofu' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mandala/mandala_6.jpg', caption: 'Vegan fish tartare (center), rainbow roll (left), quinoa tartare (left)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mandala/mandala_7.jpg', caption: 'Sushi with dry ice - great to film' }
+      ],
+      ratings: { food: 4, drinks: 4, service: 5, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Mandala%20Vegan%20Bonn%2C%20Quantiusstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Vegan Sushi',
+      alexsTip: "I recommend going for lunch if you are a bit unsure, the menu is smaller but much cheaper than dinner. Definitely take the vietnamese coffee with condensed milk.",
+      dietary: {
+        celiac: "Limited options as everything is fried. There are only a couple sushi like the rainbow roll and also the pho.",
+        lactose: "All vegan means no lactose!",
+        vegetarian: "Everything is vegan.",
+        vegan: "Everything is vegan"
+      },
+      websiteUrl: 'https://www.burgerwerk-bonn.de/',
+      instagramUrl: 'https://www.instagram.com/mandala.vegan/?hl=en',
+      tags: ["Tapas", "Sushi", "Asian", "Vietnamese", "Pho", "gluten-free", "lactose-free", "Vegan", "Vegetarian"]
     }
   ],
 };
