@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import type { Restaurant } from '../types';
@@ -377,6 +378,7 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
             </div>
         </div>
       </div>
+    </div>
       
       {isLightboxOpen && (
           <Lightbox 
@@ -388,3 +390,4 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
     </>
   );
 };
+    
