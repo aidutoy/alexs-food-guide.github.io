@@ -245,6 +245,30 @@ export const bonn: City = {
       tags: ["Cafe", "Cakes", "Coffee", "desserts", "lactose-free", "vegetarian", "vegan"]
     },
     {
+      id: 'karawane',
+      name: "Karawane",
+      description: "Karawane is an interesting oriental restaurant that offers an all-you-can-eat oriental experience. The menu changes every two weeks, and you can check online to see what is currently available and what is planned next. Some dishes are repeated each time, so keep checking for the menu that fits you best. There are 9 dishes, always one soup but the other 8 can vary. After you finish the first round, the waiter will come back and ask which three dishes you would like to have again, but this time in a bigger portion. After you finish those three, you can get another three, and so on. Worth the trip to a quiet neighbourhood, maybe on the way back from Drachenfels. ",
+      quickVerdict: 'A unique oriental experience unlike any other in Bonn.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/karawane/karawane_1.jpg', caption: 'All-you-can-eat'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/karawane/karawane_2.jpg', caption: 'Round 2' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/karawane/karawane_3.jpg', caption: 'Round 3' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/karawane/karawane_4.jpg', caption: 'Vegetarian all-you-can-eat' },
+      ],
+      ratings: { food: 4, drinks: 4, service: 4, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Karawane%2C%20Adrianstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Oriental',
+      alexsTip: "Check out the buffet menu before and tie in a trip to Drachenfels.",
+      dietary: {
+        celiac: "As the menu varies it is hard to say but gluten is in a lot of dishes. I don't recommend the gamble.",
+        lactose: "Menu varies but only one or two out of 9 dishes with dairy.",
+        vegetarian: "Vegetarian and vegan buffet available at extra cost.",
+        vegan: "Vegetarian and vegan buffet available at extra cost."
+      },
+      websiteUrl: 'https://www.hokkaido-sushi-grill.de/',
+      tags: ["Oriental", "All-you-can-eat", "Egyptian", "Syrian", "Lebanese", "Moroccan", "Iranian", "Turkish", "Tunisian", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
       id: 'mayras_wohnzimmer',
       name: "Mayra's Wohnzimmer Cafe",
       description: "A great cafe spot in Bonn-Beuel for some coffee and homemade cakes. The cosy decor makes you feel right at home where you can catch up with your friends. The place is usually crowded for brunch, especially on the weekend so if you are a larger group, consider booking ahead. I would recommend coming for coffee and cake rather than expecting a big brunch. The smaller portion sizes and limited variety on the menu are fine for small appetites or those without dietary requirements. The staff know their allergens well and can offer at least one gluten-free cake and at least one vegan cake. When I was there, there was no gluten-free bread and the hollandaise sauce is not gluten-free, so I do not recommend for coeliacs.",
