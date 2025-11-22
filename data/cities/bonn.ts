@@ -1,4 +1,5 @@
 
+
 import type { City } from '../../types';
 
 export const bonn: City = {
@@ -98,7 +99,7 @@ export const bonn: City = {
         vegan: "Every curry can be ordered with tofu, and there are vegan sushi on the menu."
       },
       websiteUrl: 'https://www.lieferando.de/speisekarte/ha-long-endenicher-strasse',
-      tags: ["Vietnamese", "Asian", "Curry", "Sushi", "Budget-friendly", "Takeaway", "gluten-free", "vegetarian", "vegan"]
+      tags: ["Vietnamese", "Asian", "Curry", "Sushi", "Budget-friendly", "Takeaway", "gluten-free", "lactose-free", "vegetarian", "vegan"]
     },
     {
       id: 'nennillo',
@@ -394,7 +395,7 @@ export const bonn: City = {
     {
       id: 'cosycorner',
       name: "Cosy Corner",
-      description: "As a Brit, I do enjoy the occasional scone and a cuppa tea. While I can make them at home, it's great to have someone else do it. I can approve of their scones and builder's brew. I miss clotted cream a lot over here in Germany, so I have been a few times as a treat.\n\nThe cafe also offers afternoon tea, sandwiches, cakes, soups, and pasties. If you are in the area, you should stop by. ps. scone rhymes with gone not with cone.",
+      description: "As a Brit, I do enjoy the occasional scone and a cuppa tea. While I can make them at home, it's great to have someone else do it. I can approve of their scones and builder's brew. I miss clotted cream a lot over here in Germany, so I have been a few times as a treat.\n\nThe cafes are decent and the food is good. The pie and the mashed potato are tasty and there is quite some variety for the pie fillings. I found it hard to choose one. But, the salad is totally not worth it in my opinion. The iced matcha latte with strawberry is quite good even for someone who doesn't like matcha. ",
       quickVerdict: 'A charming slice of Britain offering authentic scones, clotted cream, and builder\'s tea.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cosy_corner/cosy_corner_1.jpg', caption: 'Scones with clotted cream and jam, with a builders brew (tea with milk)'},
       images: [
@@ -472,7 +473,7 @@ export const bonn: City = {
     {
       id: 'fritesbelgique',
       name: "Frites Belgique",
-      description: "An easy and quick stop to get some good fries with tasty dips. Not too much to say but definitely try the peanut dipping sauce for something new. The dips change from time to time, but mayo, vegan mayo, and peanut sauce are the best..",
+      description: "An easy and quick stop to get some good fries with tasty dips. Not too much to say but definitely try the peanut dipping sauce for something new. The dips change from time to time, but mayo, vegan mayo, and peanut sauce are the best.",
       quickVerdict: 'The best fries in Bonn. Fast, tasty, and great dips.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/fritesbelgique/frites_1.jpg', caption: 'Large fries with mayo and bacon mayo'},
       images: [
@@ -491,6 +492,79 @@ export const bonn: City = {
       websiteUrl: 'https://frites-belgique.com/',
       instagramUrl: 'https://www.instagram.com/fritesbelgique/',
       tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
+      id: 'mam-mam',
+      name: "Măm-Măm",
+      description: "Măm-Măm was my introduction to Vietnamese food, and since then I consider it one of my favourite cuisines. I love coconut so I definitely recommend the Măm-Măm Signature Curry. Both the summer rolls and spring rolls are delicious starters as well. ",
+      quickVerdict: 'Authentic Vietnamese food mixed with a German influence in one of the prettiest parts of Bonn.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mam-mam/mam-mam_1.jpg', caption: 'Duck breast in mango sauce with sweet potato mash'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mam-mam/mam-mam_2.jpg', caption: 'Vegan summer rolls with tofu and peanut sauce' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mam-mam/mam-mam_3.jpg', caption: 'Vegan spring rolls with vegetables' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mam-mam/mam-mam_4.jpg', caption: 'Vegan tofu in mango sauce' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mam-mam/mam-mam_5.jpg', caption: 'Măm-Măm Signature Curry' }
+      ],
+      ratings: { food: 5, drinks: 5, service: 5, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=M%C4%83m%20M%C4%83m%20Vietnamese%20Westlands%2C%20Mwanzi%20Rd%2C%20Nairobi%2C%20Kenya&maptype=roadmap',
+      cuisine: 'Vietnamese',
+      alexsTip: "Order the spring rolls to start and the signature curry, although come hungry.",
+      dietary: {
+        celiac: "Summer rolls and curries (ask about soy sauce).",
+        lactose: "Curries are made from coconut milk.",
+        vegetarian: "There are vegetarian spring and summer rolls as well as curries, all with tofu and vegetables.",
+        vegan: "There are vegan spring and summer rolls as well as curries, all with tofu and vegetables."
+      },
+      websiteUrl: 'https://mam-mam-bonn.de/',
+      instagramUrl: 'https://www.instagram.com/mammambonn/?hl=en',
+      tags: ["Vietnamese", "Asian", "Curry", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
+      id: 'ferdinando',
+      name: "Ferdinando",
+      description: "Big pizzas, tasty cornettos and decent coffee all for a low price. The cafe is Italian, but the pizza is not the traditional Napoli pizza, so don't expect too much. Still, I enjoyed it enough to go back many times since I studied across the street. I enjoyed the four cheese pizza the most, which definitely fills a big appetite.\n\nFor the Italians out there, please don't panic that there's Hawaiian pizza on the menu, we are in Germany after all!",
+      quickVerdict: 'Large, affordable pizzas and tasty cornettos. Not traditional Napoli style but satisfies a big appetite.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ferdinandos/ferdinandos_1.jpg', caption: 'Duck breast in mango sauce with sweet potato mash'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ferdinandos/ferdinandos_2.jpg', caption: 'Vegan summer rolls with tofu and peanut sauce' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ferdinandos/ferdinandos_3.jpg', caption: 'Vegan spring rolls with vegetables' }
+      ],
+      ratings: { food: 3.5, drinks: 4, service: 5, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ferdinando%20Italian%20coffee%20%26%20bistro%2C%20Auf%20dem%20H%C3%BCgel%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Italian',
+      alexsTip: "The opening hours are quite short and often closed, try going for lunch between classes.",
+      dietary: {
+        celiac: "Virtually no gluten-free alternatives. I do not recommend for coeliacs.",
+        lactose: "Pizza and pasta without dairy available.",
+        vegetarian: "Plenty vegetarian pizzas and pastas.",
+        vegan: "Very limited options, would not recommend."
+      },
+      websiteUrl: 'https://www.lieferando.de/speisekarte/ferdinando-italian-coffee-bistro',
+      instagramUrl: 'https://www.instagram.com/ferdinando.coffee.bistro/',
+      tags: ["Italian", "Pizza", "ciabatta", "cakes", "coffee", "Takeaway", "lactose-free", "vegetarian", "vegan"]
+    }
+    ,
+    {
+      id: 'bonnanza',
+      name: "Bonnanza Burger Factory",
+      description: "Great burgers with Aberdeen Angus beef in the heart of Poppelsdorf. It is a shame they don't have gluten-free buns because it is an easy way to reach more people. This is one of my favourite burger places and I would recommend it to anyone. I would take the BBQ bacon burger every time with a side of fries. I would not recommend the coleslaw unless you prefer it dry. ",
+      quickVerdict: 'Top-quality Aberdeen Angus burgers in the heart of Poppelsdorf. Try the BBQ bacon burger.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/bonnanza/bonnanza_1.jpg', caption: 'Duck breast in mango sauce with sweet potato mash'},
+      images: [
+        
+      ],
+      ratings: { food: 4, drinks: 4, service: 5, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Bonnanza%20Burger%20Factory%2C%20Clemens-August-Stra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Burgers',
+      alexsTip: "Take the BBQ bacon burger with fries, you won't be disappointed.",
+      dietary: {
+        celiac: "No gluten-free buns, only fries.",
+        lactose: "No lactose-free cheese available, burgers without cheese available.",
+        vegetarian: "No vegetarian burgers listed on the menu. Salads available but not worth it.",
+        vegan: "No vegan burgers listed on the menu, ask about fries. Salads available but not worth it."
+      },
+      websiteUrl: 'https://www.bonnanzaburger.de/',
+      tags: ["Burgers", "Fries", "lactose-free"]
     }
   ],
 };

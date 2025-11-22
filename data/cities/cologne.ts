@@ -193,9 +193,9 @@ export const cologne: City = {
       name: "Frites Belgique",
       description: "An easy and quick stop to get some good fries with tasty dips. Not too much to say but definitely try the peanut dipping sauce for something new. The dips change from time to time, but mayo, vegan mayo, and peanut sauce are the best..",
       quickVerdict: 'The best fries in town. Fast, tasty, and great dips.',
-      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ffritesbelgique/frites_1.jpg', caption: 'Large fries with mayo and bacon mayo'},
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/fritesbelgique/frites_1.jpg', caption: 'Large fries with mayo and bacon mayo'},
       images: [
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ffritesbelgique/frites_2.jpg', caption: 'Regular fries with peanut sauce' }
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/fritesbelgique/frites_2.jpg', caption: 'Regular fries with peanut sauce' }
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frites%20Belgique%2C%20Hohe%20Stra%C3%9Fe%2C%20Cologne%2C%20Germany&maptype=roadmap',
