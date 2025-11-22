@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { cities } from '../data/mockData';
@@ -321,15 +322,6 @@ const SearchPage: React.FC = () => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                                     
-                                    {/* Quick Verdict Badge on Grid Item (Optional but nice) */}
-                                    {restaurant.quickVerdict && (
-                                        <div className="absolute top-4 left-4 z-10">
-                                             <span className="bg-brand-accent/90 backdrop-blur-md text-brand-dark text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider shadow-lg">
-                                                Top Pick
-                                             </span>
-                                        </div>
-                                    )}
-
                                     <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                         <div className="flex justify-between items-end mb-2">
                                              <p className="text-brand-primary font-medium tracking-widest uppercase text-xs">
@@ -395,3 +387,4 @@ const SearchPage: React.FC = () => {
 };
 
 export default SearchPage;
+    

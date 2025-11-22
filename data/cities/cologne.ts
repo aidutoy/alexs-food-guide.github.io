@@ -84,7 +84,7 @@ export const cologne: City = {
     {
       id: 'nennillo',
       name: 'Nennillo',
-      description: "The closest pizza to a true Napoli pizza you can find in Germany. I have been back many, many times and order takeout often. The pizzas are cooked in a traditional pizza oven so each pizza is cooked slighltly different, some more pale and some more burnt. If you are not happy with the cook of you pizza you can always send it back as the service staff are very polite. There are three in Köln, the one I have visited was in the Belgium quarter so I can recommend this one.",
+      description: "The closest pizza to a true Napoli pizza you can find in Germany. I have been back many, many times and order takeout often. The pizzas are cooked in a traditional pizza oven so each pizza is cooked slighltly different, some more pale and some more burnt.\n\nIf you are not happy with the cook of you pizza you can always send it back as the service staff are very polite. There are three in Köln, the one I have visited was in the Belgium quarter so I can recommend this one.",
       quickVerdict: 'Napoli pizza, best in town, and great value. 10-20 minutes for pick-up order.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_1.jpg', caption: 'Bufalina gluten-free (bottom), Rot und Böse (right) and Margherita (top)'},
       images: [
@@ -114,7 +114,7 @@ export const cologne: City = {
     {
       id: 'frittenwerk',
       name: "Frittenwerk",
-      description: "Definitely a good spot for some loaded fries or 'poutine'. I was surprised by how filling the fries were after seeing the portion size, so don't be too disappointed. The price is a little on the expensive side so I wouldn't go back often but a nice treat when you want to try something different. I had the Tijuana street fries that are topped with tomatoes, avocado and sour cream. I can also recommend the BBQ pulled pork poutine. I do not recommend adding extra falafel on top as it is not worth the price You can order at the screens and change the language so you don't need to speak German. Note the wait time for all orders when eating in is approx 30 minutes, so I wouldn' go if you are in a rush.",
+      description: "Definitely a good spot for some loaded fries or 'poutine'. I was surprised by how filling the fries were after seeing the portion size, so don't be too disappointed. The price is a little on the expensive side so I wouldn't go back often but a nice treat when you want to try something different.\n\nI had the Tijuana street fries that are topped with tomatoes, avocado and sour cream. I can also recommend the BBQ pulled pork poutine. I do not recommend adding extra falafel on top as it is not worth the price\n\nYou can order at the screens and change the language so you don't need to speak German. Note the wait time for all orders when eating in is approx 30 minutes, so I wouldn' go if you are in a rush.",
       quickVerdict: 'The best loaded fries in the area, wait time is a bit long but worth it.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_2.jpg', caption: 'Tijuana street fries with falafel'},
       images: [
@@ -132,6 +132,83 @@ export const cologne: City = {
       },
       websiteUrl: 'https://frittenwerk.com/',
       instagramUrl: 'https://www.instagram.com/frittenwerk/',
+      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
+      id: 'kaffeesaurus',
+      name: "Kaffeesaurus",
+      description: "A great spot for brunch with friends, or a quick coffee and cake near the central train station, or even an atmospheric place to study during the week. I would recommend coming here to try the chai and cakes.\n\nIn my experience the hollandaise sauce wasn't as good as in cream company but the Brontosaurus burger I had one time was really tasty. I think the prices are fair and the atmosphere is really nice, so overall a great cafe.",
+      quickVerdict: 'A trendy, spacious spot near the station ideal for brunch or study. Delicious cakes and fair prices.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_1.jpg', caption: 'Brontosaurus burger'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_2.jpg', caption: 'Open toast sandwiches, Bennysaurus eggs (bottom right), Eggs any style with poached eggs, extra salmon on gluten free bread with a side of turkey bacon (mid left)'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_3.jpg', caption: 'Bennysaurus eggs'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_4.jpg', caption: 'Carrot cake'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_5.jpg', caption: 'Chai'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_6.jpg', caption: 'Chai'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_7.jpg', caption: 'Options on 25.05.2025 with two gluten free options and 5 vegan options'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_8.jpg', caption: 'Gluten-free brownies'}
+      ],
+      ratings: { food: 4, drinks: 5, service: 5, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Kaffeesaurus%2C%20Friesenplatz%2C%20Cologne%2C%20Germany&maptype=roadmap',
+      cuisine: 'Cafe',
+      alexsTip: "Definitely order the chai, it tastes close to the real thing and even comes with a timer when to pour. The Brontosaurus burger is my favourite.",
+      dietary: {
+        celiac: "Some gluten free cakes, salads and gluten-free toast. Hollandaise sauce is not gluten-free.",
+        lactose: "Lactose-free milk for coffee available.",
+        vegetarian: "Plenty options for sandwiches, burgers, and cakes.",
+        vegan: "Cakes, main dishes and milk alternatives for coffee."
+      },
+      websiteUrl: 'https://kaffeesaurus.com/',
+      instagramUrl: 'https://www.instagram.com/kaffeesaurus/',
+      tags: ["Cafe", "Burgers", "Cakes", "Sandwiches", "Coffee", "Tea", "Chai", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+    }, 
+    {
+      id: 'losteria',
+      name: "Losteria",
+      description: "A good spot for a large appetite, the pizzas are so big they don't fit on a plate, and you will probably take some home. I definitely recommend coming to feed a family, or if you have a work event, because who doesn't like pizza and pasta?\n\nNow the pizza isn't as good as Napoli pizza, and they do have Hawaiian, but I am a fan regardless. You can even split the pizza in half and share with a friend, or just try two different toppings yourself, like I do. I would not recommend the pasta as the portion size is too small, and honestly, I don't think it is what they are known for.\n\nYou can find L'Osteria everywhere. There are many in Cologne, but I will only link to only one for simplicity. I don't expect the menu or quality of food to change much between the different locations. The price is fair for what you get, just have a few Aperol spritz and try to finish your plate.",
+      quickVerdict: 'Huge pizzas for a fair price, you will probably end up taking half home.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_1.jpg', caption: 'Various pizzas'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_2.jpg', caption: 'Half Hawaiian and BBQ chicken (spicy) pizza'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_4.jpg', caption: 'Quattro Formaggi pizza'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_3.jpg', caption: 'Pizza pane and bruschetta (top)'}
+      ],
+      ratings: { food: 4, drinks: 5, service: 5, price: 2 },
+      mapEmbedUrl: "https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=L'Osteria%20K%C3%B6ln%20Zollhafen%2C%20Am%20Zollhafen%2C%20Cologne%2C%20Germany&maptype=roadmap",
+      cuisine: 'Italian',
+      alexsTip: "Order half of your favourite pizza and half of something new to try.",
+      dietary: {
+        celiac: "No gluten-free pasta or pizza.",
+        lactose: "No specific lactose-free cheese but parmesean can be lactose-free so check with the waiter.",
+        vegetarian: "Plenty vegetarian pizza and pasta options.",
+        vegan: "Vegan pizza and pasta available."
+      },
+      websiteUrl: 'https://losteria.net/de/',
+      instagramUrl: 'https://www.instagram.com/losteria.de/?hl=en',
+      tags: ["Italian", "Pizza", "Aperol", "Takeaway", "vegetarian", "vegan"]
+    },
+    {
+      id: 'fritesbelgique',
+      name: "Frites Belgique",
+      description: "An easy and quick stop to get some good fries with tasty dips. Not too much to say but definitely try the peanut dipping sauce for something new. The dips change from time to time, but mayo, vegan mayo, and peanut sauce are the best..",
+      quickVerdict: 'The best fries in town. Fast, tasty, and great dips.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ffritesbelgique/frites_1.jpg', caption: 'Large fries with mayo and bacon mayo'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ffritesbelgique/frites_2.jpg', caption: 'Regular fries with peanut sauce' }
+      ],
+      ratings: { food: 5, drinks: 4, service: 5, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frites%20Belgique%2C%20Hohe%20Stra%C3%9Fe%2C%20Cologne%2C%20Germany&maptype=roadmap',
+      cuisine: 'Fries',
+      alexsTip: "Large fries with the peanut sauce if on offer, and if not go for the mayo.",
+      dietary: {
+        celiac: "All fries are gluten-free.",
+        lactose: "All fries are lactose-free and most dips are too.",
+        vegetarian: "Fries cooked in plant based oil, only bacon mayo dip not vegetarian.",
+        vegan: "Fries cooked in plant base oil, no animal fat, and there is vegan mayo."
+      },
+      websiteUrl: 'https://frites-belgique.com/',
+      instagramUrl: 'https://www.instagram.com/fritesbelgique/',
       tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
     }
   ],

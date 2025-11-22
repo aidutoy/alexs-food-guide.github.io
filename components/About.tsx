@@ -31,7 +31,7 @@ const About: React.FC = () => {
                             </h2>
                             <div className="space-y-6 text-lg font-light text-gray-300 leading-relaxed">
                                 <p>
-                                    When I was 25 yreas old, I moved from Scotland to Bonn for University. My introduction flyer to the University had a nice map of the city and the Rhein. I took that map a year later and thought...
+                                    When I was 25 years old, I moved from Scotland to Bonn for University. My introduction flyer to the University had a nice map of the city and the Rhein. I took that map a year later and thought...
                                 </p>
                                 <p className="pl-4 border-l-2 border-brand-primary/50 italic text-white/90">
                                     "Wouldn't it be cool to stick this up on a board in the kitchen and pin my favourite spots in Bonn?"

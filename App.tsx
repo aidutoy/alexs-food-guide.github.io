@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import LocationsPage from './pages/LocationsPage';
 import SearchPage from './pages/SearchPage';
 import GalleryPage from './pages/GalleryPage';
+import UpcomingPage from './pages/UpcomingPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,6 +33,7 @@ function App() {
             <Route path="/city/:cityId" element={<CityPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/upcoming" element={<UpcomingPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/search" element={<SearchPage />} />
           </Routes>
@@ -43,3 +45,4 @@ function App() {
 }
 
 export default App;
+    

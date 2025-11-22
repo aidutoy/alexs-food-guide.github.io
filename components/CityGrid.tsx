@@ -21,7 +21,7 @@ const CityGrid: React.FC<{ cities: City[] }> = ({ cities }) => {
                     <h1 className="text-5xl font-playfair font-bold text-white mb-4">
                         Choose a <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">City</span>
                     </h1>
-                    <p className="text-white/60 font-light text-lg">A handful of cities I have personally experienced.</p>
+                    <p className="text-white/60 font-light text-lg">A handful of cities I have personally experienced. Hover over to preview. Click to explore.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

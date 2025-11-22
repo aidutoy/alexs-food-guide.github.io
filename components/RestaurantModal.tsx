@@ -251,7 +251,11 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                         </div>
                     )}
 
-                    <p className="text-white/70 leading-relaxed font-light">{restaurant.description}</p>
+                    <div className="text-white/70 leading-relaxed font-light space-y-4">
+                        {restaurant.description.split('\n\n').map((paragraph, idx) => (
+                            <p key={idx}>{paragraph}</p>
+                        ))}
+                    </div>
                 </div>
                 
                 <div className="space-y-4 py-8 border-t border-white/10">
@@ -390,4 +394,3 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
     </>
   );
 };
-    

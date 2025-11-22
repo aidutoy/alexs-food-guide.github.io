@@ -54,8 +54,8 @@ const NavBar: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex-shrink-0">
-                             <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-white font-playfair text-2xl font-bold">
-                                Alex's Food Guide
+                             <Link to="/" onClick={() => setIsMenuOpen(false)} className="font-playfair text-2xl font-bold">
+                                <span className="text-white">Alex's</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Food Guide</span>
                             </Link>
                         </div>
                         <div className="hidden md:block">
@@ -65,6 +65,7 @@ const NavBar: React.FC = () => {
                                     <GalleryIcon className="w-4 h-4 mb-0.5" />
                                     Gallery
                                 </Link>
+                                <Link to="/upcoming" className={navLinkClass}>Upcoming</Link>
                                 <Link to="/contact" className={navLinkClass}>Contact</Link>
                                 <Link to="/search" className={navLinkClass}>
                                     <SearchIcon className="w-4 h-4" />
@@ -103,6 +104,7 @@ const NavBar: React.FC = () => {
                 <div className="flex flex-col items-center justify-center h-full space-y-8 overflow-y-auto py-8">
                     <Link to="/locations" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Locations</Link>
                     <Link to="/gallery" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Gallery</Link>
+                    <Link to="/upcoming" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Upcoming</Link>
                     <Link to="/contact" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Contact</Link>
                     <Link to="/search" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Search</Link>
                 </div>

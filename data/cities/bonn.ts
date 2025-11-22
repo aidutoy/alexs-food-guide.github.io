@@ -77,7 +77,7 @@ export const bonn: City = {
     {
       id: 'ha-long',
       name: 'Ha Long',
-      description: "I have been going to Ha Long since it was called Ginger's. It is one of my favourite restaurants in Bonn because I love their mama mango. The portion sizes are huge and you will definitely leave the place full. I haven't tried the sushi, but I have seen many other tables ordering it too. I quite often order take away for pickup or delivery so don't be put off if there are no customers inside.",
+      description: "I have been going to Ha Long since it was called Ginger's. It is one of my favourite restaurants in Bonn because I love their mama mango. The portion sizes are huge and you will definitely leave the place full.\n\nI haven't tried the sushi, but I have seen many other tables ordering it too. I quite often order take away for pickup or delivery so don't be put off if there are no customers inside.",
       quickVerdict: 'Huge portions, incredible flavors, and great value. Don’t judge the empty tables, it’s a takeaway favorite.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ha_long/ha_long_1.jpg', caption: 'Mama mango with crispy fried chicken.' },
       images: [
@@ -103,7 +103,7 @@ export const bonn: City = {
     {
       id: 'nennillo',
       name: 'Nennillo',
-      description: "The closest pizza to a true Napoli pizza you can find in Germany. I have been back many, many times and order takeout often. The pizzas are cooked in a traditional pizza oven so each pizza is cooked slighltly different, some more pale and some more burnt. If you are not happy with the cook of you pizza you can always send it back as the service staff are very polite. There are two in Bonn, the main restaurant in Altstadt and one smaller one in Poppelsdorf that does gluten-free pizza with enough notice.",
+      description: "The closest pizza to a true Napoli pizza you can find in Germany. I have been back many, many times and order takeout often. The pizzas are cooked in a traditional pizza oven so each pizza is cooked slighltly different, some more pale and some more burnt.\n\nIf you are not happy with the cook of you pizza you can always send it back as the service staff are very polite. There are two in Bonn, the main restaurant in Altstadt and one smaller one in Poppelsdorf that does gluten-free pizza with enough notice.",
       quickVerdict: 'Napoli pizza, best in town, and great value. 10-20 minutes for pick-up order.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_1.jpg', caption: 'Bufalina gluten-free (bottom), Rot und Böse (right) and Margherita (top)'},
       images: [
@@ -133,8 +133,8 @@ export const bonn: City = {
     {
       id: 'burgerwerk',
       name: 'Burgerwerk',
-      description: "One of my favourite spots for burgers in Bonn is actually in Bonn-Beuel. Definitely worth a trip over the Kennedy bridge for these burgers. I have been at least three times and tried a few different burgers. The burgers are cooked to your preference of medium or well-done. The special fries are not worth it, definitely stick to the regular or sweet potato fries.",
-      quickVerdict: 'Amazing burgers cooked to medium or well-done. ',
+      description: "One of my favourite spots for burgers in Bonn is actually in Bonn-Beuel. Definitely worth a trip over the Kennedy bridge for these burgers. I have been at least three times and tried a few different burgers.\n\nThe burgers are cooked to your preference of medium or well-done. The special fries are not worth it, definitely stick to the regular or sweet potato fries.",
+      quickVerdict: 'Amazing burgers cooked to medium or well-done.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_1.jpg', caption: 'Camembert burger with sweet potato fries'},
       images: [
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_2.jpg', caption: 'Camembert burger' },
@@ -162,7 +162,7 @@ export const bonn: City = {
     {
       id: 'mandala',
       name: 'Mandala',
-      description: "A new experience for me is a completely vegan asian tapas restaurant serving sushi, pho, and 10 different ways to eat tofu. I encourage foodies to give it a try, as it is worth the visit. You don't usually have to book ahead but do if you are a big group. If you do order sushi, be prepared with your camera as they make a show with some dry ice that excites the table. What I personally recommend are the raspberry & tofu, the soy on the run, and the vegan fish tartare. I don't recommend the sweet potato pancake because it is just sweet potato fries stuck together and it is really dense. I also found the sushi quite good, not as good as non-vegan sushi, unfortunately, but I hope they continue to reinvent themselves in the future.",
+      description: "A new experience for me is a completely vegan asian tapas restaurant serving sushi, pho, and 10 different ways to eat tofu. I encourage foodies to give it a try, as it is worth the visit. You don't usually have to book ahead but do if you are a big group.\n\nIf you do order sushi, be prepared with your camera as they make a show with some dry ice that excites the table. What I personally recommend are the raspberry & tofu, the soy on the run, and the vegan fish tartare.\n\nI don't recommend the sweet potato pancake because it is just sweet potato fries stuck together and it is really dense. I also found the sushi quite good, not as good as non-vegan sushi, unfortunately, but I hope they continue to reinvent themselves in the future.",
       quickVerdict: 'Unique vegan Asian tapas with theatrical dry ice presentation. A fun dining experience, especially for tofu lovers.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mandala/mandala_1.jpg', caption: 'Sweet potato pancake (bottom), soy on the run (right), mango roll (top right), buddha bowl (top), rainbow roll (left), raspbery and tofu (center)'},
       images: [
@@ -247,7 +247,7 @@ export const bonn: City = {
     {
       id: 'karawane',
       name: "Karawane",
-      description: "Karawane is an interesting oriental restaurant that offers an all-you-can-eat oriental experience. The menu changes every two weeks, and you can check online to see what is currently available and what is planned next. Some dishes are repeated each time, so keep checking for the menu that fits you best. There are 9 dishes, always one soup but the other 8 can vary. After you finish the first round, the waiter will come back and ask which three dishes you would like to have again, but this time in a bigger portion. After you finish those three, you can get another three, and so on. Worth the trip to a quiet neighbourhood, maybe on the way back from Drachenfels. ",
+      description: "Karawane is an interesting oriental restaurant that offers an all-you-can-eat oriental experience. The menu changes every two weeks, and you can check online to see what is currently available and what is planned next. Some dishes are repeated each time, so keep checking for the menu that fits you best.\n\nThere are 9 dishes, always one soup but the other 8 can vary. After you finish the first round, the waiter will come back and ask which three dishes you would like to have again, but this time in a bigger portion. After you finish those three, you can get another three, and so on. Worth the trip to a quiet neighbourhood, maybe on the way back from Drachenfels. ",
       quickVerdict: 'A unique oriental experience unlike any other in Bonn.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/karawane/karawane_1.jpg', caption: 'All-you-can-eat'},
       images: [
@@ -271,7 +271,7 @@ export const bonn: City = {
     {
       id: 'ichiban',
       name: "Ichiban Noodlebar",
-      description: "A great spot in Bonn for some cheap noodles and Japanese food. I can recommend ordering the Tonkatsu Set or the Kastu Curry Set as you get a lot of food cheap and I couldn't fault the taste. The restaurant doesn't take any bookings so larger groups are more difficult to seat. I would recommend going early in the evening during the week to avoid disappointment. ",
+      description: "A great spot in Bonn for some cheap noodles and Japanese food. I can recommend ordering the Tonkatsu Set or the Kastu Curry Set as you get a lot of food cheap and I couldn't fault the taste.\n\nThe restaurant doesn't take any bookings so larger groups are more difficult to seat. I would recommend going early in the evening during the week to avoid disappointment. ",
       quickVerdict: 'Cheap curry sets and tasty ramen in the heart of Bonn.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ichiban/ichiban_1.jpg', caption: 'Katsu Curry Set'},
       images: [
@@ -298,7 +298,7 @@ export const bonn: City = {
     {
       id: 'mayras_wohnzimmer',
       name: "Mayra's Wohnzimmer Cafe",
-      description: "A great cafe spot in Bonn-Beuel for some coffee and homemade cakes. The cosy decor makes you feel right at home where you can catch up with your friends. The place is usually crowded for brunch, especially on the weekend so if you are a larger group, consider booking ahead. I would recommend coming for coffee and cake rather than expecting a big brunch. The smaller portion sizes and limited variety on the menu are fine for small appetites or those without dietary requirements. The staff know their allergens well and can offer at least one gluten-free cake and at least one vegan cake. When I was there, there was no gluten-free bread and the hollandaise sauce is not gluten-free, so I do not recommend for coeliacs.",
+      description: "A great cafe spot in Bonn-Beuel for some coffee and homemade cakes. The cosy decor makes you feel right at home where you can catch up with your friends. The place is usually crowded for brunch, especially on the weekend so if you are a larger group, consider booking ahead.\n\nI would recommend coming for coffee and cake rather than expecting a big brunch. The smaller portion sizes and limited variety on the menu are fine for small appetites or those without dietary requirements.\n\nThe staff know their allergens well and can offer at least one gluten-free cake and at least one vegan cake. When I was there, there was no gluten-free bread and the hollandaise sauce is not gluten-free, so I do not recommend for coeliacs.",
       quickVerdict: 'A cosy cafe with fresh baked cakes and drinks to keep you warm in Winter.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mayras_wohnzimmer/mayra_1.jpg', caption: 'Monsieur camembert'},
       images: [
@@ -324,7 +324,7 @@ export const bonn: City = {
     {
       id: 'frittenwerk',
       name: "Frittenwerk",
-      description: "Definitely a good spot for some loaded fries or 'poutine'. I was surprised by how filling the fries were after seeing the portion size, so don't be too disappointed. The price is a little on the expensive side so I wouldn't go back often but a nice treat when you want to try something different. I had the Tijuana street fries that are topped with tomatoes, avocado and sour cream. I can also recommend the BBQ pulled pork poutine. I do not recommend adding extra falafel on top as it is not worth the price You can order at the screens and change the language so you don't need to speak German. Note the wait time for all orders when eating in is approx 30 minutes, so I wouldn' go if you are in a rush.",
+      description: "Definitely a good spot for some loaded fries or 'poutine'. I was surprised by how filling the fries were after seeing the portion size, so don't be too disappointed. The price is a little on the expensive side so I wouldn't go back often but a nice treat when you want to try something different.\n\nI had the Tijuana street fries that are topped with tomatoes, avocado and sour cream. I can also recommend the BBQ pulled pork poutine. I do not recommend adding extra falafel on top as it is not worth the price\n\nYou can order at the screens and change the language so you don't need to speak German. Note the wait time for all orders when eating in is approx 30 minutes, so I wouldn' go if you are in a rush.",
       quickVerdict: 'The best loaded fries in Bonn, wait time is a bit long but worth it.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_2.jpg', caption: 'Tijuana street fries with falafel'},
       images: [
@@ -342,6 +342,154 @@ export const bonn: City = {
       },
       websiteUrl: 'https://frittenwerk.com/',
       instagramUrl: 'https://www.instagram.com/frittenwerk/',
+      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
+      id: 'burgermanfaktur',
+      name: "Burgermanfaktur",
+      description: "A great spot in Bonn for burgers that competes well with Bonanza burger and Burgerwerk. There are gluten-free buns and vegan burgers upon request if not on the menu already. The fries are like steakhouse fries which I prefer over normal skinny fries. ",
+      quickVerdict: 'Juicy, high-quality burgers with thick steakhouse fries. Excellent gluten-free and vegan options available.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgermanfaktur/burgermanfaktur_1.jpg', caption: 'Der Tyropola'},
+      images: [
+        
+      ],
+      ratings: { food: 4, drinks: 4, service: 3, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Burgermanufaktur%20am%20Frankenbad%2C%20Vorgebirgsstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Burgers',
+      alexsTip: "I would recommend to all cheese lovers, der tyropola, which is covered in melted cheese and bacon. A one of kind burger for me here in Bonn. You can choose to upgrade from 120g to 200g patty for only one euro more which is a good deal. ",
+      dietary: {
+        celiac: "There are gluten-free buns on the menu but I have not personally ordered one. Fries are gluten-free.",
+        lactose: "No specific lactose-free cheese on the menu but burgers without cheese possible.",
+        vegetarian: "Two vegan burgers on the menu.",
+        vegan: "Two vegan burgers on the menu."
+      },
+      websiteUrl: 'https://www.burgermanufaktur-bonn.de/',
+      instagramUrl: 'https://www.instagram.com/burgermanufaktur.bonn/?hl=en',
+      tags: ["Burgers", "Fries", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
+      id: 'pieme',
+      name: "Pie Me",
+      description: "If you ever fancied Australian pies, for whatever reason, then Pie Me is the place to go. I haven't heard Australia having good enough pies for it's own restaurant but here it is. It is a success amongst students for a quick lunch or for a casual get together.\n\nThe cafes are decent and the food is good. The pie and the mashed potato are tasty and there is quite some variety for the pie fillings. I found it hard to choose one. But, the salad is totally not worth it in my opinion. The iced matcha latte with strawberry is quite good even for someone who doesn't like matcha. ",
+      quickVerdict: 'Authentic Australian savory pies served with mash. A hearty, quick, and affordable favorite.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/pie_me/pie_me_1.jpg', caption: 'Chicken curry pie menu with mango chutney'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/pie_me/pie_me_2.jpg', caption: 'Sweet potato salad bowl (top), chicken curry pie menu with mango chutney (bottom)'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/pie_me/pie_me_3.jpg', caption: 'Mac and cheese pie menu with cheese sauce'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/pie_me/pie_me_4.jpg', caption: 'Iced matcha latte with strawberry syrup'}
+      ],
+      ratings: { food: 3.5, drinks: 4, service: 4, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Pie%20Me%20Caf%C3%A9%20am%20Frankenbad%2C%20Vorgebirgsstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Pies',
+      alexsTip: "Take the pie menu with mashed potatoes, but never the salad, it is overpriced.",
+      dietary: {
+        celiac: "Only salads, not suitable for coealiacs.",
+        lactose: "vegan pies and pies without lactose but nothing specifically lactose-free",
+        vegetarian: "Plenty vegetarian pies and mashed potatoes.",
+        vegan: "Vegan pies and vegan mashed potatoes."
+      },
+      instagramUrl: 'https://www.instagram.com/piemecafe/',
+      tags: ["Pies", "Australian", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
+      id: 'cosycorner',
+      name: "Cosy Corner",
+      description: "As a Brit, I do enjoy the occasional scone and a cuppa tea. While I can make them at home, it's great to have someone else do it. I can approve of their scones and builder's brew. I miss clotted cream a lot over here in Germany, so I have been a few times as a treat.\n\nThe cafe also offers afternoon tea, sandwiches, cakes, soups, and pasties. If you are in the area, you should stop by. ps. scone rhymes with gone not with cone.",
+      quickVerdict: 'A charming slice of Britain offering authentic scones, clotted cream, and builder\'s tea.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cosy_corner/cosy_corner_1.jpg', caption: 'Scones with clotted cream and jam, with a builders brew (tea with milk)'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cosy_corner/cosy_corner_2.jpg', caption: 'Scones'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cosy_corner/cosy_corner_3.jpg', caption: 'Scones with clotted cream first and strawberry jam'}
+      ],
+      ratings: { food: 4, drinks: 5, service: 5, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Pie%20Me%20Caf%C3%A9%20am%20Frankenbad%2C%20Vorgebirgsstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'British',
+      alexsTip: "Take the builders brew and some scones with clotted cream for a proper british treat. I recommend the ploughmans sandwich if you prefer savoury food.",
+      dietary: {
+        celiac: "Very limited but gluten-free banana bread on Instagram.",
+        lactose: "Scones are made with dairy but some sandwiches and vegan cakes available.",
+        vegetarian: "Scones are vegetarian and there are vegetarian sandwiches.",
+        vegan: "Limited options but there are vegan cakes daily."
+      },
+      websiteUrl: 'https://cosycorner1717.de/',
+      instagramUrl: 'https://www.instagram.com/cosycorner1717/?hl=en',
+      tags: ["British", "Tea", "Scones", "Cakes", "Sandwiches", "vegetarian", "vegan"]
+    }, 
+    {
+      id: 'kaffeesaurus',
+      name: "Kaffeesaurus",
+      description: "A great spot for brunch with friends, or a quick coffee and cake near the central train station, or even an atmospheric place to study during the week. I would recommend coming here to try the chai and cakes.\n\nIn my experience the hollandaise sauce wasn't as good as in cream company but the Brontosaurus burger I had one time was really tasty. I think the prices are fair and the atmosphere is really nice, so overall a great cafe.",
+      quickVerdict: 'A trendy, spacious spot near the station ideal for brunch or study. Delicious cakes and fair prices.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_1.jpg', caption: 'Brontosaurus burger'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_2.jpg', caption: 'Open toast sandwiches, Bennysaurus eggs (bottom right), Eggs any style with poached eggs, extra salmon on gluten free bread with a side of turkey bacon (mid left)'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_3.jpg', caption: 'Bennysaurus eggs'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_4.jpg', caption: 'Carrot cake'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_5.jpg', caption: 'Chai'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_6.jpg', caption: 'Chai'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_7.jpg', caption: 'Options on 25.05.2025 with two gluten free options and 5 vegan options'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_8.jpg', caption: 'Gluten-free brownies'}
+      ],
+      ratings: { food: 4, drinks: 5, service: 5, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Kaffeesaurus%2C%20Am%20Hauptbahnhof%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Cafe',
+      alexsTip: "Definitely order the chai, it tastes close to the real thing and even comes with a timer when to pour. The Brontosaurus burger is my favourite.",
+      dietary: {
+        celiac: "Some gluten free cakes, salads and gluten-free toast. Hollandaise sauce is not gluten-free.",
+        lactose: "Lactose-free milk for coffee available.",
+        vegetarian: "Plenty options for sandwiches, burgers, and cakes.",
+        vegan: "Cakes, main dishes and milk alternatives for coffee."
+      },
+      websiteUrl: 'https://kaffeesaurus.com/',
+      instagramUrl: 'https://www.instagram.com/kaffeesaurus/',
+      tags: ["Cafe", "Burgers", "Cakes", "Sandwiches", "Coffee", "Tea", "Chai", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+    }, 
+    {
+      id: 'losteria',
+      name: "Losteria",
+      description: "A good spot for a large appetite, the pizzas are so big they don't fit on a plate, and you will probably take some home. I definitely recommend coming to feed a family, or if you have a work event, because who doesn't like pizza and pasta?\n\nNow the pizza isn't as good as Napoli pizza, and they do have Hawaiian, but I am a fan regardless. You can even split the pizza in half and share with a friend, or just try two different toppings yourself, like I do. I would not recommend the pasta as the portion size is too small, and honestly, I don't think it is what they are known for.\n\nYou can find L'Osteria everywhere. There are many in Bonn and Cologne, but I will only link to the one I went to in Bonn for simplicity. I don't expect the menu or quality of food to change much between the different locations. The price is fair for what you get, just have a few Aperol spritz and try to finish your plate.",
+      quickVerdict: 'Huge pizzas for a fair price, you will probably end up taking half home.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_1.jpg', caption: 'Various pizzas'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_2.jpg', caption: 'Half Hawaiian and BBQ chicken (spicy) pizza'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_4.jpg', caption: 'Quattro Formaggi pizza'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_3.jpg', caption: 'Pizza pane and bruschetta (top)'}
+      ],
+      ratings: { food: 4, drinks: 5, service: 5, price: 2 },
+      mapEmbedUrl: "https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=L'Osteria%20Bonn%20In%20der%20S%C3%BCrst%2C%20In%20der%20S%C3%BCrst%2C%20Bonn%2C%20Germany&maptype=roadmap",
+      cuisine: 'Italian',
+      alexsTip: "Order half of your favourite pizza and half of something new to try.",
+      dietary: {
+        celiac: "No gluten-free pasta or pizza.",
+        lactose: "No specific lactose-free cheese but parmesean can be lactose-free so check with the waiter.",
+        vegetarian: "Plenty vegetarian pizza and pasta options.",
+        vegan: "Vegan pizza and pasta available."
+      },
+      websiteUrl: 'https://losteria.net/de/',
+      instagramUrl: 'https://www.instagram.com/losteria.de/?hl=en',
+      tags: ["Italian", "Pizza", "Aperol", "Takeaway", "vegetarian", "vegan"]
+    },
+    {
+      id: 'fritesbelgique',
+      name: "Frites Belgique",
+      description: "An easy and quick stop to get some good fries with tasty dips. Not too much to say but definitely try the peanut dipping sauce for something new. The dips change from time to time, but mayo, vegan mayo, and peanut sauce are the best..",
+      quickVerdict: 'The best fries in Bonn. Fast, tasty, and great dips.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/fritesbelgique/frites_1.jpg', caption: 'Large fries with mayo and bacon mayo'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/fritesbelgique/frites_2.jpg', caption: 'Regular fries with peanut sauce' }
+      ],
+      ratings: { food: 5, drinks: 4, service: 5, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frites%20Belgique%2C%20Sternstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      cuisine: 'Fries',
+      alexsTip: "Large fries with the peanut sauce if on offer, and if not go for the mayo.",
+      dietary: {
+        celiac: "All fries are gluten-free.",
+        lactose: "All fries are lactose-free and most dips are too.",
+        vegetarian: "Fries cooked in plant based oil, only bacon mayo dip not vegetarian.",
+        vegan: "Fries cooked in plant base oil, no animal fat, and there is vegan mayo."
+      },
+      websiteUrl: 'https://frites-belgique.com/',
+      instagramUrl: 'https://www.instagram.com/fritesbelgique/',
       tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
     }
   ],
