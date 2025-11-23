@@ -11,33 +11,17 @@ import InfoIcon from './icons/InfoIcon';
 import ClockIcon from './icons/ClockIcon';
 import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from './icons/DietaryIcons';
 import Lightbox from './Lightbox';
+import StarRating from './StarRating';
 
 interface RestaurantModalProps {
   restaurant: Restaurant | null;
   onClose: () => void;
 }
 
-const StarIcon: React.FC<{ filled: boolean; }> = ({ filled }) => (
-    <svg 
-        className={`w-4 h-4 ${filled ? 'text-brand-primary' : 'text-white/20'}`} 
-        fill="currentColor" 
-        viewBox="0 0 20 20"
-    >
-        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-    </svg>
-);
-
 const RatingDisplay: React.FC<{ label: string; score: number; max: number; }> = ({ label, score, max }) => (
     <div className="flex items-center justify-between text-sm">
         <span className="text-white/60 font-light tracking-wide">{label}</span>
-        <div className="flex gap-1">
-            {Array.from({ length: max }, (_, i) => 
-                <StarIcon 
-                    key={i} 
-                    filled={i < score}
-                />
-            )}
-        </div>
+        <StarRating score={score} max={max} />
     </div>
 );
 

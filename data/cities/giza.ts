@@ -37,9 +37,52 @@ const placeholderRestaurants = newRestaurants.map(r => {
 export const giza: City = {
   id: 'giza',
   name: 'Giza',
-  image: 'https://picsum.photos/seed/giza-city/800/600',
+  image: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/giza.jpg',
   coordinates: { lat: 29.9866, lon: 31.2120 },
   restaurants: [
-    ...placeholderRestaurants
+    {
+      id: 'comfort',
+      name: "Comfort Sphinx & Pyramid Inn",
+      description: "I personally would not recommend this hotel in Giza for breakfast, lunch or dinner but instead go to another hotel in the area as there are hundreds around the Pyramids. We booked last minute and had breakfast included so we ate here every morning.\n\nThe food varied little from day to day and consisted of bread, cake, eggs, fries, cheese and salad. I was wary of the salad given that water is not potable in Egypt and the salad is washed with this water. So my diet lacked a lot of fibre. There is little vegan or gluten-free options also with no information on ingredients and a lack of knowledge on dietary restrictions by the staff.\n\nThe view was unbeatable though, I mean look at that!",
+      quickVerdict: '',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/comfort/comfort_1.jpg', caption: 'Bread, eggs, chips, cucumber, various dips.'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/comfort/comfort_2.jpg', caption: 'Aish Baladi (egyptian pita), eggs, sweet bread, fried potatoes, falafel, cheese' }
+      ],
+      ratings: { food: 2.5, drinks: 3, service: 2, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Comfort%20Sphinx%20%26%20Pyramids%20Inn%2C%20aboelhole%20st%2C%20Nazlet%20El-Semman%2C%20Al%20Haram%2C%20Egypt&maptype=roadmap',
+      cuisine: 'Oriental',
+      alexsTip: "Only book this place if there is no other option. Breakfast is better elsewhere.",
+      dietary: {
+        celiac: "Very limited gluten-free food, only vegetables, cheese and eggs. Little to none variation of food each day.",
+        lactose: "Most food without dairy except the cheese.",
+        vegetarian: "Almost everything is vegetarian.",
+        vegan: "A good amount of the buffet was vegan, but ask about the cakes."
+      },
+      tags: ["Oriental", "Egyptian", "Buffet", "Hotel", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
+      id: 'rooftop',
+      name: "Rooftop 7000",
+      description: "A very expensive rooftop bar with a more European menu: pasta, fried chicken, burgers. I would not recommed if you want to try authentic Egyptian food. But it was suggested by our hotel and I can admit the food was good with big portions. We went twice because the view is just incredible. We paid european prices, so this is very expensive for Egypt. It was nice to at least have one sanitary restaurant off the street that has some variety of gluten-free food. ",
+      quickVerdict: '',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/rooftop/rooftop_1.jpg', caption: 'Chicken 7000.'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/rooftop/rooftop_2.jpg', caption: 'Grilled chicken and fries' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/rooftop/rooftop_3.jpg', caption: 'Chicken country' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/rooftop/rooftop_4.jpg', caption: 'Cinnamon tea' }
+      ],
+      ratings: { food: 4, drinks: 4, service: 4, price: 3 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Rooftop%207000%2C%20Nazlet%20El-Semman%2C%20Al%20Haram%2C%20Egypt&maptype=roadmap',
+      cuisine: 'Oriental / European',
+      alexsTip: "Ask your hotel to reserve a table for you as it is very popular. Try get a table with a view.",
+      dietary: {
+        celiac: "A lot of pasta and fried food but take the grilled chicken, it is plentiful and tasty.",
+        lactose: "No specific lactose-free food other than the vegan options.",
+        vegetarian: "Some dishes without meat available but be careful with vegetables in Egypt.",
+        vegan: "Some vegan dishes but again be careful of vegetables."
+      },
+      tags: ["Oriental", "Egyptian", "European", "Hotel", "lactose-free", "vegetarian", "vegan"]
+    }
   ]
 };

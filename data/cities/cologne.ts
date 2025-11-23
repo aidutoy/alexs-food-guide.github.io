@@ -1,5 +1,6 @@
 
 
+
 import type { City } from '../../types';
 
 const newRestaurants = [
@@ -38,7 +39,7 @@ const placeholderRestaurants = newRestaurants.map(r => {
 export const cologne: City = {
   id: 'cologne',
   name: 'Köln',
-  image: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_1.jpg',
+  image: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/cologne.jpg',
   coordinates: { lat: 50.9375, lon: 6.9603 },
   restaurants: [
     {
@@ -149,7 +150,7 @@ export const cologne: City = {
       id: 'elinca',
       name: 'El Inca',
       description: "El Inca is an excellent Peruvian restaurant, not only specialising in Peruvian food but other dishes from Latin America. The restaurant has a great atmosphere and the decoration highlights the Latin American culture. I really recommend this restaurant to everyone. I had the aji de gallina, but I can also recommend the lomo saltado.",
-      quickVerdict: 'Authentic Peruvian flavors in a vibrant setting. Don\'t leave without trying the Pisco Sour.',
+      quickVerdict: 'A vibrant taste of Peru in Cologne! Authentic dishes, lively atmosphere, and must-try Pisco Sours.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/el_inca/el_inca_2.jpg', caption: 'Aji de Gallina'},
       images: [
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/el_inca/el_inca_1.jpg', caption: 'Lomo Saltado' },

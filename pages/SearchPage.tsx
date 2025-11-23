@@ -6,6 +6,7 @@ import type { Restaurant } from '../types';
 import { RestaurantModal } from '../components/RestaurantModal';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon';
 import SearchIcon from '../components/icons/SearchIcon';
+import StarRating from '../components/StarRating';
 
 const SearchPage: React.FC = () => {
     const location = useLocation();
@@ -335,12 +336,8 @@ const SearchPage: React.FC = () => {
                                         </h3>
                                         
                                         {/* Stars in grid */}
-                                        <div className="flex gap-0.5 mb-3 opacity-70">
-                                            {Array.from({length: 5}, (_, i) => (
-                                                <svg key={i} className={`w-3 h-3 ${i < restaurant.ratings.food ? 'text-brand-primary' : 'text-white/20'}`} fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                                                </svg>
-                                            ))}
+                                        <div className="mb-3 opacity-70">
+                                            <StarRating score={restaurant.ratings.food} size="w-3 h-3" fillColor="text-brand-primary" gap="gap-0.5" />
                                         </div>
 
                                         {restaurant.tags && (
@@ -387,4 +384,3 @@ const SearchPage: React.FC = () => {
 };
 
 export default SearchPage;
-    

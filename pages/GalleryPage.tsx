@@ -7,6 +7,7 @@ import ChevronRightIcon from '../components/icons/ChevronRightIcon';
 import ArrowUpRightIcon from '../components/icons/ArrowUpRightIcon';
 import Lightbox from '../components/Lightbox';
 import { RestaurantModal } from '../components/RestaurantModal';
+import StarRating from '../components/StarRating';
 
 const GalleryPage: React.FC = () => {
     const [openCityId, setOpenCityId] = useState<string | null>(null);
@@ -161,11 +162,7 @@ const GalleryPage: React.FC = () => {
                                                             
                                                             <div className="flex flex-col items-end text-right">
                                                                  <div className="flex items-center gap-2 mb-2">
-                                                                    {Array.from({length: 5}, (_, i) => (
-                                                                        <svg key={i} className={`w-4 h-4 ${i < restaurant.ratings.food ? 'text-white' : 'text-white/10'}`} fill="currentColor" viewBox="0 0 20 20">
-                                                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                                                                        </svg>
-                                                                    ))}
+                                                                    <StarRating score={restaurant.ratings.food} size="w-4 h-4" gap="gap-2" fillColor="text-white" emptyColor="text-white/10" />
                                                                  </div>
                                                                  <div className="text-white/40 font-playfair text-lg">
                                                                     {Array(restaurant.ratings.price).fill('€').join('')}

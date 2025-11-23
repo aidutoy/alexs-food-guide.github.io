@@ -1,12 +1,13 @@
 
 
 
+
 import type { City } from '../../types';
 
 export const bonn: City = {
   id: 'bonn',
   name: 'Bonn',
-  image: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_1.jpg',
+  image: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/bonn.jpg',
   coordinates: { lat: 50.7374, lon: 7.0982 },
   restaurants: [
     {
@@ -51,7 +52,7 @@ export const bonn: City = {
       openingHours: [
           "Monday - Thursday: 17:00 - 22:00",
           "Friday - Saturday: 12:00 - 16:00, 16:00 - 23:30",
-          "Sunday, holidays: 12:00 - 16:00, 16:00 - 22:00",
+          "Sunday, holidays: 12:00 - 16:00, 16:00 - 22:00"
       ]
     },
     {
@@ -105,7 +106,11 @@ export const bonn: City = {
         vegan: "Every curry can be ordered with tofu, and there are vegan sushi on the menu."
       },
       websiteUrl: 'https://www.lieferando.de/speisekarte/ha-long-endenicher-strasse',
-      tags: ["Vietnamese", "Asian", "Curry", "Sushi", "Budget-friendly", "Takeaway", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Vietnamese", "Asian", "Curry", "Sushi", "Budget-friendly", "Takeaway", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Tuesday - Saturday: 16:30 - 23:00",
+          "Sunday - Monday: 16:30 - 22:00"
+      ]
     },
     {
       id: 'nennillo',
@@ -167,7 +172,12 @@ export const bonn: City = {
       },
       websiteUrl: 'https://www.burgerwerk-bonn.de/',
       instagramUrl: 'https://www.instagram.com/burgerwerkbonn/?hl=en',
-      tags: ["Burgers", "Fries", "gluten-free", "Vegan", "Vegetarian"]
+      tags: ["Burgers", "Fries", "gluten-free", "Vegan", "Vegetarian"],
+      openingHours: [
+          "Monday - Thursday: 09:00 - 21:00",
+          "Friday - Saturday: 12:00 - 22:00",
+          "Sunday: 15:00 - 21:00"
+      ]
     },
     {
       id: 'mandala',
@@ -194,7 +204,11 @@ export const bonn: City = {
       },
       websiteUrl: 'https://www.burgerwerk-bonn.de/',
       instagramUrl: 'https://www.instagram.com/mandala.vegan/?hl=en',
-      tags: ["Tapas", "Sushi", "Asian", "Vietnamese", "Pho", "gluten-free", "lactose-free", "Vegan", "Vegetarian"]
+      tags: ["Tapas", "Sushi", "Asian", "Vietnamese", "Pho", "gluten-free", "lactose-free", "Vegan", "Vegetarian"],
+      openingHours: [
+          "Monday: Closed",
+          "Tuesday - Saturday: 12:00 - 23:00"
+      ]
     },
     {
       id: 'hokkaido',
@@ -221,7 +235,12 @@ export const bonn: City = {
         vegan: "Very limited vegan sushi but limited, I recommend Mandala restaurant."
       },
       websiteUrl: 'https://www.hokkaido-sushi-grill.de/',
-      tags: ["Sushi", "Asian", "All-you-can-eat", "lactose-free"]
+      tags: ["Sushi", "Asian", "All-you-can-eat", "lactose-free"],
+      openingHours: [
+          "Monday: Closed",
+          "Tuesday - Saturday: 12:00 - 15:00, 17:00 - 22:30",
+          "Sunday: 12:00 - 22:30"
+      ]
     },
     {
       id: 'cream_company',
@@ -252,7 +271,11 @@ export const bonn: City = {
         vegan: "A few vegan toasts, but ask about the waffles and pancakes because they are likely made with eggs and whole milk."
       },
       instagramUrl: 'https://www.instagram.com/creamcompany',
-      tags: ["Cafe", "Cakes", "Coffee", "desserts", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Cafe", "Cakes", "Coffee", "desserts", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Sunday - Thursday: 09:00 - 20:00",
+          "Friday - Saturday: 09:00 - 22:00"
+      ]
     },
     {
       id: 'karawane',
@@ -276,7 +299,11 @@ export const bonn: City = {
         vegan: "Vegetarian and vegan buffet available at extra cost."
       },
       websiteUrl: 'https://www.karawane-oberkassel.de/index.html',
-      tags: ["Oriental", "All-you-can-eat", "Egyptian", "Syrian", "Lebanese", "Moroccan", "Iranian", "Turkish", "Tunisian", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Oriental", "All-you-can-eat", "Egyptian", "Syrian", "Lebanese", "Moroccan", "Iranian", "Turkish", "Tunisian", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Sunday - Thursday: 17:30 - 22:00",
+          "Friday - Saturday: 17:30 - 23:00"
+      ]
     },
     {
       id: 'ichiban',
@@ -302,8 +329,10 @@ export const bonn: City = {
       },
       websiteUrl: 'https://www.ichiban-noodlebar.de/',
       instagramUrl: 'https://www.instagram.com/ichibannoodlebar/?hl=en',
-      
-      tags: ["Japanese", "Curry", "Ramen", "Noodles", "Asian", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Japanese", "Curry", "Ramen", "Noodles", "Asian", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Everyday: 12:00 - 22:00"
+      ]
     },
     {
       id: 'mayras_wohnzimmer',
@@ -329,7 +358,10 @@ export const bonn: City = {
         vegan: "Vegan sandwiches and cakes available."
       },
       websiteUrl: 'https://www.hokkaido-sushi-grill.de/',
-      tags: ["Cafe", "Cakes", "Coffee", "Matcha latte", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Cafe", "Cakes", "Coffee", "Matcha latte", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Everyday: 09:00 - 18:00"
+      ]
     },
     {
       id: 'frittenwerk',
@@ -380,7 +412,10 @@ export const bonn: City = {
       },
       websiteUrl: 'https://www.burgermanufaktur-bonn.de/',
       instagramUrl: 'https://www.instagram.com/burgermanufaktur.bonn/?hl=en',
-      tags: ["Burgers", "Fries", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Burgers", "Fries", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Everyday: 12:00 - 21:30"
+      ]
     },
     {
       id: 'pieme',
@@ -404,7 +439,11 @@ export const bonn: City = {
         vegan: "Vegan pies and vegan mashed potatoes."
       },
       instagramUrl: 'https://www.instagram.com/piemecafe/',
-      tags: ["Pies", "Australian", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Pies", "Australian", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Sunday - Wednesday: 11:30 - 21:00",
+          "Thursday - Saturday: 11:30 - 22:00"
+      ]
     },
     {
       id: 'cosycorner',
@@ -428,7 +467,11 @@ export const bonn: City = {
       },
       websiteUrl: 'https://cosycorner1717.de/',
       instagramUrl: 'https://www.instagram.com/cosycorner1717/?hl=en',
-      tags: ["British", "Tea", "Scones", "Cakes", "Sandwiches", "vegetarian", "vegan"]
+      tags: ["British", "Tea", "Scones", "Cakes", "Sandwiches", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Tuesday: Closed",
+          "Wednesday - Sunday: 10:00 - 18:00"
+      ]
     }, 
     {
       id: 'kaffeesaurus',
@@ -486,7 +529,12 @@ export const bonn: City = {
       },
       websiteUrl: 'https://losteria.net/de/',
       instagramUrl: 'https://www.instagram.com/losteria.de/?hl=en',
-      tags: ["Italian", "Pizza", "Aperol", "Takeaway", "vegetarian", "vegan"]
+      tags: ["Italian", "Pizza", "Aperol", "Takeaway", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Thursday: 11:30 - 23:00",
+          "Friday - Saturday: 11:30 - 00:00",
+          "Sunday: 12:00 - 23:00"
+      ]
     },
     {
       id: 'fritesbelgique',
@@ -539,7 +587,11 @@ export const bonn: City = {
       },
       websiteUrl: 'https://mam-mam-bonn.de/',
       instagramUrl: 'https://www.instagram.com/mammambonn/?hl=en',
-      tags: ["Vietnamese", "Asian", "Curry", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Vietnamese", "Asian", "Curry", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Friday: 12:00 - 15:00, 17:00 - 21:30",
+          "Saturday - Sunday: 14:00 - 21:30"
+      ]
     },
     {
       id: 'ferdinando',
@@ -563,9 +615,13 @@ export const bonn: City = {
       },
       websiteUrl: 'https://www.lieferando.de/speisekarte/ferdinando-italian-coffee-bistro',
       instagramUrl: 'https://www.instagram.com/ferdinando.coffee.bistro/',
-      tags: ["Italian", "Pizza", "ciabatta", "cakes", "coffee", "Takeaway", "lactose-free", "vegetarian", "vegan"]
-    }
-    ,
+      tags: ["Italian", "Pizza", "ciabatta", "cakes", "coffee", "Takeaway", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Sunday, Wednesday: Closed",
+          "Monday, Tuesday, Thursday, Friday: 09:00 - 16:00",
+          "Saturday: 10:00 - 15:00"
+      ]
+    },
     {
       id: 'bonnanza',
       name: "Bonnanza Burger Factory",
@@ -586,7 +642,11 @@ export const bonn: City = {
         vegan: "No vegan burgers listed on the menu, ask about fries. Salads available but not worth it."
       },
       websiteUrl: 'https://www.bonnanzaburger.de/',
-      tags: ["Burgers", "Fries", "lactose-free"]
+      tags: ["Burgers", "Fries", "lactose-free"],
+      openingHours: [
+          "Monday - Friday: 11:30 - 22:00",
+          "Saturday - Sunday: 12:00 - 22:00"
+      ]
     }
   ],
 };

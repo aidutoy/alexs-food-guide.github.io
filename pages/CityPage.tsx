@@ -7,6 +7,7 @@ import { RestaurantModal } from '../components/RestaurantModal';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon';
 import ArrowUpRightIcon from '../components/icons/ArrowUpRightIcon';
 import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from '../components/icons/DietaryIcons';
+import StarRating from '../components/StarRating';
 
 const CityPage: React.FC = () => {
   const { cityId } = useParams<{ cityId: string }>();
@@ -179,13 +180,7 @@ const CityPage: React.FC = () => {
                                 </span>
                                 
                                 <div className="h-px w-12 bg-white/10"></div>
-                                <div className="flex gap-0.5">
-                                    {Array.from({length: 5}, (_, i) => (
-                                        <svg key={i} className={`w-3 h-3 ${i < restaurant.ratings.food ? 'text-white' : 'text-white/20'}`} fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                                        </svg>
-                                    ))}
-                                </div>
+                                <StarRating score={restaurant.ratings.food} size="w-3 h-3" fillColor="text-white" gap="gap-0.5" />
                             </div>
 
                             <h2 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-8 leading-none group-hover:text-brand-primary/90 transition-colors duration-300">

@@ -47,12 +47,12 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
                         return (
                             <div
                                 key={city.id}
-                                onClick={() => setActiveId(city.id)}
+                                onMouseEnter={() => setActiveId(city.id)}
                                 className={`
                                     relative rounded-[2.5rem] overflow-hidden cursor-pointer 
-                                    transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]
+                                    transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
                                     shadow-2xl border border-white/10
-                                    ${isActive ? 'flex-[3.5]' : 'flex-[0.5] hover:flex-[0.75] hover:brightness-110'}
+                                    ${isActive ? 'flex-[10]' : 'flex-[1] hover:brightness-110'}
                                 `}
                             >
                                 {/* Card Image */}
@@ -82,6 +82,7 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
                                             </h3>
                                             <div className="opacity-0 animate-[slide-up_0.6s_ease-out_0.1s_forwards]">
                                                 <p className="text-white/90 text-xl mt-6 line-clamp-2 font-roboto font-light text-shadow-sm">
+                                                    {/* Description placeholder if needed */}
                                                 </p>
                                             </div>
                                             <div className="opacity-0 animate-[slide-up_0.6s_ease-out_0.2s_forwards] mt-8">
@@ -146,3 +147,4 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
 };
 
 export default FeaturedCitiesCarousel;
+    
