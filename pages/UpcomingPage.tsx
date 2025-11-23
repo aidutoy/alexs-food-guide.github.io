@@ -9,8 +9,6 @@ interface UpcomingRestaurant {
 }
 
 const upcomingList: UpcomingRestaurant[] = [
-    { name: "El Inca", city: "Cologne", cuisine: "Peruvian", notes: "Authentic ceviche and Pisco sours." },
-    { name: "Thai Viet Street Food", city: "Cologne", cuisine: "Thai/Vietnamese", notes: "Heard good things about the Pad Thai." },
     { name: "El Patio", city: "Bruhl", cuisine: "Spanish", notes: "Tapas night out planned." },
     { name: "River boat Cruise", city: "Cairo", cuisine: "Experience", notes: "Dinner on the Nile." },
     { name: "Rooftop 7000", city: "Giza", cuisine: "Rooftop Bar", notes: "Views of the pyramids." },
@@ -69,4 +67,3 @@ const UpcomingPage: React.FC = () => {
 };
 
 export default UpcomingPage;
-    

@@ -1,11 +1,11 @@
 
+
 import type { City } from '../../types';
 
 const newRestaurants = [
   { name: 'Okinii', cuisine: 'Japanese' },
   { name: 'Thai Viet Street Food', cuisine: 'Thai/Vietnamese' },
   { name: 'Nennillo', cuisine: 'Italian' },
-  { name: 'El Inca', cuisine: 'Peruvian' },
 ];
 
 const placeholderRestaurants = newRestaurants.map(r => {
@@ -79,7 +79,12 @@ export const cologne: City = {
       },
       websiteUrl: 'https://okinii.de/standorte-bu/koln/',
       instagramUrl: 'https://www.instagram.com/okiniirestaurants/?hl=en',
-      tags: ["Sushi", "Japanese", "Asian", "All-you-can-eat", "Dinner", "gluten-free", "lactose-free"]
+      tags: ["Sushi", "Japanese", "Asian", "All-you-can-eat", "Dinner", "gluten-free", "lactose-free"],
+      openingHours: [
+          "Monday - Thursday: 17:00 - 22:00",
+          "Friday - Saturday: 12:00 - 16:00, 16:00 - 23:30",
+          "Sunday, holidays: 12:00 - 16:00, 16:00 - 22:00",
+      ]
     },
     {
       id: 'nennillo',
@@ -109,16 +114,77 @@ export const cologne: City = {
       },
       websiteUrl: 'https://www.nennillo.de/',
       instagramUrl: 'https://www.instagram.com/pizzerianennillo/',
-      tags: ["Italian", "Pizza", "Aperol", "Budget-friendly", "Takeaway", "gluten-free", "vegetarian", "vegan"]
+      tags: ["Italian", "Pizza", "Aperol", "Budget-friendly", "Takeaway", "gluten-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Everyday: 11:00 - 23:00"
+      ]
+    },
+    {
+      id: 'thaiviet',
+      name: 'Thai Viet Street Food',
+      description: "If you like Thai and Vietnamese food and big portions for a good price then this is the place for you. Quite central to the Cologne Cathedral is a small cash-only restaurant that serves excellent curries. I am especially a fan of the mango sauce with crispy fried chicken and the peanut sauce. Suitable for both vegans and coeliacs. ",
+      quickVerdict: 'Excellent curries, big portions, and great value near the Cathedral. Cash only.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/thaiviet/thaiviet_1.jpg', caption: 'Crispy fried chicken with mango sauce (bottom) and fried chicken with peanut sauce (top)'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/thaiviet/thaiviet_2.jpg', caption: 'Crispy fried chicken with mango sauce' }
+      ],
+      ratings: { food: 5, drinks: 5, service: 5, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Thai-Viet%20Street%20Food%20Imbiss%2C%20Kleine%20Budengasse%2C%20Cologne%2C%20Germany&maptype=roadmap',
+      cuisine: 'Vietnamese',
+      alexsTip: "I recommend the Vietnamese drink Chanh Da with lime juice, sugar, and water",
+      dietary: {
+        celiac: "Many curries have the option to have grilled chicken or tofu. The noodles are not gluten-free.",
+        lactose: "All curries are made with coconut milk.",
+        vegetarian: "Dishes can be served with tofu or just vegetables.",
+        vegan: "Dishes can be served with tofu or just vegetables, no dairy in the curries."
+      },
+      websiteUrl: 'https://www.thaiimbisskoelnkoeln.de/',
+      tags: ["Vietnamese", "Thai", "Asian", "Curries", "Noodles", "Budget-friendly", "Takeaway", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Friday: 11:00 - 22:00",
+          "Saturday - Sunday: 12:00 - 22:00" 
+      ]
+    },
+    {
+      id: 'elinca',
+      name: 'El Inca',
+      description: "El Inca is an excellent Peruvian restaurant, not only specialising in Peruvian food but other dishes from Latin America. The restaurant has a great atmosphere and the decoration highlights the Latin American culture. I really recommend this restaurant to everyone. I had the aji de gallina, but I can also recommend the lomo saltado.",
+      quickVerdict: 'Authentic Peruvian flavors in a vibrant setting. Don\'t leave without trying the Pisco Sour.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/el_inca/el_inca_2.jpg', caption: 'Aji de Gallina'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/el_inca/el_inca_1.jpg', caption: 'Lomo Saltado' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/el_inca/el_inca_3.jpg', caption: 'Nachos with mixed salsas' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/el_inca/el_inca_6.jpg', caption: 'Patacones (bottom) and Yuca a la Huancaina (top)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/el_inca/el_inca_4.jpg', caption: 'Pisco Sour' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/el_inca/el_inca_5.jpg', caption: 'Inca Kola' }
+      ],
+      ratings: { food: 5, drinks: 5, service: 5, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Thai-Viet%20Street%20Food%20Imbiss%2C%20Kleine%20Budengasse%2C%20Cologne%2C%20Germany&maptype=roadmap',
+      cuisine: 'Peruvian',
+      alexsTip: "Definitely take the Inca kola and the pisco sour when you go!",
+      dietary: {
+        celiac: "A few dishes like lomo saltado have no gluten in it but aji de gallina is made from biscuits.",
+        lactose: "A few dishes made with dairy but plenty options without.",
+        vegetarian: "A lot of dishes meat based but some vegetarian options.",
+        vegan: "Limited options but one or two on the menu"
+      },
+      websiteUrl: 'https://www.el-inca.de/',
+      instagramUrl: 'https://www.instagram.com/elincarestaurant/?hl=en',
+      tags: ["Peruvian", "Latin American", "Pisco Sour", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday: Closed",
+          "Tuesday - Saturday: 17:00 - 00:00",
+          "Sunday: 12:00 - 22:00"
+      ]
     },
     {
       id: 'frittenwerk',
       name: "Frittenwerk",
       description: "Definitely a good spot for some loaded fries or 'poutine'. I was surprised by how filling the fries were after seeing the portion size, so don't be too disappointed. The price is a little on the expensive side so I wouldn't go back often but a nice treat when you want to try something different.\n\nI had the Tijuana street fries that are topped with tomatoes, avocado and sour cream. I can also recommend the BBQ pulled pork poutine. I do not recommend adding extra falafel on top as it is not worth the price\n\nYou can order at the screens and change the language so you don't need to speak German. Note the wait time for all orders when eating in is approx 30 minutes, so I wouldn' go if you are in a rush.",
       quickVerdict: 'The best loaded fries in the area, wait time is a bit long but worth it.',
-      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_2.jpg', caption: 'Tijuana street fries with falafel'},
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_1.jpg', caption: 'BBQ pulled pork poutine (left) and Tijuana street fries (right) with falafel'},
       images: [
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_1.jpg', caption: 'BBQ pulled pork poutine (left) and Tijuana street fries (right) with falafel' }
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_2.jpg', caption: 'Tijuana street fries with falafel' }
       ],
       ratings: { food: 4, drinks: 4, service: 3, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frittenwerk%20K%C3%B6ln%2C%20Ehrenstra%C3%9Fe%2C%20Cologne%2C%20Germany&maptype=roadmap',
@@ -132,7 +198,12 @@ export const cologne: City = {
       },
       websiteUrl: 'https://frittenwerk.com/',
       instagramUrl: 'https://www.instagram.com/frittenwerk/',
-      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Thursday: 11:00 - 22:00",
+          "Friday - Saturday: 11:00 - 23:00",
+          "Sunday, Holidays: 11:30 - 21:00"
+      ]
     },
     {
       id: 'kaffeesaurus',
@@ -161,12 +232,16 @@ export const cologne: City = {
       },
       websiteUrl: 'https://kaffeesaurus.com/',
       instagramUrl: 'https://www.instagram.com/kaffeesaurus/',
-      tags: ["Cafe", "Burgers", "Cakes", "Sandwiches", "Coffee", "Tea", "Chai", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Cafe", "Burgers", "Cakes", "Sandwiches", "Coffee", "Tea", "Chai", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Friday: 08:00 - 21:00",
+          "Saturday - Sunday: 09:00 - 21:00" 
+      ]
     }, 
     {
       id: 'losteria',
-      name: "Losteria",
-      description: "A good spot for a large appetite, the pizzas are so big they don't fit on a plate, and you will probably take some home. I definitely recommend coming to feed a family, or if you have a work event, because who doesn't like pizza and pasta?\n\nNow the pizza isn't as good as Napoli pizza, and they do have Hawaiian, but I am a fan regardless. You can even split the pizza in half and share with a friend, or just try two different toppings yourself, like I do. I would not recommend the pasta as the portion size is too small, and honestly, I don't think it is what they are known for.\n\nYou can find L'Osteria everywhere. There are many in Cologne, but I will only link to only one for simplicity. I don't expect the menu or quality of food to change much between the different locations. The price is fair for what you get, just have a few Aperol spritz and try to finish your plate.",
+      name: "L'osteria",
+      description: "A good spot for a large appetite, the pizzas are so big they don't fit on a plate, and you will probably take some home. I definitely recommend coming to feed a family, or if you have a work event, because who doesn't like pizza and pasta?\n\nNow the pizza isn't as good as Napoli pizza, and they do have Hawaiian, but I am a fan regardless. You can even split the pizza in half and share with a friend, or just try two different toppings yourself, like I do. I would not recommend the pasta as the portion size is too small, and honestly, I don't think it is what they are known for.\n\nYou can find L'Osteria everywhere. There are many in Bonn and Cologne, but I will only link to the one I went to in Bonn for simplicity. I don't expect the menu or quality of food to change much between the different locations. The price is fair for what you get, just have a few Aperol spritz and try to finish your plate.",
       quickVerdict: 'Huge pizzas for a fair price, you will probably end up taking half home.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_1.jpg', caption: 'Various pizzas'},
       images: [
@@ -175,7 +250,7 @@ export const cologne: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_3.jpg', caption: 'Pizza pane and bruschetta (top)'}
       ],
       ratings: { food: 4, drinks: 5, service: 5, price: 2 },
-      mapEmbedUrl: "https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=L'Osteria%20K%C3%B6ln%20Zollhafen%2C%20Am%20Zollhafen%2C%20Cologne%2C%20Germany&maptype=roadmap",
+      mapEmbedUrl: "https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=L'Osteria%20Bonn%20In%20der%20S%C3%BCrst%2C%20In%20der%20S%C3%BCrst%2C%20Bonn%2C%20Germany&maptype=roadmap",
       cuisine: 'Italian',
       alexsTip: "Order half of your favourite pizza and half of something new to try.",
       dietary: {
@@ -186,19 +261,24 @@ export const cologne: City = {
       },
       websiteUrl: 'https://losteria.net/de/',
       instagramUrl: 'https://www.instagram.com/losteria.de/?hl=en',
-      tags: ["Italian", "Pizza", "Aperol", "Takeaway", "vegetarian", "vegan"]
+      tags: ["Italian", "Pizza", "Aperol", "Takeaway", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Thursday: 11:30 - 23:00",
+          "Friday - Saturday: 11:30 - 00:00",
+          "Sunday: 12:00 - 23:00"
+      ]
     },
     {
       id: 'fritesbelgique',
       name: "Frites Belgique",
-      description: "An easy and quick stop to get some good fries with tasty dips. Not too much to say but definitely try the peanut dipping sauce for something new. The dips change from time to time, but mayo, vegan mayo, and peanut sauce are the best..",
-      quickVerdict: 'The best fries in town. Fast, tasty, and great dips.',
+      description: "An easy and quick stop to get some good fries with tasty dips. Not too much to say but definitely try the peanut dipping sauce for something new. The dips change from time to time, but mayo, vegan mayo, and peanut sauce are the best.",
+      quickVerdict: 'The best fries in Bonn. Fast, tasty, and great dips.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/fritesbelgique/frites_1.jpg', caption: 'Large fries with mayo and bacon mayo'},
       images: [
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/fritesbelgique/frites_2.jpg', caption: 'Regular fries with peanut sauce' }
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 1 },
-      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frites%20Belgique%2C%20Hohe%20Stra%C3%9Fe%2C%20Cologne%2C%20Germany&maptype=roadmap',
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frites%20Belgique%2C%20Sternstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Fries',
       alexsTip: "Large fries with the peanut sauce if on offer, and if not go for the mayo.",
       dietary: {
@@ -209,7 +289,11 @@ export const cologne: City = {
       },
       websiteUrl: 'https://frites-belgique.com/',
       instagramUrl: 'https://www.instagram.com/fritesbelgique/',
-      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Saturday: 11:30 - 20:00",
+          "Sunday: 13:00 - 18:00"
+      ]
     }
   ],
 };

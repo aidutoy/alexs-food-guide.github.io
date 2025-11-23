@@ -1,5 +1,6 @@
 
 
+
 import type { City } from '../../types';
 
 export const bonn: City = {
@@ -46,7 +47,12 @@ export const bonn: City = {
       },
       websiteUrl: 'https://okinii.de/standorte-bu/bonn/',
       instagramUrl: 'https://www.instagram.com/okiniirestaurants/?hl=en',
-      tags: ["Sushi", "Japanese", "Asian", "All-you-can-eat", "Dinner", "gluten-free", "lactose-free"]
+      tags: ["Sushi", "Japanese", "Asian", "All-you-can-eat", "Dinner", "gluten-free", "lactose-free"],
+      openingHours: [
+          "Monday - Thursday: 17:00 - 22:00",
+          "Friday - Saturday: 12:00 - 16:00, 16:00 - 23:30",
+          "Sunday, holidays: 12:00 - 16:00, 16:00 - 22:00",
+      ]
     },
     {
       id: 'tio-pepe',
@@ -129,7 +135,10 @@ export const bonn: City = {
       },
       websiteUrl: 'https://www.nennillobonn.de/',
       instagramUrl: 'https://www.instagram.com/bonn_pizzerianennillo/?hl=en',
-      tags: ["Italian", "Pizza", "Aperol", "Budget-friendly", "Takeaway", "gluten-free", "vegetarian", "vegan"]
+      tags: ["Italian", "Pizza", "Aperol", "Budget-friendly", "Takeaway", "gluten-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Everyday: 11:00 - 23:00"
+      ]
     },
     {
       id: 'burgerwerk',
@@ -248,7 +257,7 @@ export const bonn: City = {
     {
       id: 'karawane',
       name: "Karawane",
-      description: "Karawane is an interesting oriental restaurant that offers an all-you-can-eat oriental experience. The menu changes every two weeks, and you can check online to see what is currently available and what is planned next. Some dishes are repeated each time, so keep checking for the menu that fits you best.\n\nThere are 9 dishes, always one soup but the other 8 can vary. After you finish the first round, the waiter will come back and ask which three dishes you would like to have again, but this time in a bigger portion. After you finish those three, you can get another three, and so on. Worth the trip to a quiet neighbourhood, maybe on the way back from Drachenfels. ",
+      description: "Karawane is an interesting oriental restaurant that offers an all-you-can-eat oriental experience. The menu changes every two weeks, and you can check online to see what is currently available and what is planned next. Some dishes are repeated each time, so keep checking for the menu that fits you best.\n\nThere are 9 dishes, always one soup but the other 8 can vary. After you finish the first round, the waiter will come back and ask which dishes you would like to have again, but this time in a bigger portion. After you finish those three, you can get another three, and so on. Worth the trip to a quiet neighbourhood, maybe on the way back from Drachenfels. ",
       quickVerdict: 'A unique oriental experience unlike any other in Bonn.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/karawane/karawane_1.jpg', caption: 'All-you-can-eat'},
       images: [
@@ -327,9 +336,9 @@ export const bonn: City = {
       name: "Frittenwerk",
       description: "Definitely a good spot for some loaded fries or 'poutine'. I was surprised by how filling the fries were after seeing the portion size, so don't be too disappointed. The price is a little on the expensive side so I wouldn't go back often but a nice treat when you want to try something different.\n\nI had the Tijuana street fries that are topped with tomatoes, avocado and sour cream. I can also recommend the BBQ pulled pork poutine. I do not recommend adding extra falafel on top as it is not worth the price\n\nYou can order at the screens and change the language so you don't need to speak German. Note the wait time for all orders when eating in is approx 30 minutes, so I wouldn' go if you are in a rush.",
       quickVerdict: 'The best loaded fries in Bonn, wait time is a bit long but worth it.',
-      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_2.jpg', caption: 'Tijuana street fries with falafel'},
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_1.jpg', caption: 'BBQ pulled pork poutine (left) and Tijuana street fries (right) with falafel'},
       images: [
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_1.jpg', caption: 'BBQ pulled pork poutine (left) and Tijuana street fries (right) with falafel' }
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_2.jpg', caption: 'Tijuana street fries with falafel' }
       ],
       ratings: { food: 4, drinks: 4, service: 3, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frittenwerk%20Bonn%2C%20Sternstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
@@ -343,7 +352,12 @@ export const bonn: City = {
       },
       websiteUrl: 'https://frittenwerk.com/',
       instagramUrl: 'https://www.instagram.com/frittenwerk/',
-      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Thursday: 11:00 - 22:00",
+          "Friday - Saturday: 11:00 - 23:00",
+          "Sunday, Holidays: 11:30 - 21:00"
+      ]
     },
     {
       id: 'burgermanfaktur',
@@ -443,11 +457,15 @@ export const bonn: City = {
       },
       websiteUrl: 'https://kaffeesaurus.com/',
       instagramUrl: 'https://www.instagram.com/kaffeesaurus/',
-      tags: ["Cafe", "Burgers", "Cakes", "Sandwiches", "Coffee", "Tea", "Chai", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Cafe", "Burgers", "Cakes", "Sandwiches", "Coffee", "Tea", "Chai", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Friday: 08:00 - 21:00",
+          "Saturday - Sunday: 09:00 - 21:00" 
+      ]
     }, 
     {
       id: 'losteria',
-      name: "Losteria",
+      name: "L'osteria",
       description: "A good spot for a large appetite, the pizzas are so big they don't fit on a plate, and you will probably take some home. I definitely recommend coming to feed a family, or if you have a work event, because who doesn't like pizza and pasta?\n\nNow the pizza isn't as good as Napoli pizza, and they do have Hawaiian, but I am a fan regardless. You can even split the pizza in half and share with a friend, or just try two different toppings yourself, like I do. I would not recommend the pasta as the portion size is too small, and honestly, I don't think it is what they are known for.\n\nYou can find L'Osteria everywhere. There are many in Bonn and Cologne, but I will only link to the one I went to in Bonn for simplicity. I don't expect the menu or quality of food to change much between the different locations. The price is fair for what you get, just have a few Aperol spritz and try to finish your plate.",
       quickVerdict: 'Huge pizzas for a fair price, you will probably end up taking half home.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_1.jpg', caption: 'Various pizzas'},
@@ -491,7 +509,11 @@ export const bonn: City = {
       },
       websiteUrl: 'https://frites-belgique.com/',
       instagramUrl: 'https://www.instagram.com/fritesbelgique/',
-      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"]
+      tags: ["Fries", "Takeaway", "Street-food", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Saturday: 11:30 - 20:00",
+          "Sunday: Closed"
+      ]
     },
     {
       id: 'mam-mam',

@@ -8,6 +8,7 @@ import GlobeIcon from './icons/GlobeIcon';
 import InstagramIcon from './icons/InstagramIcon';
 import CloseIcon from './icons/CloseIcon';
 import InfoIcon from './icons/InfoIcon';
+import ClockIcon from './icons/ClockIcon';
 import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from './icons/DietaryIcons';
 import Lightbox from './Lightbox';
 
@@ -307,6 +308,22 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                                 <p className="text-gray-300">{restaurant.dietary.vegan}</p>
                             </div>
                         </div>
+                    </div>
+                )}
+
+                {restaurant.openingHours && (
+                    <div className="py-8 border-t border-white/10">
+                        <h4 className="font-playfair font-bold text-white text-lg mb-4 flex items-center gap-2">
+                             <ClockIcon className="w-5 h-5 text-white" />
+                             Opening Hours
+                        </h4>
+                        <ul className="space-y-2 text-sm text-gray-300 font-light bg-white/5 p-5 rounded-xl border border-white/5">
+                            {restaurant.openingHours.map((line, index) => (
+                                <li key={index} className="flex justify-between">
+                                    <span>{line}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 )}
 

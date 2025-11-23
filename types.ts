@@ -33,6 +33,7 @@ export interface Restaurant {
   websiteUrl?: string;
   instagramUrl?: string;
   tags?: string[];
+  openingHours?: string[];
 }
 
 export interface City {
