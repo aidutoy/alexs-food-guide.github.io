@@ -18,8 +18,8 @@ interface GalleryItem {
 const GalleryPreview: React.FC = () => {
     const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
 
-    // Initialize images with a shuffle
-    const [displayImages] = useState<GalleryItem[]>(() => {
+    // Initialize images with two different shuffles for the rows
+    const [rows] = useState<{row1: GalleryItem[], row2: GalleryItem[]}>(() => {
         const allImages: GalleryItem[] = cities.flatMap(city => 
             city.restaurants.flatMap(r => 
                 [r.mainImage, ...r.images].map(img => ({
@@ -33,21 +33,33 @@ const GalleryPreview: React.FC = () => {
         );
 
         // Fisher-Yates Shuffle
-        for (let i = allImages.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [allImages[i], allImages[j]] = [allImages[j], allImages[i]];
-        }
+        const shuffle = (array: GalleryItem[]) => {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        };
 
-        // Take top 15 after shuffle
-        return allImages.slice(0, 15);
+        // Create two independent shuffles for variety
+        const shuffled1 = shuffle(allImages);
+        const shuffled2 = shuffle(allImages);
+
+        // Take top 15 for each row (or all if less than 15)
+        return {
+            row1: shuffled1.slice(0, 15),
+            row2: shuffled2.slice(0, 15)
+        };
     });
     
     // Duplicate for infinite scroll effect
-    const scrollImages = [...displayImages, ...displayImages];
+    const scrollImages1 = [...rows.row1, ...rows.row1];
+    const scrollImages2 = [...rows.row2, ...rows.row2];
 
     return (
         <section className="py-24 bg-brand-dark relative overflow-hidden border-t border-white/5">
-             <div className="max-w-7xl mx-auto px-4 mb-12 text-center relative z-10">
+             <div className="max-w-7xl mx-auto px-4 mb-16 text-center relative z-10">
                 <h2 className="text-4xl md:text-6xl font-playfair font-bold text-white mb-6">
                     The <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Gallery</span>
                 </h2>
@@ -63,32 +75,60 @@ const GalleryPreview: React.FC = () => {
                 </Link>
              </div>
 
-             {/* Marquee Container */}
-             <div className="relative w-full overflow-hidden">
-                {/* Gradient Masks */}
-                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-brand-dark to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-brand-dark to-transparent z-10 pointer-events-none"></div>
+             <div className="space-y-8 relative">
+                 {/* Row 1 - Left Scroll */}
+                 <div className="relative w-full overflow-hidden">
+                    {/* Gradient Masks */}
+                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-brand-dark to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-brand-dark to-transparent z-10 pointer-events-none"></div>
 
-                {/* Scrolling Track */}
-                <div className="flex gap-4 animate-scroll w-max hover:[animation-play-state:paused]">
-                    {scrollImages.map((img, idx) => (
-                        <div 
-                            key={idx} 
-                            onClick={() => setSelectedImage(img)}
-                            className="relative w-64 h-48 md:w-80 md:h-60 rounded-2xl overflow-hidden shrink-0 border border-white/10 transition-all duration-500 cursor-pointer hover:scale-105 hover:border-white/30 hover:shadow-2xl group"
-                        >
-                            <img 
-                                src={img.url} 
-                                alt={img.caption} 
-                                className="w-full h-full object-cover"
-                                loading="lazy"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                <p className="text-white text-sm font-medium truncate">{img.restaurantName}</p>
+                    <div className="flex gap-4 animate-scroll w-max hover:[animation-play-state:paused]">
+                        {scrollImages1.map((img, idx) => (
+                            <div 
+                                key={`r1-${idx}`} 
+                                onClick={() => setSelectedImage(img)}
+                                className="relative w-56 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shrink-0 border border-white/10 transition-all duration-500 cursor-pointer hover:scale-105 hover:border-white/30 hover:shadow-2xl group"
+                            >
+                                <img 
+                                    src={img.url} 
+                                    alt={img.caption} 
+                                    className="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <p className="text-white text-sm font-medium truncate">{img.restaurantName}</p>
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                 </div>
+
+                 {/* Row 2 - Right Scroll */}
+                 <div className="relative w-full overflow-hidden">
+                    {/* Gradient Masks */}
+                    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-brand-dark to-transparent z-10 pointer-events-none"></div>
+                    <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-brand-dark to-transparent z-10 pointer-events-none"></div>
+
+                    <div className="flex gap-4 animate-scroll-reverse w-max hover:[animation-play-state:paused]">
+                        {scrollImages2.map((img, idx) => (
+                            <div 
+                                key={`r2-${idx}`} 
+                                onClick={() => setSelectedImage(img)}
+                                className="relative w-56 h-72 md:w-64 md:h-80 rounded-2xl overflow-hidden shrink-0 border border-white/10 transition-all duration-500 cursor-pointer hover:scale-105 hover:border-white/30 hover:shadow-2xl group"
+                            >
+                                <img 
+                                    src={img.url} 
+                                    alt={img.caption} 
+                                    className="w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                    <p className="text-white text-sm font-medium truncate">{img.restaurantName}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                 </div>
              </div>
 
              {/* Preview Modal - Sleek Design */}
