@@ -37,7 +37,7 @@ const placeholderRestaurants = newRestaurants.map(r => {
 export const luxor: City = {
   id: 'luxor',
   name: 'Luxor',
-  image: 'https://picsum.photos/seed/luxor-city/800/600',
+  image: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/luxor/luxor.jpg',
   coordinates: { lat: 25.6872, lon: 32.6396 },
   restaurants: [
     ...placeholderRestaurants

@@ -8,143 +8,131 @@ const FeaturedCitiesCarousel: React.FC<{ cities: City[] }> = ({ cities }) => {
     const [activeId, setActiveId] = useState<string>(cities[0].id);
 
     return (
-        <section id="featured-cities" className="relative py-16 md:pt-48 md:pb-24 overflow-hidden min-h-[100vh] md:min-h-[800px] flex items-center select-none -mt-32 z-0">
-             {/* Seamless Transition Gradient - Extended to cover the bottom of Why section */}
-             <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-brand-dark via-brand-dark/90 to-transparent z-10 pointer-events-none"></div>
+        <section id="featured-cities" className="py-24 bg-brand-dark relative overflow-hidden select-none">
+            {/* Header */}
+            <div className="relative z-10 max-w-7xl mx-auto px-4 mb-16 text-center">
+                 <h2 className="text-5xl md:text-7xl font-playfair font-bold text-white mb-6 tracking-tight drop-shadow-2xl">
+                    Curated <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Destinations</span>
+                </h2>
+                <p className="text-white/50 text-lg font-light max-w-2xl mx-auto">
+                    Select a city to explore the full guide.
+                </p>
+            </div>
 
-             {/* Ambient Background System */}
-             <div className="absolute inset-0">
-                {cities.map((city) => (
-                    <div
-                        key={`bg-${city.id}`}
-                        className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${activeId === city.id ? 'opacity-60' : 'opacity-0'}`}
-                    >
-                        <img 
-                            src={city.image} 
-                            alt="" 
-                            className="w-full h-full object-cover blur-3xl scale-110" 
-                        />
-                    </div>
-                ))}
-                {/* Gradient Overlay to ensure text readability */}
-                <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/60 to-brand-dark/90"></div>
-             </div>
-
-             <div className="relative z-20 max-w-7xl mx-auto px-4 w-full">
-                <div className="text-center mb-12 md:mb-16">
-                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-playfair font-bold text-white mb-6 drop-shadow-2xl">
-                        My <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Journeys</span>
-                    </h2>
-                    <p className="text-white/80 max-w-2xl mx-auto text-lg md:text-xl font-light drop-shadow-lg">
-                        Explore my recommendations for each destination
-                    </p>
-                </div>
-
-                {/* Desktop Cinematic Accordion */}
-                <div className="hidden md:flex h-[600px] w-full gap-4">
+            {/* Desktop Accordion */}
+            <div className="hidden md:flex w-full h-[650px] justify-center px-4">
+                <div className="flex w-full max-w-[1600px] gap-2">
                     {cities.map((city) => {
                         const isActive = activeId === city.id;
                         return (
-                            <div
+                            <Link
                                 key={city.id}
+                                to={`/city/${city.id}`}
                                 onMouseEnter={() => setActiveId(city.id)}
                                 className={`
-                                    relative rounded-[2.5rem] overflow-hidden cursor-pointer 
-                                    transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]
-                                    shadow-2xl border border-white/10
-                                    ${isActive ? 'flex-[10]' : 'flex-[1] hover:brightness-110'}
+                                    relative h-full transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer overflow-hidden rounded-3xl
+                                    ${isActive ? 'flex-[8]' : 'flex-[1]'}
                                 `}
                             >
-                                {/* Card Image */}
-                                <img 
-                                    src={city.image} 
-                                    alt={city.name} 
-                                    className={`
-                                        absolute inset-0 w-full h-full object-cover
-                                        transition-transform duration-1000
-                                        ${isActive ? 'animate-slow-zoom' : 'scale-100'}
-                                    `}
-                                />
-                                
-                                {/* Cinematic Dark Gradient Overlay - Lightened */}
-                                <div className={`
-                                    absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent
-                                    transition-opacity duration-500
-                                    ${isActive ? 'opacity-100' : 'opacity-40'}
-                                `}></div>
+                                {/* Image Container */}
+                                <div className="absolute inset-0 w-full h-full bg-zinc-900">
+                                    <div className={`
+                                        absolute inset-0 z-10 bg-black/60 transition-opacity duration-700
+                                        ${isActive ? 'opacity-0' : 'opacity-100'}
+                                    `}></div>
+                                    
+                                    <img 
+                                        src={city.image} 
+                                        alt={city.name} 
+                                        className={`
+                                            w-full h-full object-cover transition-transform duration-1000 ease-out
+                                            ${isActive ? 'scale-100 grayscale-0' : 'scale-[1.75] grayscale'}
+                                        `}
+                                    />
+                                </div>
 
-                                {/* Content Container */}
-                                <div className="absolute inset-0 p-8 flex flex-col justify-end overflow-hidden">
+                                {/* Content Overlay */}
+                                <div className="absolute inset-0 z-20 flex flex-col justify-end p-10 bg-gradient-to-t from-black/90 via-transparent to-transparent">
                                     {isActive ? (
-                                        <div className="max-w-xl">
-                                            <h3 className="text-6xl lg:text-8xl font-playfair font-bold text-white leading-none drop-shadow-lg animate-[slide-up_0.6s_ease-out_forwards]">
+                                        <div className="animate-[slide-up_0.6s_ease-out_forwards] overflow-hidden">
+                                            <div className="flex items-center gap-4 mb-4">
+                                                <span className="h-0.5 w-12 bg-brand-primary"></span>
+                                                <span className="text-brand-primary uppercase tracking-[0.2em] text-sm font-bold shadow-black drop-shadow-md">
+                                                    {city.coordinates.lat.toFixed(1)}°N / {city.coordinates.lon.toFixed(1)}°E
+                                                </span>
+                                            </div>
+                                            
+                                            <h3 className="text-7xl lg:text-9xl font-playfair font-bold text-white mb-6 leading-none drop-shadow-2xl">
                                                 {city.name}
                                             </h3>
-                                            <div className="opacity-0 animate-[slide-up_0.6s_ease-out_0.1s_forwards]">
-                                                <p className="text-white/90 text-xl mt-6 line-clamp-2 font-roboto font-light text-shadow-sm">
-                                                    {/* Description placeholder if needed */}
-                                                </p>
-                                            </div>
-                                            <div className="opacity-0 animate-[slide-up_0.6s_ease-out_0.2s_forwards] mt-8">
-                                                 <Link 
-                                                    to={`/city/${city.id}`}
-                                                    className="
-                                                        group inline-flex items-center gap-3 
-                                                        bg-white/10 hover:bg-white/20 backdrop-blur-md 
-                                                        text-white border border-white/30 
-                                                        px-8 py-4 rounded-full transition-all duration-300
-                                                        hover:scale-105 hover:shadow-lg hover:border-white/60
-                                                    "
-                                                >
-                                                    <span className="font-medium tracking-wider uppercase text-sm">Explore Guide</span>
-                                                    <ChevronRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                                </Link>
+                                            
+                                            <div className="flex items-center justify-between border-t border-white/20 pt-8 mt-4 backdrop-blur-sm bg-black/20 rounded-xl p-4">
+                                                <div className="flex gap-12">
+                                                     <div className="flex flex-col">
+                                                        <span className="text-white/60 text-xs uppercase tracking-wider mb-1">Curated Spots</span>
+                                                        <span className="text-2xl text-white font-light">{city.restaurants.length}</span>
+                                                    </div>
+                                                    <div className="hidden lg:flex flex-col">
+                                                        <span className="text-white/60 text-xs uppercase tracking-wider mb-1">Cuisine Variety</span>
+                                                        <span className="text-2xl text-white font-light">
+                                                            {Array.from(new Set(city.restaurants.map(r => r.cuisine))).length} Types
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                               
+                                                <div className="group flex items-center gap-3 bg-white text-brand-dark px-6 py-3 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-brand-primary hover:text-white transition-all duration-300">
+                                                    Explore
+                                                    <ChevronRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                                </div>
                                             </div>
                                         </div>
                                     ) : (
-                                        <div className="h-full flex items-end justify-center pb-6 transition-opacity duration-300 delay-100">
-                                            <h3 className="text-4xl font-playfair font-bold text-white/80 [writing-mode:vertical-rl] rotate-180 tracking-widest uppercase whitespace-nowrap drop-shadow-md">
+                                        <div className="h-full flex items-end justify-center pb-12 transition-all duration-500 delay-100">
+                                            <h3 className="text-4xl font-playfair font-bold text-white/40 [writing-mode:vertical-rl] rotate-180 tracking-[0.2em] uppercase whitespace-nowrap">
                                                 {city.name}
                                             </h3>
                                         </div>
                                     )}
                                 </div>
-                            </div>
+                            </Link>
                         );
                     })}
                 </div>
+            </div>
 
-                {/* Mobile View (Snap Cards) */}
-                <div 
-                    className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 -mx-4 px-4 [&::-webkit-scrollbar]:hidden"
-                    style={{ scrollbarWidth: 'none' }}
-                >
-                    {cities.map((city) => (
-                        <div key={city.id} className="relative flex-shrink-0 w-[85vw] h-[60vh] min-h-[450px] max-h-[600px] snap-center rounded-[2.5rem] overflow-hidden shadow-xl border border-white/10">
-                             <Link to={`/city/${city.id}`} className="block w-full h-full group">
-                                <img 
-                                    src={city.image} 
-                                    alt={city.name} 
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                                
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
-                                <div className="absolute bottom-0 left-0 p-6 w-full">
-                                    <h3 className="text-4xl font-playfair font-bold text-white mb-3 drop-shadow-md">{city.name}</h3>
-                                    <p className="text-white/80 text-base font-light mb-6 line-clamp-2">Discover the best food in {city.name}.</p>
-                                    <div className="flex items-center gap-2 text-white font-medium uppercase tracking-widest text-xs border-t border-white/20 pt-4">
-                                        <span>View City Guide</span>
-                                        <ChevronRightIcon className="w-4 h-4" />
-                                    </div>
+            {/* Mobile Snap List */}
+            <div 
+                className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 px-4 pb-12 [&::-webkit-scrollbar]:hidden"
+                style={{ scrollbarWidth: 'none' }}
+            >
+                {cities.map((city) => (
+                    <Link 
+                        key={city.id} 
+                        to={`/city/${city.id}`} 
+                        className="relative flex-shrink-0 w-[85vw] h-[550px] snap-center rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/5"
+                    >
+                        <img src={city.image} alt={city.name} className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 p-8 w-full">
+                            <div className="flex items-center gap-2 mb-4 opacity-80">
+                                 <span className="h-px w-8 bg-brand-primary"></span>
+                                 <span className="text-brand-primary uppercase tracking-widest text-xs font-bold">
+                                    Travel Guide
+                                </span>
+                            </div>
+                            <h3 className="text-6xl font-playfair font-bold text-white mb-4 leading-none">{city.name}</h3>
+                            <div className="flex items-center justify-between border-t border-white/20 pt-6">
+                                <span className="text-white/80 font-light">{city.restaurants.length} Spots</span>
+                                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-brand-dark">
+                                    <ChevronRightIcon className="w-5 h-5" />
                                 </div>
-                             </Link>
+                            </div>
                         </div>
-                    ))}
-                </div>
-             </div>
+                    </Link>
+                ))}
+            </div>
         </section>
     );
 };
 
 export default FeaturedCitiesCarousel;
-    

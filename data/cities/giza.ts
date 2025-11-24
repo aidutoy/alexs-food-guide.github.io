@@ -44,14 +44,14 @@ export const giza: City = {
       id: 'comfort',
       name: "Comfort Sphinx & Pyramid Inn",
       description: "I personally would not recommend this hotel in Giza for breakfast, lunch or dinner but instead go to another hotel in the area as there are hundreds around the Pyramids. We booked last minute and had breakfast included so we ate here every morning.\n\nThe food varied little from day to day and consisted of bread, cake, eggs, fries, cheese and salad. I was wary of the salad given that water is not potable in Egypt and the salad is washed with this water. So my diet lacked a lot of fibre. There is little vegan or gluten-free options also with no information on ingredients and a lack of knowledge on dietary restrictions by the staff.\n\nThe view was unbeatable though, I mean look at that!",
-      quickVerdict: '',
+      quickVerdict: 'Unbeatable views of the Pyramids, but the food is monotonous and basic. A stay for the eyes, not the stomach.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/comfort/comfort_1.jpg', caption: 'Bread, eggs, chips, cucumber, various dips.'},
       images: [
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/comfort/comfort_2.jpg', caption: 'Aish Baladi (egyptian pita), eggs, sweet bread, fried potatoes, falafel, cheese' }
       ],
       ratings: { food: 2.5, drinks: 3, service: 2, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Comfort%20Sphinx%20%26%20Pyramids%20Inn%2C%20aboelhole%20st%2C%20Nazlet%20El-Semman%2C%20Al%20Haram%2C%20Egypt&maptype=roadmap',
-      cuisine: 'Oriental',
+      cuisine: 'Egyptian',
       alexsTip: "Only book this place if there is no other option. Breakfast is better elsewhere.",
       dietary: {
         celiac: "Very limited gluten-free food, only vegetables, cheese and eggs. Little to none variation of food each day.",
@@ -65,7 +65,7 @@ export const giza: City = {
       id: 'rooftop',
       name: "Rooftop 7000",
       description: "A very expensive rooftop bar with a more European menu: pasta, fried chicken, burgers. I would not recommed if you want to try authentic Egyptian food. But it was suggested by our hotel and I can admit the food was good with big portions. We went twice because the view is just incredible. We paid european prices, so this is very expensive for Egypt. It was nice to at least have one sanitary restaurant off the street that has some variety of gluten-free food. ",
-      quickVerdict: '',
+      quickVerdict: 'Stunning views paired with reliable, if expensive, European comfort food. A safe, sanitary choice.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/rooftop/rooftop_1.jpg', caption: 'Chicken 7000.'},
       images: [
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/rooftop/rooftop_2.jpg', caption: 'Grilled chicken and fries' },
@@ -83,6 +83,27 @@ export const giza: City = {
         vegan: "Some vegan dishes but again be careful of vegetables."
       },
       tags: ["Oriental", "Egyptian", "European", "Hotel", "lactose-free", "vegetarian", "vegan"]
+    },
+    {
+      id: 'elkhedive',
+      name: "Elkhedive Restaurant",
+      description: "We came here as part of the paid tour we did of the pyramids and sphinx. Highly recommend coming here if you want some good food. I ate alot of good food here, only the drinks cost extra but water is 1 euro. Note the restaurant is below the Happy View Inn but unable to show that on the map.",
+      quickVerdict: 'Authentic Egyptian flavors with freshly baked bread. A delicious and convenient stop on a Pyramids tour.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/elkhedive/elkhedive_1.jpg', caption: 'Chicken 7000.'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/elkhedive/elkhedive_2.jpg', caption: 'Grilled chicken and fries' }
+      ],
+      ratings: { food: 4, drinks: 4, service: 3, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&amp;q=Happy%20View%20Inn%2C%20Cleopatra%20resonant%20St%2C%20Al%20Haram%2C%20Giza%20Governorate%2C%20Egypt&amp;maptype=roadmap',
+      cuisine: 'Egyptian',
+      alexsTip: "Watch how the bread is made fresh, it was really interesting for me",
+      dietary: {
+        celiac: "Limited options as the bread and Egyptian rice have gluten. A lot of the rice dishes have small pieces of pasta, not made from rice.",
+        lactose: "A lot of dishes without dairy, only potatoes with cream sauce had dairy.",
+        vegetarian: "A lot of meat on the menu, vegetables are considered a side dish here. There is good fried aubergine however.",
+        vegan: "As only the potatoes have dairy, everything else vegetarian is considered vegan."
+      },
+      tags: ["Oriental", "Egyptian", "Buffet", "lactose-free"]
     }
   ]
 };
