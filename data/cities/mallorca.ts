@@ -59,7 +59,38 @@ export const mallorca: City = {
         vegan: "Even less vegan food than vegetarian so not recommended."
       },
       websiteUrl: 'https://www.tripadvisor.com/Restaurant_Review-g187463-d10807909-Reviews-Cafeteria_Playa-Palma_de_Mallorca_Majorca_Balearic_Islands.html',
-      tags: ["Spanish", "Tapas",  "Sharing", "Wine", "Sangria", "Seafood", "gluten-free",  "lactose-free"]
+      tags: ["Spanish", "Tapas",  "Sharing", "Wine", "Sangria", "Seafood", "gluten-free",  "lactose-free"],
+      openingHours: [
+          "Everyday except Wednesday: 10:00 - 00:00",
+          "SWednesday: Closed",
+      ]
+    },
+    {
+      id: 'casajulio',
+      name: 'Casa Julio',
+      description: "While wandering the city center in the late evening we asked chatGPT where the top rated restaurants in Palma are. The top answer was Casa Julio, and it was totally right. This was one of the best meals we had on the island. The service was great and even set up another table for us outside even though they were full and we didn't book ahead. The sangria was amazing, and served in a large glass. The bacon covered dates and patatas bravas with aioli were delicious, could order again and again.",
+      quickVerdict: 'A hidden gem in the narrow streets that is a must stop on your vacation.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/mallorca/casajulio/casajulio_1.jpg', caption: 'Hake fillet with fries' },
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/mallorca/casajulio/casajulio_2.jpg', caption: 'House white wine' }
+      ],
+      ratings: { food: 5, drinks: 5, service: 5, price: 2 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Restaurant%20Casa%20Julio%2C%20Carrer%20de%20la%20Previsi%C3%B3%2C%20Palma%2C%20Spain&maptype=roadmap',
+      cuisine: 'Spanish',
+      alexsTip: "Take the sangria and the bacon covered dates. Get a table outside to really enjoy the atmosphere.",
+      dietary: {
+        celiac: "The tapas menu has many gluten-free dishes, like patatas braves, grilled shrimp, and andalusian squid.",
+        lactose: "Almost everything is without dairy, but check no butter is used for cooking.",
+        vegetarian: "A portion of the tapas menu is vegetarian but tapas is quite centered around seafood on the island.",
+        vegan: "Similarly to the vegetarian options but you can order food without fried eggs or cheese."
+      },
+      instagramUrl: 'https://www.instagram.com/casajuliorestaurante/?hl=en',
+      tags: ["Spanish", "Tapas",  "Sharing", "Wine", "Sangria", "Seafood", "gluten-free",  "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday: 13:00 - 23:30",
+          "Tuesday - Thursday: 13:00 - 17:00",
+          "Friday - Sunday: 13:00 - 23:00"
+      ]
     }
   ]
 };
