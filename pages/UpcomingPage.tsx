@@ -9,7 +9,6 @@ interface UpcomingRestaurant {
 }
 
 const upcomingList: UpcomingRestaurant[] = [
-    { name: "Palma de Mallorca", city: "Spain", cuisine: "City Guide", notes: "Exploring the best tapas and seafood the island has to offer." },
     { name: "Lisbon", city: "Portugal", cuisine: "City Guide", notes: "On the hunt for authentic Pastel de Nata and fresh seafood." },
     { name: "Barcelona", city: "Spain", cuisine: "City Guide", notes: "Discovering Catalan classics and hidden architectural gems." },
     { name: "Bruges", city: "Belgium", cuisine: "City Guide", notes: "Indulging in world-class waffles, chocolate, and fries." },
