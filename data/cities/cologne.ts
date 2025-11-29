@@ -209,12 +209,14 @@ export const cologne: City = {
     {
       id: 'kaffeesaurus',
       name: "Kaffeesaurus",
-      description: "A great spot for brunch with friends, or a quick coffee and cake near the central train station, or even an atmospheric place to study during the week. I would recommend coming here to try the chai and cakes.\n\nIn my experience the hollandaise sauce wasn't as good as in cream company but the Brontosaurus burger I had one time was really tasty. I think the prices are fair and the atmosphere is really nice, so overall a great cafe.",
+      description: "A great spot for brunch with friends, or a quick coffee and cake, or even an atmospheric place to study during the week. I would recommend coming here to try the chai and cakes.\n\nIn my experience the hollandaise sauce wasn't as good as in cream company but the Brontosaurus burger I had one time was really tasty. I think the prices are fair and the atmosphere is really nice, so overall a great cafe.",
       quickVerdict: 'A trendy, spacious spot near the station ideal for brunch or study. Delicious cakes and fair prices.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_1.jpg', caption: 'Brontosaurus burger'},
       images: [
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_2.jpg', caption: 'Open toast sandwiches, Bennysaurus eggs (bottom right), Eggs any style with poached eggs, extra salmon on gluten free bread with a side of turkey bacon (mid left)'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_3.jpg', caption: 'Bennysaurus eggs'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_9.jpg', caption: 'Saurus french toast with vanilla ice cream'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_10.jpg', caption: 'Saurus french toast and hawaii bowls (gluten-free)'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_4.jpg', caption: 'Carrot cake'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_5.jpg', caption: 'Chai'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_6.jpg', caption: 'Chai'},
@@ -226,7 +228,7 @@ export const cologne: City = {
       cuisine: 'Cafe',
       alexsTip: "Definitely order the chai, it tastes close to the real thing and even comes with a timer when to pour. The Brontosaurus burger is my favourite.",
       dietary: {
-        celiac: "Some gluten free cakes, salads and gluten-free toast. Hollandaise sauce is not gluten-free.",
+        celiac: "Some gluten free cakes, salads and gluten-free toast. Hollandaise sauce is not gluten-free. The Hawaii bowl is gluten-free, but please double check with server.",
         lactose: "Lactose-free milk for coffee available.",
         vegetarian: "Plenty options for sandwiches, burgers, and cakes.",
         vegan: "Cakes, main dishes and milk alternatives for coffee."
@@ -238,7 +240,7 @@ export const cologne: City = {
           "Monday - Friday: 08:00 - 21:00",
           "Saturday - Sunday: 09:00 - 21:00" 
       ]
-    }, 
+    }
     {
       id: 'losteria',
       name: "L'osteria",

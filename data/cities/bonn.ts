@@ -482,6 +482,8 @@ export const bonn: City = {
       images: [
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_2.jpg', caption: 'Open toast sandwiches, Bennysaurus eggs (bottom right), Eggs any style with poached eggs, extra salmon on gluten free bread with a side of turkey bacon (mid left)'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_3.jpg', caption: 'Bennysaurus eggs'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_9.jpg', caption: 'Saurus french toast with vanilla ice cream'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_10.jpg', caption: 'Saurus french toast and hawaii bowls (gluten-free)'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_4.jpg', caption: 'Carrot cake'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_5.jpg', caption: 'Chai'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_6.jpg', caption: 'Chai'},
@@ -493,7 +495,7 @@ export const bonn: City = {
       cuisine: 'Cafe',
       alexsTip: "Definitely order the chai, it tastes close to the real thing and even comes with a timer when to pour. The Brontosaurus burger is my favourite.",
       dietary: {
-        celiac: "Some gluten free cakes, salads and gluten-free toast. Hollandaise sauce is not gluten-free.",
+        celiac: "Some gluten free cakes, salads and gluten-free toast. Hollandaise sauce is not gluten-free. The Hawaii bowl is gluten-free, but please double check with server.",
         lactose: "Lactose-free milk for coffee available.",
         vegetarian: "Plenty options for sandwiches, burgers, and cakes.",
         vegan: "Cakes, main dishes and milk alternatives for coffee."
