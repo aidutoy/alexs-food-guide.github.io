@@ -38,6 +38,31 @@ export const bruhl: City = {
   image: 'https://picsum.photos/seed/bruhl-city/800/600',
   coordinates: { lat: 50.8295, lon: 6.8922 },
   restaurants: [
-    ...placeholderRestaurants
+    {
+      id: '',
+      name: "",
+      description: '',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/bruges/.../..._1.jpg', caption: ''},
+      images: [
+        { url: '', caption: ''}
+      ],
+      ratings: { food: 4, drinks: 5, service: 5, price: 1 },
+      mapEmbedUrl: '',
+      cuisine: 'Cafe',
+      alexsTip: "",
+      dietary: {
+        celiac: "",
+        lactose: "",
+        vegetarian: "",
+        vegan: ""
+      },
+      websiteUrl: '',
+      instagramUrl: '',
+      tags: ["gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Monday - Friday: 08:00 - 21:00",
+          "Saturday - Sunday: 09:00 - 21:00" 
+      ]
+    }
   ]
 };

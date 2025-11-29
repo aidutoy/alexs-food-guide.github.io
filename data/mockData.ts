@@ -7,5 +7,6 @@ import { giza } from './cities/giza';
 import { luxor } from './cities/luxor';
 import { hurghada } from './cities/hurghada';
 import { mallorca } from './cities/mallorca';
+import { bruges } from './cities/bruges';
 
-export const cities: City[] = [bonn, cologne, cairo, giza, luxor, hurghada, mallorca];
+export const cities: City[] = [bonn, cologne, cairo, giza, luxor, hurghada, mallorca, bruges];

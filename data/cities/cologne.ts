@@ -240,7 +240,7 @@ export const cologne: City = {
           "Monday - Friday: 08:00 - 21:00",
           "Saturday - Sunday: 09:00 - 21:00" 
       ]
-    }
+    },
     {
       id: 'losteria',
       name: "L'osteria",
