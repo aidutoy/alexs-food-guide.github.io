@@ -1,4 +1,5 @@
 
+
 import type { City } from '../../types';
 
 const newRestaurants = [
@@ -62,6 +63,33 @@ export const bruges: City = {
       tags: ["Belgian", "Waffles", "dessert", "gluten-free", "lactose-free", "vegetarian", "vegan"],
       openingHours: [
           "Everyday: 10:00 - 18:00"
+      ]
+    },
+    {
+      id: 'go-fre',
+      name: "Go.Fre",
+      description: "A must visit on your trip to Bruges. Treat yourself to an intoxicatingly sweet waffle on a stick and even buy more to heat up in the microwave later. You can gift these to friends and family who weren't abel to make it on the trip. There are toppings for everyone, but if you have a sweet tooth like me then I recommend the white chocolate and biscoff waffle. There is a shiny gold-leaf waffle for those looking to post something special on instagram but I personally find gold-leaf overrated. There are vegan and gluten-free waffles upon request so there are options for everyone.",
+      quickVerdict: 'Intoxicatingly sweet waffles on a stick with endless toppings. A perfect treat for strolling around Bruges and to bring home to your friends.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/bruges/go-fre/go-fre_1.jpg', caption: 'Gluten-free waffle sticks with white chocolate and biscoff (left) and white chocolate and smarties (right)'},
+      images: [
+      ],
+      ratings: { food: 5, drinks: 5, service: 5, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Go.fre%20%7C%20Belgian%20waffles%20on%20a%20stick%2C%20Breidelstraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
+      cuisine: 'Waffles',
+      alexsTip: "Try at least one on your trip but save your appetite for the bigger waffles elsewhere.",
+      dietary: {
+        celiac: "Gluten-free waffles available",
+        lactose: "Dairy-free toppings available like dark chocolate sauce",
+        vegetarian: "All waffles vegetarian",
+        vegan: "Waffles with dairy-free toppings upon request"
+      },
+      websiteUrl: 'https://www.gofre.be/',
+      instagramUrl: 'https://www.instagram.com/go.fre/?hl=en',
+      tags: ["Belgian", "Waffles", "dessert", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Sunday - Thursday: 10:00 - 18:30",
+          "Friday: 10:00 - 20:00",
+          "Saturday: 10:00 - 21:00" 
       ]
     }
   ]

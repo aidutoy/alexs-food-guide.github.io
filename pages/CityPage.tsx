@@ -146,7 +146,7 @@ const CityPage: React.FC = () => {
                             group-hover:translate-x-0 group-hover:translate-y-0
                         `}></div>
 
-                        <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] bg-zinc-900">
+                        <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] bg-zinc-900">
                             <img 
                                 src={restaurant.mainImage.url} 
                                 alt={restaurant.name}

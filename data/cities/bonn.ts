@@ -600,10 +600,10 @@ export const bonn: City = {
       name: "Ferdinando",
       description: "Big pizzas, tasty cornettos and decent coffee all for a low price. The cafe is Italian, but the pizza is not the traditional Napoli pizza, so don't expect too much. Still, I enjoyed it enough to go back many times since I studied across the street. I enjoyed the four cheese pizza the most, which definitely fills a big appetite.\n\nFor the Italians out there, please don't panic that there's Hawaiian pizza on the menu, we are in Germany after all!",
       quickVerdict: 'Large, affordable pizzas and tasty cornettos. Not traditional Napoli style but satisfies a big appetite.',
-      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ferdinandos/ferdinandos_1.jpg', caption: 'Duck breast in mango sauce with sweet potato mash'},
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ferdinandos/ferdinandos_1.jpg', caption: 'Quattro Formaggi Pizza'},
       images: [
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ferdinandos/ferdinandos_2.jpg', caption: 'Vegan summer rolls with tofu and peanut sauce' },
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ferdinandos/ferdinandos_3.jpg', caption: 'Vegan spring rolls with vegetables' }
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ferdinandos/ferdinandos_2.jpg', caption: 'Quattro Formaggi Pizza' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ferdinandos/ferdinandos_3.jpg', caption: 'Quattro Formaggi Pizza' }
       ],
       ratings: { food: 3.5, drinks: 4, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ferdinando%20Italian%20coffee%20%26%20bistro%2C%20Auf%20dem%20H%C3%BCgel%2C%20Bonn%2C%20Germany&maptype=roadmap',
