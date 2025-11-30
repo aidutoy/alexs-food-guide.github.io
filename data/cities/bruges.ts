@@ -48,7 +48,7 @@ export const bruges: City = {
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/bruges/otto/otto_1.jpg', caption: 'Gluten-free waffles with strawberry, cream and pomegranate seeds (left) and with blueberries, nuts and maple syrup (right).'},
       images: [
       ],
-      ratings: { food: 5, drinks: 4, service: 5, price: 1 },
+      ratings: { food: 5, drinks: 5, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Otto%20Waffle%20Atelier%20Katelijnestraat%2C%20Katelijnestraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
       cuisine: 'Waffles',
       alexsTip: "Take the blueberry waffle and take a picture by the canal to capture the Bruges experience.",
@@ -63,6 +63,31 @@ export const bruges: City = {
       tags: ["Belgian", "Waffles", "dessert", "gluten-free", "lactose-free", "vegetarian", "vegan"],
       openingHours: [
           "Everyday: 10:00 - 18:00"
+      ]
+    },
+    {
+      id: 'fritbar',
+      name: "Fritbar",
+      description: '',
+      quickVerdict: 'Crispy, fresh Belgian fries with a huge selection of sauces. A simple, delicious, and essential stop.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/bruges/frtibar/fritbar_1.jpg', caption: 'Fries with garlic mayo'},
+      images: [
+      ],
+      ratings: { food: 5, drinks: 5, service: 5, price: 1 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=FritBar%20-%20Bruges%2C%20Katelijnestraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
+      cuisine: 'Fries',
+      alexsTip: "Take a medium sized fries with garlic mayo and go next door for waffles for dessert.",
+      dietary: {
+        celiac: "Fries are gluten-free and some main-dishes like pulled pork loaded fries can be made gluten-free.",
+        lactose: "Fries are dairy-free but cheese is not.",
+        vegetarian: "Fries can be fried in plant based oil",
+        vegan: "Fries can be fried in plant based oil"
+      },
+      websiteUrl: 'https://fritbar.be/',
+      instagramUrl: 'https://www.instagram.com/fritbarbruges/?hl=en',
+      tags: ["Belgian", "Fries", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Everyday: 12:00 - 20:00"
       ]
     },
     {

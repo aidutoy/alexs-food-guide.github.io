@@ -5,6 +5,7 @@ import About from '../components/About';
 import Why from '../components/Why';
 import FeaturedCitiesCarousel from '../components/FeaturedCitiesCarousel';
 import GalleryPreview from '../components/GalleryPreview';
+import DecisionMaker from '../components/DecisionMaker';
 import { cities } from '../data/mockData';
 
 const HomePage: React.FC = () => {
@@ -31,6 +32,7 @@ const HomePage: React.FC = () => {
                 <Hero />
                 <About />
                 <Why />
+                <DecisionMaker />
                 <FeaturedCitiesCarousel cities={cities} />
                 <GalleryPreview />
             </div>
