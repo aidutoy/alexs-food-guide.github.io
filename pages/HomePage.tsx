@@ -32,8 +32,8 @@ const HomePage: React.FC = () => {
                 <Hero />
                 <About />
                 <Why />
-                <DecisionMaker />
                 <FeaturedCitiesCarousel cities={cities} />
+                <DecisionMaker />
                 <GalleryPreview />
             </div>
         </div>
