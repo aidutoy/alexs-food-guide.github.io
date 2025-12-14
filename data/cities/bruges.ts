@@ -113,8 +113,37 @@ export const bruges: City = {
       tags: ["Belgian", "Waffles", "dessert", "gluten-free", "lactose-free", "vegetarian", "vegan"],
       openingHours: [
           "Sunday - Thursday: 10:00 - 18:30",
-          "Friday: 10:00 - 20:00",
+          "Friday - 10:00 - 20:00",
           "Saturday: 10:00 - 21:00" 
+      ]
+    },
+    {
+      id: 'Bohemian',
+      name: "Bohemian Burger",
+      description: "If you need somewhere to eat and don't want to think too much about, this is the spot. They have delicious burgers with options for everyone, except vegans as only one vegan burger is consistently on the menu. Everywhere in Belgium is expensive, so expect to pay a bit more than usual for these burgers. I can recommend coming here if you are struggling to find something but honestly it is a nice break from the waffles and chocolate. The gluten-free bun is always nice to see and actually looked similar to the wheat buns. Overall, a good experience that I don't regret.",
+      quickVerdict: 'Delicious, high-quality burgers with excellent gluten-free options. A perfect savoury break from the sweets of Bruges.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/bruges/bohemian/bohemian_1.jpg', caption: 'Boston Burger with bacon, cheese, goats cheese and honey mustard with fries.'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/bruges/bohemian/bohemian_2.jpg', caption: 'Gluten-free Bohemian burger and fries'}
+      ],
+      ratings: { food: 4, drinks: 5, service: 5, price: 3 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Bohemian%20Burgers%20Brugge%2C%20Sint-Amandsstraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
+      cuisine: 'Burgers',
+      alexsTip: "Make sure you're hungry before coming as this is not a cheap burger, I would try the Whitesnake for something new",
+      dietary: {
+        celiac: "Gluten-free buns for €1 extra",
+        lactose: "Dairy-free cheese not available but burgers without cheese are",
+        vegetarian: "5 burgers are vegetarian and made from different buns like nuts and quinoa",
+        vegan: "Only one burger on the menu made from quinoa"
+      },
+      websiteUrl: 'https://www.bohemianburgers.be/en/',
+      instagramUrl: 'https://www.instagram.com/bohemianburgers.be/',
+      tags: ["Burgers", "fries", "American", "gluten-free", "vegetarian"],
+      openingHours: [
+          "Monday: Closed",
+          "Tuesday - Thursday: 12:00 - 21:00",
+          "Friday - Saturday: 12:00 - 22:00",
+          "Sunday: 12:00 - 16:00" 
       ]
     }
   ]
