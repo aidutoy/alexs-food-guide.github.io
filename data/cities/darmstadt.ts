@@ -30,6 +30,6 @@ export const darmstadt: City = {
           "Mon - Sat: 11:00 - 23:00",
           "Sun: 12:00 - 22:00"
       ]
-    },
+    }
   ]
 };

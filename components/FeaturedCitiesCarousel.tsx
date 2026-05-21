@@ -14,6 +14,7 @@ const FeaturedCitiesCarousel: React.FC<FeaturedCitiesCarouselProps> = ({ cities 
     const [activeIndex, setActiveIndex] = useState<number>(0);
     const [direction, setDirection] = useState<number>(0); // -1 for left, 1 for right
     const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+    const stationsContainerRef = useRef<HTMLDivElement>(null);
     const activeCity = cities[activeIndex];
 
     // Reset autoplay timer whenever activeIndex change
@@ -21,6 +22,37 @@ const FeaturedCitiesCarousel: React.FC<FeaturedCitiesCarouselProps> = ({ cities 
         startAutoplay();
         return () => stopAutoplay();
     }, [activeIndex]);
+
+    // Auto-scroll the active station card into view
+    useEffect(() => {
+        if (stationsContainerRef.current) {
+            const activeChild = stationsContainerRef.current.children[activeIndex] as HTMLElement;
+            if (activeChild) {
+                const container = stationsContainerRef.current;
+                const containerWidth = container.clientWidth;
+                
+                const itemLeft = activeChild.offsetLeft;
+                const itemWidth = activeChild.clientWidth;
+                
+                const targetScrollLeft = itemLeft - (containerWidth / 2) + (itemWidth / 2);
+                
+                container.scrollTo({
+                    left: targetScrollLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [activeIndex]);
+
+    const scrollStations = (dir: 'left' | 'right') => {
+        if (stationsContainerRef.current) {
+            const scrollAmount = 300;
+            stationsContainerRef.current.scrollBy({
+                left: dir === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
 
     const startAutoplay = () => {
         stopAutoplay();
@@ -294,49 +326,74 @@ const FeaturedCitiesCarousel: React.FC<FeaturedCitiesCarouselProps> = ({ cities 
                 </div>
 
                 {/* Horizontal Sliding Carousel Stations with high-contrast active bounds */}
-                <div 
-                    className="flex overflow-x-auto gap-4 py-2 px-1 scrollbar-none snap-x snap-mandatory"
-                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-                >
-                    {cities.map((city, idx) => {
-                        const isCurrent = idx === activeIndex;
-                        return (
-                            <button
-                                key={`station-${city.id}`}
-                                onClick={() => handleSelect(idx)}
-                                className={`
-                                    relative flex-shrink-0 w-36 sm:w-44 text-left transition-all duration-500 rounded-2xl p-3 border text-white snap-start flex gap-3 items-center overflow-hidden
-                                    ${isCurrent 
-                                        ? 'bg-white/10 border-brand-primary/40 shadow-xl' 
-                                        : 'bg-white/5 border-white/5 hover:bg-white/10 hover:border-white/10'
-                                    }
-                                `}
-                            >
-                                {/* City Miniature Thumbnail with slow pan */}
-                                <div className="h-10 w-10 rounded-lg overflow-hidden shrink-0 relative bg-zinc-900 border border-white/5">
-                                    <img 
-                                        src={city.image} 
-                                        alt="" 
-                                        className={`w-full h-full object-cover transition-all duration-500 ${isCurrent ? 'scale-110 filter brightness-110' : 'filter brightness-70'}`} 
-                                    />
-                                </div>
-                                <div className="min-w-0 flex-1">
-                                    <span className="text-[9px] font-mono text-white/40 block leading-tight">0{(idx + 1)}</span>
-                                    <span className={`text-sm tracking-wide truncate block font-playfair font-semibold ${isCurrent ? 'text-brand-primary' : 'text-white/75'}`}>
-                                        {city.name}
-                                    </span>
-                                </div>
+                <div className="relative group/stations select-none">
+                    {/* Visual fade gradients on the sides to indicate content scrollability */}
+                    <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-brand-dark via-brand-dark/40 to-transparent z-10 pointer-events-none hidden md:block"></div>
+                    <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-brand-dark via-brand-dark/40 to-transparent z-10 pointer-events-none hidden md:block"></div>
 
-                                {/* Active dot indicator */}
-                                {isCurrent && (
-                                    <motion.span 
-                                        layoutId="activeDot" 
-                                        className="h-1.5 w-1.5 rounded-full bg-brand-primary absolute right-3 top-3 animate-pulse" 
-                                    />
-                                )}
-                            </button>
-                        );
-                    })}
+                    {/* Desktop Hover Navigation Controls */}
+                    <button
+                        onClick={() => scrollStations('left')}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full bg-brand-dark/80 hover:bg-white text-white hover:text-brand-dark border border-white/10 flex items-center justify-center shadow-lg transition-all opacity-0 group-hover/stations:opacity-100 hover:scale-110 active:scale-95 hidden md:flex"
+                        aria-label="Scroll stations list left"
+                    >
+                        <ChevronLeftIcon className="w-5 h-5" />
+                    </button>
+
+                    <button
+                        onClick={() => scrollStations('right')}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full bg-brand-dark/80 hover:bg-white text-white hover:text-brand-dark border border-white/10 flex items-center justify-center shadow-lg transition-all opacity-0 group-hover/stations:opacity-100 hover:scale-110 active:scale-95 hidden md:flex"
+                        aria-label="Scroll stations list right"
+                    >
+                        <ChevronRightIcon className="w-5 h-5" />
+                    </button>
+
+                    {/* Scrollable container strip */}
+                    <div 
+                        ref={stationsContainerRef}
+                        className="flex overflow-x-auto gap-4 py-2 px-6 scrollbar-none snap-x snap-mandatory scroll-smooth"
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    >
+                        {cities.map((city, idx) => {
+                            const isCurrent = idx === activeIndex;
+                            return (
+                                <button
+                                    key={`station-${city.id}`}
+                                    onClick={() => handleSelect(idx)}
+                                    className={`
+                                        relative flex-shrink-0 w-36 sm:w-44 text-left transition-all duration-500 rounded-2xl p-3 border text-white snap-start flex gap-3 items-center overflow-hidden
+                                        ${isCurrent 
+                                            ? 'bg-white/10 border-brand-primary/40 shadow-xl' 
+                                            : 'bg-white/5 border-white/5 hover:bg-white/10 hover:border-white/10'
+                                        }
+                                    `}
+                                >
+                                    {/* City Miniature Thumbnail with slow pan */}
+                                    <div className="h-10 w-10 rounded-lg overflow-hidden shrink-0 relative bg-zinc-900 border border-white/5">
+                                        <img 
+                                            src={city.image} 
+                                            alt="" 
+                                            className={`w-full h-full object-cover transition-all duration-500 ${isCurrent ? 'scale-110 filter brightness-110' : 'filter brightness-70'}`} 
+                                        />
+                                    </div>
+                                    <div className="min-w-0 flex-1">
+                                        <span className="text-[9px] font-mono text-white/40 block leading-tight">0{(idx + 1)}</span>
+                                        <span className={`text-sm tracking-wide truncate block font-playfair font-semibold ${isCurrent ? 'text-brand-primary' : 'text-white/75'}`}>
+                                            {city.name}
+                                        </span>
+                                    </div>
+
+                                    {/* Active dot indicator */}
+                                    {isCurrent && (
+                                        <motion.span 
+                                            layoutId="activeDot" 
+                                            className="h-1.5 w-1.5 rounded-full bg-brand-primary absolute right-3 top-3 animate-pulse" 
+                                        />
+                                    )}
+                                </button>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </section>
