@@ -33,7 +33,7 @@ export const darmstadt: City = {
     },
     {
       id: 'SushiKi',
-      name: 'SuhsiKi',
+      name: 'SushiKi',
       description: "This asian restaurant specialising in sushi but there are plenty tasty curries on the menu too. I am a big fan of vietnamese food, so the Ga Chien Sot Xoai (mango-curry sauce) with breaded chicken was right up my street. It did not disappoint, lots of chicken and even too much rice for me, which honestly is not a negative. I would recommend coming with a big appetite. The drinks were very tasty, and I recommend ordering a Vietnames coffee at the end, they will ask you if you want it hot or cold, traditionally it is served cold. They offer a lunch menu saving at least 3 euros but only Monday to Friday between 11:30 and 15:00.",
       quickVerdict: 'Sushi, large Vietnamese curries and a cheap lunch menu.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/sushiki/sushiki_1.jpg', caption: 'Ga Chien Sot Xoai (mango-curry sauce) with breaded chicken'},
