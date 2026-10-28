@@ -58,6 +58,42 @@ export const darmstadt: City = {
           "Mon - Sun: 11:30 - 22:00",
           "Thu: closed"
       ]
+    },
+    {
+      id: 'LisKitchen',
+      name: "Li's Kitchen",
+      description: "Authentic Sichuan restaurant located on Adelungstraße in the centre of Darmstadt (also known locally as 川香巴蜀 / Chuanxiang Bashu). If you appreciate genuine Chinese spice and family style dining, this is a hidden gem. The restaurant appeared quiet through the week but don't let put you off, the food is delicious. The menu is packed with traditional specialities, from fiery Boiled Beef in Chili Sauce (Shuizhu Niurou) and fragrant Mapo Tofu to dry wok dishes and rich noodle soups. The portions are substantial and served piping hot. Those adventurous enough to drink their more exotic dishes like duck blood or pig intestines may have found your final boss. I couldn't bring myself to try it but if you do, let me know! They also offer a great-value lunch menu on weekdays.",
+      quickVerdict: "Family style authentic chinese food that should not be overlooked.",
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/lis_kitchen/lis_kitchen_1.jpg', caption: 'Sweet and Sour Chicken (bottom), Fried Aubergine (top right), Mapu Tofu (top)'},
+      images: [
+        { 
+          url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/lis_kitchen/lis_kitchen_2.jpg', 
+          caption: 'Sweet and Sour Chicken' 
+        },
+        { 
+          url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/lis_kitchen/lis_kitchen_3.jpg', 
+          caption: 'Mapu Tofu' 
+        }
+      ],
+      ratings: { food: 5, drinks: 4, service: 5, price: 2 },
+      mapEmbedUrl: '<iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Li\'s%20Kitchen%2C%20Adelungstra%C3%9Fe%2C%20Darmstadt%2C%20Germany&maptype=roadmap" allowfullscreen></iframe>',
+      cuisine: 'Chinese',
+      alexsTip: "Bring friends and order for the table, the menu is designed to share. Their lunch time menu will save you about 5 euros compared to dinner.",
+      dietary: {
+        celiac: "Many traditional Sichuan sauces and marinades contain soy sauce with wheat. Ask staff for wok dishes or steamed dishes prepared with salt and garlic without soy sauce, but cross-contamination risk is high in the kitchen.",
+        lactose: "Virtually all dishes are naturally dairy-free and lactose-free as Chinese cooking does not traditionally use milk, cream, or cheese.",
+        vegetarian: "Several solid choices including Mapo Tofu, homestyle braised eggplant/aubergine, spicy cucumber salad, and stir-fried pak choi with garlic.",
+        vegan: "Vegetable stir-fries, and tofu with chili oil can all be prepared vegan."
+      },
+      websiteUrl: "https://www.liskitchen-darmstadt.de/",
+      instagramUrl: 'https://www.instagram.com/chuanxiangbashu/?hl=en',
+      tags: ["Chinese", "Sichuan", "Spicy", "Lunch", "Dinner", "Takeaway", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Mon - Wed: 11:30 - 15:00, 17:30 - 22:30",
+          "Thu: closed",
+          "Fri: 11:30 - 15:00, 17:30 - 22:30",
+          "Sat - Sun: 12:00 - 22:30"
+      ]
     }
   ]
 };

@@ -6,6 +6,8 @@ import type { Restaurant } from '../types';
 import { RestaurantModal } from '../components/RestaurantModal';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon';
 import ArrowUpRightIcon from '../components/icons/ArrowUpRightIcon';
+import ShareIcon from '../components/icons/ShareIcon';
+import CheckIcon from '../components/icons/CheckIcon';
 import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from '../components/icons/DietaryIcons';
 import StarRating from '../components/StarRating';
 
@@ -13,8 +15,45 @@ const CityPage: React.FC = () => {
   const { cityId } = useParams<{ cityId: string }>();
   const city = cities.find((c) => c.id === cityId);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
+
+  const handleShareCard = async (e: React.MouseEvent, restaurant: Restaurant) => {
+    e.stopPropagation();
+    const origin = window.location.origin;
+    const pathname = window.location.pathname;
+    const shareUrl = `${origin}${pathname}#/city/${cityId}?restaurant=${encodeURIComponent(restaurant.id)}`;
+
+    let success = false;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(shareUrl);
+        success = true;
+      }
+    } catch (err) {
+      console.warn('Clipboard API failed', err);
+    }
+    if (!success) {
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = shareUrl;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        success = document.execCommand('copy');
+        document.body.removeChild(textArea);
+      } catch (err) {
+        console.error('Copy fallback failed', err);
+      }
+    }
+    setCopiedId(restaurant.id);
+    setTimeout(() => {
+      setCopiedId(null);
+    }, 2500);
+  };
 
   // Check for deep link to restaurant
   useEffect(() => {
@@ -22,10 +61,12 @@ const CityPage: React.FC = () => {
         const searchParams = new URLSearchParams(location.search);
         const restaurantId = searchParams.get('restaurant');
         if (restaurantId) {
-            const restaurant = city.restaurants.find(r => r.id === restaurantId);
+            const restaurant = city.restaurants.find(r => r.id === restaurantId || r.id.toLowerCase() === restaurantId.toLowerCase());
             if (restaurant) {
                 setSelectedRestaurant(restaurant);
             }
+        } else {
+            setSelectedRestaurant(null);
         }
     }
   }, [location.search, city]);
@@ -51,14 +92,17 @@ const CityPage: React.FC = () => {
 
   const openModal = (restaurant: Restaurant) => {
     setSelectedRestaurant(restaurant);
-    // Optional: Update URL without reloading to make the state shareable
-    // navigate(`?restaurant=${restaurant.id}`, { replace: true });
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.set('restaurant', restaurant.id);
+    navigate({ pathname: location.pathname, search: searchParams.toString() }, { replace: true });
   };
 
   const closeModal = () => {
     setSelectedRestaurant(null);
-    // Optional: Clear URL param
-    // navigate(location.pathname, { replace: true });
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.delete('restaurant');
+    const remaining = searchParams.toString();
+    navigate({ pathname: location.pathname, search: remaining ? `?${remaining}` : '' }, { replace: true });
   };
 
   const hasTag = (restaurant: Restaurant, tag: string) => {
@@ -217,8 +261,32 @@ const CityPage: React.FC = () => {
                                     </div>
                                 )}
 
-                                <div className="ml-auto md:hidden self-center">
-                                     <span className="text-brand-primary text-sm font-bold uppercase tracking-widest">Tap to view</span>
+                                <div className="ml-auto flex items-center gap-3 self-center">
+                                    <button
+                                        onClick={(e) => handleShareCard(e, restaurant)}
+                                        className={`
+                                            flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-medium transition-all duration-200 active:scale-95
+                                            ${copiedId === restaurant.id 
+                                                ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-sm shadow-emerald-500/20' 
+                                                : 'bg-white/5 hover:bg-white/10 text-white/60 hover:text-white border-white/10 hover:border-white/20'
+                                            }
+                                        `}
+                                        title={`Copy link to ${restaurant.name}`}
+                                        aria-label={`Share ${restaurant.name}`}
+                                    >
+                                        {copiedId === restaurant.id ? (
+                                            <>
+                                                <CheckIcon className="w-3.5 h-3.5 text-emerald-400" />
+                                                <span>Copied!</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <ShareIcon className="w-3.5 h-3.5 text-white/60" />
+                                                <span>Share</span>
+                                            </>
+                                        )}
+                                    </button>
+                                    <span className="md:hidden text-brand-primary text-sm font-bold uppercase tracking-widest">View</span>
                                 </div>
                             </div>
                         </div>

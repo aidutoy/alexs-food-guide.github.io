@@ -9,14 +9,23 @@ import InstagramIcon from './icons/InstagramIcon';
 import CloseIcon from './icons/CloseIcon';
 import InfoIcon from './icons/InfoIcon';
 import ClockIcon from './icons/ClockIcon';
+import ShareIcon from './icons/ShareIcon';
+import CheckIcon from './icons/CheckIcon';
 import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from './icons/DietaryIcons';
 import Lightbox from './Lightbox';
 import StarRating from './StarRating';
+import { cities } from '../data/mockData';
 
 interface RestaurantModalProps {
   restaurant: Restaurant | null;
   onClose: () => void;
 }
+
+const getMapSrc = (srcOrIframe: string) => {
+  if (!srcOrIframe) return '';
+  const match = srcOrIframe.match(/src=["']([^"']+)["']/i);
+  return match ? match[1] : srcOrIframe;
+};
 
 const RatingDisplay: React.FC<{ label: string; score: number; max: number; }> = ({ label, score, max }) => (
     <div className="flex items-center justify-between text-sm">
@@ -43,11 +52,13 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showMobileCaption, setShowMobileCaption] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     if (restaurant) {
       setCurrentImageIndex(0);
       setShowMobileCaption(false);
+      setCopied(false);
       // Prevent body scroll when modal is open
       document.body.style.overflow = 'hidden';
     }
@@ -56,6 +67,54 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
     }
   }, [restaurant]);
 
+  const handleShare = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!restaurant) return;
+
+    // Determine the shareable URL
+    let shareUrl = window.location.href;
+
+    // Ensure the URL contains the restaurant deep-link parameter
+    if (!shareUrl.includes(`restaurant=${encodeURIComponent(restaurant.id)}`)) {
+      const parentCity = cities.find(c => c.restaurants.some(r => r.id === restaurant.id));
+      const origin = window.location.origin;
+      const pathname = window.location.pathname;
+      const cityId = parentCity ? parentCity.id : 'darmstadt';
+      shareUrl = `${origin}${pathname}#/city/${cityId}?restaurant=${encodeURIComponent(restaurant.id)}`;
+    }
+
+    let success = false;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(shareUrl);
+        success = true;
+      }
+    } catch (err) {
+      console.warn('Clipboard API failed, using fallback', err);
+    }
+
+    if (!success) {
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = shareUrl;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        success = document.execCommand('copy');
+        document.body.removeChild(textArea);
+      } catch (err) {
+        console.error('Fallback copy failed', err);
+      }
+    }
+
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2500);
+  };
 
   if (!restaurant) return null;
 
@@ -192,16 +251,48 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
         
         {/* Details Section */}
         <div className="w-full md:w-2/5 flex flex-col flex-1 relative bg-transparent overflow-hidden">
-             {/* Close Button */}
-             <div className="absolute top-6 right-6 z-10">
+             {/* Header Action Buttons (Share & Close) */}
+             <div className="absolute top-6 right-6 z-10 flex items-center gap-2">
+                <button 
+                    onClick={handleShare}
+                    className={`
+                        flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-200 text-xs font-medium active:scale-95
+                        ${copied 
+                            ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-lg shadow-emerald-500/10' 
+                            : 'bg-white/5 hover:bg-white/15 text-white/70 hover:text-white border-white/10 hover:border-white/20'
+                        }
+                    `}
+                    title={copied ? "Copied to clipboard!" : "Share restaurant link"}
+                    aria-label="Share restaurant"
+                >
+                    {copied ? (
+                        <>
+                            <CheckIcon className="w-3.5 h-3.5 text-emerald-400" />
+                            <span>Copied!</span>
+                        </>
+                    ) : (
+                        <>
+                            <ShareIcon className="w-3.5 h-3.5 text-white/70" />
+                            <span>Share</span>
+                        </>
+                    )}
+                </button>
                 <button 
                     onClick={onClose} 
-                    className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-colors" 
+                    className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-colors border border-white/10 active:scale-95" 
                     aria-label="Close"
                 >
                     <CloseIcon className="w-5 h-5" />
                 </button>
             </div>
+
+            {/* Copied URL Toast Notification */}
+            {copied && (
+                <div className="absolute top-20 right-6 z-30 bg-emerald-600/90 text-white text-xs font-medium px-3.5 py-2 rounded-xl shadow-2xl backdrop-blur-md flex items-center gap-2 border border-emerald-400/40 animate-fade-in pointer-events-none">
+                    <CheckIcon className="w-4 h-4 text-white" />
+                    <span>Page URL copied to clipboard!</span>
+                </div>
+            )}
 
             {/* Scrollable Content */}
             <div className="overflow-y-auto flex-1 p-6 md:p-10 custom-scrollbar overscroll-contain">
@@ -334,41 +425,64 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                     </div>
                 )}
 
-                {(restaurant.websiteUrl || restaurant.instagramUrl) && (
-                     <div className="py-8 border-t border-white/10">
-                        <h4 className="font-playfair font-bold text-white text-lg mb-4">Connect</h4>
-                          <div className="flex items-center gap-6">
-                            {restaurant.websiteUrl && (
-                                <a 
-                                    href={restaurant.websiteUrl} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    aria-label="Website" 
-                                    className="text-white/60 hover:text-brand-primary transition-colors hover:scale-110 transform duration-200"
-                                >
-                                    <GlobeIcon className="w-8 h-8" />
-                                </a>
+                <div className="py-8 border-t border-white/10">
+                    <h4 className="font-playfair font-bold text-white text-lg mb-4">Connect & Share</h4>
+                    <div className="flex flex-wrap items-center gap-4">
+                        {restaurant.websiteUrl && (
+                            <a 
+                                href={restaurant.websiteUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                aria-label="Website" 
+                                className="text-white/60 hover:text-brand-primary transition-colors hover:scale-110 transform duration-200"
+                                title="Website"
+                            >
+                                <GlobeIcon className="w-8 h-8" />
+                            </a>
+                        )}
+                        {restaurant.instagramUrl && (
+                            <a 
+                                href={restaurant.instagramUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                aria-label="Instagram" 
+                                className="text-white/60 hover:text-brand-primary transition-colors hover:scale-110 transform duration-200"
+                                title="Instagram"
+                            >
+                                <InstagramIcon className="w-8 h-8" />
+                            </a>
+                        )}
+                        <button
+                            onClick={handleShare}
+                            className={`
+                                flex items-center gap-2 px-3.5 py-2 rounded-full border text-xs font-medium transition-all duration-200 active:scale-95
+                                ${copied
+                                    ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-md shadow-emerald-500/10'
+                                    : 'bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border-white/10 hover:border-white/20'
+                                }
+                            `}
+                            title="Copy restaurant link to clipboard"
+                        >
+                            {copied ? (
+                                <>
+                                    <CheckIcon className="w-4 h-4 text-emerald-400" />
+                                    <span>Link Copied!</span>
+                                </>
+                            ) : (
+                                <>
+                                    <ShareIcon className="w-4 h-4 text-white/70" />
+                                    <span>Copy Page Link</span>
+                                </>
                             )}
-                            {restaurant.instagramUrl && (
-                                <a 
-                                    href={restaurant.instagramUrl} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
-                                    aria-label="Instagram" 
-                                    className="text-white/60 hover:text-brand-primary transition-colors hover:scale-110 transform duration-200"
-                                >
-                                    <InstagramIcon className="w-8 h-8" />
-                                </a>
-                            )}
-                          </div>
+                        </button>
                     </div>
-                )}
+                </div>
                 
                  {/* Map Section */}
                 <div className="mt-4">
                     <div className="h-48 rounded-xl overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-500">
                         <iframe
-                            src={restaurant.mapEmbedUrl}
+                            src={getMapSrc(restaurant.mapEmbedUrl)}
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
