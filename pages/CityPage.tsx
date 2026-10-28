@@ -1,23 +1,34 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { cities } from '../data/mockData';
 import type { Restaurant } from '../types';
 import { RestaurantModal } from '../components/RestaurantModal';
+import { CityMapView } from '../components/CityMapView';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon';
 import ArrowUpRightIcon from '../components/icons/ArrowUpRightIcon';
 import ShareIcon from '../components/icons/ShareIcon';
 import CheckIcon from '../components/icons/CheckIcon';
+import BookmarkIcon from '../components/icons/BookmarkIcon';
+import MapPinIcon from '../components/icons/MapPinIcon';
 import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from '../components/icons/DietaryIcons';
 import StarRating from '../components/StarRating';
+import { useSaved } from '../context/SavedContext';
 
 const CityPage: React.FC = () => {
   const { cityId } = useParams<{ cityId: string }>();
   const city = cities.find((c) => c.id === cityId);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<'list' | 'map'>('list');
+
+  // Sticky Quick-filters state
+  const [selectedCuisine, setSelectedCuisine] = useState<string>('All');
+  const [selectedDietary, setSelectedDietary] = useState<string>('All');
+  const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
+
   const navigate = useNavigate();
   const location = useLocation();
+  const { isSaved, toggleSave } = useSaved();
 
   const handleShareCard = async (e: React.MouseEvent, restaurant: Restaurant) => {
     e.stopPropagation();
@@ -74,7 +85,6 @@ const CityPage: React.FC = () => {
   if (!city) {
     return (
       <div className="min-h-screen bg-brand-dark flex flex-col items-center justify-center text-center px-4 pt-16 relative overflow-hidden">
-         {/* Ambient Background */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-primary/20 rounded-full blur-[100px]"></div>
         </div>
@@ -89,6 +99,29 @@ const CityPage: React.FC = () => {
       </div>
     );
   }
+
+  // Derive available cuisines in this city
+  const cityCuisines = ['All', ...Array.from(new Set(city.restaurants.map(r => r.cuisine.split(',')[0].trim())))];
+  const dietaryOptions = ['All', 'Vegetarian', 'Vegan', 'Gluten-Free', 'Lactose-Free'];
+
+  // Apply quick filters
+  const filteredRestaurants = city.restaurants.filter(r => {
+    if (selectedPrice !== null && r.ratings.price !== selectedPrice) return false;
+    if (selectedDietary !== 'All') {
+      const has = r.tags?.some(t => t.toLowerCase().includes(selectedDietary.toLowerCase()));
+      if (!has) return false;
+    }
+    if (selectedCuisine !== 'All') {
+      if (!r.cuisine.toLowerCase().includes(selectedCuisine.toLowerCase())) return false;
+    }
+    return true;
+  });
+
+  const resetFilters = () => {
+    setSelectedCuisine('All');
+    setSelectedDietary('All');
+    setSelectedPrice(null);
+  };
 
   const openModal = (restaurant: Restaurant) => {
     setSelectedRestaurant(restaurant);
@@ -115,12 +148,11 @@ const CityPage: React.FC = () => {
       <div className="fixed inset-0 pointer-events-none z-0">
          <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] translate-x-1/2 translate-y-1/2"></div>
-         {/* Subtle Grain */}
          <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }}></div>
       </div>
 
       {/* Hero Section */}
-      <div className="relative h-[60vh] w-full z-10 flex items-center justify-center">
+      <div className="relative h-[55vh] md:h-[60vh] w-full z-10 flex items-center justify-center">
         <div className="absolute inset-0 overflow-hidden">
             <img 
                 src={city.image} 
@@ -128,20 +160,20 @@ const CityPage: React.FC = () => {
                 className="w-full h-full object-cover animate-slow-zoom"
             />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-brand-dark"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-brand-dark"></div>
         
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 mt-16">
-            <div className="flex justify-center mb-6 opacity-0 animate-[slide-up_0.8s_ease-out_forwards]">
-                 <span className="bg-white/10 backdrop-blur-md border border-white/10 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-[0.2em] text-white shadow-lg">
-                    Travel Guide
+        <div className="relative z-10 text-center px-4 mt-12">
+            <div className="flex justify-center mb-4 animate-[slide-up_0.8s_ease-out_forwards]">
+                 <span className="bg-white/10 backdrop-blur-md border border-white/10 px-5 py-1.5 rounded-full text-xs font-bold uppercase tracking-[0.2em] text-white shadow-lg">
+                    City Food Guide
                 </span>
             </div>
            
-            <h1 className="inline-block text-8xl md:text-[10rem] font-playfair font-bold text-white leading-none tracking-tight opacity-0 animate-[slide-up_0.8s_ease-out_0.1s_forwards] drop-shadow-2xl">
+            <h1 className="inline-block text-7xl md:text-9xl font-playfair font-bold text-white leading-none tracking-tight animate-[slide-up_0.8s_ease-out_0.1s_forwards] drop-shadow-2xl">
                 {city.name}
             </h1>
-            <div className="mt-8 flex items-center justify-center gap-6 text-white/60 font-light opacity-0 animate-[slide-up_0.8s_ease-out_0.2s_forwards]">
+            <div className="mt-6 flex items-center justify-center gap-6 text-white/60 font-light text-sm animate-[slide-up_0.8s_ease-out_0.2s_forwards]">
                 <span className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-brand-primary"></span>
                     {city.coordinates.lat.toFixed(2)}° N, {city.coordinates.lon.toFixed(2)}° E
@@ -168,11 +200,108 @@ const CityPage: React.FC = () => {
             </button>
         </div>
       </div>
+
+      {/* Sticky Interactive Controls Bar (View Mode Toggle & Quick Filters) */}
+      <div className="sticky top-16 z-30 bg-zinc-950/90 backdrop-blur-xl border-y border-white/10 shadow-xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+          {/* View Mode Toggle: Editorial List vs City Map */}
+          <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 p-1 rounded-full self-center md:self-auto shrink-0">
+            <button
+              onClick={() => setViewMode('list')}
+              className={`px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all ${viewMode === 'list' ? 'bg-brand-primary text-white shadow-md' : 'text-white/60 hover:text-white'}`}
+            >
+              Editorial List
+            </button>
+            <button
+              onClick={() => setViewMode('map')}
+              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all ${viewMode === 'map' ? 'bg-brand-primary text-white shadow-md' : 'text-white/60 hover:text-white'}`}
+            >
+              <MapPinIcon className="w-3.5 h-3.5" />
+              <span>City Map</span>
+            </button>
+          </div>
+
+          {/* Filter Pills */}
+          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto py-1 custom-scrollbar">
+            {/* Cuisine Filter */}
+            {cityCuisines.length > 2 && (
+              <select
+                value={selectedCuisine}
+                onChange={(e) => setSelectedCuisine(e.target.value)}
+                className="bg-white/5 border border-white/10 text-white/80 rounded-full px-3 py-1.5 text-xs font-medium focus:outline-none focus:border-brand-primary"
+              >
+                {cityCuisines.map(c => (
+                  <option key={c} value={c} className="bg-zinc-900 text-white">{c === 'All' ? 'All Cuisines' : c}</option>
+                ))}
+              </select>
+            )}
+
+            {/* Dietary Filter */}
+            <select
+              value={selectedDietary}
+              onChange={(e) => setSelectedDietary(e.target.value)}
+              className="bg-white/5 border border-white/10 text-white/80 rounded-full px-3 py-1.5 text-xs font-medium focus:outline-none focus:border-brand-primary"
+            >
+              {dietaryOptions.map(d => (
+                <option key={d} value={d} className="bg-zinc-900 text-white">{d === 'All' ? 'All Dietary' : d}</option>
+              ))}
+            </select>
+
+            {/* Price Filter Chips */}
+            <div className="flex items-center gap-1 border-l border-white/10 pl-2">
+              {[1, 2, 3].map(price => (
+                <button
+                  key={price}
+                  onClick={() => setSelectedPrice(selectedPrice === price ? null : price)}
+                  className={`px-2.5 py-1 rounded-full text-xs font-playfair transition-all ${selectedPrice === price ? 'bg-brand-primary text-white font-bold' : 'bg-white/5 text-white/50 hover:bg-white/10'}`}
+                  title={`Filter price: ${Array(price).fill('€').join('')}`}
+                >
+                  {Array(price).fill('€').join('')}
+                </button>
+              ))}
+            </div>
+
+            {/* Reset Filter Button */}
+            {(selectedCuisine !== 'All' || selectedDietary !== 'All' || selectedPrice !== null) && (
+              <button
+                onClick={resetFilters}
+                className="text-xs text-white/40 hover:text-brand-primary underline px-2 shrink-0"
+              >
+                Reset
+              </button>
+            )}
+          </div>
+
+          {/* Counter info */}
+          <div className="text-xs text-white/40 font-mono hidden lg:block shrink-0">
+            Showing {filteredRestaurants.length} of {city.restaurants.length} spots
+          </div>
+        </div>
+      </div>
       
-      {/* Restaurants Editorial List */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 pt-32 md:pt-56 relative z-10">
-        <div className="flex flex-col gap-24 md:gap-40">
-            {city.restaurants.map((restaurant, index) => (
+      {/* Content Section based on View Mode */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 pt-16 relative z-10">
+        {viewMode === 'map' ? (
+          /* Interactive City Map View */
+          <CityMapView 
+            city={{ ...city, restaurants: filteredRestaurants }} 
+            onSelectRestaurant={openModal} 
+          />
+        ) : (
+          /* Editorial Cards List View */
+          <div className="flex flex-col gap-24 md:gap-36">
+            {filteredRestaurants.length === 0 ? (
+              <div className="py-20 text-center bg-white/5 rounded-3xl border border-white/10 max-w-lg mx-auto p-8">
+                <p className="text-lg text-white/70 mb-4 font-playfair">No restaurants match your selected filters.</p>
+                <button
+                  onClick={resetFilters}
+                  className="px-6 py-2 rounded-full bg-brand-primary text-white text-xs font-bold uppercase tracking-widest shadow-lg"
+                >
+                  Reset All Filters
+                </button>
+              </div>
+            ) : (
+              filteredRestaurants.map((restaurant, index) => (
                 <div 
                     key={restaurant.id} 
                     className={`
@@ -199,7 +328,7 @@ const CityPage: React.FC = () => {
                             
                             {/* Hover Overlay Action */}
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 backdrop-blur-[2px] bg-black/20">
-                                <span className="bg-white text-brand-dark px-8 py-4 rounded-full font-bold tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 flex items-center gap-2">
+                                <span className="bg-white text-brand-dark px-8 py-4 rounded-full font-bold tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 flex items-center gap-2 shadow-2xl">
                                     View Details
                                     <ArrowUpRightIcon className="w-4 h-4" />
                                 </span>
@@ -218,21 +347,34 @@ const CityPage: React.FC = () => {
                         </div>
 
                         <div className="relative z-10">
-                            <div className="flex items-center gap-4 mb-6">
-                                <span className="px-3 py-1 rounded-full border border-brand-primary/30 text-brand-primary text-xs font-bold uppercase tracking-widest">
+                            {/* Badges row: Cuisine, Neighborhood, Last Visited */}
+                            <div className="flex flex-wrap items-center gap-3 mb-6">
+                                <span className="px-3 py-1 rounded-full border border-brand-primary/30 text-brand-primary text-xs font-bold uppercase tracking-widest bg-brand-primary/10">
                                     {restaurant.cuisine}
                                 </span>
+
+                                {restaurant.neighborhood && (
+                                    <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-white/70 text-xs font-light">
+                                        📍 {restaurant.neighborhood}
+                                    </span>
+                                )}
+
+                                {restaurant.lastVisited && (
+                                    <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-white/60 text-xs font-mono" title="Date visited & reviewed">
+                                        Visited: {restaurant.lastVisited}
+                                    </span>
+                                )}
                                 
-                                <div className="h-px w-12 bg-white/10"></div>
+                                <div className="h-px w-8 bg-white/10 hidden sm:block"></div>
                                 <StarRating score={restaurant.ratings.food} size="w-3 h-3" fillColor="text-white" gap="gap-0.5" />
                             </div>
 
-                            <h2 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-8 leading-none group-hover:text-brand-primary/90 transition-colors duration-300">
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-6 leading-none group-hover:text-brand-primary/90 transition-colors duration-300">
                                 {restaurant.name}
                             </h2>
 
                             {restaurant.quickVerdict && (
-                                <div className="mb-8 pl-6 border-l-2 border-brand-primary/50">
+                                <div className="mb-6 pl-6 border-l-2 border-brand-primary/50">
                                     <p className="text-xl md:text-2xl text-white/90 font-playfair italic leading-relaxed">
                                         "{restaurant.quickVerdict}"
                                     </p>
@@ -243,15 +385,15 @@ const CityPage: React.FC = () => {
                                 {restaurant.description}
                             </p>
 
-                            <div className="flex flex-row flex-wrap items-start gap-8 pt-8 border-t border-white/5">
+                            <div className="flex flex-row flex-wrap items-center gap-6 pt-6 border-t border-white/10">
                                 <div className="flex flex-col">
-                                    <span className="block text-xs text-white/30 uppercase tracking-widest mb-2">Price</span>
+                                    <span className="block text-xs text-white/30 uppercase tracking-widest mb-1 font-mono">Price</span>
                                     <span className="text-lg font-playfair text-white leading-none">{Array(restaurant.ratings.price).fill('€').join('')}</span>
                                 </div>
 
                                 {(hasTag(restaurant, 'gluten-free') || hasTag(restaurant, 'lactose-free') || hasTag(restaurant, 'vegetarian') || hasTag(restaurant, 'vegan')) && (
-                                     <div className="flex flex-col">
-                                        <span className="block text-xs text-white/30 uppercase tracking-widest mb-2">Dietary</span>
+                                     <div className="flex flex-col border-l border-white/10 pl-6">
+                                        <span className="block text-xs text-white/30 uppercase tracking-widest mb-1 font-mono">Dietary</span>
                                         <div className="flex items-center gap-2">
                                             {hasTag(restaurant, 'gluten-free') && <GlutenFreeIcon className="w-5 h-5" />}
                                             {hasTag(restaurant, 'lactose-free') && <LactoseFreeIcon className="w-5 h-5" />}
@@ -261,7 +403,28 @@ const CityPage: React.FC = () => {
                                     </div>
                                 )}
 
-                                <div className="ml-auto flex items-center gap-3 self-center">
+                                {/* Action Buttons: Bookmark & Share */}
+                                <div className="ml-auto flex items-center gap-2">
+                                    {/* Bookmark button */}
+                                    <button
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        toggleSave(restaurant.id);
+                                      }}
+                                      className={`
+                                        p-2 rounded-full border transition-all active:scale-95
+                                        ${isSaved(restaurant.id)
+                                          ? 'bg-brand-primary text-white border-brand-primary shadow-md'
+                                          : 'bg-white/5 hover:bg-white/15 text-white/60 hover:text-white border-white/10'
+                                        }
+                                      `}
+                                      title={isSaved(restaurant.id) ? "Remove from shortlist" : "Save spot"}
+                                      aria-label={`Save ${restaurant.name}`}
+                                    >
+                                      <BookmarkIcon className="w-4 h-4" filled={isSaved(restaurant.id)} />
+                                    </button>
+
+                                    {/* Share button */}
                                     <button
                                         onClick={(e) => handleShareCard(e, restaurant)}
                                         className={`
@@ -282,18 +445,19 @@ const CityPage: React.FC = () => {
                                         ) : (
                                             <>
                                                 <ShareIcon className="w-3.5 h-3.5 text-white/60" />
-                                                <span>Share</span>
+                                                <span className="hidden sm:inline">Share</span>
                                             </>
                                         )}
                                     </button>
-                                    <span className="md:hidden text-brand-primary text-sm font-bold uppercase tracking-widest">View</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            ))}
-        </div>
+              ))
+            )}
+          </div>
+        )}
       </div>
 
       <RestaurantModal restaurant={selectedRestaurant} onClose={closeModal} />

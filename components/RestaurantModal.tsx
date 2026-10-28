@@ -11,10 +11,13 @@ import InfoIcon from './icons/InfoIcon';
 import ClockIcon from './icons/ClockIcon';
 import ShareIcon from './icons/ShareIcon';
 import CheckIcon from './icons/CheckIcon';
+import BookmarkIcon from './icons/BookmarkIcon';
+import MapPinIcon from './icons/MapPinIcon';
 import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from './icons/DietaryIcons';
 import Lightbox from './Lightbox';
 import StarRating from './StarRating';
 import { cities } from '../data/mockData';
+import { useSaved } from '../context/SavedContext';
 
 interface RestaurantModalProps {
   restaurant: Restaurant | null;
@@ -53,6 +56,7 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
   const [showMobileCaption, setShowMobileCaption] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const { isSaved, toggleSave } = useSaved();
 
   useEffect(() => {
     if (restaurant) {
@@ -251,67 +255,107 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
         
         {/* Details Section */}
         <div className="w-full md:w-2/5 flex flex-col flex-1 relative bg-transparent overflow-hidden">
-             {/* Header Action Buttons (Share & Close) */}
-             <div className="absolute top-6 right-6 z-10 flex items-center gap-2">
-                <button 
-                    onClick={handleShare}
-                    className={`
-                        flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-200 text-xs font-medium active:scale-95
-                        ${copied 
-                            ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-lg shadow-emerald-500/10' 
-                            : 'bg-white/5 hover:bg-white/15 text-white/70 hover:text-white border-white/10 hover:border-white/20'
-                        }
-                    `}
-                    title={copied ? "Copied to clipboard!" : "Share restaurant link"}
-                    aria-label="Share restaurant"
-                >
-                    {copied ? (
-                        <>
-                            <CheckIcon className="w-3.5 h-3.5 text-emerald-400" />
-                            <span>Copied!</span>
-                        </>
-                    ) : (
-                        <>
-                            <ShareIcon className="w-3.5 h-3.5 text-white/70" />
-                            <span>Share</span>
-                        </>
-                    )}
-                </button>
-                <button 
-                    onClick={onClose} 
-                    className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-colors border border-white/10 active:scale-95" 
-                    aria-label="Close"
-                >
-                    <CloseIcon className="w-5 h-5" />
-                </button>
+             {/* Fixed Top Header Bar - gives Save, Share & Close dedicated room separated from content */}
+             <div className="shrink-0 px-6 py-4 md:px-8 border-b border-white/10 bg-zinc-900/95 backdrop-blur-md z-20 flex items-center justify-between gap-4">
+                {/* Left: Cuisine & Dietary Badges */}
+                <div className="flex items-center gap-2 flex-wrap min-w-0">
+                    <span className="inline-block px-3 py-1 rounded-full bg-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest border border-brand-primary/25 shrink-0">
+                        {restaurant.cuisine}
+                    </span>
+
+                    {/* Dietary Icons */}
+                    <div className="flex items-center gap-1.5 ml-1">
+                        {hasTag('gluten-free') && <GlutenFreeIcon className="w-5 h-5" />}
+                        {hasTag('lactose-free') && <LactoseFreeIcon className="w-5 h-5" />}
+                        {hasTag('vegetarian') && <VegetarianIcon className="w-5 h-5" />}
+                        {hasTag('vegan') && <VeganIcon className="w-5 h-5" />}
+                    </div>
+                </div>
+
+                {/* Right: Actions (Save, Share, Close) */}
+                <div className="flex items-center gap-2 shrink-0">
+                    <button
+                        onClick={() => toggleSave(restaurant.id)}
+                        className={`
+                            flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-medium transition-all duration-200 active:scale-95
+                            ${isSaved(restaurant.id)
+                                ? 'bg-brand-primary text-white border-brand-primary shadow-lg shadow-brand-primary/20'
+                                : 'bg-white/5 hover:bg-white/15 text-white/70 hover:text-white border-white/10 hover:border-white/20'
+                            }
+                        `}
+                        title={isSaved(restaurant.id) ? "Remove from shortlist" : "Save to shortlist"}
+                        aria-label="Save restaurant"
+                    >
+                        <BookmarkIcon className="w-3.5 h-3.5" filled={isSaved(restaurant.id)} />
+                        <span className="hidden sm:inline">{isSaved(restaurant.id) ? 'Saved' : 'Save'}</span>
+                    </button>
+
+                    <button 
+                        onClick={handleShare}
+                        className={`
+                            flex items-center gap-1.5 px-3 py-1.5 rounded-full border transition-all duration-200 text-xs font-medium active:scale-95
+                            ${copied 
+                                ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-lg shadow-emerald-500/10' 
+                                : 'bg-white/5 hover:bg-white/15 text-white/70 hover:text-white border-white/10 hover:border-white/20'
+                            }
+                        `}
+                        title={copied ? "Copied to clipboard!" : "Share restaurant link"}
+                        aria-label="Share restaurant"
+                    >
+                        {copied ? (
+                            <>
+                                <CheckIcon className="w-3.5 h-3.5 text-emerald-400" />
+                                <span>Copied!</span>
+                            </>
+                        ) : (
+                            <>
+                                <ShareIcon className="w-3.5 h-3.5 text-white/70" />
+                                <span>Share</span>
+                            </>
+                        )}
+                    </button>
+
+                    <button 
+                        onClick={onClose} 
+                        className="p-1.5 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-colors border border-white/10 active:scale-95 ml-1" 
+                        aria-label="Close"
+                    >
+                        <CloseIcon className="w-4 h-4" />
+                    </button>
+                </div>
             </div>
 
             {/* Copied URL Toast Notification */}
             {copied && (
-                <div className="absolute top-20 right-6 z-30 bg-emerald-600/90 text-white text-xs font-medium px-3.5 py-2 rounded-xl shadow-2xl backdrop-blur-md flex items-center gap-2 border border-emerald-400/40 animate-fade-in pointer-events-none">
+                <div className="absolute top-16 right-6 z-30 bg-emerald-600/95 text-white text-xs font-medium px-4 py-2 rounded-xl shadow-2xl backdrop-blur-md flex items-center gap-2 border border-emerald-400/40 animate-fade-in pointer-events-none">
                     <CheckIcon className="w-4 h-4 text-white" />
                     <span>Page URL copied to clipboard!</span>
                 </div>
             )}
 
             {/* Scrollable Content */}
-            <div className="overflow-y-auto flex-1 p-6 md:p-10 custom-scrollbar overscroll-contain">
+            <div className="overflow-y-auto flex-1 p-6 md:p-8 custom-scrollbar overscroll-contain">
                 <div className="mb-8">
-                    <div className="flex flex-wrap items-center gap-3 mb-4">
-                        <span className="inline-block px-3 py-1 rounded-full bg-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest border border-brand-primary/20">
-                            {restaurant.cuisine}
-                        </span>
-                        
-                        {/* Dietary Icons */}
-                        <div className="flex items-center gap-3">
-                            {hasTag('gluten-free') && <GlutenFreeIcon className="w-6 h-6" />}
-                            {hasTag('lactose-free') && <LactoseFreeIcon className="w-6 h-6" />}
-                            {hasTag('vegetarian') && <VegetarianIcon className="w-6 h-6" />}
-                            {hasTag('vegan') && <VeganIcon className="w-6 h-6" />}
-                        </div>
-                    </div>
+                    {/* Location & Last Visited transparency metadata badges - with generous breathing room */}
+                    {(restaurant.neighborhood || restaurant.lastVisited) && (
+                        <div className="flex flex-wrap items-center gap-2.5 mb-5">
+                            {restaurant.neighborhood && (
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-white/90 text-xs font-medium border border-white/10 shadow-sm">
+                                    <MapPinIcon className="w-3.5 h-3.5 text-brand-primary" />
+                                    <span>Location: {restaurant.neighborhood}</span>
+                                </span>
+                            )}
 
-                    <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6 leading-tight pr-8">{restaurant.name}</h2>
+                            {restaurant.lastVisited && (
+                                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-white/70 text-xs border border-white/10 shadow-sm" title="Last Reviewed Date">
+                                    <ClockIcon className="w-3.5 h-3.5 text-white/40" />
+                                    <span>Reviewed: {restaurant.lastVisited}</span>
+                                </span>
+                            )}
+                        </div>
+                    )}
+
+                    <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6 leading-tight">{restaurant.name}</h2>
 
                     {/* Quick Verdict */}
                     {restaurant.quickVerdict && (

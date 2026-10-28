@@ -71,6 +71,7 @@ export const cologne: City = {
       ratings: { food: 5, drinks: 4, service: 4, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Okinii%20K%C3%B6ln%2C%20Blaubach%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Japanese sushi',
+      lastVisited: 'November 2025',
       alexsTip: "The all-you-can-eat dinner during the week is far superior to the lunch menu. Try their chicken and mango roll, I can't get enough of it.",
       dietary: {
         celiac: "A few sushi options in the all-you-can-eat lunch menu, gluten-free soy sauce available.",
@@ -106,6 +107,7 @@ export const cologne: City = {
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Antica%20Pizzeria%20Nennillo%20-%20Belgisches%20Viertel%2C%20Limburger%20Stra%C3%9Fe%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Italian',
+      lastVisited: 'January 2026',
       alexsTip: "If you like it a bit spicy like me, then take the Rot und Böse (red and evil), and always have an Aperol Spritz. For dessert, share the nutella and pistachio pizza.",
       dietary: {
         celiac: "Notify the restaurant, typically a day before but morning might be ok, that you wish for a gluten-free pizza so they warm the second pizza oven before your arrival. Note it costs 4.50 more, which is rather expensive.",
@@ -132,6 +134,8 @@ export const cologne: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Thai-Viet%20Street%20Food%20Imbiss%2C%20Kleine%20Budengasse%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Vietnamese',
+      neighborhood: 'City Center',
+      lastVisited: 'October 2025',
       alexsTip: "I recommend the Vietnamese drink Chanh Da with lime juice, sugar, and water",
       dietary: {
         celiac: "Many curries have the option to have grilled chicken or tofu. The noodles are not gluten-free.",
@@ -162,6 +166,7 @@ export const cologne: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Thai-Viet%20Street%20Food%20Imbiss%2C%20Kleine%20Budengasse%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Peruvian',
+      lastVisited: 'January 2026',
       alexsTip: "Definitely take the Inca kola and the pisco sour when you go!",
       dietary: {
         celiac: "A few dishes like lomo saltado have no gluten in it but aji de gallina is made from biscuits.",
@@ -226,6 +231,8 @@ export const cologne: City = {
       ratings: { food: 4, drinks: 5, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Kaffeesaurus%2C%20Friesenplatz%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Cafe',
+      neighborhood: 'City Center',
+      lastVisited: 'October 2026',
       alexsTip: "Definitely order the chai, it tastes close to the real thing and even comes with a timer when to pour. The Brontosaurus burger is my favourite.",
       dietary: {
         celiac: "Some gluten free cakes, salads and gluten-free toast. Hollandaise sauce is not gluten-free. The Hawaii bowl is gluten-free, but please double check with server.",
@@ -255,6 +262,8 @@ export const cologne: City = {
       ratings: { food: 4, drinks: 5, service: 5, price: 2 },
       mapEmbedUrl: "https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=L'Osteria%20Bonn%20In%20der%20S%C3%BCrst%2C%20In%20der%20S%C3%BCrst%2C%20Bonn%2C%20Germany&maptype=roadmap",
       cuisine: 'Italian',
+      neighborhood: 'City Center',
+      lastVisited: 'October 2025',
       alexsTip: "Order half of your favourite pizza and half of something new to try.",
       dietary: {
         celiac: "No gluten-free pasta or pizza.",
@@ -283,6 +292,8 @@ export const cologne: City = {
       ratings: { food: 5, drinks: 4, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frites%20Belgique%2C%20Sternstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Fries',
+      neighborhood: 'City Center',
+      lastVisited: 'October 2025',
       alexsTip: "Large fries with the peanut sauce if on offer, and if not go for the mayo.",
       dietary: {
         celiac: "All fries are gluten-free.",

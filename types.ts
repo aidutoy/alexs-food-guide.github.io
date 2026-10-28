@@ -1,4 +1,3 @@
-
 export interface Rating {
   food: number;
   drinks: number;
@@ -27,6 +26,12 @@ export interface Restaurant {
   ratings: Rating;
   mapEmbedUrl: string;
   cuisine: string;
+  neighborhood?: string;
+  lastVisited?: string;
+  coordinates?: {
+    lat: number;
+    lon: number;
+  };
   alexsTip?: string;
   quickVerdict?: string;
   dietary?: DietaryInfo;

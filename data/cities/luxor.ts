@@ -57,6 +57,7 @@ export const luxor: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=El%20Mesala%20Hotel%2C%20west%20bank%D8%8C%20Al%20Qarna%20Road%2C%20Al%20Bairat%2C%20Al%20Qarna%2C%20Egypt&maptype=roadmap',
       cuisine: 'Egyptian',
+      lastVisited: 'October 2025',
       alexsTip: "Organise dinner at sunset on a velucca with the hotel, 10/10 experience.",
       dietary: {
         celiac: "There are a few foods with bread, but enough great food without. Like the kofta and chicken, but take with fries not rice as the rice has pasta in it.",
@@ -78,6 +79,7 @@ export const luxor: City = {
       ratings: { food: 4, drinks: 4, service: 3, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=New%20Nile%20Panorama%20restaurant%D8%8C%20%D8%A7%D9%84%D9%85%D9%8A%D9%86%D8%A7%D8%A1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A%D8%8C%20Al%20Qarnah%2C%20Al%20Qarna%2C%20Egypt&maptype=roadmap',
       cuisine: 'Egyptian',
+      lastVisited: 'October 2025',
       alexsTip: "If you can handle the heat, sit outside for a spectacular view of the temples and sailing feluccas.",
       dietary: {
         celiac: "All you can eat buffet has limited options but you still get a full meal.",
@@ -98,6 +100,7 @@ export const luxor: City = {
       ratings: { food: 5, drinks: 4, service: 4, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Thebes%20(Tebaa)%20Restaurant%2C%20Al%20Qarnah%2C%20Al%20Qarna%2C%20Egypt&maptype=roadmap',
       cuisine: 'Egyptian / International',
+      lastVisited: 'October 2025',
       alexsTip: "Come here for a break of the oriental food, a bit of home helps every now and then.",
       dietary: {
         celiac: "no gluten-free bread but options available like kofta and fries.",

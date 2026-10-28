@@ -52,6 +52,7 @@ export const cairo: City = {
       ratings: { food: 3.5, drinks: 4, service: 4, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1935.0052017092614!2d31.232080000000003!3d29.979162999999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145847a171025e55%3A0x4155e0af21a12a6d!2z2KfZhNio2KfYrtix2Kkg2LHZitmB2LEg2KjZiNiqIC0gUml2ZXIgQm9hdA!5e1!3m2!1sen!2sus!4v1763916254095!5m2!1sen!2sus',
       cuisine: 'Oriental Buffet',
+      lastVisited: 'October 2025',
       alexsTip: "Organise a trip with a tour guide and head up to the deck as soon as you finish eating. The boat has a pool.",
       dietary: {
         celiac: "Limited gluten-free options in the buffet.",

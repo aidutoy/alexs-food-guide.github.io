@@ -39,6 +39,8 @@ export const bonn: City = {
       ratings: { food: 5, drinks: 4, service: 4, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Okinii%20Bonn%2C%20Quantiusstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Japanese sushi',
+      neighborhood: 'Quantiusstraße (Central Station)',
+      lastVisited: 'November 2025',
       alexsTip: "The all-you-can-eat dinner during the week is far superior to the lunch menu. Try their chicken and mango roll, I can't get enough of it.",
       dietary: {
         celiac: "A few sushi options in the all-you-can-eat lunch menu, gluten-free soy sauce available.",
@@ -71,6 +73,8 @@ export const bonn: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 3 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=tio%20pepe&maptype=roadmap',
       cuisine: 'Spanish tapas',
+      neighborhood: 'City Center',
+      lastVisited: 'September 2025',
       alexsTip: "I would recommend to take a pitcher of sangria and the bacon wrapped dates, but the tortilla, croquettes, patatas bravas, and calamari are great options too.",
       dietary: {
         celiac: "No gluten-free bread but plenty of tapas like patatas bravas, calamari and bacon wrapped dates.",
@@ -98,6 +102,7 @@ export const bonn: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ha%20Long%20-%20Sushi%20%26%20vietnamesische%20K%C3%BCche%2C%20Endenicher%20Stra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Vietnamese, sushi',
+      lastVisited: 'October 2025',
       alexsTip: "I always take the mama mango with crispy fried chicken because it is incredibly tasty. I can recommend also the peanut sauce, chicken satay skewers, and the Thai yellow curry.",
       dietary: {
         celiac: "A lot of curries on the menu say they have gluten but after speaking with the chef, they in fact do not, so always ask just in case.",
@@ -131,6 +136,7 @@ export const bonn: City = {
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Antica%20Pizzeria%20Nennillo%20-%20Bonn%2C%20Im%20Krausfeld%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Italian',
+      lastVisited: 'January 2026',
       alexsTip: "If you like it a bit spicy like me, then take the Rot und Böse (red and evil), and always have an Aperol Spritz. For dessert, share the nutella and pistachio pizza.",
       dietary: {
         celiac: "Notify the restaurant in Poppelsdorf, typically a day before but morning might be ok, that you wish for a gluten-free pizza so they warm the second pizza oven before your arrival. Note it costs 4.50 more, which is rather expensive.",
@@ -163,6 +169,8 @@ export const bonn: City = {
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Burgerwerk%2C%20Friedrich-Breuer-Stra%C3%9Fe%2C%20Bonn-Beuel%2C%20Germany&maptype=roadmap',
       cuisine: 'Burgers',
+      neighborhood: 'Bonn-Beuel',
+      lastVisited: 'October 2025',
       alexsTip: "The camembert burger is my absolute favourite, take it medium rare with sweet potato fries.",
       dietary: {
         celiac: "Gluten-free bread for €1.90 extra is a good deal. The burgers are typically without gluten but check with the chef, the staff are knowledgeble on cross contamination.",
@@ -195,6 +203,8 @@ export const bonn: City = {
       ratings: { food: 4, drinks: 4, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Mandala%20Vegan%20Bonn%2C%20Quantiusstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Vegan Sushi',
+      neighborhood: 'Central Station',
+      lastVisited: 'September 2025',
       alexsTip: "I recommend going for lunch if you are a bit unsure, the menu is smaller but much cheaper than dinner. Definitely take the vietnamese coffee with condensed milk.",
       dietary: {
         celiac: "Limited options as everything is fried. There are only a couple sushi like the rainbow roll and also the pho.",
@@ -227,6 +237,8 @@ export const bonn: City = {
       ratings: { food: 4, drinks: 4, service: 4, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Hokkaido%20Sushi%20%26%20Grill%20Restaurant%2C%20Drachenburgstra%C3%9Fe%2C%20Bonn-Bad%20Godesberg%2C%20Germany&maptype=roadmap',
       cuisine: 'Sushi',
+      neighborhood: 'Bad Godesberg',
+      lastVisited: 'April 2026',
       alexsTip: "The sashimi salad is absolute perfection in a bowl.",
       dietary: {
         celiac: "Limited options as a lot is fried or with non-gluten free soy sauce. There are only a couple sushi like the maki.",
@@ -263,6 +275,8 @@ export const bonn: City = {
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Cream%20Company%20Coffee%20%26%20Friends%2C%20Sterntorbr%C3%BCcke%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Brunch',
+      neighborhood: 'City Center',
+      lastVisited: 'July 2026',
       alexsTip: "For savoury take the classic eggs benedict, no need to go more fancy. For sweets, take the pancakes if you have a big hunger.",
       dietary: {
         celiac: "The gluten-free options are really limited, so I do not recommend for coeliacs, too much toast, waffles or pancakes.",
@@ -291,6 +305,8 @@ export const bonn: City = {
       ratings: { food: 4, drinks: 4, service: 4, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Karawane%2C%20Adrianstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Oriental',
+      neighborhood: 'Oberkassel',
+      lastVisited: 'October 2023',
       alexsTip: "Check out the buffet menu before and tie in a trip to Drachenfels.",
       dietary: {
         celiac: "As the menu varies it is hard to say but gluten is in a lot of dishes. I don't recommend the gamble.",
@@ -320,6 +336,8 @@ export const bonn: City = {
       ratings: { food: 4, drinks: 4, service: 4, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ichiban%20Noodlebar%2C%20Br%C3%BCdergasse%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Japanese',
+      neighborhood: 'City Center',
+      lastVisited: 'March 2023',
       alexsTip: "Try the chicken katsu set, it's cheap and tasty.",
       dietary: {
         celiac: "Very limited, lots of fried chicken and wheat noodles",
@@ -350,6 +368,8 @@ export const bonn: City = {
       ratings: { food: 3, drinks: 4, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Mayras%20Wohnzimmer%20Caf%C3%A9%2C%20Friedrich-Breuer-Stra%C3%9Fe%2C%20Bonn-Beuel%2C%20Germany&maptype=roadmap',
       cuisine: 'Cafe, Cakes',
+      neighborhood: 'Bonn-Beuel',
+      lastVisited: 'October 2025',
       alexsTip: "Start with the Monsieur camembert but ask for more hollandaise sauce, pair with an iced-matcha strawberry latte and finish it off with the San Sebastian cheesecake, which is one of the best I have ever had.",
       dietary: {
         celiac: "No gluten-free bread, which is a big negative but they do offer at least one gluten-free cake per day. Last time was a coconut cake.",
@@ -375,6 +395,8 @@ export const bonn: City = {
       ratings: { food: 4, drinks: 4, service: 3, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frittenwerk%20Bonn%2C%20Sternstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Fries',
+      neighborhood: 'City Center',
+      lastVisited: 'October 2025',
       alexsTip: "Take the BBQ pulled pork poutine or the Tijuana street fries but do not add extra falafel. Takeaway orders are much faster.",
       dietary: {
         celiac: "Majority of fries are gluten-free.",
@@ -403,6 +425,7 @@ export const bonn: City = {
       ratings: { food: 4, drinks: 4, service: 3, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Burgermanufaktur%20am%20Frankenbad%2C%20Vorgebirgsstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Burgers',
+      lastVisited: 'July 2022',
       alexsTip: "I would recommend to all cheese lovers, der tyropola, which is covered in melted cheese and bacon. A one of kind burger for me here in Bonn. You can choose to upgrade from 120g to 200g patty for only one euro more which is a good deal. ",
       dietary: {
         celiac: "There are gluten-free buns on the menu but I have not personally ordered one. Fries are gluten-free.",
@@ -458,6 +481,8 @@ export const bonn: City = {
       ratings: { food: 4, drinks: 5, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Pie%20Me%20Caf%C3%A9%20am%20Frankenbad%2C%20Vorgebirgsstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'British',
+      neighborhood: 'Königswinter',
+      lastVisited: 'November 2022',
       alexsTip: "Take the builders brew and some scones with clotted cream for a proper british treat. I recommend the ploughmans sandwich if you prefer savoury food.",
       dietary: {
         celiac: "Very limited but gluten-free banana bread on Instagram.",
@@ -478,21 +503,27 @@ export const bonn: City = {
       name: "Kaffeesaurus",
       description: "A great spot for brunch with friends, or a quick coffee and cake near the central train station, or even an atmospheric place to study during the week. I would recommend coming here to try the chai and cakes.\n\nIn my experience the hollandaise sauce wasn't as good as in cream company but the Brontosaurus burger I had one time was really tasty. I think the prices are fair and the atmosphere is really nice, so overall a great cafe.",
       quickVerdict: 'A trendy, spacious spot near the station ideal for brunch or study. Delicious cakes and fair prices.',
-      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_1.jpg', caption: 'Brontosaurus burger'},
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_11.jpg', caption: 'Breakfast burger with extra avocado'},
       images: [
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_2.jpg', caption: 'Open toast sandwiches, Bennysaurus eggs (bottom right), Eggs any style with poached eggs, extra salmon on gluten free bread with a side of turkey bacon (mid left)'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_3.jpg', caption: 'Bennysaurus eggs'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_9.jpg', caption: 'Saurus french toast with vanilla ice cream'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_10.jpg', caption: 'Saurus french toast and hawaii bowls (gluten-free)'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_1.jpg', caption: 'Brontosaurus burger'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_12.jpg', caption: 'Breakfast burger (left), gluten-free Itchyosaurus (salmon, eggs and eggs benedict sauce)'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_4.jpg', caption: 'Carrot cake'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_5.jpg', caption: 'Chai'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_6.jpg', caption: 'Chai'},
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_7.jpg', caption: 'Options on 25.05.2025 with two gluten free options and 5 vegan options'},
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_8.jpg', caption: 'Gluten-free brownies'}
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_8.jpg', caption: 'Gluten-free brownies'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_13.jpg', caption: 'Apple cake with cream'},
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_14.jpg', caption: 'Gluten-free Rüblikuchen (swiss carrot cake)'}
       ],
       ratings: { food: 4, drinks: 5, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Kaffeesaurus%2C%20Am%20Hauptbahnhof%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Cafe',
+      neighborhood: 'Central Station',
+      lastVisited: 'October 2026',
       alexsTip: "Definitely order the chai, it tastes close to the real thing and even comes with a timer when to pour. The Brontosaurus burger is my favourite.",
       dietary: {
         celiac: "Some gluten free cakes, salads and gluten-free toast. Hollandaise sauce is not gluten-free. The Hawaii bowl is gluten-free, but please double check with server.",
@@ -522,6 +553,8 @@ export const bonn: City = {
       ratings: { food: 4, drinks: 5, service: 5, price: 2 },
       mapEmbedUrl: "https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=L'Osteria%20Bonn%20In%20der%20S%C3%BCrst%2C%20In%20der%20S%C3%BCrst%2C%20Bonn%2C%20Germany&maptype=roadmap",
       cuisine: 'Italian',
+      neighborhood: 'City Center',
+      lastVisited: 'October 2025',
       alexsTip: "Order half of your favourite pizza and half of something new to try.",
       dietary: {
         celiac: "No gluten-free pasta or pizza.",
@@ -550,6 +583,8 @@ export const bonn: City = {
       ratings: { food: 5, drinks: 4, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frites%20Belgique%2C%20Sternstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Fries',
+      neighborhood: 'City Center',
+      lastVisited: 'November 2025',
       alexsTip: "Large fries with the peanut sauce if on offer, and if not go for the mayo.",
       dietary: {
         celiac: "All fries are gluten-free.",
@@ -580,6 +615,8 @@ export const bonn: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=M%C4%83m%20M%C4%83m%20Vietnamese%20Westlands%2C%20Mwanzi%20Rd%2C%20Nairobi%2C%20Kenya&maptype=roadmap',
       cuisine: 'Vietnamese',
+      neighborhood: 'City Center',
+      lastVisited: 'October 2023',
       alexsTip: "Order the spring rolls to start and the signature curry, although come hungry.",
       dietary: {
         celiac: "Summer rolls and curries (ask about soy sauce).",
@@ -608,6 +645,7 @@ export const bonn: City = {
       ratings: { food: 3.5, drinks: 4, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ferdinando%20Italian%20coffee%20%26%20bistro%2C%20Auf%20dem%20H%C3%BCgel%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Italian',
+      lastVisited: 'November 2024',
       alexsTip: "The opening hours are quite short and often closed, try going for lunch between classes.",
       dietary: {
         celiac: "Virtually no gluten-free alternatives. I do not recommend for coeliacs.",
@@ -636,6 +674,7 @@ export const bonn: City = {
       ratings: { food: 4, drinks: 4, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Bonnanza%20Burger%20Factory%2C%20Clemens-August-Stra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Burgers',
+      lastVisited: 'August 2022',
       alexsTip: "Take the BBQ bacon burger with fries, you won't be disappointed.",
       dietary: {
         celiac: "No gluten-free buns, only fries.",

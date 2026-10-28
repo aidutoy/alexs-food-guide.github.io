@@ -45,7 +45,10 @@ const Footer: React.FC = () => {
                         <h4 className="font-playfair font-bold text-base mb-4 text-white">Explore</h4>
                         <ul className="space-y-2 text-sm text-white/60">
                             <li><Link to="/" className="hover:text-brand-primary transition-colors duration-300">Home</Link></li>
+                            <li><Link to="/map" className="hover:text-brand-primary transition-colors duration-300">Map</Link></li>
                             <li><Link to="/locations" className="hover:text-brand-primary transition-colors duration-300">Locations</Link></li>
+                            <li><Link to="/gallery" className="hover:text-brand-primary transition-colors duration-300">Gallery</Link></li>
+                            <li><Link to="/what-to-eat" className="hover:text-brand-primary transition-colors duration-300">What to Eat</Link></li>
                             <li><Link to="/search" className="hover:text-brand-primary transition-colors duration-300">Search</Link></li>
                             <li><Link to="/contact" className="hover:text-brand-primary transition-colors duration-300">Contact</Link></li>
                         </ul>

@@ -17,6 +17,8 @@ export const darmstadt: City = {
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=slap%20darmstadt&maptype=roadmap',
       cuisine: 'Italian',
+      neighborhood: 'City Centre',
+      lastVisited: 'September 2026',
       alexsTip: "Take the pizza to go and sit at outside the theatre, it's only a 2 minute walk so your pizza won't get cold. ",
       dietary: {
         celiac: "No gluten-free pizza available.",
@@ -44,6 +46,8 @@ export const darmstadt: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
       mapEmbedUrl: '<iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=sushiki&maptype=roadmap" allowfullscreen></iframe>',
       cuisine: 'Sushi, Vietnamese',
+      neighborhood: 'City Centre',
+      lastVisited: 'April 2026',
       alexsTip: "Light hunger: sushi, big hunger: vietnamese curry. Save money and come for lunch during the week.",
       dietary: {
         celiac: "Limited allergen information, most curries with breaded chicken can be replaced with regular chicken but note the amount of chicken is smaller. The curries do not appear to use gluten or soysauce with wheat. There are a lot of sushi with breadcrumbs. All nigiri, maki, temaki are GF, the more expensive larger sushi tends to have breaded shrimp or chicken or salmon in it. Play it safe and bring GF soy sauce with you.",
@@ -78,6 +82,8 @@ export const darmstadt: City = {
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
       mapEmbedUrl: '<iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Li\'s%20Kitchen%2C%20Adelungstra%C3%9Fe%2C%20Darmstadt%2C%20Germany&maptype=roadmap" allowfullscreen></iframe>',
       cuisine: 'Chinese',
+      neighborhood: 'City Center',
+      lastVisited: 'October 2026',
       alexsTip: "Bring friends and order for the table, the menu is designed to share. Their lunch time menu will save you about 5 euros compared to dinner.",
       dietary: {
         celiac: "Many traditional Sichuan sauces and marinades contain soy sauce with wheat. Ask staff for wok dishes or steamed dishes prepared with salt and garlic without soy sauce, but cross-contamination risk is high in the kitchen.",

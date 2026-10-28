@@ -52,6 +52,7 @@ export const giza: City = {
       ratings: { food: 2.5, drinks: 3, service: 2, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Comfort%20Sphinx%20%26%20Pyramids%20Inn%2C%20aboelhole%20st%2C%20Nazlet%20El-Semman%2C%20Al%20Haram%2C%20Egypt&maptype=roadmap',
       cuisine: 'Egyptian',
+      lastVisited: 'October 2025',
       alexsTip: "Only book this place if there is no other option. Breakfast is better elsewhere.",
       dietary: {
         celiac: "Very limited gluten-free food, only vegetables, cheese and eggs. Little to none variation of food each day.",
@@ -75,6 +76,7 @@ export const giza: City = {
       ratings: { food: 4, drinks: 4, service: 4, price: 3 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Rooftop%207000%2C%20Nazlet%20El-Semman%2C%20Al%20Haram%2C%20Egypt&maptype=roadmap',
       cuisine: 'Oriental / European',
+      lastVisited: 'October 2025',
       alexsTip: "Ask your hotel to reserve a table for you as it is very popular. Try get a table with a view.",
       dietary: {
         celiac: "A lot of pasta and fried food but take the grilled chicken, it is plentiful and tasty.",
@@ -96,6 +98,7 @@ export const giza: City = {
       ratings: { food: 4, drinks: 4, service: 3, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&amp;q=Happy%20View%20Inn%2C%20Cleopatra%20resonant%20St%2C%20Al%20Haram%2C%20Giza%20Governorate%2C%20Egypt&amp;maptype=roadmap',
       cuisine: 'Egyptian',
+      lastVisited: 'October 2025',
       alexsTip: "Watch how the bread is made fresh, it was really interesting for me",
       dietary: {
         celiac: "Limited options as the bread and Egyptian rice have gluten. A lot of the rice dishes have small pieces of pasta, not made from rice.",

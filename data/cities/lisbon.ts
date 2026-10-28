@@ -20,6 +20,7 @@ export const lisbon: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 3 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Maria%20Catita%2C%20Rua%20dos%20Bacalhoeiros%2C%20Lisbon%2C%20Portugal&maptype=roadmap',
       cuisine: 'Portugese',
+      lastVisited: 'May 2025',
       alexsTip: "Sit outside in the beautiful street and take the passion fruit sangria alonside some octopus, some of the best I've had.",
       dietary: {
         celiac: "A lot of seafood dishes without gluten.",

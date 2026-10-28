@@ -54,6 +54,7 @@ export const mallorca: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Caf%C3%A9%20Restaurante%20Sibil%C2%B7la%2C%20Carrer%20de%20Blanquerna%2C%20Palma%2C%20Spain&maptype=roadmap',
       cuisine: 'Spanish Tapas',
+      lastVisited: 'June 2025',
       alexsTip: "The fried aubergine with honey is addictive, order at least two plates and best shared between friends.",
       dietary: {
         celiac: "Plenty options in the tapas menu, even some fried dishes use chickpea flour. ",
@@ -82,6 +83,7 @@ export const mallorca: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Saul%C3%B3%20by%20Puro%2C%20Playa%20de%2C%20Spain&maptype=roadmap',
       cuisine: 'Continental',
+      lastVisited: 'June 2025',
       alexsTip: "Wake up with a sunrise swim and satisfy your appetite on the buffet breakfast.",
       dietary: {
         celiac: "Gluten-free bread available upon request, can be warmed up. Warmed in sealed packaging so no cross-contimation.",
@@ -109,6 +111,7 @@ export const mallorca: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Restaurant%20Casa%20Julio%2C%20Carrer%20de%20la%20Previsi%C3%B3%2C%20Palma%2C%20Spain&maptype=roadmap',
       cuisine: 'Spanish',
+      lastVisited: 'June 2025',
       alexsTip: "Take the sangria and the bacon covered dates. Get a table outside to really enjoy the atmosphere.",
       dietary: {
         celiac: "The tapas menu has many gluten-free dishes, like patatas braves, grilled shrimp, and andalusian squid.",
@@ -136,6 +139,7 @@ export const mallorca: City = {
       ratings: { food: 4, drinks: 5, service: 4, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Cafeteria%20Playa%2C%20Avinguda%20de%20Bartomeu%20Riutort%2C%20Palma%2C%20Spain&maptype=roadmap',
       cuisine: 'Spanish',
+      lastVisited: 'June 2025',
       alexsTip: "Take the daily menu for only €11.90, including a glass of wine or beer.",
       dietary: {
         celiac: "A lot on the menu is without gluten, including the cheap daily menu. You won't have a problem finding food here.",

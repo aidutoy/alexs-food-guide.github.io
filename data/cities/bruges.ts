@@ -51,6 +51,8 @@ export const bruges: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Otto%20Waffle%20Atelier%20Katelijnestraat%2C%20Katelijnestraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
       cuisine: 'Waffles',
+      neighborhood: 'City Center',
+      lastVisited: 'May 2025',
       alexsTip: "Take the blueberry waffle and take a picture by the canal to capture the Bruges experience.",
       dietary: {
         celiac: "All waffles are gluten-free.",
@@ -101,6 +103,8 @@ export const bruges: City = {
       ratings: { food: 5, drinks: 5, service: 5, price: 1 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Go.fre%20%7C%20Belgian%20waffles%20on%20a%20stick%2C%20Breidelstraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
       cuisine: 'Waffles',
+      neighborhood: 'City Center',
+      lastVisited: 'May 2025',
       alexsTip: "Try at least one on your trip but save your appetite for the bigger waffles elsewhere.",
       dietary: {
         celiac: "Gluten-free waffles available",
@@ -129,6 +133,8 @@ export const bruges: City = {
       ratings: { food: 4, drinks: 5, service: 5, price: 3 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Bohemian%20Burgers%20Brugge%2C%20Sint-Amandsstraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
       cuisine: 'Burgers',
+      neighborhood: 'City Center',
+      lastVisited: 'May 2025',
       alexsTip: "Make sure you're hungry before coming as this is not a cheap burger, I would try the Whitesnake for something new",
       dietary: {
         celiac: "Gluten-free buns for €1 extra",
