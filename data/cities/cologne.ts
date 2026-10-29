@@ -217,6 +217,49 @@ export const cologne: City = {
       ]
     },
     {
+      id: 'haweli',
+      name: "Haweli",
+      description: "An excellent indian restaurant hidden away in Zollstock. Absolutely worth visting for their curries and pakoras. The chicken pakoras here are the best in the city, and their dips are decent. I recommend sitting in and sharing curries with friends. The portions are reasonably sized, but take starters and a naan if you have a big appetite. The peshwari naan was one of the better ones in the city, it was soft, sweet, and paired well with the curries. I am disappointed they decided to discontinue their gluten-free naan because that would have sold it as one of the best indian restaurants in town for people with gluten intolerances or coeliac disease. Hopefully it comes back one day.",
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_1.jpg', caption: 'Chicken Pakora with mint sauce'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_2.jpg', caption: 'Butter Chicken (bottom), Chicken Korma (top) with rice' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_3.jpg', caption: 'Peshwari Naan' }
+      ],
+      ratings: { food: 5, drinks: 5, service: 5, price: 2 },
+      mapEmbedUrl: '<iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Haweli%2C%20H%C3%B6ninger%20Weg%2C%20Cologne-Rodenkirchen%2C%20Germany&maptype=roadmap" allowfullscreen></iframe>',
+      cuisine: 'Indian',
+      neighborhood: 'Zollstock',
+      lastVisited: 'October 2026',
+      alexsTip: "Their lunch time menu is much cheaper for takeaway",
+      dietary: {
+        celiac: "Pakoras are battered in chickpea flour so are gluten-free. All curries are gluten-free.",
+        lactose: "Some curries have cream or yoghurt in them but are clearly labelled. Lactose-free yoghurt or cream is not available.",
+        vegetarian: "Many vegetarian options, especially popular ones like palak paneer",
+        vegan: "Many vegan options with tofu or vegetables. Creamy options available but no details on which cream or butter is based of so be careful for oat or nut allergies."
+      },
+      websiteUrl: 'https://haweli.koeln/',
+      instagramUrl: 'https://www.instagram.com/restaurant.haweli/',
+      tags: ["Indian", "Takeaway", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Tuesday - Friday: 11:00 - 15:00, 17:30 - 22:00",
+          "Saturday: 16:00 - 23:00",
+          "Sunday: 13:00 - 22:00"
+      ],
+      exampleReceipt: {
+        typicalOrderDescription: 'Evening dinner for two',
+        items: [
+          { name: '1x Papadam', price: 2.50 },
+          { name: '1x Chicken Pakora', price: 8.90 },
+          { name: '1x Butter Chicken', price: 18.50 },
+          { name: '1x Chicken Korma', price: 18.50 },
+          { name: '1x Peshwari Naan', price: 5.50 },
+          { name: '2x Cola Zero', price: 7.80 },
+          { name: '2x Mango Lassi', price: 7.80 }
+        ],
+        taxOrServiceNote: 'Typical evening order for two sharing evening dinner',
+      }
+    },
+    {
       id: 'tastyindia',
       name: "Tasty India",
       description: "One of the many indian restaurants in Cologne, but this one stands out for its excellent chicken and paneer pakoras, each coming with a free dip. The restaurant is designed more for takeaway so there are a few tightly squeezed tables but we didn't mind because of the friendly atmosphere. The portions are enough to keep you satisfied but at least look somewhat smaller than what you would get if you ordered takeaway. I still prefer dining in compared to takeaway so I don't mind a smaller portion. The main dishes are not spicy so the restaurant opens up to those who like the taste but cant handle the spice. I personally am on the hunt for the best chicken tikka masala and peshwari naan and here their peshwari naan has cottage cheese which is new for me and I have to admit that the search continues. Overall Tasty India is a good restaurant and I would recommend to try it out.",
@@ -230,6 +273,7 @@ export const cologne: City = {
       coordinates: { lat: 50.93855, lon: 6.94045 },
       mapEmbedUrl: '<iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Tasty%20India%2C%20Z%C3%BClpicher%20Stra%C3%9Fe%2C%20Cologne%2C%20Lindenthal%2C%20Germany&maptype=roadmap" allowfullscreen></iframe>',
       cuisine: 'Indian',
+      lastVisited: 'October 2026',
       alexsTip: "Order the chicken and paneer pakoras, one of the best I have had in Cologne so far.",
       dietary: {
         celiac: "Pakoras are battered in chickpea flour so are gluten-free. All curries are gluten-free.",
