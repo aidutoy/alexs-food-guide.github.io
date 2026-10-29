@@ -70,6 +70,10 @@ const NavBar: React.FC = () => {
                                     Map
                                 </Link>
                                 <Link to="/locations" className={navLinkClass}>Locations</Link>
+                                <Link to="/compare" className={navLinkClass}>
+                                    <span className="text-xs">⚔️</span>
+                                    Compare
+                                </Link>
                                 <Link to="/gallery" className={navLinkClass}>
                                     <GalleryIcon className="w-4 h-4 mb-0.5" />
                                     Gallery
@@ -150,6 +154,7 @@ const NavBar: React.FC = () => {
                         Map
                     </Link>
                     <Link to="/locations" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Locations</Link>
+                    <Link to="/compare" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Compare Spots</Link>
                     <Link to="/gallery" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Gallery</Link>
                     <Link to="/what-to-eat" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>What to Eat</Link>
                     <Link to="/contact" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Contact</Link>

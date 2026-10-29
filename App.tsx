@@ -10,6 +10,7 @@ import LocationsPage from './pages/LocationsPage';
 import SearchPage from './pages/SearchPage';
 import GalleryPage from './pages/GalleryPage';
 import WhatToEatPage from './pages/WhatToEatPage';
+import ComparePage from './pages/ComparePage';
 import { SavedProvider } from './context/SavedContext';
 import { SavedDrawer } from './components/SavedDrawer';
 
@@ -36,6 +37,7 @@ function App() {
               <Route path="/city/:cityId" element={<CityPage />} />
               <Route path="/map" element={<MapPage />} />
               <Route path="/locations" element={<LocationsPage />} />
+              <Route path="/compare" element={<ComparePage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/what-to-eat" element={<WhatToEatPage />} />
               <Route path="/decide" element={<WhatToEatPage />} />

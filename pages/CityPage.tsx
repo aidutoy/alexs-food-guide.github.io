@@ -3,7 +3,6 @@ import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { cities } from '../data/mockData';
 import type { Restaurant } from '../types';
 import { RestaurantModal } from '../components/RestaurantModal';
-import { CityMapView } from '../components/CityMapView';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon';
 import ArrowUpRightIcon from '../components/icons/ArrowUpRightIcon';
 import ShareIcon from '../components/icons/ShareIcon';
@@ -19,9 +18,6 @@ const CityPage: React.FC = () => {
   const city = cities.find((c) => c.id === cityId);
   const [selectedRestaurant, setSelectedRestaurant] = useState<Restaurant | null>(null);
   const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<'list' | 'map'>('list');
-
-  // Sticky Quick-filters state
   const [selectedCuisine, setSelectedCuisine] = useState<string>('All');
   const [selectedDietary, setSelectedDietary] = useState<string>('All');
   const [selectedPrice, setSelectedPrice] = useState<number | null>(null);
@@ -201,24 +197,15 @@ const CityPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Sticky Interactive Controls Bar (View Mode Toggle & Quick Filters) */}
+      {/* Sticky Interactive Controls Bar (Quick Filters) */}
       <div className="sticky top-16 z-30 bg-zinc-950/90 backdrop-blur-xl border-y border-white/10 shadow-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* View Mode Toggle: Editorial List vs City Map */}
-          <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 p-1 rounded-full self-center md:self-auto shrink-0">
-            <button
-              onClick={() => setViewMode('list')}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all ${viewMode === 'list' ? 'bg-brand-primary text-white shadow-md' : 'text-white/60 hover:text-white'}`}
-            >
-              Editorial List
-            </button>
-            <button
-              onClick={() => setViewMode('map')}
-              className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all ${viewMode === 'map' ? 'bg-brand-primary text-white shadow-md' : 'text-white/60 hover:text-white'}`}
-            >
-              <MapPinIcon className="w-3.5 h-3.5" />
-              <span>City Map</span>
-            </button>
+          {/* Counter info & location */}
+          <div className="flex items-center gap-2 text-xs text-white/70">
+            <MapPinIcon className="w-3.5 h-3.5 text-brand-primary" />
+            <span className="font-medium text-white">{city.name} Food Guide</span>
+            <span className="text-white/40">•</span>
+            <span className="text-white/50 font-mono">Showing {filteredRestaurants.length} of {city.restaurants.length} spots</span>
           </div>
 
           {/* Filter Pills */}
@@ -271,25 +258,12 @@ const CityPage: React.FC = () => {
               </button>
             )}
           </div>
-
-          {/* Counter info */}
-          <div className="text-xs text-white/40 font-mono hidden lg:block shrink-0">
-            Showing {filteredRestaurants.length} of {city.restaurants.length} spots
-          </div>
         </div>
       </div>
       
-      {/* Content Section based on View Mode */}
+      {/* Editorial Cards List View */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32 pt-16 relative z-10">
-        {viewMode === 'map' ? (
-          /* Interactive City Map View */
-          <CityMapView 
-            city={{ ...city, restaurants: filteredRestaurants }} 
-            onSelectRestaurant={openModal} 
-          />
-        ) : (
-          /* Editorial Cards List View */
-          <div className="flex flex-col gap-24 md:gap-36">
+        <div className="flex flex-col gap-24 md:gap-36">
             {filteredRestaurants.length === 0 ? (
               <div className="py-20 text-center bg-white/5 rounded-3xl border border-white/10 max-w-lg mx-auto p-8">
                 <p className="text-lg text-white/70 mb-4 font-playfair">No restaurants match your selected filters.</p>
@@ -403,8 +377,20 @@ const CityPage: React.FC = () => {
                                     </div>
                                 )}
 
-                                {/* Action Buttons: Bookmark & Share */}
+                                {/* Action Buttons: Compare, Bookmark & Share */}
                                 <div className="ml-auto flex items-center gap-2">
+                                    {/* Compare button */}
+                                    <Link
+                                      to={`/compare?a=${restaurant.id}`}
+                                      onClick={(e) => e.stopPropagation()}
+                                      className="flex items-center gap-1 px-2.5 py-1.5 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/15 text-white/60 hover:text-white text-xs font-medium transition-all active:scale-95"
+                                      title={`Compare ${restaurant.name} with another spot`}
+                                      aria-label={`Compare ${restaurant.name}`}
+                                    >
+                                      <span>⚔️</span>
+                                      <span className="hidden sm:inline">Compare</span>
+                                    </Link>
+
                                     {/* Bookmark button */}
                                     <button
                                       onClick={(e) => {
@@ -457,7 +443,6 @@ const CityPage: React.FC = () => {
               ))
             )}
           </div>
-        )}
       </div>
 
       <RestaurantModal restaurant={selectedRestaurant} onClose={closeModal} />

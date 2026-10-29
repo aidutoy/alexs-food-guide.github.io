@@ -18,6 +18,7 @@ export const lisbon: City = {
            { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/lisbon/maria/maria_3.jpg', caption: 'Passion fruit sangria' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 3 },
+      coordinates: { lat: 38.70932, lon: -9.13374 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Maria%20Catita%2C%20Rua%20dos%20Bacalhoeiros%2C%20Lisbon%2C%20Portugal&maptype=roadmap',
       cuisine: 'Portugese',
       lastVisited: 'May 2025',

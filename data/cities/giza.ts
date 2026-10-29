@@ -50,6 +50,7 @@ export const giza: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/comfort/comfort_2.jpg', caption: 'Aish Baladi (egyptian pita), eggs, sweet bread, fried potatoes, falafel, cheese' }
       ],
       ratings: { food: 2.5, drinks: 3, service: 2, price: 1 },
+      coordinates: { lat: 29.97495, lon: 31.13965 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Comfort%20Sphinx%20%26%20Pyramids%20Inn%2C%20aboelhole%20st%2C%20Nazlet%20El-Semman%2C%20Al%20Haram%2C%20Egypt&maptype=roadmap',
       cuisine: 'Egyptian',
       lastVisited: 'October 2025',
@@ -74,6 +75,7 @@ export const giza: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/rooftop/rooftop_4.jpg', caption: 'Cinnamon tea' }
       ],
       ratings: { food: 4, drinks: 4, service: 4, price: 3 },
+      coordinates: { lat: 29.97600, lon: 31.13920 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Rooftop%207000%2C%20Nazlet%20El-Semman%2C%20Al%20Haram%2C%20Egypt&maptype=roadmap',
       cuisine: 'Oriental / European',
       lastVisited: 'October 2025',
@@ -96,6 +98,7 @@ export const giza: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/giza/elkhedive/elkhedive_2.jpg', caption: 'Grilled chicken and fries' }
       ],
       ratings: { food: 4, drinks: 4, service: 3, price: 1 },
+      coordinates: { lat: 29.97545, lon: 31.13885 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&amp;q=Happy%20View%20Inn%2C%20Cleopatra%20resonant%20St%2C%20Al%20Haram%2C%20Giza%20Governorate%2C%20Egypt&amp;maptype=roadmap',
       cuisine: 'Egyptian',
       lastVisited: 'October 2025',

@@ -18,6 +18,7 @@ import Lightbox from './Lightbox';
 import StarRating from './StarRating';
 import { cities } from '../data/mockData';
 import { useSaved } from '../context/SavedContext';
+import RealisticReceiptCard from './RealisticReceiptCard';
 
 interface RestaurantModalProps {
   restaurant: Restaurant | null;
@@ -315,6 +316,16 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                         )}
                     </button>
 
+                    <Link
+                        to={`/compare?a=${restaurant.id}`}
+                        onClick={onClose}
+                        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/15 text-white/80 hover:text-white transition-all text-xs font-medium active:scale-95"
+                        title="Compare this spot side-by-side with another restaurant"
+                    >
+                        <span>⚔️</span>
+                        <span className="hidden sm:inline">Compare</span>
+                    </Link>
+
                     <button 
                         onClick={onClose} 
                         className="p-1.5 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-colors border border-white/10 active:scale-95 ml-1" 
@@ -386,6 +397,17 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                         <RatingDisplay label="Service" score={restaurant.ratings.service} max={5} />
                         <PriceRatingDisplay score={restaurant.ratings.price} max={3} />
                     </div>
+                </div>
+
+                {/* Realistic Bill Breakdown */}
+                <div className="py-8 border-t border-white/10">
+                    <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-playfair font-bold text-white text-lg">Realistic Bill</h4>
+                        <span className="text-[11px] font-mono text-white/50 bg-white/5 px-2.5 py-1 rounded-full border border-white/10">
+                            Automatic Itemized Estimate
+                        </span>
+                    </div>
+                    <RealisticReceiptCard restaurant={restaurant} />
                 </div>
                 
                 {restaurant.alexsTip && (

@@ -57,6 +57,7 @@ export const hurghada: City = {
 
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 3 },
+      coordinates: { lat: 27.18950, lon: 33.82730 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Giftun%20Azur%20Resort%2C%20Youssef%20Affifi%20Road%2C%20Touristic%20Villages%2C%20Hurghada%201%2C%20Egypt&maptype=roadmap',
       cuisine: 'Egyptian / International',
       alexsTip: "Take advantage as much as you can of the food and drinks, go for a sunrise swim, and secure a good spot on the beach.",

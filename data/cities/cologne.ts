@@ -69,6 +69,7 @@ export const cologne: City = {
 
       ],
       ratings: { food: 5, drinks: 4, service: 4, price: 2 },
+      coordinates: { lat: 50.93282, lon: 6.95542 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Okinii%20K%C3%B6ln%2C%20Blaubach%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Japanese sushi',
       lastVisited: 'November 2025',
@@ -105,6 +106,7 @@ export const cologne: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_9.jpg', caption: 'Margherita takeaway'}
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
+      coordinates: { lat: 50.93928, lon: 6.93618 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Antica%20Pizzeria%20Nennillo%20-%20Belgisches%20Viertel%2C%20Limburger%20Stra%C3%9Fe%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Italian',
       lastVisited: 'January 2026',
@@ -132,6 +134,7 @@ export const cologne: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/thaiviet/thaiviet_2.jpg', caption: 'Crispy fried chicken with mango sauce' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 1 },
+      coordinates: { lat: 50.93882, lon: 6.95825 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Thai-Viet%20Street%20Food%20Imbiss%2C%20Kleine%20Budengasse%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Vietnamese',
       neighborhood: 'City Center',
@@ -164,7 +167,8 @@ export const cologne: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/el_inca/el_inca_5.jpg', caption: 'Inca Kola' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
-      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Thai-Viet%20Street%20Food%20Imbiss%2C%20Kleine%20Budengasse%2C%20Cologne%2C%20Germany&maptype=roadmap',
+      coordinates: { lat: 50.92985, lon: 6.93348 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=El%20Inca%2C%20G%C3%B6rresstra%C3%9Fe%202%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Peruvian',
       lastVisited: 'January 2026',
       alexsTip: "Definitely take the Inca kola and the pisco sour when you go!",
@@ -193,6 +197,7 @@ export const cologne: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_2.jpg', caption: 'Tijuana street fries with falafel' }
       ],
       ratings: { food: 4, drinks: 4, service: 3, price: 2 },
+      coordinates: { lat: 50.93855, lon: 6.94045 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frittenwerk%20K%C3%B6ln%2C%20Ehrenstra%C3%9Fe%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Fries',
       alexsTip: "Take the BBQ pulled pork poutine or the Tijuana street fries but do not add extra falafel. Takeaway orders are much faster.",
@@ -229,6 +234,7 @@ export const cologne: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_8.jpg', caption: 'Gluten-free brownies'}
       ],
       ratings: { food: 4, drinks: 5, service: 5, price: 1 },
+      coordinates: { lat: 50.94042, lon: 6.93922 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Kaffeesaurus%2C%20Friesenplatz%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Cafe',
       neighborhood: 'City Center',
@@ -260,7 +266,8 @@ export const cologne: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_3.jpg', caption: 'Pizza pane and bruschetta (top)'}
       ],
       ratings: { food: 4, drinks: 5, service: 5, price: 2 },
-      mapEmbedUrl: "https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=L'Osteria%20Bonn%20In%20der%20S%C3%BCrst%2C%20In%20der%20S%C3%BCrst%2C%20Bonn%2C%20Germany&maptype=roadmap",
+      coordinates: { lat: 50.93582, lon: 6.94425 },
+      mapEmbedUrl: "https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=L%27Osteria%2C%20Hahnenstra%C3%9Fe%2C%20Cologne%2C%20Germany&maptype=roadmap",
       cuisine: 'Italian',
       neighborhood: 'City Center',
       lastVisited: 'October 2025',
@@ -290,7 +297,8 @@ export const cologne: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/fritesbelgique/frites_2.jpg', caption: 'Regular fries with peanut sauce' }
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 1 },
-      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frites%20Belgique%2C%20Sternstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      coordinates: { lat: 50.93722, lon: 6.95675 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frites%20Belgique%2C%20Hohe%20Stra%C3%9Fe%2C%20Cologne%2C%20Germany&maptype=roadmap',
       cuisine: 'Fries',
       neighborhood: 'City Center',
       lastVisited: 'October 2025',

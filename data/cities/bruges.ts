@@ -49,6 +49,7 @@ export const bruges: City = {
       images: [
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 1 },
+      coordinates: { lat: 51.20374, lon: 3.22557 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Otto%20Waffle%20Atelier%20Katelijnestraat%2C%20Katelijnestraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
       cuisine: 'Waffles',
       neighborhood: 'City Center',
@@ -76,6 +77,7 @@ export const bruges: City = {
       images: [
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 1 },
+      coordinates: { lat: 51.20367, lon: 3.22591 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=FritBar%20-%20Bruges%2C%20Katelijnestraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
       cuisine: 'Fries',
       alexsTip: "Take a medium sized fries with garlic mayo and go next door for waffles for dessert.",
@@ -101,6 +103,7 @@ export const bruges: City = {
       images: [
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 1 },
+      coordinates: { lat: 51.20875, lon: 3.22638 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Go.fre%20%7C%20Belgian%20waffles%20on%20a%20stick%2C%20Breidelstraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
       cuisine: 'Waffles',
       neighborhood: 'City Center',
@@ -131,6 +134,7 @@ export const bruges: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/bruges/bohemian/bohemian_2.jpg', caption: 'Gluten-free Bohemian burger and fries'}
       ],
       ratings: { food: 4, drinks: 5, service: 5, price: 3 },
+      coordinates: { lat: 51.20815, lon: 3.22271 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Bohemian%20Burgers%20Brugge%2C%20Sint-Amandsstraat%2C%20Bruges%2C%20Belgium&maptype=roadmap',
       cuisine: 'Burgers',
       neighborhood: 'City Center',

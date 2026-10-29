@@ -12,9 +12,9 @@ export const bonn: City = {
   restaurants: [
     {
       id: 'okinii',
-      name: 'Okinii',
-      description: 'One of the best sushi places in bonn with an all-you-can-eat sushi menu. I have been so often that I am starting to get sick of it! I think the price is quite high but the sushi is worth it in my opinion.',
-      quickVerdict: 'The go-to spot for high-quality all-you-can-eat sushi in Bonn. Come hungry.',
+      name: 'Umi No Aji',
+      description: 'Formerly known as Okinii, Umi No Aji is one of the best sushi places in Bonn with an all-you-can-eat sushi menu. I have been so often that I am starting to get sick of it! I think the price is quite high but the sushi is worth it in my opinion.',
+      quickVerdict: 'The go-to spot for high-quality all-you-can-eat sushi in Bonn (formerly Okinii). Come hungry.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/okinii/okinii_8.jpg', caption: 'Shake nigiri, tekka nigiri, teriyaki roll, cream cheese roll, tekka maki, shake maki' },
       images: [
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/okinii/okinii_1.jpg', caption: 'Tekka maki, shake maki, avocado maki, shake nigiri, cream cheese roll, california roll' },
@@ -37,6 +37,7 @@ export const bonn: City = {
 
       ],
       ratings: { food: 5, drinks: 4, service: 4, price: 2 },
+      coordinates: { lat: 50.73095, lon: 7.09452 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Okinii%20Bonn%2C%20Quantiusstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Japanese sushi',
       neighborhood: 'Quantiusstraße (Central Station)',
@@ -71,6 +72,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/tio_pepe/tio_pepe_5.jpg', caption: 'Crema Catalana' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 3 },
+      coordinates: { lat: 50.73692, lon: 7.10425 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=tio%20pepe&maptype=roadmap',
       cuisine: 'Spanish tapas',
       neighborhood: 'City Center',
@@ -100,6 +102,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ha_long/ha_long_6.jpg', caption: 'Chicken satay skewers.' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 1 },
+      coordinates: { lat: 50.72895, lon: 7.08182 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ha%20Long%20-%20Sushi%20%26%20vietnamesische%20K%C3%BCche%2C%20Endenicher%20Stra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Vietnamese, sushi',
       lastVisited: 'October 2025',
@@ -134,6 +137,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/Nennillo/Nennillo_9.jpg', caption: 'Margherita takeaway'}
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
+      coordinates: { lat: 50.74092, lon: 7.09476 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Antica%20Pizzeria%20Nennillo%20-%20Bonn%2C%20Im%20Krausfeld%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Italian',
       lastVisited: 'January 2026',
@@ -167,6 +171,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/burgerwerk/burgerwerk_8.jpg', caption: 'Menu'}
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
+      coordinates: { lat: 50.73887, lon: 7.11718 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Burgerwerk%2C%20Friedrich-Breuer-Stra%C3%9Fe%2C%20Bonn-Beuel%2C%20Germany&maptype=roadmap',
       cuisine: 'Burgers',
       neighborhood: 'Bonn-Beuel',
@@ -201,6 +206,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mandala/mandala_7.jpg', caption: 'Sushi with dry ice - great to film' }
       ],
       ratings: { food: 4, drinks: 4, service: 5, price: 2 },
+      coordinates: { lat: 50.73082, lon: 7.09468 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Mandala%20Vegan%20Bonn%2C%20Quantiusstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Vegan Sushi',
       neighborhood: 'Central Station',
@@ -235,6 +241,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/hokkaido/hokkaido_7.jpg', caption: 'Ice cream: mango, black sesame, and peach' }
       ],
       ratings: { food: 4, drinks: 4, service: 4, price: 2 },
+      coordinates: { lat: 50.68345, lon: 7.16142 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Hokkaido%20Sushi%20%26%20Grill%20Restaurant%2C%20Drachenburgstra%C3%9Fe%2C%20Bonn-Bad%20Godesberg%2C%20Germany&maptype=roadmap',
       cuisine: 'Sushi',
       neighborhood: 'Bad Godesberg',
@@ -273,6 +280,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cream_company/creamcompany_11.jpg', caption: 'Tropical only fans' },
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
+      coordinates: { lat: 50.73642, lon: 7.09748 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Cream%20Company%20Coffee%20%26%20Friends%2C%20Sterntorbr%C3%BCcke%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Brunch',
       neighborhood: 'City Center',
@@ -303,6 +311,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/karawane/karawane_4.jpg', caption: 'Vegetarian all-you-can-eat' },
       ],
       ratings: { food: 4, drinks: 4, service: 4, price: 2 },
+      coordinates: { lat: 50.71358, lon: 7.16641 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Karawane%2C%20Adrianstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Oriental',
       neighborhood: 'Oberkassel',
@@ -334,6 +343,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ichiban/ichiban_5.jpg', caption: 'Tofu Udon' }
       ],
       ratings: { food: 4, drinks: 4, service: 4, price: 1 },
+      coordinates: { lat: 50.73685, lon: 7.10312 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ichiban%20Noodlebar%2C%20Br%C3%BCdergasse%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Japanese',
       neighborhood: 'City Center',
@@ -366,6 +376,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mayras_wohnzimmer/mayra_6.jpg', caption: 'Cappuccino' }
       ],
       ratings: { food: 3, drinks: 4, service: 5, price: 1 },
+      coordinates: { lat: 50.73832, lon: 7.11865 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Mayras%20Wohnzimmer%20Caf%C3%A9%2C%20Friedrich-Breuer-Stra%C3%9Fe%2C%20Bonn-Beuel%2C%20Germany&maptype=roadmap',
       cuisine: 'Cafe, Cakes',
       neighborhood: 'Bonn-Beuel',
@@ -393,6 +404,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/frittenwerk/frittenwerk_2.jpg', caption: 'Tijuana street fries with falafel' }
       ],
       ratings: { food: 4, drinks: 4, service: 3, price: 2 },
+      coordinates: { lat: 50.73620, lon: 7.09892 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frittenwerk%20Bonn%2C%20Sternstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Fries',
       neighborhood: 'City Center',
@@ -423,6 +435,7 @@ export const bonn: City = {
         
       ],
       ratings: { food: 4, drinks: 4, service: 3, price: 2 },
+      coordinates: { lat: 50.74175, lon: 7.09062 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Burgermanufaktur%20am%20Frankenbad%2C%20Vorgebirgsstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Burgers',
       lastVisited: 'July 2022',
@@ -452,6 +465,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/pie_me/pie_me_4.jpg', caption: 'Iced matcha latte with strawberry syrup'}
       ],
       ratings: { food: 3.5, drinks: 4, service: 4, price: 2 },
+      coordinates: { lat: 50.74152, lon: 7.09075 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Pie%20Me%20Caf%C3%A9%20am%20Frankenbad%2C%20Vorgebirgsstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Pies',
       alexsTip: "Take the pie menu with mashed potatoes, but never the salad, it is overpriced.",
@@ -479,7 +493,8 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/cosy_corner/cosy_corner_3.jpg', caption: 'Scones with clotted cream first and strawberry jam'}
       ],
       ratings: { food: 4, drinks: 5, service: 5, price: 1 },
-      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Pie%20Me%20Caf%C3%A9%20am%20Frankenbad%2C%20Vorgebirgsstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
+      coordinates: { lat: 50.67492, lon: 7.19532 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Cosy%20Corner%201717%2C%20Hauptstra%C3%9Fe%20472%2C%20K%C3%B6nigswinter%2C%20Germany&maptype=roadmap',
       cuisine: 'British',
       neighborhood: 'Königswinter',
       lastVisited: 'November 2022',
@@ -520,6 +535,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/kaffeesaurus/kaffeesaurus_14.jpg', caption: 'Gluten-free Rüblikuchen (swiss carrot cake)'}
       ],
       ratings: { food: 4, drinks: 5, service: 5, price: 1 },
+      coordinates: { lat: 50.73352, lon: 7.09915 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Kaffeesaurus%2C%20Am%20Hauptbahnhof%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Cafe',
       neighborhood: 'Central Station',
@@ -551,6 +567,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/losteria/losteria_3.jpg', caption: 'Pizza pane and bruschetta (top)'}
       ],
       ratings: { food: 4, drinks: 5, service: 5, price: 2 },
+      coordinates: { lat: 50.73395, lon: 7.10095 },
       mapEmbedUrl: "https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=L'Osteria%20Bonn%20In%20der%20S%C3%BCrst%2C%20In%20der%20S%C3%BCrst%2C%20Bonn%2C%20Germany&maptype=roadmap",
       cuisine: 'Italian',
       neighborhood: 'City Center',
@@ -581,6 +598,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/fritesbelgique/frites_2.jpg', caption: 'Regular fries with peanut sauce' }
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 1 },
+      coordinates: { lat: 50.73602, lon: 7.09945 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Frites%20Belgique%2C%20Sternstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Fries',
       neighborhood: 'City Center',
@@ -613,7 +631,8 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/mam-mam/mam-mam_5.jpg', caption: 'Măm-Măm Signature Curry' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
-      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=M%C4%83m%20M%C4%83m%20Vietnamese%20Westlands%2C%20Mwanzi%20Rd%2C%20Nairobi%2C%20Kenya&maptype=roadmap',
+      coordinates: { lat: 50.72584, lon: 7.09786 },
+      mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Mam-Mam%20Vietnamese%2C%20K%C3%B6nigstra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Vietnamese',
       neighborhood: 'City Center',
       lastVisited: 'October 2023',
@@ -643,6 +662,7 @@ export const bonn: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/Bonn/ferdinandos/ferdinandos_3.jpg', caption: 'Quattro Formaggi Pizza' }
       ],
       ratings: { food: 3.5, drinks: 4, service: 5, price: 1 },
+      coordinates: { lat: 50.72518, lon: 7.07342 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Ferdinando%20Italian%20coffee%20%26%20bistro%2C%20Auf%20dem%20H%C3%BCgel%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Italian',
       lastVisited: 'November 2024',
@@ -672,6 +692,7 @@ export const bonn: City = {
         
       ],
       ratings: { food: 4, drinks: 4, service: 5, price: 2 },
+      coordinates: { lat: 50.72462, lon: 7.09088 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Bonnanza%20Burger%20Factory%2C%20Clemens-August-Stra%C3%9Fe%2C%20Bonn%2C%20Germany&maptype=roadmap',
       cuisine: 'Burgers',
       lastVisited: 'August 2022',

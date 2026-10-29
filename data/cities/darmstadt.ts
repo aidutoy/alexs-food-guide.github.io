@@ -15,6 +15,7 @@ export const darmstadt: City = {
       images: [
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
+      coordinates: { lat: 49.86872, lon: 8.65251 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=slap%20darmstadt&maptype=roadmap',
       cuisine: 'Italian',
       neighborhood: 'City Centre',
@@ -44,6 +45,7 @@ export const darmstadt: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/sushiki/sushiki_3.jpg', caption: 'Cafe Vietnam (cold) with condensed milk' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
+      coordinates: { lat: 49.87031, lon: 8.65082 },
       mapEmbedUrl: '<iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=sushiki&maptype=roadmap" allowfullscreen></iframe>',
       cuisine: 'Sushi, Vietnamese',
       neighborhood: 'City Centre',
@@ -80,6 +82,7 @@ export const darmstadt: City = {
         }
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
+      coordinates: { lat: 49.87071, lon: 8.65096 },
       mapEmbedUrl: '<iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Li\'s%20Kitchen%2C%20Adelungstra%C3%9Fe%2C%20Darmstadt%2C%20Germany&maptype=roadmap" allowfullscreen></iframe>',
       cuisine: 'Chinese',
       neighborhood: 'City Center',

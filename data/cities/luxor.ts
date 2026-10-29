@@ -55,6 +55,7 @@ export const luxor: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/luxor/elmesala/elmesala_6.jpg', caption: 'Two lamb kofta and two chicken dishes with rice or fries, egyptian pita, hummus, and salad.'}        
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
+      coordinates: { lat: 25.69837, lon: 32.63185 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=El%20Mesala%20Hotel%2C%20west%20bank%D8%8C%20Al%20Qarna%20Road%2C%20Al%20Bairat%2C%20Al%20Qarna%2C%20Egypt&maptype=roadmap',
       cuisine: 'Egyptian',
       lastVisited: 'October 2025',
@@ -77,6 +78,7 @@ export const luxor: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/luxor/nilepanorama/nilepanorama_2.jpg', caption: 'Chocolate muffin, baklava, and angel hair' }      
       ],
       ratings: { food: 4, drinks: 4, service: 3, price: 1 },
+      coordinates: { lat: 25.69740, lon: 32.63150 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=New%20Nile%20Panorama%20restaurant%D8%8C%20%D8%A7%D9%84%D9%85%D9%8A%D9%86%D8%A7%D8%A1%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A%D8%8C%20Al%20Qarnah%2C%20Al%20Qarna%2C%20Egypt&maptype=roadmap',
       cuisine: 'Egyptian',
       lastVisited: 'October 2025',
@@ -98,6 +100,7 @@ export const luxor: City = {
       images: [
       ],
       ratings: { food: 5, drinks: 4, service: 4, price: 1 },
+      coordinates: { lat: 25.69910, lon: 32.63220 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Thebes%20(Tebaa)%20Restaurant%2C%20Al%20Qarnah%2C%20Al%20Qarna%2C%20Egypt&maptype=roadmap',
       cuisine: 'Egyptian / International',
       lastVisited: 'October 2025',

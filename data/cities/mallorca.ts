@@ -52,6 +52,7 @@ export const mallorca: City = {
 
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
+      coordinates: { lat: 39.58012, lon: 2.65082 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Caf%C3%A9%20Restaurante%20Sibil%C2%B7la%2C%20Carrer%20de%20Blanquerna%2C%20Palma%2C%20Spain&maptype=roadmap',
       cuisine: 'Spanish Tapas',
       lastVisited: 'June 2025',
@@ -81,6 +82,7 @@ export const mallorca: City = {
 
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
+      coordinates: { lat: 39.53325, lon: 2.71545 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Saul%C3%B3%20by%20Puro%2C%20Playa%20de%2C%20Spain&maptype=roadmap',
       cuisine: 'Continental',
       lastVisited: 'June 2025',
@@ -109,6 +111,7 @@ export const mallorca: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/mallorca/casajulio/casajulio_2.jpg', caption: 'House white wine' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
+      coordinates: { lat: 39.57582, lon: 2.66014 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Restaurant%20Casa%20Julio%2C%20Carrer%20de%20la%20Previsi%C3%B3%2C%20Palma%2C%20Spain&maptype=roadmap',
       cuisine: 'Spanish',
       lastVisited: 'June 2025',
@@ -137,6 +140,7 @@ export const mallorca: City = {
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/mallorca/cafeplaya/cafeplaya_2.jpg', caption: 'House white wine' }
       ],
       ratings: { food: 4, drinks: 5, service: 4, price: 1 },
+      coordinates: { lat: 39.53508, lon: 2.71618 },
       mapEmbedUrl: 'https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Cafeteria%20Playa%2C%20Avinguda%20de%20Bartomeu%20Riutort%2C%20Palma%2C%20Spain&maptype=roadmap',
       cuisine: 'Spanish',
       lastVisited: 'June 2025',
