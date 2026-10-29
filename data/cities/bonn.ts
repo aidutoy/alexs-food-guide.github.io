@@ -98,7 +98,7 @@ export const bonn: City = {
           "Sunday - Monday: 16:30 - 22:00"
       ],
       exampleReceipt: {
-        typicalOrderDescription: 'All-You-Can-Eat Dinner + Drink',
+        typicalOrderDescription: 'Evening Tapas',
         items: [
           { name: '1x Patatas Bravas', price: 4.90 },
           { name: '1x Dates with bacon', price: 4.90 },

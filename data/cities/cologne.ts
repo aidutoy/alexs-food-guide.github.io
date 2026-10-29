@@ -217,6 +217,48 @@ export const cologne: City = {
       ]
     },
     {
+      id: 'tastyindia',
+      name: "Tasty India",
+      description: "One of the many indian restaurants in Cologne, but this one stands out for its excellent chicken and paneer pakoras, each coming with a free dip. The restaurant is designed more for takeaway so there are a few tightly squeezed tables but we didn't mind because of the friendly atmosphere. The portions are enough to keep you satisfied but at least look somewhat smaller than what you would get if you ordered takeaway. I still prefer dining in compared to takeaway so I don't mind a smaller portion. The main dishes are not spicy so the restaurant opens up to those who like the taste but cant handle the spice. I personally am on the hunt for the best chicken tikka masala and peshwari naan and here their peshwari naan has cottage cheese which is new for me and I have to admit that the search continues. Overall Tasty India is a good restaurant and I would recommend to try it out.",
+      quickVerdict: 'Great takeaway spot with some of the best dips for papadams and pakoras.',
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/tasty_india/tasty_india_1.jpg', caption: 'Chicken tikka masal (left), chicken korma (bottom right), dips (mango, mint, and tamarind)'},
+      images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/tasty_india/tasty_india_2.jpg', caption: 'Chicken Tikka Masala with rice and Peshwari Naan' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/tasty_india/tasty_india_3.jpg', caption: 'Chicken Pakora (bottom), Paneer Pakora (Top) with mint, mango and tamarind dips.' }
+      ],
+      ratings: { food: 4, drinks: 4, service: 4, price: 2 },
+      coordinates: { lat: 50.93855, lon: 6.94045 },
+      mapEmbedUrl: '<iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Tasty%20India%2C%20Z%C3%BClpicher%20Stra%C3%9Fe%2C%20Cologne%2C%20Lindenthal%2C%20Germany&maptype=roadmap" allowfullscreen></iframe>',
+      cuisine: 'Indian',
+      alexsTip: "Order the chicken and paneer pakoras, one of the best I have had in Cologne so far.",
+      dietary: {
+        celiac: "Pakoras are battered in chickpea flour so are gluten-free. All curries are gluten-free.",
+        lactose: "Some curries have cream or yoghurt in them but are clearly labelled. Lactose-free yoghurt or cream is not available.",
+        vegetarian: "Many vegetarian options, especially popular ones like palak paneer",
+        vegan: "Many vegan options with tofu or vegetables. Creamy options available but no details on which cream or butter is based of so be careful for oat or nut allergies."
+      },
+      websiteUrl: 'https://www.tastyindiakoeln.de/',
+      instagramUrl: 'https://www.instagram.com/tastyindiakoeln/',
+      tags: ["Indian", "Takeaway", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Tuesday: closed",
+          "Sunday - Friday (except Tuesday): 11:30 - 22:00",
+          "Saturday: 16:00 - 22:00"
+      ],
+      exampleReceipt: {
+        typicalOrderDescription: 'Evening dinner for two',
+        items: [
+          { name: '1x Papadam', price: 2.00 },
+          { name: '1x Chicken Pakora', price: 8.90 },
+          { name: '1x Chicken Tikka Masala', price: 16.90 },
+          { name: '1x Chicken Korma', price: 16.90 },
+          { name: '1x Peshwari Naan', price: 5.90 },
+          { name: '2x Cola Zero', price: 7.80 }
+        ],
+        taxOrServiceNote: 'Typical evening order for two sharing evening dinner',
+      }
+    },
+    {
       id: 'kaffeesaurus',
       name: "Kaffeesaurus",
       description: "A great spot for brunch with friends, or a quick coffee and cake, or even an atmospheric place to study during the week. I would recommend coming here to try the chai and cakes.\n\nIn my experience the hollandaise sauce wasn't as good as in cream company but the Brontosaurus burger I had one time was really tasty. I think the prices are fair and the atmosphere is really nice, so overall a great cafe.",

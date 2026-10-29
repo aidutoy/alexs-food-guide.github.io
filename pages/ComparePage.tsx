@@ -343,13 +343,15 @@ export const ComparePage: React.FC = () => {
                 </div>
               )}
 
-              {/* Example Receipt Section */}
-              <div className="mb-6">
-                <span className="text-[11px] uppercase tracking-widest text-white/40 font-mono block mb-2 font-bold">
-                  Example Receipt
-                </span>
-                <RealisticReceiptCard restaurant={restA} cityId={cityA?.id} compact={true} />
-              </div>
+              {/* Example Receipt Section (manual receipts only) */}
+              {restA.exampleReceipt?.items && restA.exampleReceipt.items.length > 0 && (
+                <div className="mb-6">
+                  <span className="text-[11px] uppercase tracking-widest text-white/40 font-mono block mb-2 font-bold">
+                    Example Receipt
+                  </span>
+                  <RealisticReceiptCard restaurant={restA} cityId={cityA?.id} compact={true} />
+                </div>
+              )}
 
               {/* Insider Tip */}
               {restA.alexsTip && (
@@ -454,13 +456,15 @@ export const ComparePage: React.FC = () => {
                 </div>
               )}
 
-              {/* Example Receipt Section */}
-              <div className="mb-6">
-                <span className="text-[11px] uppercase tracking-widest text-white/40 font-mono block mb-2 font-bold">
-                  Example Receipt
-                </span>
-                <RealisticReceiptCard restaurant={restB} cityId={cityB?.id} compact={true} />
-              </div>
+              {/* Example Receipt Section (manual receipts only) */}
+              {restB.exampleReceipt?.items && restB.exampleReceipt.items.length > 0 && (
+                <div className="mb-6">
+                  <span className="text-[11px] uppercase tracking-widest text-white/40 font-mono block mb-2 font-bold">
+                    Example Receipt
+                  </span>
+                  <RealisticReceiptCard restaurant={restB} cityId={cityB?.id} compact={true} />
+                </div>
+              )}
 
               {/* Insider Tip */}
               {restB.alexsTip && (

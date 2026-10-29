@@ -441,16 +441,18 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                     </div>
                 )}
 
-                {/* Example Receipt Breakdown (placed below dietary information) */}
-                <div className="py-8 border-t border-white/10">
-                    <div className="flex items-center justify-between mb-4">
-                        <h4 className="font-playfair font-bold text-white text-lg">Example Receipt</h4>
-                        <span className="text-[11px] font-mono text-white/50 bg-white/5 px-2.5 py-1 rounded-full border border-white/10">
-                            Sample Order Estimate
-                        </span>
+                {/* Example Receipt Breakdown (only shown for restaurants with manual example receipts) */}
+                {restaurant.exampleReceipt?.items && restaurant.exampleReceipt.items.length > 0 && (
+                    <div className="py-8 border-t border-white/10">
+                        <div className="flex items-center justify-between mb-4">
+                            <h4 className="font-playfair font-bold text-white text-lg">Example Receipt</h4>
+                            <span className="text-[11px] font-mono text-white/50 bg-white/5 px-2.5 py-1 rounded-full border border-white/10">
+                                Alex's Order Breakdown
+                            </span>
+                        </div>
+                        <RealisticReceiptCard restaurant={restaurant} />
                     </div>
-                    <RealisticReceiptCard restaurant={restaurant} />
-                </div>
+                )}
 
                 {restaurant.openingHours && (
                     <div className="py-8 border-t border-white/10">

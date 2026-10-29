@@ -15,6 +15,10 @@ export const RealisticReceiptCard: React.FC<RealisticReceiptCardProps> = ({
 }) => {
   const receipt = generateRealisticReceipt(restaurant, cityId);
 
+  if (!receipt) {
+    return null;
+  }
+
   return (
     <div className={`relative bg-zinc-950 text-zinc-200 rounded-2xl border border-white/15 shadow-2xl overflow-hidden font-mono text-xs ${compact ? 'p-4' : 'p-5 sm:p-6'}`}>
       {/* Subtle thermal receipt texture backdrop */}
