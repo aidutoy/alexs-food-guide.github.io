@@ -168,7 +168,7 @@ export const ComparePage: React.FC = () => {
             Compare <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Two Spots</span>
           </h1>
           <p className="text-white/60 text-sm sm:text-base font-light leading-relaxed">
-            Can’t decide where to eat? Put any two places side-by-side to compare food ratings, unedited photography, insider tips, and realistic bill estimates.
+            Can’t decide where to eat? Put any two places side-by-side to compare food ratings, unedited photography, insider tips, and example receipts.
           </p>
 
           {/* Quick Preset Duels */}
@@ -343,10 +343,10 @@ export const ComparePage: React.FC = () => {
                 </div>
               )}
 
-              {/* Realistic Bill Section */}
+              {/* Example Receipt Section */}
               <div className="mb-6">
                 <span className="text-[11px] uppercase tracking-widest text-white/40 font-mono block mb-2 font-bold">
-                  Realistic Bill Estimate
+                  Example Receipt
                 </span>
                 <RealisticReceiptCard restaurant={restA} cityId={cityA?.id} compact={true} />
               </div>
@@ -454,10 +454,10 @@ export const ComparePage: React.FC = () => {
                 </div>
               )}
 
-              {/* Realistic Bill Section */}
+              {/* Example Receipt Section */}
               <div className="mb-6">
                 <span className="text-[11px] uppercase tracking-widest text-white/40 font-mono block mb-2 font-bold">
-                  Realistic Bill Estimate
+                  Example Receipt
                 </span>
                 <RealisticReceiptCard restaurant={restB} cityId={cityB?.id} compact={true} />
               </div>

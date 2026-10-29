@@ -56,7 +56,16 @@ export const bonn: City = {
           "Monday - Thursday: 17:00 - 22:00",
           "Friday - Saturday: 12:00 - 16:00, 16:00 - 23:30",
           "Sunday, holidays: 12:00 - 16:00, 16:00 - 22:00"
-      ]
+      ],
+      exampleReceipt: {
+        typicalOrderDescription: 'All-You-Can-Eat Dinner + Drink',
+        items: [
+          { name: '1x All-You-Can-Eat Evening Buffet', price: 29.95 },
+          { name: '1x Lemonade', price: 4.80 },
+          { name: '1x Ice Cream & Mochi', price: 0.00, formattedPrice: 'Included' },
+        ],
+        taxOrServiceNote: 'Typical evening order per person',
+      }
     },
     {
       id: 'tio-pepe',
@@ -83,6 +92,23 @@ export const bonn: City = {
         lactose: "No cheese or milk specifically lactose-free but many options without dairy.",
         vegetarian: "Classic tapas like Patatas Bravas, Pimientos, Tortilla, and Manchego cheese.",
         vegan: "Very limited options due to the meat and fish in most food."
+      },
+      openingHours: [
+          "Tuesday - Saturday: 16:30 - 23:00",
+          "Sunday - Monday: 16:30 - 22:00"
+      ],
+      exampleReceipt: {
+        typicalOrderDescription: 'All-You-Can-Eat Dinner + Drink',
+        items: [
+          { name: '1x Patatas Bravas', price: 4.90 },
+          { name: '1x Dates with bacon', price: 4.90 },
+          { name: '1x Shrimp with garlic oil and chili', price: 8.90 },
+          { name: '1x Grilled Octopus', price: 14.90 },
+          { name: '1x Spanish Tortilla', price: 11.90 },
+          { name: '1x Cream Catalana', price: 5.90 },
+          { name: '1x Pitcher of Sangria', price: 24.90 }
+        ],
+        taxOrServiceNote: 'Typical evening order for two persons',
       },
       websiteUrl: 'https://tio-pepe-bonn.de/',
       instagramUrl: 'https://www.instagram.com/tiopepebonn/',

@@ -8,7 +8,7 @@ export interface ReceiptLineItem {
   category?: 'starter' | 'main' | 'side' | 'drink' | 'dessert' | 'special';
 }
 
-export interface RealisticReceipt {
+export interface ExampleReceipt {
   restaurantId: string;
   restaurantName: string;
   cityId?: string;
@@ -23,7 +23,11 @@ export interface RealisticReceipt {
   typicalOrderDescription: string;
   priceTier: 1 | 2 | 3;
   timestampHint?: string;
+  isCustom?: boolean;
 }
+
+// Backward compatibility alias
+export type RealisticReceipt = ExampleReceipt;
 
 /**
  * Deterministic hash generator based on restaurant ID so receipts remain stable across renders.
@@ -38,10 +42,10 @@ function hashString(str: string): number {
 }
 
 /**
- * Generates an authentic, realistic bill breakdown tailored to the restaurant's
- * cuisine, price tier, and destination city.
+ * Generates an example receipt breakdown tailored to the restaurant's
+ * cuisine, price tier, and destination city, or uses custom prices defined in code.
  */
-export function generateRealisticReceipt(restaurant: Restaurant, cityId?: string): RealisticReceipt {
+export function generateExampleReceipt(restaurant: Restaurant, cityId?: string): ExampleReceipt {
   const seed = hashString(restaurant.id + (restaurant.name || ''));
   const priceTier = (restaurant.ratings?.price || 2) as 1 | 2 | 3;
   const cuisineLower = (restaurant.cuisine || '').toLowerCase();
@@ -54,6 +58,50 @@ export function generateRealisticReceipt(restaurant: Restaurant, cityId?: string
     cityId === 'hurghada' || 
     cuisineLower.includes('egypt') || 
     cuisineLower.includes('middle east');
+
+  // Check if restaurant has custom prices defined directly in code
+  if (restaurant.exampleReceipt && restaurant.exampleReceipt.items && restaurant.exampleReceipt.items.length > 0) {
+    const custom = restaurant.exampleReceipt;
+    const currencySymbol = custom.currencySymbol || (isEgypt ? 'EGP ' : '€');
+    const currency = custom.currency || (isEgypt ? 'Egyptian Pound' : 'EUR');
+    
+    const items: ReceiptLineItem[] = custom.items.map(item => ({
+      name: item.name,
+      quantity: item.quantity,
+      price: item.price,
+      formattedPrice: item.formattedPrice || (currencySymbol === '€' 
+        ? `€${item.price.toFixed(2)}` 
+        : `${currencySymbol}${item.price % 1 === 0 ? item.price : item.price.toFixed(2)}`),
+      category: item.category || 'main'
+    }));
+
+    const calculatedSubtotal = items.reduce((acc, it) => acc + (it.price || 0), 0);
+    const subtotal = custom.total !== undefined ? custom.total : Math.round(calculatedSubtotal * 100) / 100;
+    const formattedTotal = custom.formattedTotal || (currencySymbol === '€' ? `€${subtotal.toFixed(2)}` : `${currencySymbol}${subtotal}`);
+    
+    let secondaryCurrencyTotal = custom.secondaryCurrencyTotal;
+    if (!secondaryCurrencyTotal && isEgypt) {
+      secondaryCurrencyTotal = `~€${(subtotal / 50).toFixed(2)}`;
+    }
+
+    return {
+      restaurantId: restaurant.id,
+      restaurantName: restaurant.name,
+      cityId,
+      currency,
+      currencySymbol,
+      items,
+      subtotal,
+      taxOrServiceNote: custom.taxOrServiceNote || (isEgypt ? 'Includes standard 12% service charge & 14% VAT' : 'Inclusive of VAT. Normal rounding/tip: ~5-10%'),
+      total: subtotal,
+      formattedTotal,
+      secondaryCurrencyTotal,
+      typicalOrderDescription: custom.typicalOrderDescription || 'Sample Order (Alex’s Selection)',
+      priceTier,
+      timestampHint: restaurant.lastVisited ? `Sampled: ${restaurant.lastVisited}` : undefined,
+      isCustom: true,
+    };
+  }
 
   const currencySymbol = isEgypt ? 'EGP ' : '€';
   const currency = isEgypt ? 'Egyptian Pound' : 'EUR';
@@ -232,3 +280,7 @@ export function generateRealisticReceipt(restaurant: Restaurant, cityId?: string
     timestampHint: restaurant.lastVisited ? `Tasted: ${restaurant.lastVisited}` : undefined,
   };
 }
+
+// Backward compatibility alias
+export const generateRealisticReceipt = generateExampleReceipt;
+

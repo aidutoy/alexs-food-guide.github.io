@@ -17,6 +17,25 @@ export interface ImageWithCaption {
   caption: string;
 }
 
+export interface CustomReceiptItem {
+  name: string;
+  price: number;
+  quantity?: number;
+  formattedPrice?: string;
+  category?: 'starter' | 'main' | 'side' | 'drink' | 'dessert' | 'special';
+}
+
+export interface CustomReceipt {
+  items?: CustomReceiptItem[];
+  currencySymbol?: string;
+  currency?: string;
+  total?: number;
+  formattedTotal?: string;
+  typicalOrderDescription?: string;
+  taxOrServiceNote?: string;
+  secondaryCurrencyTotal?: string;
+}
+
 export interface Restaurant {
   id: string;
   name: string;
@@ -39,6 +58,7 @@ export interface Restaurant {
   instagramUrl?: string;
   tags?: string[];
   openingHours?: string[];
+  exampleReceipt?: CustomReceipt;
 }
 
 export interface City {

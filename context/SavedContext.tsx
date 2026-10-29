@@ -16,7 +16,19 @@ interface SavedContextType {
 
 const STORAGE_KEY = 'alexs_saved_restaurants';
 
-const SavedContext = createContext<SavedContextType | undefined>(undefined);
+const fallbackSavedContext: SavedContextType = {
+  savedIds: [],
+  isSaved: () => false,
+  toggleSave: () => {},
+  removeSaved: () => {},
+  clearAllSaved: () => {},
+  savedRestaurants: [],
+  isDrawerOpen: false,
+  setIsDrawerOpen: () => {},
+  savedToast: null,
+};
+
+const SavedContext = createContext<SavedContextType>(fallbackSavedContext);
 
 export const SavedProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [savedIds, setSavedIds] = useState<string[]>(() => {
@@ -98,22 +110,4 @@ export const SavedProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   );
 };
 
-const fallbackSavedContext: SavedContextType = {
-  savedIds: [],
-  isSaved: () => false,
-  toggleSave: () => {},
-  removeSaved: () => {},
-  clearAllSaved: () => {},
-  savedRestaurants: [],
-  isDrawerOpen: false,
-  setIsDrawerOpen: () => {},
-  savedToast: null,
-};
-
-export const useSaved = () => {
-  const context = useContext(SavedContext);
-  if (!context) {
-    return fallbackSavedContext;
-  }
-  return context;
-};
+export const useSaved = () => useContext(SavedContext);

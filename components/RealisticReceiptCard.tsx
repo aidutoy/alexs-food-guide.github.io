@@ -23,15 +23,22 @@ export const RealisticReceiptCard: React.FC<RealisticReceiptCardProps> = ({
       {/* Top perforated edge simulation */}
       <div className="flex justify-between items-center pb-3 border-b border-dashed border-white/20 mb-3">
         <div>
-          <span className="text-[10px] tracking-widest uppercase text-brand-primary font-bold block">
-            ★ Realistic Bill Estimate
-          </span>
+          <div className="flex items-center gap-1.5 mb-0.5">
+            <span className="text-[10px] tracking-widest uppercase text-brand-primary font-bold block">
+              ★ Example Receipt
+            </span>
+            {receipt.isCustom && (
+              <span className="text-[9px] uppercase px-1.5 py-0.2 rounded bg-brand-primary/20 text-brand-primary font-mono font-medium">
+                Alex's Order
+              </span>
+            )}
+          </div>
           <h4 className="text-sm sm:text-base font-bold text-white font-mono tracking-tight">
             {receipt.restaurantName}
           </h4>
         </div>
         <div className="text-right">
-          <span className="text-[10px] text-white/50 block">EST. PER PERSON</span>
+          <span className="text-[10px] text-white/50 block">SAMPLE TOTAL</span>
           <span className="text-xs font-bold text-emerald-400">
             {receipt.formattedTotal}
           </span>
@@ -40,7 +47,7 @@ export const RealisticReceiptCard: React.FC<RealisticReceiptCardProps> = ({
 
       {/* Meta Bar */}
       <div className="flex items-center justify-between text-[11px] text-white/40 pb-2.5 mb-2.5 border-b border-white/10">
-        <span>Order: {receipt.typicalOrderDescription}</span>
+        <span>Sample: {receipt.typicalOrderDescription}</span>
         {receipt.timestampHint && <span>{receipt.timestampHint}</span>}
       </div>
 
@@ -69,7 +76,7 @@ export const RealisticReceiptCard: React.FC<RealisticReceiptCardProps> = ({
         </div>
 
         <div className="flex items-baseline justify-between text-sm sm:text-base font-bold text-white font-mono pt-1">
-          <span className="tracking-wider">REALISTIC BILL</span>
+          <span className="tracking-wider">EXAMPLE BILL</span>
           <div className="text-right">
             <span className="text-brand-primary text-base sm:text-lg">
               {receipt.formattedTotal}
@@ -102,4 +109,5 @@ export const RealisticReceiptCard: React.FC<RealisticReceiptCardProps> = ({
   );
 };
 
+export const ExampleReceiptCard = RealisticReceiptCard;
 export default RealisticReceiptCard;
