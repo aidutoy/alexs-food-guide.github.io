@@ -7,6 +7,7 @@ import { RestaurantModal } from '../components/RestaurantModal';
 import ChevronLeftIcon from '../components/icons/ChevronLeftIcon';
 import SearchIcon from '../components/icons/SearchIcon';
 import StarRating from '../components/StarRating';
+import OpenStatusBadge from '../components/OpenStatusBadge';
 
 const SearchPage: React.FC = () => {
     const location = useLocation();
@@ -323,6 +324,12 @@ const SearchPage: React.FC = () => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                                     
+                                    {restaurant.openingHours && restaurant.openingHours.length > 0 && (
+                                        <div className="absolute top-4 left-4 z-20 pointer-events-none">
+                                            <OpenStatusBadge openingHours={restaurant.openingHours} size="sm" showDetail={false} />
+                                        </div>
+                                    )}
+
                                     <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                         <div className="flex justify-between items-end mb-2">
                                              <p className="text-brand-primary font-medium tracking-widest uppercase text-xs">

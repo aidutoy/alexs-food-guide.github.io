@@ -13,6 +13,7 @@ export const darmstadt: City = {
       quickVerdict: 'Napoli pizza, great for a quick bite in town, and decent value.',
       mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/slap/slap_1.jpg', caption: 'Pepperoni and chili-honey pizza (bottom), bufalina (top and right)'},
       images: [
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/slap/slap_2.jpg', caption: 'Margerhita pizza'}
       ],
       ratings: { food: 5, drinks: 4, service: 5, price: 2 },
       coordinates: { lat: 49.86872, lon: 8.65251 },

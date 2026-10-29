@@ -19,6 +19,7 @@ import StarRating from './StarRating';
 import { cities } from '../data/mockData';
 import { useSaved } from '../context/SavedContext';
 import RealisticReceiptCard from './RealisticReceiptCard';
+import OpenStatusBadge from './OpenStatusBadge';
 
 interface RestaurantModalProps {
   restaurant: Restaurant | null;
@@ -347,8 +348,8 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
             {/* Scrollable Content */}
             <div className="overflow-y-auto flex-1 p-6 md:p-8 custom-scrollbar overscroll-contain">
                 <div className="mb-8">
-                    {/* Location & Last Visited transparency metadata badges - with generous breathing room */}
-                    {(restaurant.neighborhood || restaurant.lastVisited) && (
+                    {/* Location, Last Visited & Live Open Status metadata badges */}
+                    {(restaurant.neighborhood || restaurant.lastVisited || restaurant.openingHours) && (
                         <div className="flex flex-wrap items-center gap-2.5 mb-5">
                             {restaurant.neighborhood && (
                                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-white/90 text-xs font-medium border border-white/10 shadow-sm">
@@ -362,6 +363,10 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                                     <ClockIcon className="w-3.5 h-3.5 text-white/40" />
                                     <span>Reviewed: {restaurant.lastVisited}</span>
                                 </span>
+                            )}
+
+                            {restaurant.openingHours && (
+                                <OpenStatusBadge openingHours={restaurant.openingHours} size="md" />
                             )}
                         </div>
                     )}
@@ -456,13 +461,16 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
 
                 {restaurant.openingHours && (
                     <div className="py-8 border-t border-white/10">
-                        <h4 className="font-playfair font-bold text-white text-lg mb-4 flex items-center gap-2">
-                             <ClockIcon className="w-5 h-5 text-white" />
-                             Opening Hours
-                        </h4>
+                        <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+                            <h4 className="font-playfair font-bold text-white text-lg flex items-center gap-2">
+                                <ClockIcon className="w-5 h-5 text-brand-primary" />
+                                Opening Hours
+                            </h4>
+                            <OpenStatusBadge openingHours={restaurant.openingHours} size="md" />
+                        </div>
                         <ul className="space-y-2 text-sm text-gray-300 font-light bg-white/5 p-5 rounded-xl border border-white/5">
                             {restaurant.openingHours.map((line, index) => (
-                                <li key={index} className="flex justify-between">
+                                <li key={index} className="flex justify-between items-center py-0.5">
                                     <span>{line}</span>
                                 </li>
                             ))}

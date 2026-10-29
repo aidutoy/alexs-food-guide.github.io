@@ -9,6 +9,7 @@ import BookmarkIcon from '../components/icons/BookmarkIcon';
 import RealisticReceiptCard from '../components/RealisticReceiptCard';
 import { RestaurantModal } from '../components/RestaurantModal';
 import { useSaved } from '../context/SavedContext';
+import OpenStatusBadge from '../components/OpenStatusBadge';
 
 interface PresetDuel {
   id: string;
@@ -329,6 +330,13 @@ export const ComparePage: React.FC = () => {
                     {restA.lastVisited || 'Recent'}
                   </span>
                 </div>
+
+                {restA.openingHours && restA.openingHours.length > 0 && (
+                  <div className="flex items-center justify-between text-sm pt-1 border-t border-white/5">
+                    <span className="text-white/60">Live Status</span>
+                    <OpenStatusBadge openingHours={restA.openingHours} size="sm" showDetail={false} />
+                  </div>
+                )}
               </div>
 
               {/* Quick Verdict */}
@@ -442,6 +450,13 @@ export const ComparePage: React.FC = () => {
                     {restB.lastVisited || 'Recent'}
                   </span>
                 </div>
+
+                {restB.openingHours && restB.openingHours.length > 0 && (
+                  <div className="flex items-center justify-between text-sm pt-1 border-t border-white/5">
+                    <span className="text-white/60">Live Status</span>
+                    <OpenStatusBadge openingHours={restB.openingHours} size="sm" showDetail={false} />
+                  </div>
+                )}
               </div>
 
               {/* Quick Verdict */}

@@ -12,6 +12,7 @@ import MapPinIcon from '../components/icons/MapPinIcon';
 import { GlutenFreeIcon, LactoseFreeIcon, VegetarianIcon, VeganIcon } from '../components/icons/DietaryIcons';
 import StarRating from '../components/StarRating';
 import { useSaved } from '../context/SavedContext';
+import OpenStatusBadge from '../components/OpenStatusBadge';
 
 const CityPage: React.FC = () => {
   const { cityId } = useParams<{ cityId: string }>();
@@ -337,6 +338,10 @@ const CityPage: React.FC = () => {
                                     <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-white/60 text-xs font-mono" title="Date visited & reviewed">
                                         Visited: {restaurant.lastVisited}
                                     </span>
+                                )}
+
+                                {restaurant.openingHours && restaurant.openingHours.length > 0 && (
+                                    <OpenStatusBadge openingHours={restaurant.openingHours} size="sm" />
                                 )}
                                 
                                 <div className="h-px w-8 bg-white/10 hidden sm:block"></div>
