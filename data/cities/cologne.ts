@@ -220,10 +220,13 @@ export const cologne: City = {
       id: 'haweli',
       name: "Haweli",
       description: "An excellent indian restaurant hidden away in Zollstock. Absolutely worth visting for their curries and pakoras. The chicken pakoras here are the best in the city, and their dips are decent. I recommend sitting in and sharing curries with friends. The portions are reasonably sized, but take starters and a naan if you have a big appetite. The peshwari naan was one of the better ones in the city, it was soft, sweet, and paired well with the curries. I am disappointed they decided to discontinue their gluten-free naan because that would have sold it as one of the best indian restaurants in town for people with gluten intolerances or coeliac disease. Hopefully it comes back one day.",
-      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_1.jpg', caption: 'Chicken Pakora with mint sauce'},
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_4.jpg', caption: 'Chicken Pakora with mint sauce'},
       images: [
         { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_2.jpg', caption: 'Butter Chicken (bottom), Chicken Korma (top) with rice' },
-        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_3.jpg', caption: 'Peshwari Naan' }
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_3.jpg', caption: 'Peshwari Naan' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_1.jpg', caption: 'Chicken Pakora with mint sauce' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_5.jpg', caption: 'Chicken Shahi Tikka Masala (monthly special)' },
+        { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/cologne/haweli/haweli_6.jpg', caption: 'Chicken korma (right), Chicken shahi tikka masala (bottom), Butter chicken (right), Garlic naan (center)' }
       ],
       ratings: { food: 5, drinks: 5, service: 5, price: 2 },
       mapEmbedUrl: '<iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Haweli%2C%20H%C3%B6ninger%20Weg%2C%20Cologne-Rodenkirchen%2C%20Germany&maptype=roadmap" allowfullscreen></iframe>',
