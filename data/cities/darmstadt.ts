@@ -104,6 +104,47 @@ export const darmstadt: City = {
           "Fri: 11:30 - 15:00, 17:30 - 22:30",
           "Sat - Sun: 12:00 - 22:30"
       ]
+    },
+    {
+      id: 'Swaad',
+      name: "Swaad",
+      description: "A wonderful Indian restaurant located right in the city center of Darmstadt on Neckarstraße. One of the clearest signs of an authentic spot is seeing many Indian customers dining inside, and Swaad definitely delivers on genuine flavor without breaking the bank.\n\nThe standout moment for me was ordering the Pani Puri — biting into the crispy hollow puris filled with spiced potatoes and pouring in the tangy mint and tamarind water created an absolute flavor explosion. For the mains, the chicken curries were aromatic, rich, and paired perfectly with warm butter naan and a refreshing mango lassi. With fair prices, friendly service, and a huge selection of gluten-free starters and vegetarian curries, this is easily one of the best Indian spots to visit in Darmstadt.",
+      quickVerdict: "Tasty Indian food with many Indian customers, showing its authenticity and inexpensive offers.",
+      mainImage: { url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/swaad/swaad_1.jpg', caption: 'Pani Puri with tamarind and mint sauce'},
+      images: [
+        { 
+          url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/swaad/swaad_2.jpg', 
+          caption: 'Chicken Tikka Masala' 
+        },
+        { 
+          url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/swaad/swaad_3.jpg', 
+          caption: 'Chicken Curry with Butter Naan' 
+        },
+        { 
+          url: 'https://raw.githubusercontent.com/aidutoy/alexs-food-guide-images/main/images/darmstadt/swaad/swaad_4.jpg', 
+          caption: 'Mango Lassi' 
+        }
+      ],
+      ratings: { food: 5, drinks: 5, service: 5, price: 2 },
+      mapEmbedUrl: '<iframe width="100%" height="650px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB2NIWI3Tv9iDPrlnowr_0ZqZWoAQydKJU&q=Swaad%2C%20Neckarstra%C3%9Fe%2C%20Darmstadt%2C%20Germany&maptype=satellite" allowfullscreen></iframe>',
+      cuisine: 'Indian',
+      neighborhood: 'City Center',
+      lastVisited: 'November 2026',
+      alexsTip: "Absolutely worth it ordering the Pani Puri, I haven't had a flavour explosion like that in some time!",
+      dietary: {
+        celiac: "Every curry is gluten-free, but also the pakoras are battered with chickpea flour and the pappadoms are made with lentils so there is a large selection of gluten-free starts also. No gluten-free Naan.",
+        lactose: "Many curries contain yoghurt, butter, or cream. There are at least 10 different curries that do not contain dairy like channa masala.",
+        vegetarian: "Many curries are vegetarian, as many people in India are vegetarian. The main ingredients are Paneer, lentils, aubergine and potatoes.",
+        vegan: "Similar to vegetarian, there are at least 9 curries that are vegan using a combination of vegetables or lentils or chickpeas."
+      },
+      websiteUrl: "https://www.lieferando.de/speisekarte/swaad-darmstadt#pre-order",
+      instagramUrl: 'https://www.instagram.com/swaad_indisches_darmstadt/?hl=en',
+      tags: ["Indian", "Curry", "Lunch", "Dinner", "Takeaway", "gluten-free", "lactose-free", "vegetarian", "vegan"],
+      openingHours: [
+          "Mon - Thu: 11:30 - 14:30, 17:00 - 22:30",
+          "Fri: 11:00 - 14:30, 17:00 - 22:30",
+          "Sat - Sun: 17:00 - 22:30"
+      ]
     }
   ]
 };
