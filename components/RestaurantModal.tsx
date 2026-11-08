@@ -146,6 +146,36 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
       setShowMobileCaption(!showMobileCaption);
   };
 
+  // Touch Swipe handlers for swiping through photos on mobile
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchStartY, setTouchStartY] = useState<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    setTouchStartX(touch.clientX);
+    setTouchStartY(touch.clientY);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null || touchStartY === null) return;
+    const touch = e.changedTouches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+
+    // Only swipe if horizontal motion is significantly greater than vertical scroll
+    if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+      if (deltaX < 0) {
+        // Swipe left -> next image
+        setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
+      } else {
+        // Swipe right -> previous image
+        setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+      }
+    }
+    setTouchStartX(null);
+    setTouchStartY(null);
+  };
+
   const openZoom = (e: React.MouseEvent) => {
       e.stopPropagation();
       setIsLightboxOpen(true);
@@ -158,21 +188,36 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
   return (
     <>
     <div
-      className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4 transition-opacity duration-300 animate-fade-in"
+      className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 p-0 sm:p-4 transition-opacity duration-300 animate-fade-in"
       onClick={onClose}
     >
       <div
         className="
-            bg-zinc-900/85 backdrop-blur-xl rounded-[2rem] w-full md:max-w-[90vw] lg:max-w-[1400px]
-            h-[85vh] md:h-full md:max-h-[90vh] 
-            overflow-hidden 
-            flex flex-col md:flex-row border border-white/10 shadow-2xl
+            bg-zinc-900/95 backdrop-blur-2xl rounded-none sm:rounded-[2rem] w-full md:max-w-[90vw] lg:max-w-[1400px]
+            h-full sm:h-[88vh] md:h-full md:max-h-[90vh] 
+            overflow-y-auto md:overflow-hidden 
+            flex flex-col md:flex-row border-0 sm:border border-white/10 shadow-2xl relative
         "
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Prominent Floating Close Button on Top Left (Mobile & Desktop) */}
+        <button
+            onClick={onClose}
+            className="absolute top-4 left-4 z-40 flex items-center gap-1.5 px-3 py-2 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/20 shadow-2xl backdrop-blur-md transition-all active:scale-95 group"
+            aria-label="Close restaurant details"
+            title="Close"
+        >
+            <CloseIcon className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+            <span className="text-xs font-mono font-medium tracking-wider uppercase">Close</span>
+        </button>
+
         {/* Image Carousel Section */}
-        <div className="w-full h-[45vh] md:h-auto md:w-3/5 relative group bg-black flex flex-col shrink-0">
-            <div className="relative flex-1 overflow-hidden bg-transparent">
+        <div className="w-full md:w-3/5 relative group bg-black flex flex-col shrink-0">
+            <div 
+                className="relative h-[48vh] sm:h-[52vh] md:h-full overflow-hidden bg-transparent select-none touch-pan-y"
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+            >
                 <div 
                     className="w-full h-full flex items-center justify-center cursor-zoom-in" 
                     onClick={openZoom}
@@ -187,22 +232,29 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                 {/* Mobile Info Toggle */}
                 <button 
                     onClick={toggleMobileCaption}
-                    className="md:hidden absolute top-4 right-4 z-30 p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/20 transition-all active:scale-95"
-                    aria-label="Show info"
+                    className="md:hidden absolute top-4 right-4 z-30 p-2 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white hover:bg-black/80 transition-all active:scale-95"
+                    aria-label="Show photo caption"
                 >
-                    <InfoIcon className="w-6 h-6" />
+                    <InfoIcon className="w-5 h-5" />
                 </button>
+
+                {/* Mobile Swipe Hint Indicator */}
+                {allImages.length > 1 && (
+                    <div className="md:hidden absolute top-4 left-1/2 -translate-x-1/2 z-20 pointer-events-none bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 text-[10px] text-white/70 font-mono">
+                        Swipe photos ⇄
+                    </div>
+                )}
 
                 {/* Mobile Caption Overlay */}
                 <div 
                     className={`
                         md:hidden absolute bottom-0 left-0 right-0 
-                        bg-black/80 backdrop-blur-md p-6 pt-4 z-20
+                        bg-black/85 backdrop-blur-md p-5 pt-3 z-20
                         transition-transform duration-300 ease-in-out border-t border-white/10
                         ${showMobileCaption ? 'translate-y-0' : 'translate-y-full'}
                     `}
                 >
-                    <p className="text-white/80 text-sm font-light italic text-center">
+                    <p className="text-white/80 text-xs sm:text-sm font-light italic text-center">
                         {allImages[currentImageIndex].caption}
                     </p>
                 </div>
@@ -210,10 +262,10 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                 {/* Navigation Arrows */}
                 {allImages.length > 1 && (
                     <>
-                        <button onClick={prevImage} className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/20 hover:bg-black/50 backdrop-blur-md text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/10 z-10" aria-label="Previous image">
+                        <button onClick={prevImage} className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-black/60 backdrop-blur-md text-white p-3 rounded-full opacity-0 md:group-hover:opacity-100 transition-all duration-300 border border-white/10 z-10 hidden sm:block" aria-label="Previous image">
                             <ChevronLeftIcon className="w-5 h-5" />
                         </button>
-                        <button onClick={nextImage} className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/20 hover:bg-black/50 backdrop-blur-md text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 border border-white/10 z-10" aria-label="Next image">
+                        <button onClick={nextImage} className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-black/60 backdrop-blur-md text-white p-3 rounded-full opacity-0 md:group-hover:opacity-100 transition-all duration-300 border border-white/10 z-10 hidden sm:block" aria-label="Next image">
                             <ChevronRightIcon className="w-5 h-5" />
                         </button>
                     </>
@@ -221,7 +273,7 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
 
                 {/* Mobile Pagination Dots (Overlay) */}
                 {allImages.length > 1 && (
-                     <div className={`md:hidden absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-30 transition-opacity duration-300 ${showMobileCaption ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+                     <div className={`md:hidden absolute bottom-3 left-0 right-0 flex justify-center space-x-1.5 z-30 transition-opacity duration-300 ${showMobileCaption ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                         {allImages.map((_, index) => (
                             <button 
                                 key={index}
@@ -256,9 +308,9 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
         </div>
         
         {/* Details Section */}
-        <div className="w-full md:w-2/5 flex flex-col flex-1 relative bg-transparent overflow-hidden">
-             {/* Fixed Top Header Bar - gives Save, Share & Close dedicated room separated from content */}
-             <div className="shrink-0 px-6 py-4 md:px-8 border-b border-white/10 bg-zinc-900/95 backdrop-blur-md z-20 flex items-center justify-between gap-4">
+        <div className="w-full md:w-2/5 flex flex-col flex-1 relative bg-transparent md:overflow-hidden">
+             {/* Action Header Bar (Save, Share, Compare, Close) */}
+             <div className="shrink-0 px-5 py-3 sm:px-6 md:px-8 border-b border-white/10 bg-zinc-900/95 backdrop-blur-md z-20 flex items-center justify-between gap-3">
                 {/* Left: Cuisine & Dietary Badges */}
                 <div className="flex items-center gap-2 flex-wrap min-w-0">
                     <span className="inline-block px-3 py-1 rounded-full bg-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest border border-brand-primary/25 shrink-0">
@@ -267,14 +319,14 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
 
                     {/* Dietary Icons */}
                     <div className="flex items-center gap-1.5 ml-1">
-                        {hasTag('gluten-free') && <GlutenFreeIcon className="w-5 h-5" />}
-                        {hasTag('lactose-free') && <LactoseFreeIcon className="w-5 h-5" />}
-                        {hasTag('vegetarian') && <VegetarianIcon className="w-5 h-5" />}
-                        {hasTag('vegan') && <VeganIcon className="w-5 h-5" />}
+                        {hasTag('gluten-free') && <GlutenFreeIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
+                        {hasTag('lactose-free') && <LactoseFreeIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
+                        {hasTag('vegetarian') && <VegetarianIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
+                        {hasTag('vegan') && <VeganIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
                     </div>
                 </div>
 
-                {/* Right: Actions (Save, Share, Close) */}
+                {/* Right: Actions (Save, Share, Compare, Close) */}
                 <div className="flex items-center gap-2 shrink-0">
                     <button
                         onClick={() => toggleSave(restaurant.id)}
@@ -289,7 +341,7 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                         aria-label="Save restaurant"
                     >
                         <BookmarkIcon className="w-3.5 h-3.5" filled={isSaved(restaurant.id)} />
-                        <span className="hidden sm:inline">{isSaved(restaurant.id) ? 'Saved' : 'Save'}</span>
+                        <span>{isSaved(restaurant.id) ? 'Saved' : 'Save'}</span>
                     </button>
 
                     <button 
@@ -323,13 +375,12 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
                         className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/15 text-white/80 hover:text-white transition-all text-xs font-medium active:scale-95"
                         title="Compare this spot side-by-side with another restaurant"
                     >
-                        <span>⚔️</span>
-                        <span className="hidden sm:inline">Compare</span>
+                        <span>Compare</span>
                     </Link>
 
                     <button 
                         onClick={onClose} 
-                        className="p-1.5 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-colors border border-white/10 active:scale-95 ml-1" 
+                        className="p-1.5 rounded-full bg-white/5 hover:bg-white/15 text-white/70 hover:text-white transition-colors border border-white/10 active:scale-95 ml-1 hidden sm:block" 
                         aria-label="Close"
                     >
                         <CloseIcon className="w-4 h-4" />

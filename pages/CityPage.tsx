@@ -280,11 +280,34 @@ const CityPage: React.FC = () => {
                 <div 
                     key={restaurant.id} 
                     className={`
-                        flex flex-col md:flex-row items-center gap-12 md:gap-24 group cursor-pointer
+                        flex flex-col md:flex-row items-center gap-8 md:gap-24 group cursor-pointer
                         ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}
                     `}
                     onClick={() => openModal(restaurant)}
                 >
+                    {/* Mobile-Only Header: Restaurant Name & Badges shown BEFORE the image */}
+                    <div className="w-full md:hidden mb-1">
+                        <div className="flex flex-wrap items-center gap-2 mb-3">
+                            <span className="px-3 py-1 rounded-full border border-brand-primary/30 text-brand-primary text-xs font-bold uppercase tracking-widest bg-brand-primary/10">
+                                {restaurant.cuisine}
+                            </span>
+
+                            {restaurant.neighborhood && (
+                                <span className="px-2.5 py-1 rounded-full border border-white/10 bg-white/5 text-white/70 text-xs font-light">
+                                    📍 {restaurant.neighborhood}
+                                </span>
+                            )}
+
+                            {restaurant.openingHours && restaurant.openingHours.length > 0 && (
+                                <OpenStatusBadge openingHours={restaurant.openingHours} size="sm" />
+                            )}
+                        </div>
+
+                        <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-white leading-tight">
+                            {restaurant.name}
+                        </h2>
+                    </div>
+
                     {/* Image Side */}
                     <div className="w-full md:w-1/2 relative perspective-1000">
                          {/* Decorative Offset Border */}
@@ -294,7 +317,7 @@ const CityPage: React.FC = () => {
                             group-hover:translate-x-0 group-hover:translate-y-0
                         `}></div>
 
-                        <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[3/4] bg-zinc-900">
+                        <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] md:aspect-[3/4] bg-zinc-900">
                             <img 
                                 src={restaurant.mainImage.url} 
                                 alt={restaurant.name}
@@ -322,8 +345,8 @@ const CityPage: React.FC = () => {
                         </div>
 
                         <div className="relative z-10">
-                            {/* Badges row: Cuisine, Neighborhood, Last Visited */}
-                            <div className="flex flex-wrap items-center gap-3 mb-6">
+                            {/* Desktop Badges row: Cuisine, Neighborhood, Last Visited */}
+                            <div className="hidden md:flex flex-wrap items-center gap-3 mb-6">
                                 <span className="px-3 py-1 rounded-full border border-brand-primary/30 text-brand-primary text-xs font-bold uppercase tracking-widest bg-brand-primary/10">
                                     {restaurant.cuisine}
                                 </span>
@@ -348,7 +371,7 @@ const CityPage: React.FC = () => {
                                 <StarRating score={restaurant.ratings.food} size="w-3 h-3" fillColor="text-white" gap="gap-0.5" />
                             </div>
 
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-6 leading-none group-hover:text-brand-primary/90 transition-colors duration-300">
+                            <h2 className="hidden md:block text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-6 leading-none group-hover:text-brand-primary/90 transition-colors duration-300">
                                 {restaurant.name}
                             </h2>
 
@@ -388,12 +411,11 @@ const CityPage: React.FC = () => {
                                     <Link
                                       to={`/compare?a=${restaurant.id}`}
                                       onClick={(e) => e.stopPropagation()}
-                                      className="flex items-center gap-1 px-2.5 py-1.5 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/15 text-white/60 hover:text-white text-xs font-medium transition-all active:scale-95"
+                                      className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/15 text-white/70 hover:text-white text-xs font-medium transition-all active:scale-95"
                                       title={`Compare ${restaurant.name} with another spot`}
                                       aria-label={`Compare ${restaurant.name}`}
                                     >
-                                      <span>⚔️</span>
-                                      <span className="hidden sm:inline">Compare</span>
+                                      <span>Compare</span>
                                     </Link>
 
                                     {/* Bookmark button */}

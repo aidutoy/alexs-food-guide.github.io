@@ -71,7 +71,6 @@ const NavBar: React.FC = () => {
                                 </Link>
                                 <Link to="/locations" className={navLinkClass}>Locations</Link>
                                 <Link to="/compare" className={navLinkClass}>
-                                    <span className="text-xs">⚔️</span>
                                     Compare
                                 </Link>
                                 <Link to="/gallery" className={navLinkClass}>
@@ -123,13 +122,14 @@ const NavBar: React.FC = () => {
 
                             <button
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-300 focus:outline-none"
+                                className="inline-flex items-center justify-center p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-colors focus:outline-none"
                                 aria-controls="mobile-menu"
                                 aria-expanded={isMenuOpen}
+                                aria-label={isMenuOpen ? "Close menu" : "Open main menu"}
                             >
-                                <span className="sr-only">Open main menu</span>
+                                <span className="sr-only">Toggle menu</span>
                                 {isMenuOpen ? (
-                                    <CloseIcon className="block h-6 w-6" aria-hidden="true" />
+                                    <CloseIcon className="block h-6 w-6 text-white" aria-hidden="true" />
                                 ) : (
                                     <MenuIcon className="block h-6 w-6" aria-hidden="true" />
                                 )}
@@ -142,19 +142,34 @@ const NavBar: React.FC = () => {
             {/* Mobile Menu Overlay */}
             <div
                 className={`
-                    fixed inset-0 z-40 bg-brand-dark/95 backdrop-blur-sm lg:hidden 
-                    transition-opacity duration-300 ease-in-out
+                    fixed inset-0 z-50 bg-brand-dark/98 backdrop-blur-xl lg:hidden 
+                    transition-opacity duration-300 ease-in-out flex flex-col
                     ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
                 `}
                 id="mobile-menu"
             >
-                <div className="flex flex-col items-center justify-center h-full space-y-6 overflow-y-auto py-8">
+                {/* Mobile Menu Top Header with prominent Close button */}
+                <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
+                    <Link to="/" onClick={handleMobileRouterLinkClick} className="font-playfair text-xl font-bold">
+                        <span className="text-white">Alex's</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-orange-400">Food Guide</span>
+                    </Link>
+                    <button
+                        onClick={() => setIsMenuOpen(false)}
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all active:scale-95 text-xs font-mono uppercase tracking-wider"
+                        aria-label="Close navigation menu"
+                    >
+                        <CloseIcon className="w-5 h-5 text-white" />
+                        <span>Close</span>
+                    </button>
+                </div>
+
+                <div className="flex flex-col items-center justify-center flex-1 space-y-6 overflow-y-auto py-8">
                     <Link to="/map" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>
                         <MapPinIcon className="w-6 h-6" />
                         Map
                     </Link>
                     <Link to="/locations" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Locations</Link>
-                    <Link to="/compare" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Compare Spots</Link>
+                    <Link to="/compare" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Compare</Link>
                     <Link to="/gallery" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Gallery</Link>
                     <Link to="/what-to-eat" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>What to Eat</Link>
                     <Link to="/contact" onClick={handleMobileRouterLinkClick} className={mobileNavLinkClass}>Contact</Link>

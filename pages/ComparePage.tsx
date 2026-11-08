@@ -190,7 +190,7 @@ export const ComparePage: React.FC = () => {
                     }
                   `}
                 >
-                  <span>⚔️ {preset.label}</span>
+                  <span>{preset.label}</span>
                 </button>
               ))}
             </div>
