@@ -58,6 +58,8 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
   const [showMobileCaption, setShowMobileCaption] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchStartY, setTouchStartY] = useState<number | null>(null);
   const { isSaved, toggleSave } = useSaved();
 
   useEffect(() => {
@@ -147,9 +149,6 @@ export const RestaurantModal: React.FC<RestaurantModalProps> = ({ restaurant, on
   };
 
   // Touch Swipe handlers for swiping through photos on mobile
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const [touchStartY, setTouchStartY] = useState<number | null>(null);
-
   const handleTouchStart = (e: React.TouchEvent) => {
     const touch = e.touches[0];
     setTouchStartX(touch.clientX);
